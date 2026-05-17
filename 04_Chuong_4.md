@@ -218,32 +218,30 @@ Ngoài các chỉ số về chất lượng, em cũng đo **Response Latency** (
 
 ### 4.4.3. Kết quả thực nghiệm
 
-*Bảng 4.6. Kết quả so sánh Naive RAG và Agentic RAG*
+Thực nghiệm được tiến hành trên bộ 60 câu hỏi (30 N1 + 30 N2) chạy tự động qua API chatbot. Toàn bộ 60 câu hoàn thành không có lỗi. Điểm N1 được chấm theo phương pháp so khớp tự động với expected_ref; điểm N2 được chấm bởi LLM-judge (Gemini 2.5 Pro) theo thang 1–5.
 
-| Chỉ số | Naive RAG | Agentic RAG | Cải thiện |
-|---|---|---|---|
-| Accuracy@1 (N1) | % | % | +Δ% |
-| Recall@20 | % | % | +Δ% |
-| Context Relevance (1–5) | | | +Δ |
-| Answer Quality (1–5) | | | +Δ |
-| Citation Accuracy | % | % | +Δ% |
-| Temporal Conflict Detection | /5 | /5 | |
-| Latency P50 (TTFT) | s | s | |
-| Latency P95 (full response) | s | s | |
+*Bảng 4.6. Kết quả đánh giá hệ thống Agentic RAG*
 
-*(Bảng sẽ được điền sau khi hoàn thành thực nghiệm)*
+| Chỉ số | Kết quả | Ghi chú |
+|---|---|---|
+| **Accuracy@1** (N1, 30 câu) | **90,0%** (27/30) | 3 câu sai do thiếu số liệu điều khoản cụ thể trong câu trả lời |
+| **Citation Accuracy** (N1) | **56,7%** (17/30) | Phản ánh việc NĐ 168/2024 chưa được index đầy đủ trong ChromaDB |
+| **Temporal Conflict OK** (3 câu ★) | **3/3 (100%)** | Hệ thống xác định đúng NĐ 168/2024 thay thế NĐ 100/2019 |
+| **Answer Quality** (N2, LLM-judge) | **3,67/5,0** | Phân bố: 5★×4, 4★×16, 3★×6, 2★×4, 1★×0 |
+| **Latency P50** (full response) | **65,5s** | Bao gồm toàn bộ pipeline: Guardrail → Query Analysis → Agent → Verifier |
+| **Latency P95** (full response) | **100,6s** | Trường hợp câu hỏi phức tạp, Agent thực hiện nhiều vòng lặp ReAct |
 
 **Nhận xét tổng hợp**
 
-Kết quả thực nghiệm cho thấy Agentic RAG vượt trội so với Naive RAG trên hầu hết các chỉ số chất lượng. Sự cải thiện rõ nét nhất đến từ hai điểm sau:
+Kết quả thực nghiệm cho thấy Agentic RAG đạt chất lượng câu trả lời tốt với Accuracy@1 = 90,0% và Answer Quality = 3,67/5,0, khẳng định khả năng tư vấn pháp lý thực tế của hệ thống. Hai phát hiện nổi bật được phân tích dưới đây.
 
-*Thứ nhất*, cơ chế **Verifier bằng Gemini 2.5 Pro** có tác dụng lọc đáng kể các câu trả lời có thông tin không được hỗ trợ bởi context. Trong thực nghiệm, tỷ lệ câu trả lời chứa thông tin bịa đặt (hallucination) ở Naive RAG cao hơn đáng kể so với Agentic RAG vì Naive RAG không có bước kiểm chứng chéo.
+*Thứ nhất*, **Temporal Conflict Detection đạt 100% (3/3)**. Đây là tính năng đặc thù của hệ thống, không có ở các chatbot RAG thông thường. Trong cả ba câu hỏi kiểm tra xung đột thời gian giữa NĐ 100/2019 và NĐ 168/2024, hệ thống xác định đúng văn bản đang có hiệu lực, trình bày so sánh rõ ràng và không trích dẫn sai văn bản đã hết hiệu lực. Kết quả này chứng minh thiết kế metadata `effective_date` và logic Temporal Conflict trong pipeline RAG hoạt động đúng.
 
-*Thứ hai*, cơ chế **Two-Stage Reranking** (bi-encoder top-60 → cross-encoder top-20) cải thiện Recall@20 so với Naive RAG chỉ dùng bi-encoder top-5. Cross-encoder `ms-marco-MiniLM-L-6-v2` dù không được huấn luyện trên văn bản tiếng Việt nhưng vẫn cho kết quả reranking tốt hơn vì nó đánh giá ngữ nghĩa ở cấp câu, bù được hạn chế của bi-encoder khi xử lý câu hỏi phức tạp nhiều vế.
+*Thứ hai*, **khoảng cách giữa Accuracy@1 (90,0%) và Citation Accuracy (56,7%)** là một phát hiện quan trọng. Hệ thống trả lời đúng nhiều hơn so với tỷ lệ retrieve đúng văn bản nguồn, cho thấy Gemini 2.5 Pro đang bổ sung parametric knowledge (kiến thức nội tại từ quá trình huấn luyện) khi retrieval không tìm được đúng văn bản — đặc biệt với NĐ 168/2024 là văn bản mới chưa được index đầy đủ. Đây vừa là điểm mạnh (hệ thống vẫn trả lời đúng) vừa là hạn chế (câu trả lời thiếu nguồn trích dẫn từ kho dữ liệu nội bộ, khó kiểm chứng).
 
-*Về Temporal Conflict Detection*, Agentic RAG phát hiện chính xác x/5 trường hợp xung đột trong bộ kiểm thử, trong đó điển hình là câu hỏi về mức phạt vi phạm nồng độ cồn — hệ thống xác định đúng rằng NĐ 168/2024 đang có hiệu lực và NĐ 100/2019 đã được thay thế một phần, đồng thời hiển thị cả hai nguồn để người dùng so sánh. Naive RAG không có khả năng này.
+*Về Answer Quality (N2)*, điểm 3,67/5,0 phản ánh hệ thống trả lời đúng hướng với căn cứ pháp lý rõ ràng ở hầu hết câu hỏi mở. Một số câu bị trừ điểm do thiếu chi tiết về chế tài, quy trình khiếu nại hoặc chưa phân biệt đủ các trường hợp ngoại lệ — đây là giới hạn tự nhiên khi câu hỏi mở yêu cầu phân tích tình huống phức tạp.
 
-*Về latency*, đây là điểm hạn chế rõ ràng của Agentic RAG: thời gian phản hồi P50 khoảng 5–8 giây (TTFT) và 10–15 giây (full response), cao hơn 3–5 lần so với Naive RAG (1–2 giây). Chi phí latency này đến từ việc thực hiện nhiều lần gọi LLM tuần tự (Guardrail → Query Analysis → Agent → Verifier) và có thể lên đến 6 vòng lặp ReAct trong trường hợp câu hỏi phức tạp. Tuy nhiên, trong bối cảnh tư vấn pháp lý — nơi độ chính xác quan trọng hơn tốc độ — đây là đánh đổi hợp lý.
+*Về latency*, P50 = 65,5s và P95 = 100,6s là thời gian phản hồi cao hơn kỳ vọng ban đầu (ước tính 10–15s). Nguyên nhân chủ yếu đến từ: (1) mỗi câu hỏi thực hiện 4–6 lần gọi LLM tuần tự, (2) Gemini API có latency nền ~10–15s/lần gọi trong điều kiện thực tế, và (3) retrieval Two-Stage với top-60 → top-20 thêm ~500ms. Trong bối cảnh tư vấn pháp lý — nơi độ chính xác quan trọng hơn tốc độ — đây là đánh đổi chấp nhận được, nhưng cần cải thiện trong phiên bản sản xuất thực tế.
 
 ### 4.4.4. Phân tích case study
 
@@ -272,9 +270,8 @@ Kết quả: câu trả lời chính xác, minh bạch, hiển thị cả hai ng
 |---|---|
 | ChromaDB query top-60 (cosine, HNSW) | < 200ms |
 | Two-Stage Reranking (top-60 → top-20) | < 500ms |
-| Agentic RAG TTFT (P50) | 5–8 giây |
-| Agentic RAG full response (P50) | 10–15 giây |
-| Naive RAG full response (P50) | 1–3 giây |
+| Agentic RAG full response (P50) | **65,5 giây** (đo thực nghiệm, 60 câu) |
+| Agentic RAG full response (P95) | **100,6 giây** (đo thực nghiệm) |
 | Ingestion pipeline (PDF 50 điều, ~30 trang) | 3–5 phút |
 | Embedding batch 100 chunks | < 10 giây |
 

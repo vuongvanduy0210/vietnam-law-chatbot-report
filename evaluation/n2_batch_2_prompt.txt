@@ -1,0 +1,221 @@
+Bạn là chuyên gia đánh giá câu trả lời pháp lý Việt Nam.
+Đánh giá từng câu trả lời theo thang 1–5:
+  5 = Đầy đủ, chính xác, có trích dẫn điều khoản cụ thể
+  4 = Đúng hướng, có trích dẫn, thiếu vài điểm phụ
+  3 = Đúng phần lớn nhưng thiếu thông tin quan trọng
+  2 = Lẫn thông tin đúng và sai
+  1 = Sai hoàn toàn hoặc từ chối không có lý
+
+[CÂU 1] ID: N2-031
+Câu hỏi: Người lao động muốn nghỉ việc ngay lập tức để nhận việc ở công ty khác. Nếu không báo trước, NLĐ chịu hậu quả gì? Có cách nào hợp pháp không?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang có nhu cầu đơn phương chấm dứt hợp đồng lao động để nhận việc tại công ty khác và muốn biết về hậu quả pháp lý nếu không tuân thủ thời hạn báo trước, cũng như các trường hợp có thể nghỉ việc ngay lập tức một cách hợp pháp.
+
+Vấn đề này được quy định cụ thể trong Bộ luật Lao động hiện hành.
+
+**I. Căn cứ pháp lý hiện hành**
+
+Theo quy định tại **Bộ luật Lao động số 45/2019/QH14** (có hiệu lực từ ngày 01/01/2021):
+
+**1. Quyền đơn phương chấm dứt hợp đồng lao động của người lao động (Điều 35 BLLĐ 2019)**
+
+*   **Thời hạn báo trước:**
+    Người lao động có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước cho người sử dụng lao động như sau:
+    *   Ít nhất 45 ngày nếu làm việc theo hợp đồng lao động không xác định thời hạn.
+    *   Ít nhất 30 ngày nếu làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ 12 tháng đến 36 tháng.
+    *   Ít nhất 03 ngày làm việc nếu làm việc theo hợp đồng lao động xác định thời hạn có thời hạn dưới 12 tháng.
+    *   Đối với một số ngành, nghề, công việc đặc thù thì thời hạn báo trước được thực hiện theo quy định của Chính phủ.
+
+*   **Các trường hợp không cần báo trước:**
+    Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong 07 trường hợp sau đây:
+    *   Không được bố trí theo đúng công việc, địa điểm làm việc hoặc không được bảo đảm điều kiện làm việc theo thỏa thuận, trừ trường hợp quy định tại Điều 29 của Bộ luật này.
+    *   Không được trả đủ lương h
+
+[CÂU 2] ID: N2-041
+Câu hỏi: Công ty TNHH hai thành viên có 3 thành viên, một thành viên muốn rút vốn nhưng hai thành viên còn lại không đồng ý mua lại. Theo Luật DN 2020, thành viên đó có thể làm gì?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang là thành viên của một công ty trách nhiệm hữu hạn hai thành viên trở lên và mong muốn rút vốn, nhưng hai thành viên còn lại không đồng ý mua lại phần vốn góp của Anh/Chị. Vấn đề pháp lý ở đây là quyền chuyển nhượng phần vốn góp của thành viên trong công ty trách nhiệm hữu hạn hai thành viên trở lên khi các thành viên còn lại không mua lại.
+
+Căn cứ pháp lý hiện hành cho trường hợp này được quy định tại Luật Doanh nghiệp 2020, cụ thể là Điều 52 và một số nội dung liên quan tại Điều 53 của Luật này. Quy định này hiện vẫn còn hiệu lực thi hành theo Văn bản hợp nhất Luật Doanh nghiệp số 67/VBHN-VPQH ngày 15/08/2025, có hiệu lực tại thời điểm hiện tại (17/05/2026).
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH:**
+
+Theo Điều 52 Luật Doanh nghiệp 2020 (Văn bản hợp nhất số 67/VBHN-VPQH), quy định về chuyển nhượng phần vốn góp như sau:
+
+**Điều 52. Chuyển nhượng phần vốn góp**
+
+1.  Trừ trường hợp quy định tại khoản 4 Điều 51, khoản 6 và khoản 7 Điều 53 của Luật này, thành viên công ty trách nhiệm hữu hạn hai thành viên trở lên có quyền chuyển nhượng một phần hoặc toàn bộ phần vốn góp của mình cho người khác theo quy định sau đây:
+    a) Chào bán phần vốn góp đó cho các thành viên còn lại theo tỷ lệ tương ứng với phần vốn góp của họ trong công ty với cùng điều kiện chào bán;
+    b) Chuyển nhượng với cùng điều kiện chào bán đối với các thành viên còn lại quy định tại điểm a khoản này cho người không phải là thành viên nếu các thành viên còn lại của công ty không mu
+
+[CÂU 3] ID: N2-043
+Câu hỏi: Cổ đông thiểu số (nắm 5% cổ phần) muốn yêu cầu triệu tập họp ĐHĐCĐ bất thường. Điều kiện và thủ tục theo Luật DN 2020 là gì?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang quan tâm đến điều kiện và thủ tục để cổ đông thiểu số (nắm giữ 5% cổ phần) yêu cầu triệu tập họp Đại hội đồng cổ đông bất thường theo quy định của pháp luật doanh nghiệp Việt Nam.
+
+Theo quy định hiện hành, quyền này của cổ đông được quy định tại Luật Doanh nghiệp 2020 và đã có những sửa đổi, bổ sung quan trọng bởi Luật 76/2025/QH15.
+
+**1. CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Quy định về việc triệu tập họp Đại hội đồng cổ đông bất thường theo yêu cầu của cổ đông hoặc nhóm cổ đông được quy định tại Điều 140 Luật Doanh nghiệp 2020, được sửa đổi, bổ sung bởi Luật 76/2025/QH15 (có hiệu lực từ ngày 01/7/2025).
+
+Cụ thể, theo Điều 140 Luật Doanh nghiệp 2020 (được sửa đổi, bổ sung tại Luật 76/2025/QH15):
+
+*   **Điều kiện yêu cầu triệu tập họp:**
+    Hội đồng quản trị phải triệu tập họp bất thường Đại hội đồng cổ đông trong trường hợp:
+    "...Theo yêu cầu của cổ đông hoặc nhóm cổ đông sở hữu từ 05% tổng số cổ phần phổ thông trở lên hoặc một tỷ lệ khác nhỏ hơn theo quy định tại Điều lệ công ty (quy định tại khoản 2 Điều 115 của Luật Doanh nghiệp);"
+    Như vậy, cổ đông hoặc nhóm cổ đông sở hữu từ 05% tổng số cổ phần phổ thông trở lên có quyền yêu cầu triệu tập họp Đại hội đồng cổ đông bất thường. Tỷ lệ này có thể thấp hơn nếu Điều lệ công ty quy định.
+
+*   **Thủ tục triệu tập họp:**
+    *   Trừ trường hợp Điều lệ công ty có quy định khác, Hội đồng quản trị phải triệu tập họp Đại hội đồng cổ đông trong thời hạn **30 ngày** kể từ ngày nhận được yêu cầu triệu t
+
+[CÂU 4] ID: N2-046
+Câu hỏi: Một công ty muốn mua lại 70% cổ phần của đối thủ cạnh tranh. Theo Luật Cạnh tranh 2018, giao dịch này phải tuân theo thủ tục nào?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang quan tâm đến thủ tục pháp lý khi một công ty muốn mua lại 70% cổ phần của đối thủ cạnh tranh theo quy định của Luật Cạnh tranh 2018. Đây là một giao dịch thuộc hình thức tập trung kinh tế và cần tuân thủ các quy định về thông báo cho cơ quan cạnh tranh.
+
+**1. Căn cứ pháp lý hiện hành về thủ tục thông báo tập trung kinh tế**
+
+Theo Luật Cạnh tranh số 23/2018/QH14, quy định này hiện vẫn còn hiệu lực thi hành:
+
+*   **Điều 33. Thông báo tập trung kinh tế**
+    *   Các doanh nghiệp tham gia tập trung kinh tế phải nộp hồ sơ thông báo tập trung kinh tế đến Ủy ban Cạnh tranh Quốc gia trước khi tiến hành tập trung kinh tế nếu thuộc ngưỡng thông báo tập trung kinh tế.
+    *   Ngưỡng thông báo tập trung kinh tế được xác định căn cứ vào một trong các tiêu chí sau đây:
+        *   Tổng tài sản trên thị trường Việt Nam của doanh nghiệp tham gia tập trung kinh tế;
+        *   Tổng doanh thu trên thị trường Việt Nam của doanh nghiệp tham gia tập trung kinh tế;
+        *   Giá trị giao dịch của tập trung kinh tế;
+        *   Thị phần kết hợp trên thị trường liên quan của doanh nghiệp tham gia tập trung kinh tế.
+    *   Hồ sơ thông báo tập trung kinh tế bao gồm báo cáo tài chính của từng doanh nghiệp tham gia tập trung kinh tế trong 02 năm liên tiếp liền kề trước năm thông báo tập trung kinh tế hoặc báo cáo tài chính từ thời điểm thành lập đến thời điểm thông báo tập trung kinh tế đối với doanh nghiệp mới thành lập có xác nhận của tổ chức kiểm toán theo
+
+[CÂU 5] ID: N2-056
+Câu hỏi: Theo Luật Phá sản 2014, khi nào doanh nghiệp bị coi là mất khả năng thanh toán và ai có quyền nộp đơn yêu cầu mở thủ tục phá sản?
+Câu trả lời: Kính chào Anh/Chị,
+
+Tôi xin tư vấn về các quy định liên quan đến việc doanh nghiệp bị coi là mất khả năng thanh toán và các chủ thể có quyền, nghĩa vụ nộp đơn yêu cầu mở thủ tục phá sản theo pháp luật hiện hành của Việt Nam.
+
+Theo tra cứu hiệu lực văn bản hiện hành, Luật Phá sản năm 2014 (số 51/2014/QH13) đã hết hiệu lực thi hành từ ngày 01/03/2026. Văn bản pháp luật thay thế là **Luật Phục hồi, phá sản số 142/2025/QH15**, được Quốc hội thông qua ngày 11/12/2025 và có hiệu lực thi hành từ ngày 01/03/2026. Do đó, mọi vấn đề liên quan sẽ được áp dụng theo Luật Phục hồi, phá sản 2025.
+
+### 1. Doanh nghiệp bị coi là mất khả năng thanh toán theo quy định hiện hành
+
+Theo Luật Phục hồi, phá sản số 142/2025/QH15, doanh nghiệp, hợp tác xã được coi là mất khả năng thanh toán nếu không thực hiện nghĩa vụ thanh toán các khoản nợ đến hạn sau thời hạn **06 tháng** kể từ ngày đến hạn thanh toán.
+
+### 2. Các chủ thể có quyền, nghĩa vụ nộp đơn yêu cầu mở thủ tục phá sản theo quy định hiện hành
+
+Căn cứ Điều 38 Luật Phục hồi, phá sản số 142/2025/QH15, các chủ thể có quyền và nghĩa vụ nộp đơn yêu cầu áp dụng thủ tục phá sản khi doanh nghiệp, hợp tác xã mất khả năng thanh toán bao gồm:
+
+**a) Người có quyền nộp đơn yêu cầu áp dụng thủ tục phá sản:**
+*   Chủ nợ không có bảo đảm, chủ nợ có bảo đảm một phần.
+*   Người lao động, công đoàn cơ sở, công đoàn cấp trên trực tiếp cơ sở ở những nơi chưa thành lập công đoàn cơ sở có quyền nộp đơn yêu cầu mở thủ tục phá sản khi hết thời hạn 03 tháng kể từ ngày
+
+[CÂU 6] ID: N2-061
+Câu hỏi: Vợ chồng ly hôn, tài sản chung là một mảnh đất mua trước hôn nhân bằng tiền riêng của vợ nhưng đứng tên cả hai. Phân chia tài sản này như thế nào theo Luật HN-GĐ 2014?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang có thắc mắc về việc phân chia một mảnh đất khi ly hôn. Mảnh đất này được mua trước hôn nhân bằng tiền riêng của vợ nhưng lại đứng tên cả hai vợ chồng. Vấn đề pháp lý ở đây là xác định bản chất của tài sản (là tài sản riêng hay tài sản chung) và nguyên tắc phân chia khi ly hôn theo Luật Hôn nhân và gia đình 2014.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Theo tra cứu hiệu lực văn bản hiện hành, Luật Hôn nhân và gia đình số 52/2014/QH13, có hiệu lực từ ngày 01/01/2015, là văn bản pháp luật điều chỉnh vấn đề này. Các quy định liên quan bao gồm:
+
+*   **Điều 43. Tài sản riêng của vợ, chồng**
+    "1. Tài sản riêng của vợ, chồng gồm tài sản mà mỗi người có trước khi kết hôn; tài sản được thừa kế riêng, được tặng cho riêng trong thời kỳ hôn nhân; tài sản được chia riêng cho vợ, chồng theo quy định tại các điều 38, 39 và 40 của Luật này; tài sản phục vụ nhu cầu thiết yếu của vợ, chồng và tài sản khác mà theo quy định của pháp luật thuộc sở hữu riêng của vợ, chồng."
+
+*   **Điều 44. Chiếm hữu, sử dụng, định đoạt tài sản riêng**
+    "1. Vợ, chồng có quyền chiếm hữu, sử dụng, định đoạt tài sản riêng của mình; nhập hoặc không nhập tài sản riêng vào tài sản chung."
+
+*   **Điều 59. Nguyên tắc giải quyết tài sản của vợ chồng khi ly hôn**
+    "1. Trong trường hợp chế độ tài sản của vợ chồng theo luật định thì việc giải quyết tài sản do các bên thỏa thuận; nếu không thỏa thuận được thì theo yêu cầu của vợ, chồng hoặc của hai vợ chồng, Tòa án giải quyết theo quy
+
+[CÂU 7] ID: N2-065
+Câu hỏi: Dự án khu đô thị chủ đầu tư chưa hoàn thiện hạ tầng nhưng đã bán nhà cho khách hàng. Theo Luật Kinh doanh BĐS 2023, khách hàng có quyền gì?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang quan tâm đến quyền lợi của mình khi mua nhà ở hình thành trong tương lai tại một dự án khu đô thị mà chủ đầu tư chưa hoàn thiện hạ tầng kỹ thuật, theo quy định của Luật Kinh doanh bất động sản 2023.
+
+**1. CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Vấn đề này được điều chỉnh bởi các quy định sau:
+*   **Luật Kinh doanh bất động sản số 29/2023/QH15**, được Quốc hội khóa XV, kỳ họp thứ 6 thông qua ngày 28/11/2023, có hiệu lực thi hành từ ngày **01/8/2024**.
+*   **Nghị định số 96/2024/NĐ-CP** quy định chi tiết một số điều của Luật Kinh doanh bất động sản.
+
+**2. ĐIỀU KIỆN ĐỂ CHỦ ĐẦU TƯ ĐƯỢC PHÉP BÁN NHÀ Ở HÌNH THÀNH TRONG TƯƠNG LAI**
+
+Theo Luật Kinh doanh bất động sản 2023, nhà ở, công trình xây dựng hình thành trong tương lai chỉ được đưa vào kinh doanh khi đáp ứng các điều kiện quy định tại Điều 24 của Luật này và Điều 8 Nghị định số 96/2024/NĐ-CP. Đặc biệt, liên quan đến hạ tầng kỹ thuật, các điều kiện chính bao gồm:
+
+*   **Văn bản thông báo đủ điều kiện:** Trước khi bán, cho thuê mua nhà ở hình thành trong tương lai, chủ đầu tư dự án phải có văn bản thông báo cho cơ quan quản lý nhà nước về kinh doanh bất động sản cấp tỉnh về việc nhà ở đủ điều kiện được bán, cho thuê mua.
+*   **Giấy tờ về quyền sử dụng đất:** Phải có một trong các giấy tờ về quyền sử dụng đất như quyết định giao đất, cho thuê đất, cho phép chuyển mục đích sử dụng đất, Giấy chứng nhận quyền sử dụng đất, v.v.
+*   **Giấy phép xây dựng và nghiệm thu hạ tầng:**
+    *   Có giấy phép xây dựng (đ
+
+[CÂU 8] ID: N2-068
+Câu hỏi: Ông A lập di chúc tặng đất cho cháu nhưng con cái không đồng ý. Theo BLDS 2015, di chúc có hiệu lực không? Phần di sản bắt buộc là bao nhiêu?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang băn khoăn về hiệu lực của di chúc do ông A lập tặng đất cho cháu nhưng con cái không đồng ý, cũng như quy định về phần di sản bắt buộc theo Bộ luật Dân sự 2015. Tôi sẽ tư vấn chi tiết về vấn đề này.
+
+**1. CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Theo tra cứu hiệu lực văn bản hiện hành, Bộ luật Dân sự số 91/2015/QH13, được Quốc hội ban hành ngày 24/11/2015 và có hiệu lực từ ngày 01/01/2017, hiện vẫn đang có hiệu lực thi hành và là căn cứ pháp lý chính cho vấn đề này.
+
+Cụ thể, các quy định liên quan bao gồm:
+
+*   **Điều 630. Di chúc hợp pháp** (Bộ luật Dân sự 2015)
+    Di chúc hợp pháp phải có đủ các điều kiện sau đây:
+    1.  Người lập di chúc minh mẫn, sáng suốt trong khi lập di chúc; không bị lừa dối, đe dọa, cưỡng ép.
+    2.  Nội dung của di chúc không vi phạm điều cấm của luật, không trái đạo đức xã hội; hình thức di chúc không trái quy định của luật.
+    3.  Di chúc của người từ đủ mười lăm tuổi đến chưa đủ mười tám tuổi phải được lập thành văn bản và phải được cha, mẹ hoặc người giám hộ đồng ý về việc lập di chúc.
+    4.  Di chúc của người bị hạn chế về thể chất hoặc của người không biết chữ phải được người làm chứng lập thành văn bản và có công chứng hoặc chứng thực.
+    5.  Di chúc bằng văn bản không có công chứng, chứng thực chỉ được coi là hợp pháp, nếu có đủ các điều kiện được quy định tại khoản 1 Điều này.
+    6.  Di chúc miệng được coi là hợp pháp nếu người di chúc miệng thể hiện ý chí cuối cùng của mình trước mặt ít nhất hai người làm chứn
+
+[CÂU 9] ID: N2-074
+Câu hỏi: Hai anh em ruột tranh chấp di sản thừa kế là nhà đất, một người đã sử dụng 20 năm. Thời hiệu khởi kiện chia di sản thừa kế là bao lâu?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang có thắc mắc về thời hiệu khởi kiện chia di sản thừa kế là nhà đất khi một người đã sử dụng trong thời gian dài. Đây là một vấn đề pháp lý quan trọng cần được xác định rõ để bảo vệ quyền và lợi ích hợp pháp của các bên.
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH:**
+
+Theo tra cứu hiệu lực văn bản hiện hành, quy định về thời hiệu khởi kiện chia di sản thừa kế được quy định cụ thể tại **Điều 623 Bộ luật Dân sự số 91/2015/QH13**, được Quốc hội ban hành ngày 24/11/2015 và có hiệu lực thi hành từ ngày 01/01/2017. Quy định này hiện vẫn còn hiệu lực thi hành.
+
+Nội dung nguyên văn của Điều 623 Bộ luật Dân sự 2015 như sau:
+
+**"Điều 623. Thời hiệu thừa kế**
+
+1.  Thời hiệu để người thừa kế yêu cầu chia di sản là 30 năm đối với bất động sản, 10 năm đối với động sản, kể từ thời điểm mở thừa kế.
+    *   Hết thời hạn này thì di sản thuộc về người thừa kế đang quản lý di sản đó.
+    *   Trường hợp không có người thừa kế đang quản lý di sản thì di sản được giải quyết như sau:
+        *   a) Di sản thuộc quyền sở hữu của người đang chiếm hữu theo quy định tại Điều 236 của Bộ luật này;
+        *   b) Di sản thuộc về Nhà nước, nếu không có người chiếm hữu quy định tại điểm a khoản này.
+2.  Thời hiệu để người thừa kế yêu cầu xác nhận quyền thừa kế của mình hoặc bác bỏ quyền thừa kế của người khác là 10 năm, kể từ thời điểm mở thừa kế.
+3.  Thời hiệu yêu cầu người thừa kế thực hiện nghĩa vụ về tài sản của người chết để lại là 03 năm, kể từ thời điểm mở thừa kế."
+
+**PHÂN TÍCH VÀ 
+
+[CÂU 10] ID: N2-079
+Câu hỏi: Bất động sản đang thế chấp ngân hàng, chủ sở hữu muốn bán cho người khác. Thủ tục và điều kiện để thực hiện giao dịch này?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang quan tâm đến các điều kiện và thủ tục pháp lý để chuyển nhượng một bất động sản đang được thế chấp tại ngân hàng. Đây là một giao dịch phổ biến nhưng đòi hỏi sự tuân thủ chặt chẽ các quy định pháp luật để đảm bảo quyền lợi của tất cả các bên.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Việc chuyển nhượng bất động sản đang thế chấp ngân hàng được điều chỉnh chủ yếu bởi các văn bản pháp luật sau:
+
+*   **Bộ luật Dân sự số 91/2015/QH13** ngày 24/11/2015, có hiệu lực từ ngày 01/01/2017.
+*   **Luật Đất đai số 31/2024/QH15** ngày 18/01/2024, có hiệu lực từ ngày 01/8/2024.
+
+**2. Điều kiện để chuyển nhượng bất động sản đang thế chấp ngân hàng**
+
+Để thực hiện giao dịch chuyển nhượng bất động sản đang thế chấp ngân hàng, cần đáp ứng các điều kiện sau:
+
+*   **Điều kiện chung đối với quyền sử dụng đất (theo Luật Đất đai 2024):**
+    Theo khoản 1 Điều 45 Luật Đất đai 2024, người sử dụng đất được thực hiện quyền chuyển nhượng quyền sử dụng đất khi có đủ các điều kiện sau:
+    *   Có Giấy chứng nhận quyền sử dụng đất hoặc Giấy chứng nhận quyền sở hữu nhà ở và quyền sử dụng đất ở hoặc Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất hoặc Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất, trừ các trường hợp được pháp luật quy định khác.
+    *   Đất không có tranh chấp hoặc tranh chấp đã được giải quyết bởi cơ quan nhà nước có thẩm quyền, bản án, quyết định của Tòa án, quyết định hoặc phán quyết của Trọng tà
+
+Trả lời JSON: [{"id":"N2-xxx","score":X,"reason":"..."},...]

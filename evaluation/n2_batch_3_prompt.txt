@@ -1,0 +1,211 @@
+Bạn là chuyên gia đánh giá câu trả lời pháp lý Việt Nam.
+Đánh giá từng câu trả lời theo thang 1–5:
+  5 = Đầy đủ, chính xác, có trích dẫn điều khoản cụ thể
+  4 = Đúng hướng, có trích dẫn, thiếu vài điểm phụ
+  3 = Đúng phần lớn nhưng thiếu thông tin quan trọng
+  2 = Lẫn thông tin đúng và sai
+  1 = Sai hoàn toàn hoặc từ chối không có lý
+
+[CÂU 1] ID: N2-081
+Câu hỏi: Một cửa hàng online bán hàng giả mạo nhãn hiệu qua sàn TMĐT. Theo quy định pháp luật hiện hành, người bán, sàn và người mua chịu trách nhiệm gì?
+Câu trả lời: Kính chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang quan tâm đến trách nhiệm pháp lý của các bên liên quan khi một cửa hàng online bán hàng giả mạo nhãn hiệu qua sàn thương mại điện tử, cũng như quyền lợi của người mua. Đây là một vấn đề phức tạp liên quan đến nhiều lĩnh vực pháp luật như sở hữu trí tuệ, thương mại điện tử, bảo vệ quyền lợi người tiêu dùng và có thể cả hình sự.
+
+Dựa trên các quy định pháp luật hiện hành và các văn bản mới nhất, tôi xin tư vấn như sau:
+
+### 1. Trách nhiệm của người bán hàng giả mạo nhãn hiệu
+
+Người bán hàng giả mạo nhãn hiệu trên sàn thương mại điện tử phải chịu trách nhiệm pháp lý rất nghiêm khắc, bao gồm trách nhiệm hành chính, dân sự và thậm chí là hình sự.
+
+**Căn cứ pháp lý hiện hành:**
+
+*   **Về định nghĩa hàng giả mạo nhãn hiệu:**
+    Theo Điều 213 Luật Sở hữu trí tuệ sửa đổi 2022 (Luật số 07/2022/QH15, có hiệu lực từ ngày 01/01/2023), quy định:
+    "**Điều 213. Hàng hóa giả mạo về sở hữu trí tuệ**
+    1. Hàng hóa giả mạo về sở hữu trí tuệ theo quy định của Luật này bao gồm hàng hóa giả mạo nhãn hiệu, hàng hóa giả mạo chỉ dẫn địa lý, hàng hóa sao chép lậu quy định tại các khoản 2, 3 và 4 Điều này.
+    2. Hàng hóa giả mạo nhãn hiệu là hàng hóa, bao bì của hàng hóa có gắn nhãn hiệu trùng hoặc khó phân biệt với nhãn hiệu đang được bảo hộ cho cùng loại hàng hóa, dịch vụ mà không được phép của chủ sở hữu nhãn hiệu."
+    *Lưu ý: Luật Sở hữu trí tuệ sửa đổi, bổ sung năm 2025 sẽ có hiệu lực từ ngày 01/04/2026, tuy nhiên nội dung chi tiết các điều khoản li
+
+[CÂU 2] ID: N2-083
+Câu hỏi: Theo pháp luật Việt Nam, việc thu âm, quay phim người khác mà không có sự đồng ý có vi phạm pháp luật không? Xử lý như thế nào?
+Câu trả lời: Chào Anh/Chị,
+
+Vấn đề thu âm, quay phim người khác mà không có sự đồng ý là một vấn đề pháp lý phức tạp, liên quan đến quyền riêng tư cá nhân và có thể bị xử lý theo nhiều quy định khác nhau của pháp luật Việt Nam.
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH:**
+
+Theo pháp luật Việt Nam hiện hành, việc thu âm, quay phim người khác mà không có sự đồng ý của họ có thể vi phạm các quy định về quyền nhân thân, quyền riêng tư và bí mật đời tư, và tùy thuộc vào mục đích, nội dung, hậu quả của hành vi mà có thể bị xử lý hành chính hoặc hình sự.
+
+1.  **Về quyền đối với hình ảnh và bí mật đời tư (Bộ luật Dân sự 2015):**
+    *   Theo Bộ luật Dân sự 2015, quyền của cá nhân đối với hình ảnh và quyền về đời sống riêng tư, bí mật cá nhân, bí mật gia đình được pháp luật bảo vệ.
+    *   Cụ thể, theo thông tin tra cứu, hình ảnh cá nhân chỉ được sử dụng khi có sự đồng ý của người có hình ảnh. Nếu cố tình phát tán, chia sẻ hay công khai clip mà người còn lại không đồng ý, đó là hành vi xâm phạm quyền về hình ảnh, xâm phạm đời tư.
+
+2.  **Về bảo vệ dữ liệu cá nhân thu được từ hoạt động ghi âm, ghi hình tại nơi công cộng:**
+    *   **Nghị định số 13/2023/NĐ-CP ngày 17/4/2023 của Chính phủ về bảo vệ dữ liệu cá nhân (có hiệu lực từ ngày 01/7/2023):**
+        *   **Điều 18. Xử lý dữ liệu cá nhân thu được từ hoạt động ghi âm, ghi hình tại nơi công cộng:**
+            Cơ quan, tổ chức có thẩm quyền được ghi âm, ghi hình và xử lý dữ liệu cá nhân thu được từ hoạt động ghi âm, ghi hình tại nơi công cộng với mục đích bảo v
+
+[CÂU 3] ID: N2-084
+Câu hỏi: Người tiêu dùng mua điện thoại online, nhận hàng bị lỗi và muốn trả lại. Theo Luật Bảo vệ quyền lợi người tiêu dùng 2023, người tiêu dùng có những quyền gì?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về quyền lợi của người tiêu dùng khi mua điện thoại online bị lỗi và muốn trả lại theo Luật Bảo vệ quyền lợi người tiêu dùng 2023. Tôi xin tư vấn như sau:
+
+**1. QUY ĐỊNH HIỆN HÀNH**
+
+Theo Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15, được Quốc hội ban hành ngày 20/06/2023 và có hiệu lực thi hành từ ngày 01/07/2024, cùng với Nghị định số 55/2024/NĐ-CP của Chính phủ ban hành ngày 16/05/2024 quy định chi tiết một số điều của Luật này (cũng có hiệu lực từ 01/07/2024), người tiêu dùng mua hàng hóa thông qua giao dịch từ xa (mua online) và nhận được hàng hóa có khuyết tật hoặc không đúng như cam kết có các quyền lợi sau:
+
+*   **Quyền được cung cấp sản phẩm, hàng hóa, dịch vụ đúng với nội dung đã giao kết:** Người tiêu dùng có quyền được nhận sản phẩm đúng với mô tả, chất lượng, quy cách đã được cam kết khi giao kết hợp đồng.
+*   **Quyền yêu cầu hoàn trả hàng hóa:** Người tiêu dùng có quyền yêu cầu hoàn trả hàng hóa nếu hàng hóa không đúng chất lượng, quy cách như cam kết hoặc không đảm bảo tiêu chuẩn kỹ thuật quốc gia (theo Điều 21 Luật Bảo vệ quyền lợi người tiêu dùng 2023).
+*   **Quyền yêu cầu bồi thường thiệt hại:** Người tiêu dùng có quyền yêu cầu tổ chức, cá nhân kinh doanh bồi thường thiệt hại khi sản phẩm, hàng hóa có khuyết tật, sản phẩm, hàng hóa, dịch vụ không phù hợp tiêu chuẩn, quy chuẩn kỹ thuật, không bảo đảm an toàn, đo lường, số lượng, khối lượng, chất lượng, công dụng, giá, nội dung khác theo quy định của
+
+[CÂU 4] ID: N2-089
+Câu hỏi: Một người bị vu khống trên mạng xã hội gây ảnh hưởng nghiêm trọng đến danh dự. Theo pháp luật Việt Nam, họ có thể xử lý theo những hướng nào (dân sự, hành chính, hình sự)?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang quan tâm đến các hướng xử lý pháp lý khi một người bị vu khống trên mạng xã hội gây ảnh hưởng nghiêm trọng đến danh dự. Theo pháp luật Việt Nam hiện hành, người bị hại có thể xem xét xử lý theo ba hướng chính: dân sự, hành chính và hình sự, tùy thuộc vào tính chất và mức độ nghiêm trọng của hành vi vi phạm.
+
+**I. CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Quy định này hiện vẫn còn hiệu lực thi hành.
+
+**A. Xử lý theo quy định của pháp luật dân sự (Bồi thường thiệt hại)**
+
+Theo quy định của pháp luật dân sự, danh dự, nhân phẩm, uy tín của cá nhân được pháp luật bảo vệ. Người có hành vi xâm phạm danh dự, nhân phẩm, uy tín của người khác mà gây thiệt hại thì phải bồi thường thiệt hại. Các thiệt hại này có thể bao gồm chi phí hợp lý để hạn chế, khắc phục thiệt hại, thu nhập thực tế bị mất hoặc giảm sút, và một khoản tiền bù đắp tổn thất về tinh thần.
+
+**B. Xử lý vi phạm hành chính**
+
+Hành vi vu khống, xúc phạm danh dự, nhân phẩm trên mạng xã hội có thể bị xử phạt vi phạm hành chính theo quy định tại Nghị định số 15/2020/NĐ-CP ngày 03/02/2020 của Chính phủ quy định xử phạt vi phạm hành chính trong lĩnh vực bưu chính, viễn thông, tần số vô tuyến điện, công nghệ thông tin và giao dịch điện tử, được sửa đổi, bổ sung bởi Nghị định số 14/2022/NĐ-CP ngày 27/01/2022 của Chính phủ.
+
+Cụ thể, theo tra cứu hiệu lực văn bản hiện hành:
+
+*   **Điều 101 Khoản 1 Điểm a Nghị định 15/2020/NĐ-CP (được sửa đổi, bổ sung tại Nghị định 14/2022/NĐ-CP)** quy định:
+    *   Phạt ti
+
+[CÂU 5] ID: N2-092
+Câu hỏi: Theo pháp luật Việt Nam, hợp đồng đặt cọc mua nhà với tiền cọc 10% tổng giá trị bị vi phạm bởi bên bán. Bên mua được nhận lại bao nhiêu?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang gặp phải tình huống hợp đồng đặt cọc mua nhà bị bên bán vi phạm và muốn biết số tiền Anh/Chị sẽ nhận lại theo quy định của pháp luật.
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH:**
+
+Theo tra cứu hiệu lực văn bản hiện hành, quy định về đặt cọc và xử lý khi có vi phạm hợp đồng đặt cọc được quy định tại **Điều 328 của Bộ luật Dân sự số 91/2015/QH13**, có hiệu lực từ ngày 01/01/2017. Quy định này hiện vẫn còn hiệu lực thi hành.
+
+Nội dung cụ thể của Điều 328 Bộ luật Dân sự 2015 như sau:
+
+**"Điều 328. Đặt cọc**
+
+1.  Đặt cọc là việc một bên (sau đây gọi là bên đặt cọc) giao cho bên kia (sau đây gọi là bên nhận đặt cọc) một khoản tiền hoặc kim khí quý, đá quý hoặc vật có giá trị khác (sau đây gọi chung là tài sản đặt cọc) trong một thời hạn để bảo đảm giao kết hoặc thực hiện hợp đồng.
+2.  Trường hợp hợp đồng được giao kết, thực hiện thì tài sản đặt cọc được trả lại cho bên đặt cọc hoặc được trừ để thực hiện nghĩa vụ trả tiền; nếu bên đặt cọc từ chối việc giao kết, thực hiện hợp đồng thì tài sản đặt cọc thuộc về bên nhận đặt cọc; **nếu bên nhận đặt cọc từ chối việc giao kết, thực hiện hợp đồng thì phải trả cho bên đặt cọc tài sản đặt cọc và một khoản tiền tương đương giá trị tài sản đặt cọc, trừ trường hợp có thỏa thuận khác.**"
+
+**PHÂN TÍCH VÀ ÁP DỤNG VÀO TÌNH HUỐNG CỤ THỂ:**
+
+Trong trường hợp của Anh/Chị, bên bán (bên nhận đặt cọc) đã vi phạm hợp đồng đặt cọc. Căn cứ Khoản 2 Điều 328 Bộ luật Dân sự 2015, nếu bên nhận đặt cọc từ chối việc giao kết hoặc thực 
+
+[CÂU 6] ID: N2-093
+Câu hỏi: Theo Luật Hình sự 2015, hành vi cho vay nặng lãi (lãi suất gấp 5 lần mức pháp luật quy định) bị xử lý như thế nào?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi xin tư vấn về hành vi cho vay lãi nặng trong giao dịch dân sự theo quy định của pháp luật hình sự Việt Nam hiện hành.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Theo tra cứu hiệu lực văn bản hiện hành, hành vi cho vay lãi nặng được quy định tại Điều 201 của Bộ luật Hình sự số 100/2015/QH13, được sửa đổi, bổ sung bởi Luật số 12/2017/QH14 (sau đây gọi tắt là Bộ luật Hình sự 2015). Quy định này hiện vẫn còn hiệu lực thi hành.
+
+Để hướng dẫn áp dụng Điều 201 Bộ luật Hình sự, Hội đồng Thẩm phán Tòa án nhân dân tối cao đã ban hành Nghị quyết số 01/2021/NQ-HĐTP ngày 20/12/2021, có hiệu lực thi hành kể từ ngày 24/12/2021.
+
+Cụ thể, Điều 201 Bộ luật Hình sự 2015 quy định như sau:
+
+'''
+**Điều 201. Tội cho vay lãi nặng trong giao dịch dân sự**
+
+1. Người nào trong giao dịch dân sự mà cho vay với lãi suất gấp 05 lần trở lên của mức lãi suất cao nhất quy định trong Bộ luật Dân sự, thu lợi bất chính từ 30.000.000 đồng đến dưới 100.000.000 đồng hoặc đã bị xử phạt vi phạm hành chính về hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc phạt cải tạo không giam giữ đến 03 năm.
+
+2. Phạm tội mà thu lợi bất chính 100.000.000 đồng trở lên, thì bị phạt tiền từ 200.000.000 đồng đến 1.000.000.000 đồng hoặc phạt tù từ 06 tháng đến 03 năm.
+
+3. Người phạm tội còn có thể bị phạt tiền từ 30.000.000 đồng đến 100.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 nă
+
+[CÂU 7] ID: N2-023
+Câu hỏi: Công ty G yêu cầu nhân viên làm thêm 60 giờ/tháng liên tục trong 3 tháng. Điều này có vi phạm BLLĐ không? Nếu vi phạm, hậu quả pháp lý là gì?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về việc Công ty G yêu cầu nhân viên làm thêm 60 giờ/tháng liên tục trong 3 tháng có vi phạm pháp luật lao động hay không và hậu quả pháp lý nếu có vi phạm. Tôi xin tư vấn như sau:
+
+**1. Quy định hiện hành về giới hạn thời giờ làm thêm**
+
+Theo quy định hiện hành, giới hạn thời giờ làm thêm được quy định tại Bộ luật Lao động số 45/2019/QH14, có hiệu lực từ ngày 01/01/2021, và được hướng dẫn, điều chỉnh bởi các văn bản pháp luật khác.
+
+Cụ thể, theo **khoản 2 Điều 107 Bộ luật Lao động 2019** (đã được cập nhật bởi Nghị quyết số 17/2022/UBTVQH15 của Ủy ban Thường vụ Quốc hội), người sử dụng lao động được sử dụng người lao động làm thêm giờ khi đáp ứng đầy đủ các yêu cầu sau đây:
+*   Phải được sự đồng ý của người lao động.
+*   Bảo đảm số giờ làm thêm của người lao động không quá 50% số giờ làm việc bình thường trong 01 ngày; trường hợp áp dụng quy định thời giờ làm việc bình thường theo tuần thì tổng số giờ làm việc bình thường và số giờ làm thêm không quá 12 giờ trong 01 ngày.
+*   **Không quá 60 giờ trong 01 tháng.**
+*   Bảo đảm số giờ làm thêm của người lao động không quá 200 giờ trong 01 năm, trừ trường hợp quy định tại khoản 3 Điều này.
+
+Ngoài ra, **khoản 3 Điều 107 Bộ luật Lao động 2019** cũng quy định người sử dụng lao động được sử dụng người lao động làm thêm không quá 300 giờ trong 01 năm trong một số ngành, nghề, công việc hoặc trường hợp đặc biệt (như sản xuất, gia công xuất khẩu sản phẩm dệt, may, da, giày, điện, điện tử
+
+[CÂU 8] ID: N2-002
+Câu hỏi: Một vụ tai nạn giao thông: xe tải A đâm vào xe máy B do vượt tốc độ, nhưng xe máy B cũng không có gương chiếu hậu. Pháp luật quy định thế nào về phân định trách nhiệm bồi thường?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về việc phân định trách nhiệm bồi thường thiệt hại trong vụ tai nạn giao thông khi cả hai bên đều có lỗi. Đây là một tình huống pháp lý phổ biến và được quy định rõ ràng trong pháp luật dân sự Việt Nam.
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Việc phân định trách nhiệm bồi thường thiệt hại trong trường hợp này được điều chỉnh chủ yếu bởi Bộ luật Dân sự 2015 và các văn bản hướng dẫn thi hành. Các quy định này hiện vẫn còn hiệu lực thi hành.
+
+1.  **Bộ luật Dân sự 2015 (Luật số 91/2015/QH13)**
+    *   **Ngày ban hành:** 24/11/2015
+    *   **Ngày có hiệu lực:** 01/01/2017
+
+    **Điều 585. Nguyên tắc bồi thường thiệt hại** quy định:
+    *   "1. Thiệt hại thực tế phải được bồi thường toàn bộ và kịp thời. Các bên có thể thỏa thuận về mức bồi thường, hình thức bồi thường bằng tiền, bằng hiện vật hoặc thực hiện một công việc, phương thức bồi thường một lần hoặc nhiều lần, trừ trường hợp pháp luật có quy định khác."
+    *   "4. Khi bên bị thiệt hại có lỗi trong việc gây thiệt hại thì không được bồi thường phần thiệt hại do lỗi của mình gây ra."
+
+2.  **Nghị quyết 02/2022/NQ-HĐTP của Hội đồng Thẩm phán Tòa án nhân dân tối cao**
+    *   **Tên văn bản:** Nghị quyết của Hội đồng Thẩm phán Tòa án nhân dân tối cao hướng dẫn áp dụng một số quy định của Bộ luật Dân sự về trách nhiệm bồi thường thiệt hại ngoài hợp đồng.
+    *   **Số hiệu:** 02/2022/NQ-HĐTP
+    *   **Ngày ban hành:** 06/09/2022
+    *   **Ngày có hiệu lực:** 01/01/2023
+
+    Nghị quyết này
+
+[CÂU 9] ID: N2-098
+Câu hỏi: Bệnh viện tư nhân thực hiện phẫu thuật nhầm vị trí do lỗi của bác sĩ. Bệnh viện và bác sĩ chịu trách nhiệm gì? Bệnh nhân có thể khởi kiện theo hướng nào?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang quan tâm đến trách nhiệm pháp lý của bệnh viện tư nhân và bác sĩ khi xảy ra trường hợp phẫu thuật nhầm vị trí do lỗi chuyên môn, cũng như các hướng mà bệnh nhân có thể khởi kiện. Đây là một vấn đề pháp lý quan trọng liên quan đến quyền lợi của người bệnh.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Theo tra cứu hiệu lực văn bản hiện hành, các quy định sau đây của Luật Khám bệnh, chữa bệnh 2023 và các văn bản hướng dẫn liên quan đang có hiệu lực thi hành:
+
+*   **Luật Khám bệnh, chữa bệnh số 15/2023/QH15** (Ngày ban hành: 09/01/2023, Ngày có hiệu lực: 01/01/2024)
+    *   **Điều 100. Sai sót chuyên môn kỹ thuật**
+        1.  Người hành nghề có sai sót chuyên môn kỹ thuật khi được Hội đồng chuyên môn quy định tại Điều 101 của Luật này xác định có ít nhất một trong các hành vi sau đây:
+            a) Vi phạm trách nhiệm trong chăm sóc, điều trị người bệnh.
+            b) Vi phạm các quy định về chuyên môn kỹ thuật.
+        2.  Người hành nghề không có sai sót chuyên môn kỹ thuật khi được Hội đồng chuyên môn quy định tại Điều 101 của Luật này xác định thuộc một trong các trường hợp sau đây:
+            a) Trong quá trình khám bệnh, chữa bệnh, người hành nghề đã thực hiện đúng trách nhiệm chăm sóc, điều trị người bệnh và các quy định về chuyên môn kỹ thuật nhưng vẫn xảy ra tai biến y khoa đối với người bệnh.
+            b) Trường hợp cấp cứu nhưng do thiếu phương tiện, thiết bị y tế, thuốc, thiếu người hành nghề mà không thể khắc phục được; trường hợp
+
+[CÂU 10] ID: N2-100
+Câu hỏi: Theo Luật Thuế TNCN hiện hành, thu nhập từ chuyển nhượng cổ phần công ty chưa niêm yết bị đánh thuế như thế nào? Phân biệt với cổ phiếu niêm yết.
+Câu trả lời: Kính chào Anh/Chị,
+
+Tôi xin tư vấn về quy định thuế thu nhập cá nhân (TNCN) đối với thu nhập từ chuyển nhượng cổ phần của công ty chưa niêm yết và phân biệt với cổ phiếu niêm yết theo pháp luật hiện hành.
+
+**1. Quy định hiện hành về thuế TNCN đối với chuyển nhượng cổ phần công ty chưa niêm yết**
+
+Theo tra cứu hiệu lực văn bản hiện hành, quy định về thuế TNCN đối với thu nhập từ chuyển nhượng cổ phần đã có sự thay đổi đáng kể với việc ban hành **Luật Thuế thu nhập cá nhân số 109/2025/QH15** (Luật Thuế TNCN 2025), có hiệu lực trong năm 2026, và các văn bản hướng dẫn thi hành.
+
+Cụ thể, đối với thu nhập từ chuyển nhượng cổ phần của công ty không phải là công ty đại chúng, chuyển nhượng cổ phần của tổ chức không phải là tổ chức niêm yết, đăng ký giao dịch theo quy định của pháp luật chứng khoán (tức là cổ phần của công ty chưa niêm yết), quy định hiện hành như sau:
+
+*   **Căn cứ pháp lý:** Luật Thuế thu nhập cá nhân số 109/2025/QH15 và các văn bản hướng dẫn thi hành (trong đó có Dự thảo Nghị định quy định chi tiết một số điều của Luật Thuế thu nhập cá nhân (sửa đổi) đang được lấy ý kiến, phản ánh định hướng của Luật).
+*   **Thuế suất và cách tính thuế:**
+    *   Thuế suất áp dụng là **20%** trên thu nhập tính thuế theo từng lần chuyển nhượng.
+    *   Thu nhập tính thuế được xác định bằng giá chuyển nhượng trừ đi giá mua và các khoản chi phí hợp lý liên quan đến việc tạo ra thu nhập từ chuyển nhượng phần vốn.
+    *   Trường hợp không xác định được giá mua và các chi phí liên quan đ
+
+Trả lời JSON: [{"id":"N2-xxx","score":X,"reason":"..."},...]

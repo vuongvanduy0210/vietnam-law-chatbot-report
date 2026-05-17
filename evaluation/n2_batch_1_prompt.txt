@@ -1,0 +1,220 @@
+Bạn là chuyên gia đánh giá câu trả lời pháp lý Việt Nam.
+Đánh giá từng câu trả lời theo thang 1–5:
+  5 = Đầy đủ, chính xác, có trích dẫn điều khoản cụ thể
+  4 = Đúng hướng, có trích dẫn, thiếu vài điểm phụ
+  3 = Đúng phần lớn nhưng thiếu thông tin quan trọng
+  2 = Lẫn thông tin đúng và sai
+  1 = Sai hoàn toàn hoặc từ chối không có lý
+
+[CÂU 1] ID: N2-001
+Câu hỏi: Anh A lái xe ô tô và bị cảnh sát giao thông đo nồng độ cồn là 0.35mg/L khí thở. Theo quy định pháp luật hiện hành, anh A sẽ phải đối mặt với những hình thức xử phạt gì? Thời gian tước GPLX là bao lâu?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã tra cứu các quy định pháp luật liên quan đến trường hợp Anh A điều khiển xe ô tô với nồng độ cồn 0.35mg/L khí thở. Theo quy định pháp luật hiện hành, hành vi này sẽ bị xử phạt theo Nghị định số 168/2024/NĐ-CP của Chính phủ.
+
+**1. QUY ĐỊNH HIỆN HÀNH**
+
+Căn cứ theo Nghị định số 168/2024/NĐ-CP của Chính phủ quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông đường bộ; trừ điểm, phục hồi điểm Giấy phép lái xe, có hiệu lực từ ngày 01/01/2025:
+
+Đối với người điều khiển xe ô tô mà trong hơi thở có nồng độ cồn vượt quá 0,25 miligam đến 0,4 miligam/1 lít khí thở (trường hợp của Anh A là 0.35mg/L khí thở), sẽ bị xử phạt như sau:
+
+*   **Mức phạt tiền:** Phạt tiền từ 18.000.000 đồng đến 20.000.000 đồng.
+*   **Hình thức xử phạt bổ sung:** Bị trừ 10 điểm giấy phép lái xe.
+
+Quy định này hiện vẫn còn hiệu lực thi hành.
+
+**2. SO SÁNH VỚI QUY ĐỊNH CŨ (đã hết hiệu lực)**
+
+⚠️ SO SÁNH VỚI QUY ĐỊNH CŨ (đã hết hiệu lực):
+*   Văn bản cũ: Nghị định số 100/2019/NĐ-CP (đã được sửa đổi, bổ sung bởi Nghị định số 123/2021/NĐ-CP), đã hết hiệu lực từ ngày 01/01/2025 do bị thay thế bởi Nghị định số 168/2024/NĐ-CP.
+*   Quy định cũ: Theo Điểm c Khoản 8 Điều 5 Nghị định số 100/2019/NĐ-CP, người điều khiển xe ô tô mà trong hơi thở có nồng độ cồn vượt quá 0,25 miligam đến 0,4 miligam/1 lít khí thở bị phạt tiền từ 16.000.000 đồng đến 18.000.000 đồng (quy định cũ, đã hết hiệu lực). Ngoài ra, theo Điểm g Khoản 11 Điều 5 Nghị định số 100/2019/NĐ-CP, người vi phạm còn bị tước quyền
+
+[CÂU 2] ID: N2-003
+Câu hỏi: Hiện nay NĐ 100/2019 và NĐ 168/2024 có điểm gì khác nhau cơ bản về xử phạt vi phạm nồng độ cồn đối với người điều khiển xe ô tô? Văn bản nào đang có hiệu lực?
+Câu trả lời: Kính chào Anh/Chị,
+
+Tôi xin tư vấn về sự khác biệt cơ bản giữa Nghị định 100/2019/NĐ-CP và Nghị định 168/2024/NĐ-CP về xử phạt vi phạm nồng độ cồn đối với người điều khiển xe ô tô, cũng như văn bản pháp luật đang có hiệu lực.
+
+**1. Quy định hiện hành về xử phạt nồng độ cồn đối với người điều khiển xe ô tô**
+
+Theo tra cứu hiệu lực văn bản hiện hành, **Nghị định số 168/2024/NĐ-CP** của Chính phủ, ban hành ngày 26/12/2024 và có hiệu lực thi hành từ ngày 01/01/2025, là văn bản đang có hiệu lực và đã thay thế các quy định xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ của Nghị định 100/2019/NĐ-CP.
+
+Cụ thể, các mức phạt nồng độ cồn đối với người điều khiển xe ô tô được quy định tại **Điều 6 Nghị định 168/2024/NĐ-CP** như sau:
+
+*   **Mức 1: Trong máu hoặc hơi thở có nồng độ cồn nhưng chưa vượt quá 50 miligam/100 mililít máu hoặc chưa vượt quá 0,25 miligam/1 lít khí thở.**
+    *   Phạt tiền: Từ 6.000.000 đồng đến 8.000.000 đồng.
+    *   Hình phạt bổ sung: Trừ 04 điểm giấy phép lái xe.
+*   **Mức 2: Trong máu hoặc hơi thở có nồng độ cồn vượt quá 50 miligam đến 80 miligam/100 mililít máu hoặc vượt quá 0,25 miligam đến 0,4 miligam/1 lít khí thở.**
+    *   Phạt tiền: Từ 18.000.000 đồng đến 20.000.000 đồng.
+    *   Hình phạt bổ sung: Trừ 10 điểm giấy phép lái xe.
+*   **Mức 3: Trong máu hoặc hơi thở có nồng độ cồn vượt quá 80 miligam/100 mililít máu hoặc vượt quá 0,4 miligam/1 lít khí thở.**
+    *   Phạt tiền: Từ 30.000.000 đồng đến 40.000.000 đồng.
+    *   Hình phạt bổ sung:
+
+[CÂU 3] ID: N2-005
+Câu hỏi: Chị B chạy xe máy với tốc độ 80km/h trên đường nội thành quy định tốc độ tối đa 60km/h, đồng thời không đội mũ bảo hiểm. Liệt kê tất cả các hành vi vi phạm và mức phạt tương ứng theo NĐ 168/2024.
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã tra cứu các quy định pháp luật liên quan đến trường hợp của Chị B. Dựa trên thông tin Anh/Chị cung cấp và kết quả tra cứu hiệu lực văn bản hiện hành, các hành vi vi phạm của Chị B sẽ được xử lý theo Nghị định số 168/2024/NĐ-CP.
+
+**1. QUY ĐỊNH HIỆN HÀNH**
+
+Theo Nghị định số 168/2024/NĐ-CP quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ (có hiệu lực từ ngày 01/01/2025), các hành vi vi phạm của Chị B sẽ bị xử phạt như sau:
+
+*   **Hành vi 1: Điều khiển xe mô tô chạy quá tốc độ quy định từ 10 km/h đến 20 km/h.**
+    *   Chị B điều khiển xe máy với tốc độ 80 km/h trên đường nội thành quy định tốc độ tối đa 60 km/h, tức là đã vượt quá tốc độ cho phép 20 km/h.
+    *   Căn cứ pháp lý: Nghị định 168/2024/NĐ-CP.
+    *   Mức phạt: Phạt tiền từ **800.000 đồng đến 1.000.000 đồng**.
+
+*   **Hành vi 2: Không đội mũ bảo hiểm cho người đi mô tô, xe máy.**
+    *   Căn cứ pháp lý: Khoản 2 Điều 7 Nghị định 168/2024/NĐ-CP.
+    *   Mức phạt: Phạt tiền từ **400.000 đồng đến 600.000 đồng**.
+
+**2. SO SÁNH VỚI QUY ĐỊNH CŨ (đã hết hiệu lực)**
+
+⚠️ SO SÁNH VỚI QUY ĐỊNH CŨ (đã hết hiệu lực):
+*   Văn bản cũ: Nghị định số 100/2019/NĐ-CP, đã hết hiệu lực từ ngày 01/01/2025 do bị thay thế bởi Nghị định số 168/2024/NĐ-CP.
+*   Quy định cũ:
+    *   Đối với hành vi điều khiển xe mô tô chạy quá tốc độ quy định từ 10 km/h đến 20 km/h: Phạt tiền từ 600.000 đồng đến 1.000.000 đồng (quy định cũ, đã hết hiệu lực) theo điểm a khoản 4 Điều 6 Nghị đ
+
+[CÂU 4] ID: N2-007
+Câu hỏi: Anh C bị CSGT dừng xe kiểm tra và yêu cầu thổi nồng độ cồn. Anh C từ chối không hợp tác. Theo quy định, CSGT có quyền xử lý thế nào và anh C có thể bị phạt như thế nào?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về việc xử lý hành vi từ chối kiểm tra nồng độ cồn. Tôi xin tư vấn như sau:
+
+**1. MỞ ĐẦU:**
+Hành vi từ chối chấp hành yêu cầu kiểm tra nồng độ cồn của người điều khiển phương tiện giao thông là một vi phạm hành chính nghiêm trọng và sẽ bị xử phạt theo quy định của pháp luật.
+
+**2. QUY ĐỊNH HIỆN HÀNH:**
+Theo tra cứu hiệu lực văn bản hiện hành, Nghị định 100/2019/NĐ-CP ngày 30/12/2019 của Chính phủ đã bị bãi bỏ hoàn toàn bởi Nghị định 81/2026/NĐ-CP của Chính phủ, có hiệu lực thi hành từ ngày 15/05/2026.
+
+Hiện tại, các quy định về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ được điều chỉnh bởi **Nghị định 168/2024/NĐ-CP** của Chính phủ, có hiệu lực từ ngày 01/01/2025.
+
+Đối với trường hợp Anh C điều khiển xe ô tô và từ chối kiểm tra nồng độ cồn, quy định hiện hành như sau:
+
+*   **Căn cứ pháp lý:** Điểm b Khoản 11 Điều 6 Nghị định 168/2024/NĐ-CP ngày 26/12/2024 của Chính phủ quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ; trừ điểm, phục hồi điểm Giấy phép lái xe.
+*   **Nội dung quy định:** Người điều khiển xe ô tô và các loại xe tương tự xe ô tô thực hiện hành vi "Không chấp hành yêu cầu kiểm tra về nồng độ cồn của người thi hành công vụ" sẽ bị xử phạt.
+*   **Mức phạt tiền:** Từ 30.000.000 đồng đến 40.000.000 đồng.
+*   **Hình thức xử phạt bổ sung:** Tước quyền sử dụng Giấy phép lái xe từ 22 tháng đến 24 tháng.
+
+**3. SO SÁNH VỚI QUY ĐỊNH CŨ (đã hết hiệu lực):
+
+[CÂU 5] ID: N2-015
+Câu hỏi: Mức xử phạt đối với hành vi đua xe trái phép theo NĐ 168/2024 và BLHS 2015 là gì? Phân biệt khi nào xử phạt hành chính, khi nào truy cứu TNHS.
+Câu trả lời: Chào Anh/Chị,
+
+Tôi xin tư vấn về mức xử phạt đối với hành vi đua xe trái phép theo Nghị định 168/2024/NĐ-CP và Bộ luật Hình sự 2015 (sửa đổi 2017), cũng như phân biệt khi nào áp dụng xử phạt hành chính và khi nào truy cứu trách nhiệm hình sự.
+
+**I. QUY ĐỊNH HIỆN HÀNH VỀ XỬ PHẠT VI PHẠM HÀNH CHÍNH ĐỐI VỚI HÀNH VI ĐUA XE TRÁI PHÉP**
+
+Theo tra cứu hiệu lực văn bản hiện hành, hành vi đua xe trái phép, tổ chức đua xe, xúi giục, giúp sức, cổ vũ đua xe trái phép bị nghiêm cấm theo khoản 5 Điều 9 Luật Trật tự, an toàn giao thông đường bộ năm 2024. Các quy định về xử phạt hành chính được nêu tại **Điều 35 Nghị định số 168/2024/NĐ-CP** của Chính phủ, có hiệu lực từ ngày 01/01/2025.
+
+Cụ thể, Điều 35 Nghị định số 168/2024/NĐ-CP quy định như sau:
+
+*   **Phạt tiền từ 1.000.000 đồng đến 2.000.000 đồng** đối với hành vi tụ tập để cổ vũ, giúp sức, xúi giục hành vi điều khiển xe chạy quá tốc độ quy định, lạng lách, đánh võng, đuổi nhau trên đường hoặc đua xe trái phép.
+*   **Phạt tiền từ 40.000.000 đồng đến 50.000.000 đồng** đối với cá nhân thực hiện hành vi tổ chức đua xe trái phép.
+*   **Phạt tiền từ 80.000.000 đồng đến 100.000.000 đồng** đối với tổ chức thực hiện hành vi tổ chức đua xe trái phép.
+*   **Hình thức xử phạt bổ sung:**
+    *   **Tịch thu phương tiện** đối với người điều khiển phương tiện thực hiện hành vi đua xe gắn máy, xe đạp máy, xe đạp trái phép trên đường giao thông.
+    *   **Tịch thu phương tiện** đối với người điều khiển phương tiện thực hiện hành vi đua xe ô tô, mô tô t
+
+[CÂU 6] ID: N2-020
+Câu hỏi: Anh D gây tai nạn giao thông và bỏ trốn nhưng sau đó tự ra đầu thú trong vòng 24 giờ. Việc tự nguyện ra đầu thú có ảnh hưởng gì đến việc xử lý hành chính và hình sự của anh D?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu Anh/Chị đang quan tâm đến việc tự nguyện ra đầu thú sau khi gây tai nạn giao thông và bỏ trốn sẽ ảnh hưởng như thế nào đến trách nhiệm pháp lý (hành chính và hình sự). Đây là một vấn đề pháp lý phức tạp, cần xem xét kỹ lưỡng các quy định hiện hành.
+
+**I. Về trách nhiệm hình sự**
+
+Việc anh D gây tai nạn giao thông có thể bị truy cứu trách nhiệm hình sự về Tội vi phạm quy định về tham gia giao thông đường bộ theo Điều 260 Bộ luật Hình sự 2015 (sửa đổi, bổ sung năm 2017).
+
+**1. Căn cứ pháp lý hiện hành:**
+
+*   **Điều 260. Tội vi phạm quy định về tham gia giao thông đường bộ** (Bộ luật Hình sự số 100/2015/QH13, sửa đổi, bổ sung bởi Luật số 12/2017/QH14, có hiệu lực từ 01/01/2018). Quy định này hiện vẫn còn hiệu lực thi hành.
+    *   Khoản 1 quy định khung hình phạt cơ bản: "Người nào tham gia giao thông đường bộ mà vi phạm quy định về an toàn giao thông đường bộ gây thiệt hại cho người khác thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 30.000.000 đồng đến 100.000.000 đồng, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 01 năm đến 05 năm: Làm chết người; Gây thương tích hoặc gây tổn hại cho sức khỏe của 01 người mà tỷ lệ tổn thương cơ thể 61% trở lên; Gây thương tích hoặc gây tổn hại cho sức khỏe của 02 người trở lên mà tổng tỷ lệ tổn thương cơ thể của những người này từ 61% đến 121%; Gây thiệt hại về tài sản từ 100.000.000 đồng đến dưới 500.000.000 đồng."
+    *   Khoản 2 quy định các trường hợp phạm tội thuộc khung hình phạt cao hơn (
+
+[CÂU 7] ID: N2-021
+Câu hỏi: Chị E làm việc 8 năm tại công ty, bị công ty đơn phương chấm dứt HĐLĐ không có lý do chính đáng. Chị E được hưởng những quyền lợi gì và có thể khiếu kiện ở đâu?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi hiểu rằng Anh/Chị đang quan tâm đến quyền lợi của chị E khi bị công ty đơn phương chấm dứt hợp đồng lao động (HĐLĐ) trái pháp luật và trình tự giải quyết tranh chấp. Dưới đây là tư vấn của tôi dựa trên các quy định pháp luật hiện hành.
+
+### 1. Căn cứ pháp lý hiện hành
+
+Vấn đề của chị E được điều chỉnh chủ yếu bởi **Bộ luật Lao động số 45/2019/QH14** (sau đây gọi tắt là Bộ luật Lao động 2019), có hiệu lực từ ngày 01/01/2021. Quy định này hiện vẫn còn hiệu lực thi hành.
+
+Cụ thể, các điều khoản liên quan bao gồm:
+
+*   **Điều 39. Đơn phương chấm dứt hợp đồng lao động trái pháp luật**
+    Đơn phương chấm dứt hợp đồng lao động trái pháp luật là trường hợp chấm dứt hợp đồng lao động không đúng quy định tại các điều 35, 36 và 37 của Bộ luật này.
+*   **Điều 41. Nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật**
+    1.  Phải nhận người lao động trở lại làm việc theo hợp đồng lao động đã giao kết; phải trả tiền lương, đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp trong những ngày người lao động không được làm việc và phải trả thêm cho người lao động một khoản tiền ít nhất bằng 02 tháng tiền lương theo hợp đồng lao động. Sau khi được nhận lại làm việc, người lao động hoàn trả cho người sử dụng lao động các khoản tiền trợ cấp thôi việc, trợ cấp mất việc làm nếu đã nhận của người sử dụng lao động.
+    2.  Trường hợp không còn vị trí, công việc đã giao kết trong hợp đồng lao động mà người lao động vẫn muốn làm việc t
+
+[CÂU 8] ID: N2-024
+Câu hỏi: Chị H mang thai 5 tháng và bị công ty sa thải với lý do "cắt giảm nhân sự". Pháp luật lao động quy định như thế nào về việc sa thải lao động nữ đang mang thai?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về trường hợp chị H bị công ty sa thải khi đang mang thai 5 tháng với lý do cắt giảm nhân sự. Vấn đề này liên quan đến quyền lợi của lao động nữ mang thai theo quy định của pháp luật lao động Việt Nam.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Theo quy định của pháp luật lao động Việt Nam hiện hành, việc người sử dụng lao động sa thải hoặc đơn phương chấm dứt hợp đồng lao động đối với lao động nữ đang mang thai là hành vi bị nghiêm cấm, trừ một số trường hợp ngoại lệ rất cụ thể.
+
+Cụ thể, căn cứ tại **Khoản 3 Điều 137 Bộ luật Lao động số 45/2019/QH14** (có hiệu lực từ ngày 01/01/2021) quy định về bảo vệ thai sản như sau:
+
+'''
+"3. Người sử dụng lao động không được sa thải hoặc đơn phương chấm dứt hợp đồng lao động đối với người lao động vì lý do kết hôn, mang thai, nghỉ thai sản, nuôi con dưới 12 tháng tuổi, trừ trường hợp người sử dụng lao động là cá nhân chết, bị Tòa án tuyên bố mất năng lực hành vi dân sự, mất tích hoặc đã chết hoặc người sử dụng lao động không phải là cá nhân chấm dứt hoạt động hoặc bị cơ quan chuyên môn về đăng ký kinh doanh thuộc Ủy ban nhân dân cấp tỉnh ra thông báo không có người đại diện theo pháp luật, người được ủy quyền thực hiện quyền và nghĩa vụ của người đại diện theo pháp luật."
+'''
+
+Quy định này hiện vẫn còn hiệu lực thi hành.
+
+Ngoài ra, **Điều 28 Nghị định số 12/2022/NĐ-CP** của Chính phủ (có hiệu lực từ ngày 17/01/2022) quy định về xử phạt vi phạm hành chính trong lĩnh vực lao động, bảo hiểm xã hội,
+
+[CÂU 9] ID: N2-026
+Câu hỏi: Anh I bị tai nạn lao động trong giờ làm việc và mất 30% sức lao động. Anh I được hưởng những quyền lợi gì từ người sử dụng lao động và từ bảo hiểm xã hội?
+Câu trả lời: Chào Anh/Chị,
+
+Tôi đã nhận được câu hỏi của Anh/Chị về quyền lợi của người lao động bị tai nạn lao động và mất 30% sức lao động. Dưới đây là tư vấn của tôi dựa trên các quy định pháp luật hiện hành.
+
+**1. Căn cứ pháp lý hiện hành**
+
+Các quyền lợi của người lao động bị tai nạn lao động được quy định chủ yếu tại các văn bản pháp luật sau đây, hiện vẫn còn hiệu lực thi hành:
+
+*   **Luật An toàn, vệ sinh lao động số 84/2015/QH13** ngày 25/6/2015, có hiệu lực từ ngày 01/7/2016.
+*   **Luật Bảo hiểm xã hội số 41/2024/QH15**, có hiệu lực từ ngày 01/01/2025, đã sửa đổi, bổ sung một số điều của Luật An toàn, vệ sinh lao động 2015 và Luật Bảo hiểm xã hội 2014.
+*   **Nghị định số 88/2020/NĐ-CP** ngày 28/7/2020 của Chính phủ, có hiệu lực từ ngày 15/9/2020, được sửa đổi, bổ sung bởi **Nghị định số 158/2025/NĐ-CP** ngày 25/6/2025 của Chính phủ.
+*   **Thông tư số 25/2025/TT-BNV** sửa đổi, bổ sung chế độ tai nạn lao động, bệnh nghề nghiệp, có hiệu lực từ ngày 01/01/2026.
+*   **Văn bản hợp nhất số 04/VBHN-BNV** ngày 02/02/2026 của Bộ Nội vụ quy định chi tiết và hướng dẫn thi hành một số điều của Luật An toàn, vệ sinh lao động về bảo hiểm tai nạn lao động, bệnh nghề nghiệp bắt buộc.
+
+**2. Phân tích và áp dụng vào trường hợp của Anh I**
+
+Khi Anh I bị tai nạn lao động trong giờ làm việc và mất 30% sức lao động, Anh I sẽ được hưởng các quyền lợi từ Quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp và từ người sử dụng lao động như sau:
+
+**2.1. Quyền lợi từ Quỹ bảo hiểm tai nạn lao động, bệnh nghề ngh
+
+[CÂU 10] ID: N2-029
+Câu hỏi: Chị K sau khi nghỉ thai sản 6 tháng quay lại làm việc nhưng công ty bố trí vị trí khác với mức lương thấp hơn 30%. Hành vi này có vi phạm pháp luật không?
+Câu trả lời: Chào Anh/Chị,
+
+Vấn đề Anh/Chị nêu liên quan đến quyền lợi của lao động nữ sau thời gian nghỉ thai sản, cụ thể là việc công ty bố trí vị trí làm việc khác với mức lương thấp hơn. Tôi xin tư vấn như sau:
+
+**CĂN CỨ PHÁP LÝ HIỆN HÀNH**
+
+Theo quy định tại **Điều 140 Bộ luật Lao động số 45/2019/QH14** của Quốc hội, có hiệu lực từ ngày 01 tháng 01 năm 2021, quy định về bảo đảm việc làm cho lao động nghỉ thai sản như sau:
+
+"**Điều 140. Bảo đảm việc làm cho lao động nghỉ thai sản**
+1. Lao động được bảo đảm việc làm cũ khi trở lại làm việc sau khi nghỉ hết thời gian theo quy định tại các khoản 1, 3 và 5 Điều 139 của Bộ luật này mà không bị cắt giảm tiền lương và quyền, lợi ích so với trước khi nghỉ thai sản.
+2. Trường hợp việc làm cũ không còn thì người sử dụng lao động phải bố trí việc làm khác cho họ với mức lương không thấp hơn mức lương trước khi nghỉ thai sản."
+
+Quy định này hiện vẫn còn hiệu lực thi hành. Theo tra cứu hiệu lực văn bản hiện hành, mặc dù Luật Dân số 2025 (số 113/2025/QH15) có hiệu lực từ ngày 01/7/2026 đã sửa đổi Điều 139 Bộ luật Lao động 2019 về thời gian nghỉ thai sản, nhưng nội dung của Điều 140 về việc bảo đảm việc làm và tiền lương khi lao động nữ trở lại làm việc sau thai sản không bị thay đổi.
+
+**PHÂN TÍCH VÀ ÁP DỤNG VÀO TRƯỜNG HỢP CỤ THỂ**
+
+Trong trường hợp của Chị K, sau khi nghỉ thai sản 6 tháng quay lại làm việc, công ty đã bố trí Chị K vào vị trí khác với mức lương thấp hơn 30% so với trước khi nghỉ thai sản.
+
+Đối chiếu với Điều 140 Bộ luật Lao động 201
+
+Trả lời JSON: [{"id":"N2-xxx","score":X,"reason":"..."},...]
