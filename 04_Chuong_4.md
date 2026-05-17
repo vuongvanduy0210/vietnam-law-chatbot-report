@@ -47,7 +47,7 @@ Mỗi service được cấu hình qua file `.env` riêng biệt, không đượ
 
 ## 4.2. Giao diện ứng dụng Mobile
 
-Ứng dụng Mobile được phát triển theo kiến trúc Kotlin Multiplatform (KMP) với Compose Multiplatform, cho phép triển khai đồng thời trên Android và iOS từ một codebase duy nhất. Giao diện tuân theo Material Design 3, được tối ưu cho màn hình điện thoại với kích thước từ 5 đến 6.7 inch. Các màn hình chính gồm có Đăng nhập, Thư viện pháp luật, Chat Agentic RAG, AI-Powered Search, Guided Consultation và Quản lý hội thoại.
+Ứng dụng Mobile được phát triển theo kiến trúc Kotlin Multiplatform (KMP) với Compose Multiplatform, cho phép triển khai đồng thời trên Android và iOS từ một codebase duy nhất. Giao diện tuân theo Material Design 3, được tối ưu cho màn hình điện thoại với kích thước từ 5 đến 6.7 inch. Các màn hình chính gồm có Đăng nhập, Thư viện pháp luật, Chi tiết văn bản, Chat Agentic RAG, AI-Powered Search, Guided Consultation và Quản lý hội thoại.
 
 ### 4.2.1. Đăng nhập và xác thực
 
@@ -63,37 +63,62 @@ Màn hình đăng nhập cung cấp form xác thực với email và mật khẩ
 
 Màn hình Thư viện cho phép người dùng duyệt và tìm kiếm trong kho 46.047 văn bản pháp luật, với các bộ lọc theo chủ đề, năm ban hành và cơ quan ban hành. Danh sách điều khoản được tải theo phân trang (pagination) để tối ưu hiệu năng, với lazy loading tích hợp sẵn trong Compose Multiplatform.
 
+[IMG:mobile_detail_law.png]
+*Hình 4.3. Màn hình chi tiết văn bản pháp luật*
+
+Khi chọn một văn bản, người dùng chuyển sang màn hình Chi tiết hiển thị toàn bộ nội dung điều khoản theo cấu trúc phân cấp (chương → điều → khoản → điểm). Nội dung được render với định dạng rich text, hỗ trợ cuộn dài và tìm kiếm trong văn bản, giúp người dùng tra cứu trực tiếp nội dung pháp luật gốc mà không cần rời ứng dụng.
+
 ### 4.2.3. Chat Agentic RAG và ThinkingPanel
 
 [IMG:mobile_chat_thinking.png]
-*Hình 4.3. Màn hình Chat với ThinkingPanel đang hiển thị 5 bước xử lý*
+*Hình 4.4. Màn hình Chat với ThinkingPanel đang hiển thị các bước xử lý của pipeline*
 
 Đây là tính năng trọng tâm của ứng dụng. Giao diện Chat sử dụng SSE (Server-Sent Events) streaming để hiển thị câu trả lời theo từng token, tạo cảm giác phản hồi thời gian thực với hiệu ứng con trỏ nhấp nháy (TypingBubble). Điểm nổi bật là **ThinkingPanel** — một component hiển thị tiến trình xử lý của pipeline AI theo 5 bước tuần tự: Guardrail, Query Analysis, Agent, Tool Calls, và Verifier. Mỗi bước được animate theo trạng thái (đang xử lý / hoàn thành / bỏ qua), giúp người dùng hiểu hệ thống đang làm gì trong khi chờ câu trả lời.
 
-[IMG:mobile_chat_answer.png]
-*Hình 4.4. Màn hình Chat với câu trả lời hoàn chỉnh và nguồn trích dẫn*
+[IMG:mobile_chat_answer_1.png]
+*Hình 4.5. Câu trả lời Agentic RAG — phần đầu với trích dẫn điều khoản cụ thể*
+
+[IMG:mobile_chat_answer_2.png]
+*Hình 4.6. Câu trả lời Agentic RAG — phần tiếp theo với phân tích chi tiết*
+
+[IMG:mobile_chat_answer_3.png]
+*Hình 4.7. Câu trả lời Agentic RAG — phần cuối với danh sách nguồn tham chiếu*
 
 Sau khi pipeline hoàn tất, câu trả lời được hiển thị dưới dạng Markdown với danh sách nguồn tham chiếu rõ ràng, bao gồm tên văn bản pháp luật, số điều khoản và năm ban hành. Khi hệ thống phát hiện xung đột thời gian giữa hai văn bản cùng điều chỉnh một vấn đề, nguồn cũ được đánh dấu ⛔ và nguồn mới được đánh dấu ✅, giúp người dùng nhận biết ngay quy định nào đang còn hiệu lực.
 
-[IMG:mobile_chat_conflict.png]
-*Hình 4.5. Hiển thị xung đột pháp luật theo thời gian (NĐ 100/2019 vs NĐ 168/2024)*
+### 4.2.4. AI-Powered Search (Tìm kiếm theo ngữ nghĩa)
 
-### 4.2.4. Guided Consultation (Tư vấn có hướng dẫn)
+[IMG:mobile_chat_search_ai.png]
+*Hình 4.8. Tính năng AI-Powered Search — tìm kiếm văn bản pháp luật theo ngữ nghĩa*
+
+Tính năng AI-Powered Search cho phép người dùng tìm kiếm văn bản pháp luật bằng ngôn ngữ tự nhiên thay vì từ khóa cứng. Truy vấn người dùng được embedding bằng mô hình `vietnamese-bi-encoder` (768 chiều), sau đó ChromaDB thực hiện truy vấn cosine similarity để tìm các điều khoản ngữ nghĩa gần nhất. Kết quả trả về được sắp xếp theo độ liên quan, kèm tên văn bản, số điều khoản và đoạn trích ngữ cảnh, giúp người dùng định vị nhanh văn bản pháp lý cần tham chiếu mà không cần biết chính xác tên văn bản hay số điều.
+
+### 4.2.5. Guided Consultation (Tư vấn có hướng dẫn)
 
 [IMG:mobile_guided_step1.png]
-*Hình 4.6. Bước 1 — Guided Consultation: câu hỏi làm rõ ngữ cảnh*
+*Hình 4.9. Guided Consultation — bước 1: câu hỏi gốc và gợi ý câu hỏi làm rõ ngữ cảnh*
 
-Tính năng Guided Consultation được thiết kế cho các câu hỏi pháp lý thiếu ngữ cảnh. Ở bước đầu tiên, hệ thống phân tích câu hỏi gốc và sinh ra các câu hỏi trắc nghiệm multiple-choice để làm rõ hoàn cảnh cụ thể của người dùng (ví dụ: loại hợp đồng lao động, lĩnh vực doanh nghiệp, vùng địa lý...).
+Tính năng Guided Consultation được thiết kế cho các câu hỏi pháp lý thiếu ngữ cảnh. Ở bước đầu tiên, người dùng nhập câu hỏi và hệ thống hiển thị đồng thời các gợi ý câu hỏi bổ trợ (multiple-choice) nhằm làm rõ hoàn cảnh cụ thể — ví dụ: loại hợp đồng lao động, lĩnh vực doanh nghiệp, vùng địa lý.
 
 [IMG:mobile_guided_step2.png]
-*Hình 4.7. Bước 2 — Guided Consultation: câu trả lời tùy chỉnh theo ngữ cảnh*
+*Hình 4.10. Guided Consultation — bước 2: câu hỏi thu thập thông tin chi tiết*
 
-Sau khi người dùng chọn đáp án, bước hai sinh câu trả lời chuyên sâu phù hợp với đúng tình huống của họ thông qua Guided Graph riêng (START → planning → agent → verifier → END). Planning Node hoạt động theo cơ chế deterministic (không dùng LLM) bằng cách ghép các query theo template từ kết quả bước 1, tiết kiệm đáng kể chi phí token và giảm latency so với phương pháp planning bằng LLM.
+Bước hai hệ thống thu thập thêm thông tin chi tiết từ người dùng thông qua các câu hỏi trắc nghiệm có cấu trúc, nhằm xác định chính xác khung pháp lý áp dụng cho tình huống. Các câu hỏi được Planning Node tạo ra theo cơ chế deterministic (không dùng LLM) bằng cách ghép template từ kết quả phân tích bước 1, tiết kiệm đáng kể chi phí token và giảm latency so với phương pháp planning bằng LLM.
 
-### 4.2.5. Quản lý hội thoại
+[IMG:mobile_guided_step3.png]
+*Hình 4.11. Guided Consultation — bước 3: hệ thống đang suy nghĩ và tổng hợp*
+
+Sau khi thu thập đủ ngữ cảnh, hệ thống chạy Guided Graph (START → planning → agent → verifier → END) để tổng hợp câu trả lời. Trạng thái "đang suy nghĩ" được hiển thị với animation tương tự ThinkingPanel, phản ánh quá trình Agent gọi tool retrieve và Verifier kiểm chứng kết quả.
+
+[IMG:mobile_guided_step4.png]
+*Hình 4.12. Guided Consultation — bước 4: kết quả tư vấn chuyên sâu theo ngữ cảnh*
+
+Bước cuối trả về câu trả lời chuyên sâu được tùy chỉnh hoàn toàn theo tình huống cụ thể của người dùng, kèm trích dẫn điều khoản và tên văn bản pháp lý liên quan. Nhờ thu thập đủ ngữ cảnh trước khi truy vấn, kết quả chính xác hơn so với câu hỏi mở thông thường, đặc biệt với các tình huống pháp lý có nhiều ngoại lệ theo từng đối tượng hoặc ngành nghề.
+
+### 4.2.6. Quản lý hội thoại
 
 [IMG:mobile_conversations.png]
-*Hình 4.8. Màn hình danh sách hội thoại*
+*Hình 4.13. Màn hình danh sách hội thoại*
 
 Ứng dụng lưu trữ toàn bộ lịch sử hội thoại theo tài khoản người dùng. Tiêu đề mỗi cuộc hội thoại được tự động tạo bởi LLM từ câu hỏi đầu tiên. Người dùng có thể ghim (pin) các cuộc hội thoại quan trọng, lưu trữ (archive) hoặc xóa các cuộc hội thoại không cần thiết.
 
@@ -106,38 +131,35 @@ Admin Web được xây dựng bằng Next.js 16.1.6 với App Router, React 19.
 ### 4.3.1. Đăng nhập quản trị
 
 [IMG:admin_login.png]
-*Hình 4.9. Trang đăng nhập Admin Web*
+*Hình 4.14. Trang đăng nhập Admin Web*
 
 Trang đăng nhập admin yêu cầu tài khoản có quyền `role=admin` được cấp từ hệ thống. JWT token sau khi đăng nhập thành công được lưu trong httpOnly cookie với thời hạn phiên làm việc theo cấu hình server.
 
 ### 4.3.2. Dashboard tổng quan
 
 [IMG:admin_dashboard.png]
-*Hình 4.10. Dashboard tổng quan với BarChart và các card thống kê*
+*Hình 4.15. Dashboard tổng quan với BarChart và các card thống kê*
 
 Dashboard hiển thị tổng quan trạng thái hệ thống theo thời gian thực thông qua kết nối WebSocket. Giao diện gồm các card thống kê nhanh (tổng số văn bản, tổng số điều khoản, số vector trong ChromaDB) và biểu đồ cột (BarChart, thư viện Recharts) thể hiện số lượng tài liệu được tải lên theo từng tháng. Khi có tài liệu mới hoàn thành xử lý, các chỉ số được cập nhật tức thì mà không cần tải lại trang.
 
 ### 4.3.3. Quản lý tài liệu
 
-[IMG:admin_documents.png]
-*Hình 4.11. Danh sách DocumentTask với trạng thái xử lý*
-
-Trang Documents hiển thị danh sách tất cả tác vụ xử lý tài liệu (DocumentTask), bao gồm các thông tin: tên file PDF, mã văn bản pháp luật (law_id) được trích xuất tự động, số điều khoản đã parse, trạng thái (pending / processing / completed / failed), và thời gian tạo. Admin có thể xem chi tiết từng tác vụ để kiểm tra kết quả parse.
-
 [IMG:admin_document_detail.png]
-*Hình 4.12. Chi tiết tài liệu — danh sách điều khoản đã được trích xuất*
+*Hình 4.16. Chi tiết tài liệu — danh sách điều khoản đã được trích xuất*
+
+Trang Documents hiển thị danh sách tất cả tác vụ xử lý tài liệu (DocumentTask), bao gồm các thông tin: tên file PDF, mã văn bản pháp luật (law_id) được trích xuất tự động, số điều khoản đã parse, trạng thái (pending / processing / completed / failed), và thời gian tạo. Khi xem chi tiết từng tác vụ, admin có thể kiểm tra toàn bộ danh sách điều khoản đã được trích xuất — bao gồm số điều, tiêu đề và nội dung — để đối chiếu với văn bản PDF gốc và phát hiện các trường hợp parse sai hoặc thiếu.
 
 ### 4.3.4. Upload và theo dõi tiến trình
 
 [IMG:admin_upload_processing.png]
-*Hình 4.13. Giao diện Upload PDF đang trong quá trình xử lý*
+*Hình 4.17. Giao diện Upload PDF đang trong quá trình xử lý*
 
 Trang Upload hỗ trợ kéo-thả (drag-and-drop) file PDF hoặc chọn file thông thường. Sau khi upload, hệ thống khởi chạy pipeline ingestion với các bước: tải lên Cloudinary (lưu trữ file gốc), parse nội dung bằng Gemini Vision API, lưu điều khoản vào MongoDB, embedding và lưu vector vào ChromaDB. Tiến trình được phản hồi thời gian thực qua WebSocket với thanh tiến trình (progress bar) và thông báo bước hiện tại.
 
 Một tính năng đáng chú ý là khả năng **phục hồi sau reload trang** (resume): task_id được lưu vào localStorage, khi người dùng tải lại trình duyệt, hệ thống tự động tra trạng thái qua `GET /documents/tasks/{id}` và khôi phục thanh tiến trình đúng giai đoạn. Điều này ngăn tình trạng mất thông tin tiến trình khi mạng chập chờn hoặc trình duyệt bị đóng.
 
 [IMG:admin_upload_done.png]
-*Hình 4.14. Trạng thái hoàn thành sau khi xử lý tài liệu thành công*
+*Hình 4.18. Trạng thái hoàn thành sau khi xử lý tài liệu thành công*
 
 ---
 
