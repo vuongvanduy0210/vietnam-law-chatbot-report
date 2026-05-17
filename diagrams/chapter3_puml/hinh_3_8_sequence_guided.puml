@@ -1,0 +1,22 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+participant "Mobile App" as Mobile
+participant "Main Service" as Main
+participant "RAG Service" as RAG
+database "ChromaDB" as Chroma
+Mobile -> Main : POST /api/v1/guided/clarify
+Main -> RAG : POST /api/v1/rag/guided-clarify
+RAG --> Main : status, topic, questions
+Main --> Mobile : câu hỏi làm rõ
+Mobile -> Main : POST /api/v1/guided/answer/stream
+Main -> RAG : POST /api/v1/rag/guided-answer/stream
+RAG --> Main : event progress(validate)
+Main --> Mobile : event progress
+RAG -> Chroma : truy hồi nguồn phù hợp
+RAG --> Main : event progress(retrieve/synthesize/verify)
+Main --> Mobile : event progress
+RAG --> Main : event done(answer, sources)
+Main --> Mobile : event done
+@enduml

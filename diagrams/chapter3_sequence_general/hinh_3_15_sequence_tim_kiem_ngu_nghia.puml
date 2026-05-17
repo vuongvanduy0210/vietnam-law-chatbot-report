@@ -1,0 +1,60 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Tìm kiếm ngữ nghĩa
+
+actor "Người dùng" as User
+boundary "Giao diện" as UI
+control "Hệ thống" as System
+database "CSDL Vector" as VDB
+
+User -> UI: 1: Nhập truy vấn tự nhiên
+activate UI
+UI -> UI: 2: Kiểm tra truy vấn và phân trang
+UI -> System: 3: Gửi yêu cầu tìm kiếm ngữ nghĩa
+activate System
+System -> System: 4: Phân tích ý định truy vấn
+System -> VDB: 5: Truy hồi vector liên quan
+activate VDB
+VDB --> System: 6: Trả danh sách ứng viên
+deactivate VDB
+System -> System: 7: Xếp hạng lại kết quả
+System --> UI: 8: Trả danh sách điều luật liên quan
+deactivate System
+UI --> User: 9: Hiển thị kết quả tìm kiếm
+
+User -> UI: 10: Mở một kết quả
+UI -> System: 11: Yêu cầu chi tiết điều luật
+activate System
+System -> VDB: 12: Lấy thông tin nguồn tham chiếu
+activate VDB
+VDB --> System: 13: Trả metadata nguồn
+deactivate VDB
+System --> UI: 14: Trả nội dung chi tiết
+deactivate System
+UI --> User: 15: Hiển thị điều luật được chọn
+
+alt Không tìm thấy kết quả
+  UI --> User: 16: Gợi ý điều chỉnh truy vấn
+end
+deactivate UI
+@enduml

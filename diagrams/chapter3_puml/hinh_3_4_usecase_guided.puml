@@ -1,0 +1,19 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Tư vấn có hướng dẫn" {
+  usecase "Nhập câu hỏi\nban đầu" as Input
+  usecase "Nhận câu hỏi\nlàm rõ" as Clarify
+  usecase "Chọn đáp án\nngữ cảnh" as Select
+  usecase "Nhận câu trả lời\ncó nguồn dẫn" as Answer
+  usecase "Theo dõi tiến trình\nqua SSE" as Stream
+}
+User --> Input
+Input ..> Clarify : <<include>>
+User --> Select
+Select ..> Answer : <<include>>
+Answer ..> Stream : <<include>>
+@enduml

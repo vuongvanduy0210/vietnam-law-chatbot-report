@@ -1,0 +1,73 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_2_8" name="hinh_2_8">
+    <mxGraphModel dx="2054" dy="2210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="q" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Người dùng nhập&lt;br&gt;câu hỏi còn thiếu dữ kiện" vertex="1">
+          <mxGeometry height="78" width="230" x="560" y="-230" as="geometry" />
+        </mxCell>
+        <mxCell id="clarify_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="POST /guided/clarify&lt;br&gt;stateless" vertex="1">
+          <mxGeometry height="70" width="230" x="560" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="clarify" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="guided-clarify&lt;br&gt;validate legal scope&lt;br&gt;detect topic/domain&lt;br&gt;generate questions" vertex="1">
+          <mxGeometry height="100" width="250" x="550" as="geometry" />
+        </mxCell>
+        <mxCell id="llm1" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="LLMs&lt;br&gt;classification + question generation" vertex="1">
+          <mxGeometry height="90" width="140" x="900" y="5" as="geometry" />
+        </mxCell>
+        <mxCell id="choices" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Hiển thị câu hỏi&lt;br&gt;và các lựa chọn làm rõ" vertex="1">
+          <mxGeometry height="78" width="230" x="560" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="answers" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Người dùng chọn&lt;br&gt;câu trả lời" vertex="1">
+          <mxGeometry height="70" width="230" x="560" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="answer_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="POST /guided/answer/stream&lt;br&gt;SSE progress/done" vertex="1">
+          <mxGeometry height="78" width="260" x="545" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="guided_agent" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Guided Agent Graph&lt;br&gt;planning -&gt; agent/tools -&gt; verifier&lt;br&gt;không lưu conversation" vertex="1">
+          <mxGeometry height="100" width="270" x="540" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="tools" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="Internal Law Tool&lt;br&gt;Web Search&lt;br&gt;ChromaDB" vertex="1">
+          <mxGeometry height="100" width="160" x="880" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="stream" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="SSE Response&lt;br&gt;progress, done, error" vertex="1">
+          <mxGeometry height="70" width="230" x="560" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="final" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="Câu trả lời cuối&lt;br&gt;answer + sources" vertex="1">
+          <mxGeometry height="70" width="230" x="270" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="q" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="clarify_api" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="clarify_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="clarify" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="clarify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="llm1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="clarify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="choices" value="questions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="choices" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="answers" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="answers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="answer_api" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="answer_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="guided_agent" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="guided_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="tools" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="guided_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="stream" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="stream" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="final" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

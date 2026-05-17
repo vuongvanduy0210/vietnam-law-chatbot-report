@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Quản trị viên" as Admin
+rectangle "Cập nhật văn bản pháp luật" {
+  usecase "Upload PDF\nvăn bản pháp luật" as Upload
+  usecase "Xem trước kết quả\ntrích xuất" as Preview
+  usecase "Kiểm tra trùng\nvăn bản" as Duplicate
+  usecase "Validate dữ liệu\ntrích xuất" as Validate
+  usecase "Lưu MongoDB\nvà ChromaDB" as Save
+  usecase "Rollback khi lỗi" as Rollback
+}
+Admin --> Upload
+Admin --> Preview
+Upload ..> Duplicate : <<include>>
+Upload ..> Validate : <<include>>
+Validate ..> Save : <<include>>
+Save ..> Rollback : <<extend>>
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Quản trị viên" as Admin
+rectangle "Theo dõi xử lý tài liệu" {
+  usecase "Kết nối WebSocket" as WS
+  usecase "Nhận UPLOAD_PROGRESS" as Progress
+  usecase "Nhận UPLOAD_STATUS" as Status
+  usecase "Huỷ task\nđang chạy" as Cancel
+  usecase "Xoá log task" as DeleteTask
+  usecase "Xem dashboard\nthống kê" as Dash
+}
+Admin --> WS
+WS ..> Progress : <<include>>
+WS ..> Status : <<include>>
+Admin --> Cancel
+Admin --> DeleteTask
+Admin --> Dash
+@enduml

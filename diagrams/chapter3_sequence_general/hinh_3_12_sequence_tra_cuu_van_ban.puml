@@ -1,0 +1,46 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Tra cứu văn bản
+
+participant "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+
+User -> UI: 1: Nhập từ khóa hoặc chọn bộ lọc
+activate UI
+UI -> UI: 2: Kiểm tra điều kiện tra cứu
+UI -> System: 3: Gửi yêu cầu tra cứu
+activate System
+System --> UI: 4: Trả danh sách kết quả phù hợp
+deactivate System
+UI --> User: 5: Hiển thị danh sách văn bản
+User -> UI: 6: Chọn văn bản cần xem
+UI -> System: 7: Yêu cầu nội dung chi tiết
+activate System
+System --> UI: 8: Trả nội dung văn bản
+deactivate System
+UI --> User: 9: Hiển thị chi tiết văn bản
+deactivate UI
+
+alt Không tìm thấy kết quả
+  UI --> User: 10: Hiển thị trạng thái không có dữ liệu
+else Lỗi tra cứu
+  UI --> User: 11: Hiển thị thông báo lỗi
+end
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Tư vấn có hướng dẫn
+
+actor "Người dùng" as User
+boundary "Giao diện" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+
+User -> UI: 1: Nhập vấn đề cần tư vấn
+activate UI
+UI -> UI: 2: Kiểm tra thông tin ban đầu
+UI -> System: 3: Yêu cầu tạo câu hỏi làm rõ
+activate System
+System -> DB: 4: Kiểm tra dữ liệu pháp luật liên quan
+activate DB
+DB --> System: 5: Trả ngữ cảnh tham chiếu
+deactivate DB
+System --> UI: 6: Trả danh sách câu hỏi gợi ý
+deactivate System
+UI --> User: 7: Hiển thị câu hỏi làm rõ
+User -> UI: 8: Chọn phương án hoặc bổ sung thông tin
+UI -> System: 9: Gửi vấn đề và thông tin làm rõ
+activate System
+System -> DB: 10: Truy hồi căn cứ pháp luật phù hợp
+activate DB
+DB --> System: 11: Trả điều luật liên quan
+deactivate DB
+System --> UI: 12: Trả tiến trình tư vấn
+UI --> User: 13: Hiển thị tiến trình
+System --> UI: 14: Trả kết quả tư vấn và căn cứ tham chiếu
+deactivate System
+UI --> User: 15: Hiển thị nội dung tư vấn
+
+alt Thông tin chưa đủ rõ
+  UI --> User: 16: Yêu cầu bổ sung thêm thông tin
+else Phát sinh lỗi xử lý
+  UI --> User: 17: Hiển thị thông báo lỗi
+end
+deactivate UI
+@enduml

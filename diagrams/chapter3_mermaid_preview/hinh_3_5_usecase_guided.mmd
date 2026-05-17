@@ -1,0 +1,17 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 60, "rankSpacing": 78, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    User(("Người dùng"))
+
+    subgraph GUIDED["Tư vấn có hướng dẫn"]
+      Input(["Nhập câu hỏi<br/>ban đầu"])
+      Clarify(["Nhận câu hỏi<br/>làm rõ"])
+      Select(["Chọn đáp án<br/>ngữ cảnh"])
+      Stream(["Theo dõi tiến trình<br/>qua SSE"])
+      Answer(["Nhận câu trả lời<br/>có nguồn dẫn"])
+    end
+
+    User --> Input
+    Input -. include .-> Clarify
+    User --> Select
+    Select -. include .-> Stream
+    Stream -. include .-> Answer

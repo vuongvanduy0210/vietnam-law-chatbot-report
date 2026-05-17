@@ -1,0 +1,46 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Tư vấn có hướng dẫn
+
+participant "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+
+User -> UI: 1: Nhập vấn đề cần tư vấn
+activate UI
+UI -> UI: 2: Kiểm tra thông tin ban đầu
+UI -> System: 3: Yêu cầu tạo câu hỏi làm rõ
+activate System
+System --> UI: 4: Trả danh sách câu hỏi gợi ý
+deactivate System
+UI --> User: 5: Hiển thị câu hỏi làm rõ
+User -> UI: 6: Chọn phương án hoặc bổ sung thông tin
+UI -> System: 7: Gửi vấn đề và thông tin làm rõ
+activate System
+System --> UI: 8: Trả kết quả tư vấn và căn cứ tham chiếu
+deactivate System
+UI --> User: 9: Hiển thị nội dung tư vấn
+deactivate UI
+
+alt Thông tin chưa đủ rõ
+  UI --> User: 10: Yêu cầu bổ sung thêm thông tin
+else Phát sinh lỗi xử lý
+  UI --> User: 11: Hiển thị thông báo lỗi
+end
+@enduml

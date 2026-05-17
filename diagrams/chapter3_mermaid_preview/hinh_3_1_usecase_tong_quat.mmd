@@ -1,0 +1,33 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 54, "rankSpacing": 72, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart TB
+    User(("Người dùng"))
+    Admin(("Quản trị viên"))
+
+    subgraph SYS["Vietnam Law Chatbot"]
+      UGroup(["Nhóm chức năng<br/>người dùng"])
+      AGroup(["Nhóm chức năng<br/>quản trị"])
+      UC1(["Đăng ký,<br/>đăng nhập"])
+      UC2(["Quản lý<br/>hội thoại"])
+      UC3(["Gửi câu hỏi<br/>pháp luật"])
+      UC4(["Tư vấn<br/>có hướng dẫn"])
+      UC5(["Tra cứu thư viện<br/>pháp luật"])
+      UC6(["Tìm kiếm AI<br/>ngữ nghĩa"])
+      UC7(["Quản trị<br/>văn bản"])
+      UC8(["Cập nhật văn bản<br/>pháp luật"])
+      UC9(["Theo dõi tiến trình<br/>xử lý tài liệu"])
+      UC10(["Xem dashboard<br/>thống kê"])
+    end
+
+    User --> UGroup
+    Admin --> AGroup
+    UGroup --> UC1
+    UGroup --> UC2
+    UGroup --> UC3
+    UGroup --> UC4
+    UGroup --> UC5
+    UGroup --> UC6
+    AGroup --> UC1
+    AGroup --> UC7
+    AGroup --> UC8
+    AGroup --> UC9
+    AGroup --> UC10

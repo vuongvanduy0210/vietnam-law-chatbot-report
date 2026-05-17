@@ -1,0 +1,17 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 58, "rankSpacing": 76, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    User(("Người dùng"))
+
+    subgraph LAW["Tra cứu thư viện pháp luật"]
+      List(["Xem danh sách<br/>văn bản"])
+      Filter(["Lọc theo năm,<br/>chủ đề"])
+      Search(["Tìm kiếm theo<br/>nội dung"])
+      Detail(["Xem chi tiết<br/>điều luật"])
+      Meta(["Xem topic,<br/>năm, keyword"])
+    end
+
+    User --> List
+    User --> Filter
+    User --> Search
+    User --> Detail
+    List -. include .-> Meta

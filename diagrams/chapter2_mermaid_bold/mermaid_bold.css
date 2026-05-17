@@ -1,0 +1,86 @@
+svg {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+text,
+.nodeLabel,
+.edgeLabel,
+.cluster-label,
+.label,
+.messageText,
+.actor,
+.sequenceNumber {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  fill: #111111 !important;
+  text-anchor: middle !important;
+}
+
+.nodeLabel,
+.label {
+  text-align: center !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+}
+
+.node .label text,
+.nodeLabel {
+  transform: translate(5px, 10px);
+}
+
+.nodeLabel p,
+.edgeLabel p,
+.label p {
+  margin: 0 !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+}
+
+.node rect,
+.node polygon,
+.node circle,
+.node ellipse,
+.node path {
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+  fill: #ffffff !important;
+}
+
+.cluster rect {
+  stroke: #8a8a8a !important;
+  stroke-width: 2.5px !important;
+  fill: #f7f7f7 !important;
+}
+
+.edgePath .path,
+.flowchart-link {
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+}
+
+.arrowheadPath,
+marker path {
+  fill: #111111 !important;
+  stroke: #111111 !important;
+}
+
+.edgeLabel,
+.edgeLabel p,
+.labelBkg {
+  background: #ffffff !important;
+  fill: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.actor {
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+  fill: #ffffff !important;
+}
+
+.messageLine0,
+.messageLine1 {
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+}

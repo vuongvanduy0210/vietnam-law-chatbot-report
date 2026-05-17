@@ -1,0 +1,117 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_2_2" name="hinh_2_2">
+    <mxGraphModel dx="4016" dy="2524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="auth_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Auth API&lt;br&gt;login, refresh,&lt;br&gt;current user" vertex="1">
+          <mxGeometry height="70" width="230" x="-615" y="-410" as="geometry" />
+        </mxCell>
+        <mxCell id="chat_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Chat API&lt;br&gt;/messages/stream&lt;br&gt;conversation history" vertex="1">
+          <mxGeometry height="70" width="250" x="20" y="-390" as="geometry" />
+        </mxCell>
+        <mxCell id="guided_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Guided API&lt;br&gt;/clarify&lt;br&gt;/answer/stream" vertex="1">
+          <mxGeometry height="70" width="250" x="400" y="-440" as="geometry" />
+        </mxCell>
+        <mxCell id="doc_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Documents API&lt;br&gt;/upload-v2&lt;br&gt;admin only" vertex="1">
+          <mxGeometry height="70" width="250" x="760" y="-440" as="geometry" />
+        </mxCell>
+        <mxCell id="laws_api" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Laws API&lt;br&gt;search, list,&lt;br&gt;delete, detail" vertex="1">
+          <mxGeometry height="70" width="180" x="1190" y="-440" as="geometry" />
+        </mxCell>
+        <mxCell id="auth_svc" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="AuthService&lt;br&gt;JWT, refresh token,&lt;br&gt;role admin/user" vertex="1">
+          <mxGeometry height="78" width="250" x="-625" y="-290" as="geometry" />
+        </mxCell>
+        <mxCell id="chat_svc" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="ChatService&lt;br&gt;persist messages,&lt;br&gt;bridge RAG SSE" vertex="1">
+          <mxGeometry height="78" width="270" x="10" y="-280" as="geometry" />
+        </mxCell>
+        <mxCell id="rag_client" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="RAGClient&lt;br&gt;agent-search stream,&lt;br&gt;guided stream, ingest" vertex="1">
+          <mxGeometry height="78" width="290" x="380" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="doc_proc" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="DocumentProcessor&lt;br&gt;parse PDF, OCR,&lt;br&gt;structure articles" vertex="1">
+          <mxGeometry height="78" width="290" x="740" y="126" as="geometry" />
+        </mxCell>
+        <mxCell id="user_repo" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="UserRepository&lt;br&gt;RefreshTokenRepository" vertex="1">
+          <mxGeometry height="70" width="260" x="-630" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="msg_repo" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="ConversationRepository&lt;br&gt;MessageRepository" vertex="1">
+          <mxGeometry height="70" width="290" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="task_repo" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="DocumentTaskRepository&lt;br&gt;progress, status, errors" vertex="1">
+          <mxGeometry height="70" width="290" x="50" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="law_repo" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="LawRepository&lt;br&gt;articles, laws_cache,&lt;br&gt;duplicate checks" vertex="1">
+          <mxGeometry height="70" width="300" x="1130" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rag" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="RAG Service" vertex="1">
+          <mxGeometry height="70" width="230" x="410" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="ws" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="WebSocket Manager&lt;br&gt;upload progress" vertex="1">
+          <mxGeometry height="70" width="260" x="755" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="auth_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="auth_svc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="chat_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="chat_svc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="guided_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="rag_client" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="doc_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="doc_proc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="laws_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="law_repo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="chat_svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="rag_client" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="doc_proc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="law_repo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="doc_proc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="task_repo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="auth_svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="user_repo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="chat_svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="msg_repo" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="rag_client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="rag" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="user_repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="I3GlSdqR27gH6n2vJjS_-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-360" y="-135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="msg_repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="I3GlSdqR27gH6n2vJjS_-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-130" y="-135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="task_repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="I3GlSdqR27gH6n2vJjS_-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-245" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="law_repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="I3GlSdqR27gH6n2vJjS_-2" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1279.999999999999" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="doc_proc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="ws" value="progress/status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I3GlSdqR27gH6n2vJjS_-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;PostgreSQL&lt;/span&gt;" vertex="1">
+          <mxGeometry height="130" width="130" x="-310" y="-200" as="geometry" />
+        </mxCell>
+        <mxCell id="I3GlSdqR27gH6n2vJjS_-2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;MongoDB&lt;/span&gt;" vertex="1">
+          <mxGeometry height="160" width="110" x="1225" y="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

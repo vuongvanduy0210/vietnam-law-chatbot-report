@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_3_3" name="hinh_3_3">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e5" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="search" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="615" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="delete" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="800" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="update" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="430" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="list" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="800" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="new" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="430" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="system" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=none;spacingTop=14;" value="Quản lý hội thoại" vertex="1">
+          <mxGeometry height="750" width="620" x="270" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Arial;fontSize=18;fontStyle=1;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Người dùng" vertex="1">
+          <mxGeometry height="135" width="95" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="new" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Tạo&lt;br&gt;hội thoại" vertex="1">
+          <mxGeometry height="100" width="260" x="450" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="list" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Xem danh sách&lt;br&gt;hội thoại" vertex="1">
+          <mxGeometry height="100" width="260" x="450" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="update" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Cập nhật hội thoại&lt;br&gt;đổi tên, ghim, lưu trữ" vertex="1">
+          <mxGeometry height="100" width="260" x="450" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="delete" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Xóa&lt;br&gt;hội thoại" vertex="1">
+          <mxGeometry height="100" width="260" x="450" y="417.5" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Tìm kiếm&lt;br&gt;lịch sử chat" vertex="1">
+          <mxGeometry height="100" width="260" x="450" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="1valT4aTGuBXUxHm837E-1" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=none;spacingTop=14;" value="Quản lý hội thoại" vertex="1">
+          <mxGeometry height="750" width="620" x="270" y="78" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

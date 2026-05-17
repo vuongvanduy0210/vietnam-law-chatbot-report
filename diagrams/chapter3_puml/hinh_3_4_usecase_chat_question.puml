@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Hỏi đáp pháp luật" {
+  usecase "Nhập câu hỏi\npháp luật" as Input
+  usecase "Gửi tin nhắn\nqua chat" as Send
+  usecase "Nhận event ready" as Ready
+  usecase "Theo dõi tiến trình\nSSE" as Progress
+  usecase "Nhận câu trả lời\nvà nguồn dẫn" as Done
+  usecase "Xem câu hỏi\ngợi ý" as Suggested
+}
+User --> Input
+Input ..> Send : <<include>>
+Send ..> Ready : <<include>>
+Send ..> Progress : <<include>>
+Send ..> Done : <<include>>
+Done ..> Suggested : <<extend>>
+@enduml

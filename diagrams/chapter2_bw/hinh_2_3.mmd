@@ -1,0 +1,42 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    subgraph API["RAG API"]
+        direction LR
+        A1["/rag/agent-search"]
+        A2["/rag/search"]
+        A3["/guided/*"]
+        A4["/ingest/articles"]
+    end
+
+    subgraph GRAPH["Agent Graph"]
+        direction LR
+        G1["Guardrail"]
+        G2["Query Analysis"]
+        G3["Agent + Tools"]
+        G4["Verifier"]
+        G1 --> G2 --> G3 --> G4
+    end
+
+    subgraph TOOLS["Tool Layer"]
+        direction LR
+        T1["Internal Law Retrieval"]
+        T2["Web Law Search"]
+    end
+
+    subgraph INFRA["Model & Storage"]
+        direction LR
+        LLM["Gemini Service"]
+        EMB["Embedding Models"]
+        CH[("ChromaDB")]
+    end
+
+    API --> GRAPH
+    G3 <--> TOOLS
+    TOOLS --> EMB
+    TOOLS --> CH
+    GRAPH --> LLM
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class A1,A2,A3,A4,G1,G2,G3,G4,T1,T2 core;
+    class LLM,EMB,CH muted;

@@ -1,0 +1,47 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Cập nhật văn bản
+
+participant "Quản trị viên" as Admin
+participant "Giao diện quản trị" as UI
+participant "Hệ thống" as System
+
+Admin -> UI: 1: Chọn tệp văn bản cần cập nhật
+activate UI
+UI -> UI: 2: Kiểm tra định dạng và thông tin tệp
+UI -> System: 3: Gửi yêu cầu cập nhật văn bản
+activate System
+System --> UI: 4: Xác nhận tiếp nhận yêu cầu
+UI --> Admin: 5: Hiển thị tiến trình xử lý
+System --> UI: 6: Trả kết quả cập nhật
+deactivate System
+UI --> Admin: 7: Hiển thị trạng thái hoàn tất
+deactivate UI
+
+alt Tệp không hợp lệ
+  UI --> Admin: 8: Hiển thị nguyên nhân lỗi
+else Hủy yêu cầu
+  Admin -> UI: 9: Hủy tiến trình cập nhật
+  UI -> System: 10: Gửi yêu cầu hủy
+  activate System
+  System --> UI: 11: Xác nhận hủy xử lý
+  deactivate System
+  UI --> Admin: 12: Cập nhật trạng thái đã hủy
+end
+@enduml

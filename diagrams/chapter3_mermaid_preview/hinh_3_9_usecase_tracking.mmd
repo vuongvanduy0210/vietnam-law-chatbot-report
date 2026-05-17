@@ -1,0 +1,19 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 58, "rankSpacing": 76, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    Admin(("Quản trị viên"))
+
+    subgraph TRACK["Theo dõi xử lý tài liệu"]
+      WS(["Kết nối<br/>WebSocket"])
+      Progress(["Nhận<br/>UPLOAD_PROGRESS"])
+      Status(["Nhận<br/>UPLOAD_STATUS"])
+      Cancel(["Hủy task<br/>đang chạy"])
+      DeleteTask(["Xóa log<br/>task"])
+      Dash(["Xem dashboard<br/>thống kê"])
+    end
+
+    Admin --> WS
+    WS -. include .-> Progress
+    WS -. include .-> Status
+    Admin --> Cancel
+    Admin --> DeleteTask
+    Admin --> Dash

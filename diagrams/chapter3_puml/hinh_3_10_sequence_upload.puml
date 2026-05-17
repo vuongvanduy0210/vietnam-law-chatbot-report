@@ -1,0 +1,29 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+participant "Admin Web" as Admin
+participant "Main Service" as Main
+database "PostgreSQL" as PG
+database "MongoDB" as Mongo
+participant "RAG Service" as RAG
+database "ChromaDB" as Chroma
+Admin -> Main : POST /api/v1/documents/upload-v2
+Main -> PG : tạo document_tasks
+Main --> Admin : WebSocket UPLOAD_PROGRESS
+Main -> Main : kiểm tra file, hash, law_id
+Main -> Main : OCR + parse + validate
+Main -> Mongo : lưu articles + laws_cache
+Main -> RAG : POST /api/v1/ingest/articles
+RAG -> Chroma : chunk, embedding, insert
+Chroma --> RAG : success
+RAG --> Main : ingest result
+Main -> PG : status=completed, progress=100
+Main --> Admin : WebSocket UPLOAD_STATUS completed
+alt lỗi sau khi đã ghi dữ liệu
+  Main -> Mongo : rollback articles/cache
+  Main -> RAG : DELETE /api/v1/ingest/articles/{law_id}
+  Main -> PG : status=failed
+  Main --> Admin : WebSocket UPLOAD_STATUS failed
+end
+@enduml

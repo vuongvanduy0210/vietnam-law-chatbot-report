@@ -1,0 +1,66 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Quản lý hội thoại
+
+actor "Người dùng" as User
+boundary "Giao diện" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+
+User -> UI: 1: Mở danh sách hội thoại
+activate UI
+UI -> System: 2: Yêu cầu danh sách hội thoại
+activate System
+System -> DB: 3: Lấy hội thoại của người dùng
+activate DB
+DB --> System: 4: Trả danh sách và tin nhắn gần nhất
+deactivate DB
+System --> UI: 5: Trả danh sách hội thoại
+deactivate System
+UI --> User: 6: Hiển thị danh sách hội thoại
+
+User -> UI: 7: Chọn một hội thoại
+UI -> System: 8: Yêu cầu chi tiết và tin nhắn
+activate System
+System -> DB: 9: Lấy chi tiết hội thoại
+activate DB
+DB --> System: 10: Trả tin nhắn và metadata
+deactivate DB
+System --> UI: 11: Trả thông tin hội thoại
+deactivate System
+UI --> User: 12: Hiển thị nội dung hội thoại
+
+opt Đổi tên, ghim, lưu trữ hoặc xoá
+  User -> UI: 13: Chọn thao tác quản lý
+  UI -> System: 14: Gửi yêu cầu cập nhật
+  activate System
+  System -> DB: 15: Ghi thay đổi hội thoại
+  activate DB
+  DB --> System: 16: Xác nhận cập nhật
+  deactivate DB
+  System --> UI: 17: Trả trạng thái mới
+  deactivate System
+  UI --> User: 18: Cập nhật danh sách hiển thị
+end
+deactivate UI
+@enduml

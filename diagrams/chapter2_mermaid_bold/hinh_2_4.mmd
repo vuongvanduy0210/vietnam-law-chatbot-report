@@ -1,0 +1,18 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    Q["Câu hỏi\nngười dùng"]
+    G{"Guardrail\nhợp lệ?"}
+    A["Hợp lệ\nQuery Analysis\nrewrite + context"]
+    R["Agentic RAG\nplanning + tools\nevidence"]
+    V["Verifier\nkiểm chứng"]
+    O["Answer\ncitation"]
+    X["Không hợp lệ\nTừ chối lịch sự"]
+
+    Q --> G
+    G --> A --> R --> V --> O
+    G --> X --> O
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class Q,A,R,V,O,X core;
+    class G decision;

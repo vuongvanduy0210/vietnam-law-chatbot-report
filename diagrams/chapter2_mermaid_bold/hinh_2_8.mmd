@@ -1,0 +1,14 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":6,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    Q["Câu hỏi thiếu\nngữ cảnh"]
+    C["Clarify\nhỏi làm rõ"]
+    O["Người dùng\nchọn đáp án"]
+    P["Planning\ntạo truy vấn"]
+    A["Guided Agent\ntra cứu nguồn"]
+    V["Verifier\nkiểm chứng"]
+    S["SSE Response\nanswer + sources"]
+
+    Q --> C --> O --> P --> A --> V --> S
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    class Q,C,O,P,A,V,S core;

@@ -1,0 +1,1482 @@
+[Heading 1] LỜI CẢM ƠN
+[Normal] Trước khi bắt đầu bài báo cáo, em xin gửi lời cảm ơn chân thành đến những người đã đồng hành và hỗ trợ trong suốt quá trình nghiên cứu và hoàn thành đề tài.
+[Normal] Em muốn bày tỏ lòng biết ơn sâu sắc đến giảng viên hướng dẫn – TS. Lê Đức Thuận và ThS. Trần Đức Thịnh, người đã tận tình hướng dẫn, chia sẻ kinh nghiệm quý báu trong quá trình học tập và nghiên cứu môn học. Sự chỉ dẫn tận tâm và kiến thức chuyên môn của thầy đã đóng vai trò quan trọng trong việc hoàn thiện bài báo cáo này.
+[Normal] Đồng thời, em xin gửi lời cảm ơn sâu sắc đến gia đình và bạn bè đã luôn đồng hành, động viên và tiếp thêm động lực cho em trong suốt thời gian nghiên cứu và thực hiện đồ án tốt nghiệp.
+[Normal] Do trình độ nghiên cứu còn hạn chế và những nguyên nhân khác nên dù đã cố gắng hoàn thành bài báo cáo đồ án nhưng không tránh khỏi những hạn chế, thiếu sót. Vì thế, em rất mong nhận được sự quan tâm, góp ý của các thầy cô để bài báo cáo của em được hoàn chỉnh hơn.
+[Normal] Em xin chân thành cảm ơn!
+[Heading 1] LỜI CAM ĐOAN
+[Normal] Tôi xin cam đoan bản đồ án này do tôi tự nghiên cứu dưới sự hướng dẫn của ThS. Trần Đức Thịnh.
+[Normal] Để hoàn thành đồ án này, tôi chỉ sử dụng những tài liệu đã ghi trong mục tài liệu tham khảo, ngoài ra không sử dụng bất cứ tài liệu nào khác mà không được ghi.
+[Normal] Nếu sai, tôi xin chịu mọi hình thức kỷ luật theo quy định của Học viện.
+[Heading 1] MỤC LỤC
+[toc 1] LỜI CẢM ƠN	i
+[toc 1] LỜI CAM ĐOAN	ii
+[toc 1] MỤC LỤC	iii
+[toc 1] DANH MỤC HÌNH VẼ	vi
+[toc 1] DANH MỤC BẢNG BIỂU	viii
+[toc 1] LỜI NÓI ĐẦU	1
+[toc 1] CHƯƠNG 1: TỔNG QUAN ĐỀ TÀI	3
+[toc 2] 1.1. Tổng quan về chatbot	3
+[toc 3] 1.1.1. Khái niệm chatbot	3
+[toc 3] 1.1.2. Khảo sát tiềm năng ứng dụng của chatbot trong hoạt động giáo dục tại học viện Kỹ thuật mật mã	4
+[toc 2] 1.2. Một số phương pháp xây dựng chatbot hiện nay	5
+[toc 3] 1.2.1. Chatbot dựa trên tập luật	5
+[toc 3] 1.2.2. Chatbot dựa trên LLMs	6
+[toc 3] 1.2.3. Xây dựng hệ thống chatbot dựa trên AI Agent	7
+[toc 2] 1.3. Tìm hiểu về mô hình ngôn ngữ lớn	8
+[toc 3] 1.3.1. Khái niệm mô hình ngôn ngữ lớn	8
+[toc 3] 1.3.2. Khái niệm Chat LLMs	10
+[toc 2] 1.4. Tìm hiểu về AI Agent	11
+[toc 3] 1.4.1. Khái niệm AI Agent	11
+[toc 3] 1.4.2. Các thành phần của AI Agent	12
+[toc 3] 1.4.3. Tool trong Agent	15
+[toc 3] 1.4.4. Planning trong Agent	15
+[toc 3] 1.4.5. Tự đánh giá và sửa lỗi	16
+[toc 2] 1.5. Các công nghệ hỗ trợ phát triển hệ thống	18
+[toc 3] 1.5.1. Nền tảng ollama	18
+[toc 3] 1.5.2. Ngôn ngữ lập trình Python	19
+[toc 3] 1.5.3. LangGraph Framework	21
+[toc 3] 1.5.4. FastAPI Framework	25
+[toc 3] 1.5.5. ReactJs framework	26
+[toc 3] 1.5.6. Hệ quản trị cơ sở dữ liệu postgresql	28
+[toc 2] 1.6. Tổng kết chương 1	29
+[toc 1] CHƯƠNG 2: PHƯƠNG PHÁP XÂY DỰNG HỆ THỐNG CHAT BOT VỚI AI AGENT VÀ LLMS	30
+[toc 2] 2.1. Xây dựng mô hình tổng quát của AI Agent	30
+[toc 3] 2.1.1. Xác định các tính chất của AI Agent	30
+[toc 3] 2.1.2. Mô hình tổng quan của AI Agent cho hệ thống chatbot	32
+[toc 2] 2.2. Phương pháp xây dựng chi tiết từng thành phần của AI Agent	35
+[toc 3] 2.2.1. Xây dựng node Summary_Chat_History	35
+[toc 3] 2.2.2. Xây dựng node Initial_Thinking	36
+[toc 3] 2.2.3. Xây dựng node Plan_Validator	38
+[toc 3] 2.2.4. Xây dựng node Re_Planning	39
+[toc 3] 2.2.5. Xây dựng node Do_task	42
+[toc 3] 2.2.6. Xây dựng node RAG_Agentic	43
+[toc 3] 2.2.7. Xây dựng các tool	51
+[toc 2] 2.3. Lựa chọn mô hình ngôn ngữ lớn	53
+[toc 2] 2.4. Tổng kết chương 2	55
+[toc 1] CHƯƠNG 3: PHÂN TÍCH, THIẾT KẾ HỆ THỐNG	56
+[toc 2] 3.1. Yêu cầu của hệ thống	56
+[toc 3] 3.3.1. Yêu cầu về hình thức sản phẩm	56
+[toc 3] 3.3.2. Yêu cầu chức năng	56
+[toc 3] 3.3.3. Yêu cầu phi chức năng	57
+[toc 2] 3.2. Phân tích hệ thống	58
+[toc 3] 3.2.1. Biểu đồ usecase tổng quát	58
+[toc 3] 3.2.2. Đặc tả các usecase	59
+[toc 2] 3.3. Thiết kế hệ thống	73
+[toc 3] 3.3.2. Thiết kế cơ sở dữ liệu	73
+[toc 3] 3.3.2. Thiết kế các API	75
+[toc 2] 3.4. Tổng kết chương 3	79
+[toc 1] CHƯƠNG 4: XÂY DỰNG HỆ THỐNG VÀ THỰC NGHIỆM	80
+[toc 2] 4.1. Mô hình tổng quan của hệ thống	80
+[toc 2] 4.2. Các chức năng của hệ thống	80
+[toc 3] 4.2.1. Trang chủ	80
+[toc 3] 4.2.2. Chức năng tra cứu điểm cá nhân	81
+[toc 3] 4.2.3. Chức năng tra cứu sinh viên đủ điều kiện dự xét học bổng	82
+[toc 3] 4.2.4. Chức năng chat với chatbot AI.	83
+[toc 3] 4.2.5. Một số chức năng của chatbot AI	84
+[toc 3] 4.2.6. Chức năng đăng nhập của quản trị viên	86
+[toc 3] 4.2.7. Chức năng cập nhật cơ sở dữ liệu về điểm số	87
+[toc 3] 4.2.8. Chức năng cập nhật thêm dữ liệu mới về chính sách, quy định của học viện	88
+[toc 2] 4.3. Đánh giá	89
+[toc 3] 4.3.1. Mô tả bộ dữ liệu thực nghiệm	89
+[toc 3] 4.3.2. Kịch bản thực nghiệm	92
+[toc 3] 4.3.3. Tiến hành thực nghiệm	95
+[toc 3] 4.3.4. Kết quả thực nghiệm	97
+[toc 2] 4.4. Tổng kết	98
+[toc 1] KẾT LUẬN	99
+[toc 1] TÀI LIỆU THAM KHẢO	100
+[UH1] DANH MỤC HÌNH VẼ
+[toc 1] Hình 1.1. Chatbot dựa trên tập luật khi đầu vào không nằm trong kịch bản	5
+[toc 1] Hình 1.2. Mô hình RAG	7
+[toc 1] Hình 1.3. AI Agent bao gồm nhiều thành phần tư duy, truy vấn, tương tác	8
+[toc 1] Hình 1.4. Mô hình SWE AI Agent	12
+[toc 1] Hình 1.5. Sơ đồ kiến trúc các thành phần của AI Agent	12
+[toc 1] Hình 1.6. Mô hình quá trình Planning và Re-planning của Agent	16
+[toc 1] Hình 1.7. Ví dụ áp dụng ReAct Agent để trả lời câu hỏi	18
+[toc 1] Hình 1.8. Mô phỏng các Nút và các Cạnh trong LangGraph	22
+[toc 1] Hình 1.9. Ví dụ State trong Graph của một Agent về thông tin thời tiết	24
+[toc 1] Hình 2.1. Mô hình tổng quan của AI Agent áp dụng cho chatbot của đề tài	32
+[toc 1] Hình 2.2. Sơ đồ luồng hành trình khi người dùng gửi tin nhắn mới đến chatbot	33
+[toc 1] Hình 2.3. Graph tổng quan của AI Agent	34
+[toc 1] Hình 2.4. Prompt sử dụng cho node Summary_Chat_History	35
+[toc 1] Hình 2.5. Sơ đồ kỹ thuật RAG	44
+[toc 1] Hình 2.6. Mô hình mô phỏng hệ thống áp dụng kỹ thuật RAG	45
+[toc 1] Hình 2.7. Hoạt động của quá trình Retrieval	45
+[toc 1] Hình 2.8. Mô phỏng quá trình embedding vector được sinh ra	46
+[toc 1] Hình 2.9. Hình ảnh mô phỏng các embedding vector tương tự nhau	46
+[toc 1] Hình 2.10. Một mẫu prompt template sử dụng trong RAG.	47
+[toc 1] Hình 2.11. Đồ thị của Node _RAG_Agentic_	47
+[toc 1] Hình 2.12. Mô phỏng quá trình truy vấn kết hợp	48
+[toc 1] Hình 2.13. Hàm tạo truy vấn RAG kép	49
+[toc 1] Hình 2.14. Hàm truy vấn của tool tra cứu điểm sinh viên	51
+[toc 1] Hình 2.15. Hàm của tool truy vấn thông tin sinh viên	52
+[toc 1] Hình 2.16. Công thức tính điểm trung bình chung tích luỹ học kỳ	52
+[toc 1] Hình 2.17. Hàm của tool tính điểm trung bình cộng	53
+[toc 1] Hình 3.1. Usecase tổng quát	58
+[toc 1] Hình 3.2. Usecase tra cứu bảng điểm	59
+[toc 1] Hình 3.3. Usecase xuất bảng điểm dưới dạng file excel	60
+[toc 1] Hình 3.4. Usecase tra cứu xếp hạng điểm tổng kết	60
+[toc 1] Hình 3.5. Usecase tra cứu danh sách sinh viên đủ điều kiện xét học bổng	61
+[toc 1] Hình 3.6. Usecase tra cứu quy định và chính sách của học viện	62
+[toc 1] Hình 3.7. Usecase quản lý danh sách cuộc trò chuyện	63
+[toc 1] Hình 3.8. Usecase gửi tin nhắn mới	64
+[toc 1] Hình.3.9 . Usecase cập nhật cơ sở dữ liệu điểm sinh viên	65
+[toc 1] Hình 3.10. Usecase cập nhật cơ sở dữ liệu về quy định, chính sách	66
+[toc 1] Hình 3.11. Usecase tạo tài khoản admin	67
+[toc 1] Hình 3.12. Biểu đồ tuần tự chức năng tra cứu bảng điểm cá nhân	68
+[toc 1] Hình 3.13. Biểu đồ tuần tra cứu xếp hạng điểm trung bình sinh viên	69
+[toc 1] Hình 3.14. Biểu đồ tuần tự tra cứu danh sách sinh viên xét học bổng	69
+[toc 1] Hình 3.15. Biểu đồ tuần tự tra cứu quy định của học viện	70
+[toc 1] Hình 3.16. Biểu đồ tuần tự quản lý danh sách cuộc hội thoại với chatbot	71
+[toc 1] Hình 3.17. Biểu đồ tuần tự luồng gửi tin nhắn mới đến chatbot AI	72
+[toc 1] Hình 3.18. Biểu đồ tuần tự luồng cập nhật cơ sở dữ liệu về điểm	72
+[toc 1] Hình 3.19. Biểu đồ tuần tự luồng cập nhật cơ sở dữ liệu về chính sách	73
+[toc 1] Hình 4.1. Kiến trúc hệ thống	80
+[toc 1] Hình 4.2. Giao diện trang landing page	81
+[toc 1] Hình 4.3. Giao diện trang tra cứu điểm và xếp hạng	81
+[toc 1] Hình 4.4. Giao diện bảng điểm	82
+[toc 1] Hình 4.5. Giao diện trang tra cứu sinh viên đủ điều kiện xét học bổng	83
+[toc 1] Hình 4.6. Giao diện danh sách sinh viên đủ điều kiện dự xét học bổng	83
+[toc 1] Hình 4.7. Giao diện một cuộc hội thoại đang mở	84
+[toc 1] Hình 4.8. Giao diện tra cứu thông tin sinh viên bằng chatbot AI	85
+[toc 1] Hình 4.9. Giao diện tra cứu điểm số sinh viên bằng chatbot AI	85
+[toc 1] Hình 4.10. Giao diện tính điểm trung bình bằng chatbot AI	86
+[toc 1] Hình 4.11. Giao diện tra cứu về quy định của học viện với chatbot AI	86
+[toc 1] Hình 4.12. Giao diện đăng nhập dành cho quản trị viên	87
+[toc 1] Hình 4.13. Giao diện trang cập nhật dữ liệu điểm số	87
+[toc 1] Hình 4.14. Giao diện kiểm tra dữ liệu trước khi lưu	88
+[toc 1] Hình 4.15. Giao diện chức năng đăng bài viết mới	88
+[toc 1] Hình 4.16. Giao diện quản lý danh sách bài viết	89
+[toc 1] Hình 4.17. Đoạn code thực hiện đo lường chỉ số accuracy	93
+[toc 1] Hình 4.18. Đoạn code đo lường chỉ số Recall	94
+[toc 1] Hình 4.19. Đoạn code thực hiện đo lường latency	95
+[toc 1] Hình 4.20. Chương trình thực nghiệm hệ thống	96
+[Heading 1] DANH MỤC BẢNG BIỂU
+[toc 1] Bảng 2.1. Bảng xác định tính chất môi trường của AI Agent	30
+[toc 1] Bảng 2.2. Bảng xác định miền tri thức của AI Agent	31
+[toc 1] Bảng 2.3. State của node _Summary_Chat_History_	36
+[toc 1] Bảng 2.4. State của node Initial_Thinking	38
+[toc 1] Bảng 2.5. State sử dụng bởi node Plan_Validator	39
+[toc 1] Bảng 2.6. State sử dụng bởi node Re_Planning	41
+[toc 1] Bảng 2.7. State sử dụng bởi node Do_task	43
+[toc 1] Bảng 2.8. Thông số của tool truy xuất bảng điểm sinh viên	51
+[toc 1] Bảng 2.9. Thông số của tool truy xuất thông tin sinh viên	52
+[toc 1] Bảng 2.10. Thông số của tool tính điểm trung bình sinh viên	53
+[toc 1] Bảng 3.1. Đặc tả Usecase tra cứu bảng điểm	59
+[toc 1] Bảng 3.2. Đặc tả Usecase xuất bảng điểm dưới dạng file excel	60
+[toc 1] Bảng 3.3. Đặc tả Usecase tra cứu xếp hạng điểm tổng kết	61
+[toc 1] Bảng 3.4. Đặc tả Usecase tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng	61
+[toc 1] Bảng 3.5. Đặc tả Usecase tra cứu quy định và chính sách của học viện	62
+[toc 1] Bảng 3.6. Đặc tả Usecase quản lý danh sách cuộc trò chuyện	63
+[toc 1] Bảng 3.7. Đặc tả Usecase gửi tin nhắn mới	64
+[toc 1] Bảng 3.8. Đặc tả Usecase cập nhật cơ sở dữ liệu điểm sinh viên	65
+[toc 1] Bảng 3.9. Đặc tả Usecase cập nhật cơ sở dữ liệu quy định, chính sách	66
+[toc 1] Bảng 3.10. Đặc tả Usecase tạo tài khoản admin	67
+[toc 1] Bảng 3.11. Score lưu trữ thông tin điểm số	73
+[toc 1] Bảng 3.12. Structure lưu trữ thông tin về môn học	74
+[toc 1] Bảng 3.13. Student lưu trữ thông tin về sinh viên	74
+[toc 1] Bảng 3.14. Bảng Regulation lưu trữ quy định	74
+[toc 1] Bảng 3.15. Bảng Message lưu trữ tin nhắn giữa chatbot và người dùng	74
+[toc 1] Bảng 3.16. Bảng Conversation lưu trữ đoạn hội thoại giữa chatbot và người dùng	75
+[toc 1] Bảng 3.17. API tra cứu điểm sinh viên	75
+[toc 1] Bảng 3.18. API tra cứu xếp hạng sinh viên	76
+[toc 1] Bảng 3.19. API tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng	76
+[toc 1] Bảng 3.20. API tra cứu danh sách quy định, quy chế của học viện	76
+[toc 1] Bảng 3.21. API xem danh sách cuộc trò chuyện	77
+[toc 1] Bảng 3.22. API tạo cuộc trò chuyện mới	77
+[toc 1] Bảng 3.23 API xoá cuộc trò chuyện	78
+[toc 1] Bảng 3.24. API lấy lịch sử chat của cuộc trò chuyện	78
+[toc 1] Bảng 3.25. API gửi tin nhắn mới	78
+[toc 1] Bảng 4.1. Bảng mô tả ý nghĩa các trường của bộ dữ liệu thực nghiệm	90
+[toc 1] Bảng 4.2. Một số câu hỏi nhóm N1 trong bộ dữ liệu thực nghiệm.	90
+[toc 1] Bảng 4.3. Một số câu hỏi nhóm N2 trong bộ dữ liệu thực nghiệm	91
+[toc 1] Bảng 4.4. Kết quả thực nghiệm bộ dữ liệu N1	97
+[toc 1] Bảng 4.5. Kết quả thực nghiệm bộ dữ liệu N2	97
+[UH1] LỜI NÓI ĐẦU
+[Normal] Trong bối cảnh công cuộc chuyển đổi số quốc gia đang diễn ra mạnh mẽ trên mọi lĩnh vực, việc ứng dụng công nghệ thông tin vào quản lý, vận hành và cung cấp dịch vụ hành chính công, pháp luật ngày càng trở nên cấp thiết. Đặc biệt đối với lĩnh vực pháp luật, nơi hệ thống văn bản quy phạm pháp luật của Việt Nam rất đồ sộ, phức tạp và thường xuyên được cập nhật, việc tra cứu và tìm hiểu luật của người dân, doanh nghiệp và thậm chí cả các cán bộ chuyên trách đang gặp không ít khó khăn. Người dùng thông thường gặp rào cản lớn về mặt thuật ngữ chuyên ngành cũng như việc phân mảnh của các thông tin.
+[Normal] Sự bùng nổ của trí tuệ nhân tạo (AI), đặc biệt là các Mô hình ngôn ngữ lớn (Large Language Models - LLMs) đã mở ra hướng đi mới trong việc giải quyết bài toán giao tiếp giữa người và máy. Tuy nhiên, các LLM thông thường dễ gặp phải hiện tượng "ảo giác thông tin" (hallucination) – một điểm chí mạng trong lĩnh vực đòi hỏi tính chính xác tuyệt đối như pháp luật. Để giải quyết triệt để vấn đề này, kiến trúc Retrieval-Augmented Generation (RAG) và hiện đại hơn là mô hình AI Agent (Agentic RAG) ra đời, kết hợp khả năng suy luận ngôn ngữ linh hoạt của LLM với thông tin được trích xuất từ cơ sở dữ liệu luật pháp chuẩn xác, cập nhật theo thời gian thực.
+[Normal] Trước bối cảnh đó, việc ứng dụng các hệ thống đối thoại tự động (chatbot) nổi lên như một giải pháp tiềm năng. Chatbot có khả năng hoạt động 24/7, xử lý đồng thời một lượng lớn yêu cầu và cung cấp phản hồi ngay lập tức, giúp tối ưu hóa nguồn nhân lực vốn có hạn của Học viện. Đặc biệt, việc xây dựng chatbot dựa trên mô hình kiến trúc AI Agent là một hướng tiếp cận tiên tiến, cho phép tận dụng sức mạnh tổng hợp của các mô hình ngôn ngữ lớn (LLMs), cơ sở dữ liệu sẵn có từ hệ thống quản lý sinh viên và các công cụ truy xuất, tính toán chuyên dụng.
+[Normal] Nhận thức được tính cấp thiết và giá trị thực tiễn của vấn đề, dưới sự định hướng của giảng viên hướng dẫn, em đã thực hiện đề tài: “Xây dựng chatbot phục vụ cho đào tạo tại Học viện Kỹ thuật mật mã”.
+[Normal] Mục tiêu chính của đồ án là nghiên cứu, xây dựng hệ thống chatbot thông minh có khả năng hỗ trợ sinh viên và giảng viên trong việc cung cấp thông tin và giải đáp các thắc mắc liên quan đến đào tạo, dựa trên hướng tiếp cận sử dụng trí tuệ nhân tạo và triển khai dưới dạng website có tích hợp chatbot tiện lợi.
+[Normal] Cấu trúc báo cáo gồm các nội dung chính như sau:
+[Normal] Chương 1: Tổng quan đề tài.
+[Normal] Chương 2: Phương pháp xây dựng hệ thống chatbot với AI Agent.
+[Normal] Chương 3: Phương pháp xây dựng ứng dụng tích hợp chatbot.
+[Normal] Chương 4: Xây dựng hệ thống và thực nghiệm
+[Normal] Sau một thời gian nghiên cứu và thực hiện, đồ án đã hoàn thành các mục tiêu cơ bản đề ra. Tuy nhiên, do lĩnh vực Trí tuệ nhân tạo, đặc biệt là chatbot thế hệ mới, là một ngành khoa học phức tạp và đòi hỏi nghiên cứu dài hạn, cùng với khung thời gian thực hiện có hạn, báo cáo chắc chắn không thể tránh khỏi những thiếu sót. Kính mong nhận được sự đóng góp quý báu từ Quý Thầy cô và các bạn để đề tài được hoàn thiện hơn.
+[Heading 1] CHƯƠNG 1: TỔNG QUAN ĐỀ TÀI
+[Heading 2] 1.1. Tổng quan về chatbot
+[Heading 3] 1.1.1. Khái niệm chatbot
+[Normal] Chatbot hay tác nhân hội thoại là một hệ thống phần mềm được thiết kế để mô phỏng cuộc hội thoại với người dùng thông qua giao diện văn bản hoặc giọng nói. Mục tiêu cốt lõi của chatbot là tự động hóa quy trình giao tiếp, cho phép người dùng truy xuất thông tin hoặc thực hiện tác vụ một cách hiệu quả mà không cần sự can thiệp trực tiếp từ con người. Việc ứng dụng chatbot mang lại nhiều lợi ích đáng kể, bao gồm: nâng cao hiệu quả vận hành, giảm chi phí nhân sự cho các tác vụ lặp lại, cung cấp dịch vụ liên tục (24/7) và cải thiện trải nghiệm người dùng.
+[Normal] Dựa trên công nghệ lõi, chatbot có thể được phân loại thành hai nhóm chính: chatbot truyền thống và chatbot ứng dụng Trí tuệ nhân tạo.
+[Normal] Các hệ thống chatbot truyền thống là những hệ thống sử dụng phương pháp tập luật, hoạt động dựa trên một tập hợp các quy tắc và kịch bản được lập trình sẵn. Điểm yếu cố hữu của phương pháp này là sự thiếu linh hoạt. Hệ thống phụ thuộc hoàn toàn vào cơ sở tri thức do người thiết kế xây dựng và chỉ có thể xử lý các câu hỏi tuân thủ đúng kịch bản. Khi người dùng đặt câu hỏi bằng những cấu trúc ngữ pháp hoặc từ vựng khác biệt, chatbot truyền thống thường không thể hiểu và đưa ra phản hồi phù hợp.
+[Normal] Để khắc phục những hạn chế của chatbot truyền thống, các thế hệ chatbot hiện đại tích hợp những thành tựu của Trí tuệ nhân tạo, đặc biệt là trong lĩnh vực Xử lý ngôn ngữ tự nhiên (NLP) và các Mô hình ngôn ngữ lớn (LLMs). Thay vì chỉ bám vào các quy tắc cứng, AI chatbot có khả năng "hiểu" ý định đằng sau câu hỏi của người dùng, cho phép chúng xử lý các truy vấn đa dạng và phức tạp hơn, đồng thời tạo ra các phản hồi tự nhiên, linh hoạt như một cuộc đối thoại thực sự.
+[Normal] Một trong những công nghệ tiên tiến được sử dụng để xây dựng AI chatbot hiện nay là nền tảng kiến trúc AI Agent. Tác tử thông minh hay AI Agent không chỉ dừng lại ở việc trả lời mà trên tập dữ liệu được huấn luyện trước mà còn có khả năng suy luận và sử dụng các công cụ bên ngoài, cho phép chatbot tương tác với các hệ thốn khác như CSDL, các hàm tính toán,… Trong phạm vi của đồ án này, hướng tiếp cận được lựa chọn là xây dựng một AI chatbot dựa trên kiến trúc AI Agent nhằm khai thác tối đa khả năng tương tác với dữ liệu liên quan đến Học viện.
+[Heading 3] 1.1.2. Khảo sát tiềm năng ứng dụng của chatbot trong hoạt động giáo dục tại học viện Kỹ thuật mật mã
+[Heading 4] 1.1.2.1. Lợi ích của chatbot đối với sinh viên
+[List Paragraph] Truy cập thông tin nhanh chóng, mọi lúc – mọi nơi: chatbot có thể hoạt động 24/7, giúp sinh viên tra cứu thông tin liên quan đến lịch học, lịch thi, chương trình đào tạo, đăng ký môn học… mà không phụ thuộc vào thời gian làm việc của cán bộ hoặc giảng viên. Điều này đặc biệt hữu ích trong những thời điểm cao điểm như đầu học kỳ hoặc mùa thi.
+[List Paragraph] Giảm áp lực cho các bộ phận hành chính: Với khả năng trả lời các câu hỏi lặp đi lặp lại một cách tự động, chatbot góp phần giảm tải khối lượng công việc cho phòng đào tạo và các bộ phận chức năng, đồng thời nâng cao hiệu quả phục vụ sinh viên.
+[List Paragraph] Cá nhân hóa trải nghiệm học tập: Hệ thống chatbot có thể được tích hợp với dữ liệu sinh viên (như kết quả học tập, lịch đăng ký, môn đã học…), từ đó cung cấp câu trả lời mang tính cá nhân hóa cao, giúp sinh viên nhận được thông tin phù hợp với nhu cầu và tình trạng học tập của bản thân.
+[List Paragraph] Nâng cao kỹ năng tự học và tính chủ động: Việc sử dụng chatbot như một “trợ lý học tập ảo” giúp sinh viên rèn luyện kỹ năng đặt câu hỏi, tìm kiếm thông tin và giải quyết vấn đề độc lập – những năng lực thiết yếu trong học tập và làm việc hiện đại.
+[Normal] 1.1.2.2. Lợi ích của chatbot đối với giảng viên
+[Normal] Bên cạnh việc hỗ trợ sinh viên, hệ thống chatbot AI cũng mang lại nhiều lợi ích rõ rệt cho đội ngũ giảng viên trong quá trình giảng dạy và quản lý học vụ:
+[List Paragraph] Tiết kiệm thời gian trong việc giải đáp câu hỏi lặp lại: Giảng viên thường nhận được nhiều câu hỏi trùng lặp từ sinh viên như: thời gian nộp bài, hình thức kiểm tra, yêu cầu môn học,... chatbot có thể thay giảng viên tự động giải đáp những câu hỏi này một cách nhanh chóng và chính xác, giúp họ tập trung vào các hoạt động chuyên môn như soạn bài giảng, nghiên cứu và hỗ trợ chuyên sâu.
+[List Paragraph] Hỗ trợ quản lý lớp học hiệu quả hơn: Khi được tích hợp với hệ thống quản lý đào tạo, chatbot có thể cung cấp thông tin tức thời như danh sách lớp, tỷ lệ tham dự, lịch thi, tiến độ học tập,… giúp giảng viên nắm bắt tình hình lớp nhanh chóng và dễ dàng hơn.
+[List Paragraph] Cải thiện chất lượng tương tác với sinh viên: Nhờ có chatbot xử lý các yêu cầu cơ bản, giảng viên có thêm thời gian để tương tác sâu hơn với sinh viên – như phản hồi bài tập, tổ chức thảo luận, hoặc hướng dẫn nghiên cứu. Điều này góp phần nâng cao hiệu quả giảng dạy và sự kết nối giữa người học và người dạy.
+[List Paragraph] Tăng cường tính linh hoạt trong dạy học: chatbot có thể đóng vai trò là “trợ giảng ảo”, hỗ trợ gửi thông báo, kiểm tra nhanh kiến thức, thậm chí cung cấp tài liệu học tập tự động. Điều này giúp giảng viên mở rộng phương pháp giảng dạy, kết hợp giữa học tập truyền thống và tương tác số.
+[Heading 2] 1.2. Một số phương pháp xây dựng chatbot hiện nay
+[Normal] Việc phát triển các Chat Bot trả lời tự động dựa trên nhiều phương pháp luận khác nhau, mỗi phương pháp đều sở hữu những đặc điểm, ưu và nhược điểm riêng biệt, phản ánh sự tiến hóa của ngành khoa học máy tính và xử lý ngôn ngữ tự nhiên. Về cơ bản, các phương pháp xây dựng chatbot hiện nay có thể được phân thành ba nhóm chính: chatbot dựa trên các tập luật, chatbot dựa trên các mô hình LLMs, chatbot kết hợp dựa trên AI Agent.
+[Heading 3] 1.2.1. Chatbot dựa trên tập luật
+[Normal] Phương pháp xây dựng chatbot dựa trên tập luật là cách tiếp cận sơ khai và nền tảng nhất. Hoạt động của các chatbot này hoàn toàn phụ thuộc vào một kịch bản và một bộ quy tắc được lập trình sẵn. Các nhà phát triển phải dự đoán các câu hỏi, từ khóa có thể có từ người dùng và xây dựng một cây quyết định logic để đưa ra câu trả lời tương ứng.
+[Tên hình vẽ] Hình 1.1. Chatbot dựa trên tập luật khi đầu vào không nằm trong kịch bản
+[Normal] Mặc dù phương pháp này đảm bảo tính nhất quán và có thể kiểm soát hoàn toàn luồng hội thoại, nó bộc lộ nhiều hạn chế. Hệ thống thiếu đi sự linh hoạt, không có khả năng xử lý các câu hỏi phức tạp, sai chính tả hoặc các truy vấn không nằm trong kịch bản định sẵn. Do đó, phạm vi ứng dụng của chatbot dựa trên luật thường bị giới hạn trong các tác vụ đơn giản như cung cấp thông tin theo mẫu hoặc trả lời các câu hỏi thường gặp có cấu trúc rõ ràng.
+[Heading 3] 1.2.2. Chatbot dựa trên LLMs
+[Normal] Để khắc phục những giới hạn của cách tiếp cận dựa trên luật, các phương pháp dựa trên học máy đã được nghiên cứu và ứng dụng rộng rãi. Thay vì các quy tắc cứng, chatbot học máy được huấn luyện trên các tập dữ liệu lớn để có thể tự nhận dạng mẫu, hiểu ý định và thực thể trong câu nói của người dùng.
+[Normal] Trong các chatbot này, nổi bật hơn cả là các chatbot với nền tảng là mô hình sinh ngôn ngữ, điển hình là các Mô hình ngôn ngữ lớn, có khả năng tự tạo ra câu trả lời mới hoàn toàn, mang lại các cuộc hội thoại tự nhiên và linh hoạt hơn.
+[Normal] Việc xây dựng dựa trên các mô hình LLM sẽ mang lại nhiều khả năng mạnh mẽ cho chatbot, tuy nhiên ta cũng cần phải khắc phục một số vấn đề bao gồm:
+[List Paragraph] Non-Specific domain: Các mô hình LLM được đào tạo giải quyết đa dạng các vấn đề, như vậy chúng không thể giải quyết chuyên sâu bài toán cụ thể.
+[List Paragraph] Non-access private datas: Các mô hình LLM không thể hiểu những dữ liệu riêng tư của tổ chức, hệ thống tích hợp chúng. Đồng thời, vì lý do bảo mật, các hệ thống chatbot cũng không được phép đào tạo với dữ liệu riêng tư của tổ chức sử dụng chatbot. Tuy nhiên, việc không thể sử dụng dữ liệu riêng tư lại khiến chatbot không có khả năng thấu hiểu và giải quyết các vấn đề cụ thể của tổ chức/cá nhân sử dụng chatbot
+[List Paragraph] Hiện tượng ảo giác (Hallucination): Khi không được đào tạo kiến thức liên quan phần dữ liệu riêng tư mà ta đã nhắc ở trên, các mô hình LLM có xu hướng “bịa” ra những dữ liệu này để trả lời, dẫn đến sự sai sót về thông tin và việc sử dụng chatbot thậm chí đi ngược lại so với tiêu chí xây dựng.
+[Normal] Để giải quyết những bài toán này, kỹ thuật Truy xuất tạo sinh tăng cường (RAG) thường được áp dụng nhằm tìm kiếm và bổ sung thêm ngữ cảnh, cho phép LLMs trả lời câu hỏi với những dữ liệu cụ thể, liên quan trực tiếp đến câu hỏi của người dùng.
+[Tên hình vẽ] Hình 1.2. Mô hình RAG
+[Normal] Cách tiếp cận này giải quyết triệt để các vấn đề đã nêu ở phần trước:
+[List Paragraph] Vượt qua giới hạn về miền kiến thức và dữ liệu riêng tư (Non-Specific domain & Non-access private datas): Bằng cách kết nối LLMs với một cơ sở tri thức bên ngoài, chatbot có thể truy cập và sử dụng nguồn dữ liệu riêng tư của tổ chức một cách an toàn và hiệu quả mà không cần phải tái huấn luyện toàn bộ mô hình tốn kém. Dữ liệu riêng tư không bị lộ ra ngoài hay bị sử dụng cho việc đào tạo chung, đảm bảo tính bảo mật tuyệt đối.
+[List Paragraph] Giảm thiểu tối đa hiện tượng ảo giác (Hallucination): Vì LLMs được yêu cầu phải trả lời dựa trên thông tin thực tế được cung cấp trong câu lệnh, khả năng "bịa" ra thông tin sai lệch bị triệt tiêu. Câu trả lời của chatbot được "neo" vào sự thật trong cơ sở tri thức của tổ chức, từ đó tăng cường đáng kể độ tin cậy và chính xác.
+[Normal] Mặc dù vậy, chatbot dựa trên LLMs và RAG vẫn còn bị hạn chế ở mức “chatbot truy vấn dữ liệu”. Điều này có nghĩa là các chatbot này chỉ mới đáp ứng khả năng truy vấn dữ liệu tối ưu để trả lời câu hỏi mà chưa có các khả năng tương tác chủ động như: Tổng hợp dữ liệu từ nhiều nguồn, kết hợp với các hệ thống khác để chủ động hỗ trợ người dùng (chẳng hạn như chủ động đặt phòng đối với chatbot về khách sạn, chủ động tạo lịch đối với chatbot lịch trình cá nhân,…)
+[Heading 3] 1.2.3. Xây dựng hệ thống chatbot dựa trên AI Agent
+[Normal] Phương pháp xây dựng chatbot dựa trên Tác tử AI (AI Agent) là một kiến trúc tiên tiến, ra đời như sự kết hợp của những phương pháp xây dựng chatbot khác cùng với khả năng tự suy luận, chủ động tương tác với người dùng.
+[Normal] AI Agent là kiến trúc bao gồm các thành phần suy luận, tạo sinh, thành phần tương tác với các công cụ (như công cụ tính toán, kết nối API, công cụ tìm kiếm,…), thành phần tạo sinh (các mô hình LLMs),… Nhờ đó, AI Agent có khả năng thấu hiểu người dùng, truy vấn tăng cường (bằng cách kết hợp với RAG), sử dụng công cụ, lên kế hoạch,…
+[Tên hình vẽ] Hình 1.3. AI Agent bao gồm nhiều thành phần tư duy, truy vấn, tương tác
+[Normal] Như vậy, mô hình AI Agent không chỉ tận dụng được sức mạnh ngôn ngữ của LLMs mà còn khắc phục được những điểm yếu chí mạng của chúng, tạo ra một thế hệ chatbot thông minh, am hiểu sâu sắc về lĩnh vực chuyên môn và đáng tin cậy cho các ứng dụng trong doanh nghiệp.
+[Heading 2] 1.3. Tìm hiểu về mô hình ngôn ngữ lớn
+[Heading 3] 1.3.1. Khái niệm mô hình ngôn ngữ lớn
+[Normal] Mô hình ngôn ngữ lớn hay LLMs là những mô hình AI được thiết kế để xử lý và tạo sinh ngôn ngữ tự nhiên. Được xây dựng dựa trên kiến trúc mạng nơ-ron sâu, đặc biệt là mô hình Transformer. LLMs được đào tạo trên lượng dữ liệu khổng lồ và cho ra mô hình lên tới hàng chục tỷ tham số. Nhờ đó, LLMs có khả năng hiểu ngôn ngữ tự nhiên, trả lời các câu hỏi, dịch văn bản, làm toán,…
+[Normal] LLMs không chỉ học cách xử lý các mẫu ngôn ngữ phức tạp mà còn nắm bắt được ngữ cảnh, ngữ nghĩa, và cả bối cảnh văn hóa trong nhiều ngôn ngữ khác nhau. Nhờ khả năng tạo sinh ngôn ngữ tự nhiên mạnh mẽ, LLMs mở ra tiềm năng vô hạn cho các ứng dụng AI, điển hình trong đó là các ứng dụng chatbot hay Chat LLMs.
+[Normal] Để LLM có thể đưa ra output chính xác, chúng hoạt động dựa trên mạng nơ-ron sâu, thường là kiến trúc transformer. Quá trình này bao gồm các bước chính:
+[List Paragraph] Mã hóa đầu vào (Input Encoding / Embedding Layer): Khi nhận văn bản đầu vào, LLM đầu tiên chuyển đổi các từ (tokens) thành các biểu diễn số học dưới dạng vector, gọi là "embedding". Lớp nhúng này nắm bắt ý nghĩa ngữ nghĩa và cú pháp của từ, cho phép mô hình xử lý ngôn ngữ theo phương pháp toán học.
+[List Paragraph] Xử lý qua các lớp Transformer: Dữ liệu sau khi nhúng sẽ đi qua các lớp của kiến trúc Transformer.
+[List Paragraph] Lớp truyền tiếp (Feedforward Layers): Các lớp này thực hiện các biến đổi phi tuyến tính trên các vector embedding, giúp mô hình học và tạo ra các liên kết phức tạp giữa dữ liệu đầu vào và đầu ra, góp phần tạo ra văn bản phù hợp với ngữ cảnh.
+[List Paragraph] Cơ chế chú ý (Attention Mechanism): Đây là một thành phần cốt lõi, đặc biệt trong kiến trúc Transformer. Cơ chế này cho phép mô hình tập trung có chọn lọc vào các phần quan trọng nhất của văn bản đầu vào khi thực hiện dự đoán. Bằng cách gán trọng số cho mỗi phần dữ liệu đầu vào, mô hình có thể xác định mức độ liên quan của từng yếu tố, từ đó tạo ra văn bản mạch lạc và bám sát yêu cầu của người dùng. Một số LLM có thể sử dụng Lớp tuần hoàn (Recurrent Layers) để xử lý dữ liệu theo trình tự, duy trì thông tin từ các bước trước đó, rất hữu ích cho việc duy trì tính liên tục trong hội thoại.
+[List Paragraph] Dự đoán đầu ra (Output Prediction): Dựa trên thông tin đã được xử lý và hiểu biết về ngữ cảnh, LLM sẽ dự đoán từ hoặc chuỗi từ tiếp theo để tạo thành câu trả lời hoặc nội dung.
+[Normal] Chất lượng của dữ liệu huấn luyện đóng vai trò cực kỳ quan trọng; dữ liệu càng lớn và càng chất lượng thì LLM học ngôn ngữ tự nhiên càng tốt, từ đó đưa ra output chính xác hơn. Quá trình huấn luyện thường bao gồm giai đoạn học không giám sát trên dữ liệu lớn để xây dựng kiến thức nền tảng, sau đó có thể được tinh chỉnh (fine-tuning) cho các tác vụ cụ thể.Bên cạnh kiến trúc và dữ liệu huấn luyện, việc kiểm soát cách LLM tạo ra output cũng rất quan trọng để đạt được kết quả mong muốn. Các tham số cấu hình như "temperature", "top-k sampling" và "top-p sampling" (còn gọi là nucleus sampling) có thể thay đổi đáng kể kết quả đầu ra:
+[List Paragraph] Temperature: Tham số này điều chỉnh mức độ ngẫu nhiên hay "sáng tạo" của câu trả lời. Giá trị temperature cao có thể tạo ra những phản hồi đa dạng và bất ngờ hơn, trong khi temperature thấp sẽ cho phản hồi tập trung, có cơ sở và dễ đoán hơn.
+[List Paragraph] Top-k sampling: Kỹ thuật này giới hạn việc lựa chọn từ tiếp theo trong số k từ có xác suất cao nhất. Ví dụ, nếu k=50, mô hình sẽ chỉ xem xét 50 từ có khả năng xuất hiện cao nhất để chọn từ tiếp theo. Điều này giúp loại bỏ các từ có xác suất rất thấp, tránh tạo ra các câu trả lời vô nghĩa.
+[List Paragraph] Top-p (nucleus) sampling: Thay vì chọn một số lượng cố định k từ, top-p sampling chọn một tập hợp nhỏ nhất các từ sao cho tổng xác suất của chúng vượt qua một ngưỡng p nhất định. Ví dụ, nếu p=0.9, mô hình sẽ xem xét các từ có xác suất cao nhất cho đến khi tổng xác suất của chúng đạt 0.9, rồi chọn từ tiếp theo từ tập hợp này. Giá trị p càng nhỏ, câu trả lời càng tập trung hơn.
+[Normal] Việc điều chỉnh các tham số này cho phép chúng ta tinh chỉnh hành vi của mô hình để phù hợp với từng yêu cầu cụ thể, từ việc tạo ra các câu trả lời ngắn gọn, chính xác cho đến các nội dung sáng tạo và đa dạng hơn.
+[Heading 3] 1.3.2. Khái niệm Chat LLMs
+[Normal] Chatbot AI hay Chat LLMs là những ứng dụng chat dựa trên LLMs, cho phép người dùng tương tác với các mô hình ngôn ngữ lớn dưới dạng các đoạn hội thoại gần gũi. Nhờ cách tương tác tiện dụng, chatbot AI cho phép người dùng phổ thông dễ dàng sử dụng, đồng thời có triển khai rộng rãi trên nhiều loại thiết bị khác nhau. Chatbot AI giúp đẩy mạnh ứng dụng AI vào cuộc sống.
+[Normal] Ưu điểm và hạn chế của Chat LLMs
+[List Paragraph] Ưu điểm:
+[List Paragraph] Khả năng giao tiếp tự nhiên: LLM có thể hiểu và tạo ra văn bản giống như con người, giúp tương tác trở nên trực quan và dễ dàng hơn.
+[List Paragraph] Truy cập thông tin nhanh chóng: Chúng có thể xử lý và tóm tắt lượng lớn thông tin từ nhiều nguồn khác nhau, cung cấp câu trả lời nhanh cho các câu hỏi.
+[List Paragraph] Hỗ trợ đa dạng các tác vụ: LLM có thể hỗ trợ viết lách, dịch thuật, tóm tắt văn bản, lên ý tưởng, lập trình, học tập và nhiều công việc khác.
+[List Paragraph] Cá nhân hoá trải nghiệm người dùng: Một số LLM có khả năng học hỏi từ các tương tác trước đó để đưa ra phản hồi phù hợp hơn với từng người dùng.
+[List Paragraph] Giúp nâng cao hiệu suất công việc: Bằng cách tự động hóa một số tác vụ và cung cấp thông tin nhanh chóng, LLM giúp người dùng tiết kiệm thời gian và tăng năng suất.
+[List Paragraph] Thao tác với đa dạng tài nguyên: LLM có thể thao tác với chữ viết, hình ảnh, âm thanh, video,…
+[List Paragraph] Nhược điểm:
+[List Paragraph] Nguy cơ về lạm dụng: LLM có thể bị sử dụng cho các mục đích xấu như tạo tin giả, lừa đảo, tấn công mạng hoặc thao túng dư luận.
+[List Paragraph] Sự phụ thuộc quá mức: Người dùng có thể trở nên quá phụ thuộc vào LLM, làm giảm khả năng tư duy độc lập và các kỹ năng giải quyết vấn đề của bản thân.
+[List Paragraph] Rủi ro về bảo mật: Việc chia sẻ thông tin nhạy cảm với LLM có thể dẫn đến nguy cơ rò rỉ dữ liệu nếu không được quản lý cẩn thận.
+[List Paragraph] Hiện tượng ảo giác (Hallucination): LLM có thể "bịa" ra thông tin không chính xác nhưng lại trình bày một cách rất thuyết phục. Điều này đặc biệt nguy hiểm khi người dùng tin tưởng hoàn toàn vào câu trả lời của chúng.
+[Heading 2] 1.4. Tìm hiểu về AI Agent
+[Heading 3] 1.4.1. Khái niệm AI Agent
+[Normal] Một tác tử (Agent) là bất cứ thứ gì có khả năng nhận thức được môi trường xung quanh và hành động theo môi trường đó. Cuốn sách Artificial Intelligence: A Modern Approach (1995) định nghĩa một tác tử là bất cứ thứ gì có thể xem là có khả năng nhận thức (perceive) môi trường của nó thông quá các cảm biến (sensor) và tác động lên môi trường đó thông qua các bộ truyền động (actuators). “Bộ truyền động” là khái niệm chỉ bất kỳ cách thức, công cụ, biện pháp nào giúp Agent tác động lên môi trường xung quanh nó.
+[Normal] Một Agent được đặc trưng bởi môi trường mà nó hoạt động và tập hợp các hành động mà Agent có thể tác động lên môi trường đó. Ví dụ, một Agent được xây dựng để chơi game thì “game” (như là Dota, LoL, Go,...) sẽ là môi trường của Agent và tác động của Agent lên môi trường sẽ là hành động “chơi game”.
+[Normal] Tác tử thông minh (AI Agent) là Agent được xây dựng trên nền tảng các kỹ thuật AI. Môi trường của AI Agent là bối cảnh, yêu cầu, tài liệu,… được đưa vào bởi người dùng hoặc các tài nguyên hệ thống khác. Các tác động của AI Agent lên môi trường được tăng cường bởi các công cụ mà nó có quyền truy cập. Phần sau của báo cáo sẽ trình bày về các công cụ này.
+[Normal]  AI Agent đại diện cho sự phát triển đáng kể trong AI, thể hiện sự thay đổi mô hình trong cách các hệ thống thông minh tương tác với môi trường, đưa ra quyết định và đạt được các mục tiêu phức tạp.
+[Normal] Hình sau đây mô tả một AI Agent có tên là SWE-Agent, được xây dựng trên nền tảng mô hình GPT-4. Môi trường của Agent này là máy vi tính với hệ thống tập tin, công cụ dòng lệnh. Tập hành động bao gồm các thao tác lưu trữ, duyệt, xem tập tin.
+[Tên hình vẽ] Hình 1.4. Mô hình SWE AI Agent
+[Normal] Khi áp dụng vào xây dựng chatbot, AI Agent cho phép chatbot thấu hiểu ngữ cảnh, yêu cầu, tài nguyên của người dùng và đưa ra những hành động cụ thể để thực hiện yêu cầu.
+[Heading 3] 1.4.2. Các thành phần của AI Agent
+[Normal] Kiến trúc của AI Agent đại diện cho sự tích hợp tinh vi của nhiều thành phần cho phép Agent có khả năng nhận thức, tư duy, lên kế hoạch, thực hiện hành động.
+[Normal] AI Agent bao gồm các thành phần sau đây.
+[Tên hình vẽ] Hình 1.5. Sơ đồ kiến trúc các thành phần của AI Agent 
+[Heading 4] 1.4.2.1. Cơ chế nhận thức – Perception mechanics
+[Normal] Cơ chế nhận thức là giao diện cho phép thu thập và xử lý thông tin bên ngoài từ môi trường. Trong các Agent dựa trên ngôn ngữ, nhận thức chủ yếu bao gồm các mô-đun hiểu ngôn ngữ tự nhiên (NLU), trích xuất các thực thể và ý định liên quan, chuyển đổi các văn bản phi cấu trúc thành các đối tượng có cấu trúc để xử lý tiếp.  Trong các tác nhân hiện thực hóa, nhận thức có thể bao gồm thị giác máy tính, nhận dạng giọng nói, xử lý dữ liệu cảm biến, v.v... Các AI Agent dựa trên thông tin chúng nhận thức được để hành động, làm cho khả năng nhận thức mạnh mẽ trở thành nền tảng cho hoạt động hiệu quả của Agent.
+[Normal] 1.4.2.2. Hệ thống biểu diễn tri thức - Knowledge representation systems
+[Normal] Knowledge Representation Systems cung cấp các cấu trúc và cơ chế để lưu trữ, tổ chức và truy xuất thông tin bên trong Agent. Chúng kết hợp các biểu diễn ký hiệu và phân tán, đồng thời lưu trữ tri thức khai báo, thủ tục, tình tiết và siêu tri thức.
+[Normal] Các hệ thống này phải cân bằng nhiều yêu cầu, bao gồm tính biểu đạt (khả năng biểu diễn các loại tri thức đa dạng), hiệu quả tính toán (cho phép truy cập và thao tác nhanh chóng), và khả năng học hỏi (hỗ trợ việc tích hợp thông tin mới). Các kiến trúc Agent hiện đại thường sử dụng các phương pháp biểu diễn tri thức lai kết hợp các cấu trúc ký hiệu (bản thể luận, đồ thị tri thức, các khẳng định logic) với các biểu diễn phân tán (nhúng vector, các kích hoạt mạng nơ-ron). Sự tích hợp này cho phép các tác nhân tận dụng cả tính chính xác của suy luận ký hiệu và khả năng nhận dạng mẫu của các phương pháp vector, nơ-ron.
+[Normal] Một Agent hiệu quả cần phải đảm bảo phân biệt giữa nhiều dạng tri thức khác nhau bao gồm:
+[List Paragraph] Context: Sự thật về thế giới xung quanh.
+[List Paragraph] Task: Các nhiệm vụ cụ thể.
+[List Paragraph] Steps: Các tri thức thủ tục.
+[List Paragraph] Experiments: Những trải nghiệm thực tế.
+[List Paragraph] Meta data: Siêu tri thức – tự nhận thức về vai trò, khả năng và hạn chế của chính Agent.
+[Normal] 1.4.2.3. Mô-đun suy luận và ra quyết định – Reasoning & Decision making
+[Normal] Các mô-đun suy luận và ra quyết định cho phép tác nhân xử lý thông tin có sẵn, đánh giá các phương án thay thế và lựa chọn hành động phù hợp. Các mô-đun này có nhiệm vụ lập kế hoạch để Agent thực hiện. Một ví dụ điển hình về Reasoning trong AI Ageng có thể kể đến là các mô hình LLMs có khả năng Thinking được ra mắt trong thời gian gần đây như DeepSeek, Gemini 2.5 pro thinking, GPT-4,…
+[Heading 4] 1.4.2.4. Thành phần thực thi – Action
+[Normal] Action là các thành phần chuyển đổi các quyết định thành các hành vi cụ thể tác động đến môi trường. Action có thể bao gồm:
+[List Paragraph] Tạo phản hồi.
+[List Paragraph] Gọi API.
+[List Paragraph] Gọi các công cụ.
+[List Paragraph] Đặt câu hỏi làm rõ cho người dùng.
+[Normal] Như Microsoft giải thích, các tác nhân cần quyền truy cập vào các chương trình máy tính mà chúng cần để thực hiện hành động thay mặt bạn, như Teams và PowerPoint. Sự tích hợp này với các công cụ và hệ thống bên ngoài giúp mở rộng đáng kể phạm vi hành động có sẵn cho các tác nhân, cho phép chúng hoàn thành các tác vụ phức tạp mà không thể thực hiện chỉ bằng việc tạo ngôn ngữ.
+[Normal] 1.4.2.5. Các thành phần khác
+[Normal] Ngoài các thành phần này, AI-Agent hiện đại thường bao gồm một số mô-đun và công cụ khác như:
+[List Paragraph] Mô-đun quản lý bộ nhớ: Duy trì thông tin qua nhiều tương tác và thang thời gian, cho phép tác nhân học hỏi từ kinh nghiệm và duy trì ngữ cảnh.
+[List Paragraph] Các thành phần tự phản chiếu (reflection) và sửa lỗi (correcting): cho phép tác nhân đánh giá hiệu suất của chính mình, nhận ra các hạn chế và điều chỉnh phương pháp tiếp cận cho phù hợp. Những khả năng này rất cần thiết cho hoạt động mạnh mẽ trong các môi trường phức tạp, cho phép tác nhân phát hiện khi chúng thiếu thông tin cần thiết, khi độ tin cậy của chúng vào các kết luận cụ thể thấp, hoặc khi chúng cần xem xét lại các quyết định trước đó dựa trên thông tin mới
+[List Paragraph] Cơ chế an toàn và điều chỉnh: đảm bảo rằng hành vi của tác nhân vẫn nằm trong giới hạn phù hợp với các giá trị và ý định của con người. Các cơ chế này có thể bao gồm các ràng buộc rõ ràng về lựa chọn hành động, quy trình xác minh cho các quyết định quan trọng, các tính năng diễn giải giúp con người xem xét lý luận của tác nhân và các kỹ thuật điều chỉnh giá trị để hiệu chỉnh mục tiêu của tác nhân với sở thích của con người.
+[Heading 3] 1.4.3. Tool trong Agent
+[Normal] Một Agent không nhất thiết truy cập vào các công cụ bên ngoài. Tuy nhiên, nếu không có các công cụ bên ngoài, khả năng của Agent sẽ bị hạn chế. Bản thân một mô hình LLM thường chỉ có thể thực hiện một hành động - một LLM có thể tạo văn bản và một trình tạo hình ảnh có thể tạo hình ảnh. Các công cụ bên ngoài làm cho Agent có khả năng hơn rất nhiều. Agent có thể vừa tạo hình ảnh, vừa tạo văn bản, vừa truy cập vào các dữ liệu khác.
+[Normal] Các công cụ giúp tác nhân vừa nhận biết môi trường vừa hành động dựa trên nó. Các hành động cho phép tác nhân nhận biết môi trường là hành động đọc, trong khi các hành động cho phép tác nhân tác động lên môi trường là hành động ghi.
+[Normal] Ví dụ: một Agent về thống kê bán hàng có thể có tool để truy cập vào database nhằm lấy dữ liệu bán hàng (đọc), vừa truy cập vào tool để tính toán trên data (ghi), vừa truy cập vào tool để tạo báo cáo thống kê (ghi).
+[Normal] Các tác nhân thường lựa chọn công cụ để sử dụng trong quá trình lên kế hoạch thực hiện. Việc lựa chọn công cụ nào sẽ phục thuộc vào mô tả về khả năng, phạm vi,… của công cụ đó.
+[Heading 3] 1.4.4. Planning trong Agent
+[Normal] Planning là cốt lõi của một AI Agent tốt. Các AI Agent có thể phải giải quyết những nhiệm vụ rất phức tạp, ví dụ: “xuất danh sách top 5 sinh viên có điểm cao nhất của một môn học”. Một nhiệm vụ được xác định bởi mục tiêu và các ràng buộc của nó. Trong ví dụ trên, mục tiêu là danh sách sinh viên và ràng buộc là tên môn học và điều kiện “top 5 sinh viên”.
+[Normal] Các nhiệm vụ phức tạp đòi hỏi phải lập kế hoạch. Đầu ra của quá trình lập kế hoạch là một kế hoạch, tức là một lộ trình vạch ra các bước cần thiết để hoàn thành một nhiệm vụ. Đối với một nhiệm vụ bất kỳ, để có thể lập kế hoạch tốt, ta thường phải thực hiện một vài bước:
+[List Paragraph] Hiểu nhiệm vụ cần thực hiện.
+[List Paragraph] Xem xét tài nguyên và công cụ có sẵn.
+[List Paragraph] Lập ra các hướng giải quyết khác nhau và lựa chọn hướng đi tốt nhất với lượng tài nguyên tiết kiệm nhất.
+[Normal] Đối với AI Agent cũng tương tự, Agent sẽ thực hiện:
+[List Paragraph] Hiểu các nhiệm vụ cần thực hiện.
+[List Paragraph] Xem xét các Tool và Knowledge có sẵn.
+[List Paragraph] Lựa chọn plan tốt nhất.
+[Normal] Tuy nhiên, trong quá trình Planning, Agent hoàn toàn có thể mắc sai lầm và đưa ra một kế hoạch quá dài dòng mà thậm chí không đạt được mục đích. Do đó, việc lập kế hoạch thường được tách riêng ra khỏi việc thực thi (thành các mô-đun riêng chẳng hạn) và sau khi thực thi một số bước, AI-Agent có thể sẽ cần phải có những bước đánh giá tình hình và tiến hành re-plan nếu cần thiết:
+[List Paragraph] Nếu kế hoạch là hợp lý và có thể thực hiện tiếp, tiếp tục thực thi.
+[List Paragraph] Nếu kế hoạch không còn hợp lý, tiến hành lập kế hoạch lại dựa trên những dữ liệu thu hoạch được từ các bước thực thi trước đấy.
+[Tên hình vẽ] Hình 1.6. Mô hình quá trình Planning và Re-planning của Agent
+[Normal] Trong hình minh hoạ bên trên, ta thấy Agent có quá trình Planner dựa trên đầu vào Query. Plan đã tạo sẽ được đánh giá, sau đó tiến hành thực hiện với các Tools và sau mỗi bước sử dụng Tool, ta sẽ lập kế hoạch lại và tiếp tục chu trình cho đến khi thu được kết quả cuối cùng.
+[Heading 3] 1.4.5. Tự đánh giá và sửa lỗi
+[Normal] Như đã trình bày ở mục trước, ngay cả những kế hoạch tốt nhất cũng cần được đánh giá và điều chỉnh liên tục để tối đa hóa độ chính xác của kết quả. Quá trình tự đánh giá hay tự nhìn nhận này được gọi là Reflection.
+[Normal] Mặc dù Reflection không hoàn toàn cần thiết để một Agent hoạt động, nhưng nó lại cần thiết để Agent đạt được độ chính xác cao nhất. Có nhiều thời điểm trong quá trình thực hiện một tác vụ mà việc tự đánh giá có thể hữu ích:
+[List Paragraph] Sau khi nhận được truy vấn của người dùng để đánh giá xem yêu cầu có khả thi hay không.
+[List Paragraph] Sau khi tạo kế hoạch ban đầu để đánh giá xem kế hoạch có hợp lý hay không.
+[List Paragraph] Sau mỗi bước thực thi để đánh giá xem nó có đi đúng hướng hay không.
+[List Paragraph] Sau khi toàn bộ kế hoạch đã được thực thi để xác định xem tác vụ đã hoàn thành hay chưa.
+[Normal] Tự nhìn nhận và sửa lỗi là hai cơ chế khác nhau nhưng đi đôi với nhau. Tự nhìn nhận tạo ra những hiểu biết sâu sắc giúp phát hiện ra các lỗi cần sửa. Việc tự nhìn nhận có thể được thực hiện bởi cùng một Agent với các lời nhắc tự phê bình. Nó cũng có thể được thực hiện bởi một thành phần riêng biệt, chẳng hạn như một công cụ chấm điểm chuyên dụng.
+[Normal] Ví dụ, một mô hình đưa ra điểm số cụ thể cho mỗi kết quả. Lần đầu tiên được đề xuất trong bài báo ReAct (Yao et al., 2022), việc xen kẽ giữa suy luận (reasoning) và hành động (action) đã trở thành một khuôn mẫu phổ biến cho các Agent. Yao và cộng sự đã sử dụng thuật ngữ "suy luận" để bao hàm cả việc lập kế hoạch và tự nhìn nhận. Ở mỗi bước, Agent  được yêu cầu giải thích suy nghĩ của mình (lập kế hoạch), thực hiện hành động, sau đó phân tích các kết quả đạt được (tự nhìn nhận), cho đến khi tác vụ được Agent coi là hoàn thành. Các AI Agent thường được viết Prompt để tạo ra các output có dạng như sau:
+[Code] Thought 1:
+[Code] …
+[Code] Act 1:
+[Code] …
+[Code] Observation 1:
+[Code] …
+[Code] …
+[Code] [continue until reflection determines that the task is finished] …
+[Code] Thought N:
+[Code] … 
+[Code] Act N:
+[Code] Finish [Response to query]
+[Normal] Ta thấy, trong output này đã bao gồm kế hoạch thực hiện (Thought 1, Thought 2,… Thought N), hành động tương ứng (Act 1, Act 2,… Act N) và quan sát (có thể bao gồm cả kết quả và đánh giá kết quả) của hành động (Observation 1, Observation 2,… Observation N).
+[Normal] Dưới đây là một ví dụ thực tế cho quá trình Planning-Reflection-Recorrect (thường gọi là ReAct Framework) để trả lời một câu hỏi có thể có nhiều hướng.
+[Tên hình vẽ] Hình 1.7. Ví dụ áp dụng ReAct Agent để trả lời câu hỏi
+[Heading 2] 1.5. Các công nghệ hỗ trợ phát triển hệ thống
+[Heading 3] 1.5.1. Nền tảng ollama
+[Normal] Ollama là một công cụ mã nguồn mở được thiết kế để giúp người dùng dễ dàng chạy các Mô hình Ngôn ngữ Lớn (LLM) ngay trên máy tính cá nhân. Nó đã nhanh chóng trở nên phổ biến trong cộng đồng phát triển và nghiên cứu AI nhờ vào sự đơn giản và khả năng tiếp cận mà nó mang lại.
+[List Paragraph] Ưu điểm:
+[List Paragraph] Thiết lập và sử dụng đơn giản: Ollama giúp đơn giản hóa đáng kể quá trình tải xuống, cài đặt và chạy các LLM. Chỉ với vài dòng lệnh, người dùng có thể bắt đầu tương tác với các mô hình mạnh mẽ.
+[List Paragraph] Hỗ trợ đa dạng các LLM mã nguồn mở: Ollama cung cấp một thư viện các mô hình phổ biến như Llama 2, Mistral, Gemma và nhiều mô hình khác, cho phép người dùng dễ dàng thử nghiệm và lựa chọn mô hình phù hợp với nhu cầu.
+[List Paragraph] Chạy LLM cục bộ (offline) và bảo mật dữ liệu: Việc chạy mô hình ngay trên máy tính cá nhân giúp đảm bảo quyền riêng tư và bảo mật dữ liệu, vì không có thông tin nào được gửi lên máy chủ bên ngoài. Điều này rất quan trọng đối với các ứng dụng cần xử lý thông tin nhạy cảm.
+[List Paragraph] Tùy chỉnh và quản lý model dễ dàng: Người dùng có thể tùy chỉnh các tham số của mô hình, tạo các phiên bản mô hình riêng (thông qua Modelfile) và quản lý các mô hình đã tải về một cách thuận tiện.
+[List Paragraph] Cộng đồng tích cực và phát triển nhanh chóng: Ollama có một cộng đồng người dùng và nhà phát triển năng động, liên tục cập nhật các mô hình mới và cải tiến công cụ.
+[List Paragraph] Nhược điểm:
+[List Paragraph] Yêu cầu tài nguyên phần cứng: Việc chạy các LLM, đặc biệt là các mô hình lớn, đòi hỏi tài nguyên máy tính đáng kể về CPU, RAM và đặc biệt là GPU. Máy tính cấu hình yếu có thể gặp khó khăn hoặc chạy mô hình với tốc độ chậm.
+[List Paragraph] Hiệu suất phụ thuộc vào phần cứng cục bộ: Tốc độ xử lý và khả năng của mô hình sẽ bị giới hạn bởi năng lực của máy tính cá nhân, không thể so sánh với các hệ thống đám mây chuyên dụng có GPU mạnh mẽ.
+[List Paragraph] Quản lý và cập nhật model thủ công: Mặc dù Ollama đơn giản hóa việc tải model, người dùng vẫn cần tự quản lý không gian lưu trữ và cập nhật các phiên bản model mới khi chúng được phát hành.
+[List Paragraph] Giới hạn về khả năng của các model nhỏ hơn: Các model có thể chạy mượt mà trên máy tính cá nhân thường là các phiên bản nhỏ hơn, có thể không mạnh mẽ hoặc đa năng bằng các model lớn nhất, thường chỉ có sẵn qua API của các nhà cung cấp lớn.
+[List Paragraph] Thiếu các công cụ quản lý và giám sát nâng cao: So với các nền tảng triển khai LLM chuyên nghiệp, Ollama có thể thiếu các công cụ giám sát hiệu suất, quản lý tài nguyên và gỡ lỗi chi tiết
+[Heading 3] 1.5.2. Ngôn ngữ lập trình Python
+[Normal] Python là một ngôn ngữ lập trình bậc cao, được Guido van Rossum phát triển và phát hành lần đầu vào năm 1991. Python nổi tiếng với cú pháp rõ ràng và dễ đọc, điều này giúp lập trình viên dễ dàng viết và duy trì mã nguồn. Ngôn ngữ này được thiết kế để khuyến khích việc viết mã có cấu trúc rõ ràng và logic, giúp giảm thiểu lỗi và tăng hiệu suất làm việc.
+[Normal] Trong suốt hơn ba thập kỷ phát triển, Python đã trải qua nhiều phiên bản, mỗi phiên bản mang lại những cải tiến và tính năng mới. Phiên bản Python 2.x được sử dụng rộng rãi trong một thời gian dài, nhưng hiện tại Python 3.x đã trở thành chuẩn mực do có nhiều cải tiến đáng kể về hiệu suất và cú pháp.
+[List Paragraph] Đặc điểm nổi bật của Python
+[List Paragraph] Cú Pháp Đơn Giản và Dễ Hiểu: Python có cú pháp ngắn gọn, dễ học, dễ đọc và dễ viết. Cú pháp của Python gần gũi với ngôn ngữ tự nhiên, giúp người học lập trình nhanh chóng nắm bắt được cách viết mã.
+[List Paragraph] Đa nền tảng: Python có thể chạy trên nhiều hệ điều hành khác nhau như Windows, macOS, Linux, và các hệ điều hành dựa trên Unix. Điều này làm cho Python trở thành một lựa chọn phổ biến cho phát triển phần mềm đa nền tảng.
+[List Paragraph] Thư viện phong phú và đa dạng: Python có một hệ thống thư viện phong phú, phục vụ nhiều mục đích khác nhau từ phát triển web, khoa học dữ liệu, trí tuệ nhân tạo, học máy, đến xử lý hình ảnh và video. Các thư viện nổi bật bao gồm NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, và Flask.
+[List Paragraph] Cộng đồng lớn mạnh: Python có một cộng đồng lập trình viên lớn mạnh và năng động. Cộng đồng này đóng góp vào việc phát triển các thư viện mới, giải đáp thắc mắc và chia sẻ kiến thức thông qua các diễn đàn, blog, và hội thảo. Điều này giúp người học và lập trình viên dễ dàng tìm kiếm hỗ trợ khi gặp khó khăn.
+[List Paragraph] Đa năng và linh hoạt: Python được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau, từ phát triển ứng dụng web, tự động hóa hệ thống, phát triển trò chơi, đến phân tích dữ liệu và trí tuệ nhân tạo. Khả năng tích hợp với các ngôn ngữ và công nghệ khác cũng làm tăng tính linh hoạt của Python.
+[List Paragraph] Ứng dụng của Python:
+[List Paragraph] Khoa học dữ liệu và Học máy: Python là ngôn ngữ hàng đầu trong lĩnh vực khoa học dữ liệu và học máy nhờ vào các thư viện như NumPy, Pandas, Matplotlib, Scikit-learn, và TensorFlow. Các công cụ này giúp dễ dàng xử lý, phân tích và trực quan hóa dữ liệu, cũng như phát triển các mô hình học máy phức tạp.
+[List Paragraph] Phát triển web: Python có nhiều framework mạnh mẽ như Django và Flask hỗ trợ phát triển các ứng dụng web. Các framework này cung cấp các công cụ cần thiết để xây dựng từ các ứng dụng web nhỏ đến các hệ thống web lớn và phức tạp.
+[List Paragraph] Tự động hóa: Python được sử dụng rộng rãi để tự động hóa các tác vụ lặp đi lặp lại, từ quản lý hệ thống, xử lý tệp tin, đến kiểm thử phần mềm. Các công cụ như Selenium và PyAutoGUI giúp tự động hóa các quy trình một cách hiệu quả.
+[List Paragraph] Phát triển ứng dụng: Python có thể được sử dụng để phát triển các ứng dụng desktop với giao diện người dùng thông qua các thư viện như Tkinter, PyQt, và Kivy.
+[List Paragraph] Internet of Things (IoT): Python cũng được sử dụng trong các dự án Internet of Things (IoT) để lập trình các thiết bị nhúng, cảm biến và hệ thống tự động. Với sự hỗ trợ của các thư viện như MicroPython và các công cụ như Raspberry Pi, lập trình viên có thể dễ dàng phát triển và triển khai các ứng dụng IoT.
+[List Paragraph] Tương lai của Python: Python tiếp tục phát triển mạnh mẽ và có ảnh hưởng sâu rộng trong nhiều lĩnh vực công nghệ. Với sự phát triển nhanh chóng của trí tuệ nhân tạo và học máy, Python được dự đoán sẽ tiếp tục là ngôn ngữ lập trình hàng đầu trong những năm tới. Cộng đồng Python cũng đang nỗ lực để cải thiện hiệu suất, tính bảo mật và khả năng mở rộng của ngôn ngữ này.
+[Normal] Python là một ngôn ngữ lập trình mạnh mẽ, linh hoạt và dễ học, phù hợp cho cả người mới bắt đầu và các lập trình viên giàu kinh nghiệm. Với cú pháp rõ ràng, thư viện phong phú, và cộng đồng hỗ trợ mạnh mẽ, Python đã và đang đóng góp quan trọng vào sự phát triển của nhiều lĩnh vực công nghệ hiện đại. Từ phát triển web, khoa học dữ liệu, học máy, đến tự động hóa và IoT, Python cung cấp những công cụ cần thiết để giải quyết các vấn đề phức tạp và thúc đẩy sự đổi mới
+[Heading 3] 1.5.3. LangGraph Framework
+[Heading 4] 1.5.3.1. Khái niệm LangGraph
+[Normal] LangGraph là một framework được phát triển bởi đội ngũ LangChain của công ty OpenAI. LangGraph cung cấp khả năng xây dựng các AI Agent mạnh mẽ và linh hoạt. LangGraph được thiết kế để xây dựng, quản lý các quy trình làm việc của AI Agent phức tạp.
+[Normal] LangGraph cung cấp bộ công cụ và thư viện cho phép người dùng tạo, sử dụng và tối ưu hoá các mô hình ngôn ngữ lớn.
+[Heading 4] 1.5.3.2. Các node và các cạnh
+[Normal] Về bản chất, LangGraph sử dụng sức mạnh của các kiến trúc dựa trên đồ thị để mô hình hoá và quản lý các mối quan hệ phức tạp giữa các thành phần khác nhau trong quy trình làm việc của AI Agent.
+[Normal] Thay vì sử dụng cấu trúc chain tuyến tính truyền thống, LangGraph cho phép bạn thiết kế một luồng hoạt động phức tạp hơn cho agent, tương tự như một mạng lưới với các node (nút) và edge (cạnh).
+[List Paragraph] Nodes: Đại diện cho các bước hoặc giai đoạn trong quá trình hoạt động của Agent. Mỗi node có thể là một task (công việc), state (trạng thái) hoặc action (hành động) cụ thể mà agent cần thực hiện. Ví dụ: "Chào người dùng", "Tìm kiếm thông tin", "Trả lời câu hỏi", v.v.
+[List Paragraph] Edges: Đại diện cho các kết nối giữa các node, xác định luồng di chuyển của agent. Edges có thể là direct (trực tiếp) hoặc conditional (có điều kiện), ví dụ "nếu điều kiện A đúng thì đi đến node X, ngược lại đi đến node Y".
+[List Paragraph] Coditional_edges: Đại diện cho những cạnh rẽ nhánh đến các Nodes khác nhau dựa trên State của Agent hoặc một yếu tố nào đó khác. Contitional_edges là thành phần quan trọng giúp quyết định điều hướng Agent và giúp Agent tránh khỏi vòng lặp vĩnh cửu.
+[Tên hình vẽ] Hình 1.8. Mô phỏng các Nút và các Cạnh trong LangGraph
+[Normal] Tính năng quan trọng nhất của LangGraph là khả năng tạo ra cycles (vòng lặp). Khác với chain truyền thống chỉ đi theo một chiều (Directed Acyclic Graph - DAG), LangGraph cho phép agent quay lại các node đã truy cập, thực hiện lại các bước, tự điều chỉnh dựa trên kết quả, và lặp lại quy trình cho đến khi đạt được mục tiêu.
+[Normal] Thực tế, nhiều tác vụ phức tạp đòi hỏi sự iterative (lặp đi lặp lại), dynamic (linh hoạt) và context-aware (nhận biết ngữ cảnh). LangGraph với cycles cung cấp khả năng xây dựng agent có thể:
+[List Paragraph] Xử lý các tình huống phức tạp, đa bước.
+[List Paragraph] Tương tác qua lại với người dùng (hoặc các agent khác) để thu thập thêm thông tin.
+[List Paragraph] Tự động điều chỉnh hành vi dựa trên kết quả và phản hồi.
+[List Paragraph] Thực hiện các quy trình lặp đi lặp lại để tối ưu hóa kết quả.
+[Normal] Ví dụ: Hãy tưởng tượng bạn xây dựng một chatbot dịch vụ khách hàng. Với chain, chatbot có thể chỉ trả lời được các câu hỏi đơn giản. Nhưng với LangGraph, chatbot có thể:
+[List Paragraph] Tiếp nhận câu hỏi của khách hàng. (Node 1)
+[List Paragraph] Phân tích câu hỏi và xác định thông tin còn thiếu. (Node 2)
+[List Paragraph] Đặt câu hỏi làm rõ yêu cầu với khách hàng. (Node 3) <- Cycle! Nếu thông tin chưa đủ, chatbot có thể quay lại Node 3 để hỏi tiếp.
+[List Paragraph] Tìm kiếm thông tin liên quan trong cơ sở dữ liệu. (Node 4)
+[List Paragraph] Tổng hợp thông tin và trả lời khách hàng. (Node 5)
+[Normal] Như vậy, quy trình này có cycles (vòng lặp), cho phép chatbot tương tác và làm rõ yêu cầu của khách hàng cho đến khi hiểu đúng vấn đề và cung cấp câu trả lời chính xác nhất. Đây chính là ưu điểm nổi bật của LangGraph.
+[Heading 4] 1.5.3.3. Quản lý trạng thái trong LangGraph
+[Normal] LangGraph làm sáng tỏ các quy trình trong luồng công việc AI, cho phép minh bạch hoàn toàn trạng thái (State) của tác nhân. Trong LangGraph, tính năng State đóng vai trò như một ngân hàng bộ nhớ ghi lại và theo dõi tất cả thông tin có giá trị được hệ thống AI xử lý. Nó tương tự như một sổ ghi chép kỹ thuật số, trong đó hệ thống ghi lại và cập nhật dữ liệu khi dữ liệu di chuyển qua các giai đoạn khác nhau của luồng công việc hoặc phân tích đồ thị.
+[Normal] State có thể là một chuỗi các tin nhắn, một mảng các số, một cấu trúc dữ liệu phức tạp, một model class,… State đóng vai trò như công cụ truyền đạt thông tin giữa các Node của Agent. State này được cập nhật khi Agent chạy qua các Node, mỗi Node sẽ xử lý với State là đầu vào và cập nhật State ở đầu ra. Nhờ đó, Agent có thể đưa ra các đề xuất dựa trên xu hướng thay đổi của lượng tuyết rơi.
+[Tên hình vẽ] Hình 1.9. Ví dụ State trong Graph của một Agent về thông tin thời tiết
+[Normal] Trong hình trên là ví dụ nếu bạn đang chạy các Agent để theo dõi thời tiết, State có thể chứa các thông tin về thời tiết như là số lần tuyết rơi, cùng với thông tin về vị trí của người dùng. State này có thể được cập nhật khi di chuyển qua các Node như sau:
+[List Paragraph] Node __Ask_User_Location: Node này lấy thông tin về vị trí của người dùng, do đó sẽ cập nhật vị trí này vào State
+[List Paragraph] Node __Get_Weather__: Node này lấy thông tin thời tiết dựa vào vị trí nên sẽ cập nhật thời tiết vào State
+[List Paragraph] Node __Trip_advise__ sẽ dựa vào thông tin thời tiết đã cập nhật trong state để trả lời user
+[Normal] State là công cụ mạnh mẽ, truyền đạt ý chí, kế hoạch, yêu cầu, dữ liệu xuyên suốt quá trình hoạt động của Agent. Quản lý State là công việc quan trọng trong quá trình phát triển AI Agent với LangGraph. Quản lý trạng thái cũng rất hữu ích khi gỡ lỗi vì nó cho phép tập trung trạng thái của ứng dụng, do đó thường rút ngắn toàn bộ quy trình.
+[Heading 4] 1.5.3.4. Các bước xây dựng AI Agent vói LangGraph
+[Normal] Để xây dựng một AI Agent, ta sẽ đi qua các bước sau.
+[List Paragraph] Bước 1: Trước hết, để xây dựng AI Agent, ta cần xác định được các tính chất của Agent bao gồm:
+[List Paragraph] Môi trường của Agent: Bối cảnh của Agent là gì, vai trò của Agent là gì, đối tượng của Agent là ai, dữ liệu mà Agent có thể tiếp cận là gì,…
+[List Paragraph] Xác định miền tri thức của Agent: Agent có thể truy cập vào miền tri thức nào, giới hạn tri thức nằm ở đâu,… 
+[List Paragraph] Xác định tập hành động của Agent đối với môi trường: Agent có thể có hành động gì đối với môi trường xung quanh
+[List Paragraph] Bước 2: Sau khi đã định hình được tính chất của Agent, ta cần lên kế hoạch luồng hoạt động cho Agent:
+[List Paragraph] Từ input của Agent tới output mong muốn, cần trả qua những bước gì
+[List Paragraph] Những trường hợp nào có thể xảy ra trong quá trình thực hiện các task
+[List Paragraph] Bước 3: Từ workflow trên, ta đã có thể nắm được các Node trong đồ thị của agent.
+[List Paragraph] Bước 4: Dựa vào workflow, xác định các cạnh, các cạnh điều kiện của Agent
+[List Paragraph] Bước 5: Xây dựng State cho agent
+[List Paragraph] Bước 6: Xây dựng các Tool cho agent
+[List Paragraph] Bước 7: Triển khai
+[Heading 3] 1.5.4. FastAPI Framework
+[Normal] FastAPI là một web framework hiện đại, hiệu suất cao được viết bằng Python (yêu cầu phiên bản 3.7+), được thiết kế chuyên biệt để xây dựng các API một cách nhanh chóng và hiệu quả. Framework này được xây dựng trên nền tảng của Starlette (cho các phần web) và Pydantic (cho việc xác thực dữ liệu), tận dụng tối đa các tính năng hiện đại của Python như gợi ý kiểu (type hints) và lập trình bất đồng bộ (asynchronous).
+[Normal] Ưu điểm:
+[List Paragraph] Hiệu năng vượt trội: Nhờ được xây dựng trên Starlette và hỗ trợ asyncio một cách tự nhiên, FastAPI có hiệu năng rất cao, có thể sánh ngang với các framework trên NodeJS hay Go. Điều này làm cho nó trở thành lựa chọn lý tưởng cho các ứng dụng yêu cầu xử lý đồng thời lượng lớn request.
+[List Paragraph] Tốc độ phát triển cực nhanh: FastAPI giúp giảm từ 200% đến 300% thời gian phát triển code. Việc sử dụng Pydantic và gợi ý kiểu giúp giảm đáng kể lỗi do con người, đồng thời cung cấp tính năng tự động hoàn thành (auto-completion) mạnh mẽ trong các trình soạn thảo code.
+[List Paragraph] Tự động tạo tài liệu tương tác: Đây là một trong những tính năng nổi bật nhất. FastAPI tự động sinh ra tài liệu API theo hai chuẩn mở là OpenAPI (trước đây là Swagger) và ReDoc. Điều này giúp các lập trình viên front-end và back-end có thể kiểm thử và tương tác với các API một cách trực quan mà không cần viết thêm bất kỳ dòng code tài liệu nào.
+[List Paragraph] Xác thực dữ liệu mạnh mẽ: Với Pydantic, việc xác thực, tuần tự hóa (serialization) và giải tuần tự hóa (deserialization) dữ liệu trở nên cực kỳ đơn giản và rõ ràng. Lập trình viên chỉ cần khai báo cấu trúc dữ liệu mong muốn bằng các lớp Python thông thường.
+[List Paragraph] Hỗ trợ lập trình bất đồng bộ (Async): FastAPI được thiết kế với tư tưởng "async first", cho phép dễ dàng định nghĩa các API endpoint bất đồng bộ bằng cú pháp async def, tối ưu hóa cho các tác vụ I/O-bound (như gọi API khác, truy vấn cơ sở dữ liệu).
+[List Paragraph] Dựa trên các tiêu chuẩn mở: FastAPI hoàn toàn tương thích với các tiêu chuẩn mở cho API như OpenAPI và JSON Schema, giúp việc tích hợp với các công cụ và hệ thống khác trở nên dễ dàng.
+[Normal] Nhược điểm:
+[List Paragraph] Yêu cầu kiến thức về các tính năng Python hiện đại: Để tận dụng hết sức mạnh của FastAPI, lập trình viên cần có sự hiểu biết nhất định về các khái niệm như gợi ý kiểu (type hints) và lập trình bất đồng bộ (async/await), điều này có thể là một rào cản nhỏ cho những người mới làm quen. 
+[List Paragraph] Cộng đồng nhỏ hơn so với Flask và Django: Mặc dù đang phát triển rất nhanh, cộng đồng của FastAPI vẫn còn non trẻ hơn so với các framework có lịch sử lâu đời như Django hay Flask. Điều này có thể dẫn đến việc có ít tài liệu, hướng dẫn và các plugin được phát triển sẵn hơn.
+[Heading 3] 1.5.5. ReactJs framework
+[Normal] Trong hệ sinh thái phát triển web hiện đại, ReactJs nổi lên như một công nghệ tiềm năng, đóng vai trò nền tảng trong việc xây dựng các giao diện người dùng (UI) phong phú và có tính tương tác cao. ReactJS là một thư viện được xây dựng trên ngôn ngữ JavaScript để giải quyết các thách thức cụ thể trong quá trình phát triển.
+[Normal] JavaScript (thường được viết tắt là JS) là một ngôn ngữ lập trình kịch bản, cùng với HTML (ngôn ngữ đánh dấu siêu văn bản) và CSS (ngôn ngữ định dạng trang web), tạo thành bộ ba công nghệ nền tảng của World Wide Web. Nếu HTML định nghĩa cấu trúc và nội dung của một trang web, và CSS chịu trách nhiệm về phần trình bày và phong cách, thì JavaScript chính là "bộ não" mang lại sự sống, tính tương tác và sự năng động cho trang web đó.
+[Normal] Ban đầu, JavaScript được tạo ra chỉ để thực thi các tác vụ đơn giản phía máy khách (client-side) như xác thực biểu mẫu hay tạo hiệu ứng hình ảnh. Tuy nhiên, qua nhiều năm phát triển mạnh mẽ, đặc biệt là với sự ra đời của các môi trường chạy như Node.js, JavaScript đã trở thành một ngôn ngữ đa năng, có khả năng chạy trên cả máy chủ (server-side), thiết bị di động và máy tính để bàn. Chức năng chính của nó trong bối cảnh web là cho phép các nhà phát triển thao tác với Mô hình Đối tượng Tài liệu (DOM), xử lý sự kiện người dùng (như nhấp chuột, gõ phím), và thực hiện các yêu cầu mạng bất đồng bộ (AJAX/Fetch) để cập nhật nội dung trang mà không cần tải lại toàn bộ.
+[Normal] ReactJS được nhà phát triển mạng xã hội lớn nhất hành tinh, Facebook, xây dựng và phát hành vào năm 2013. ReactJS là một thư viện JavaScript mã nguồn mở, được thiết kế chuyên biệt cho việc xây dựng các thành phần giao diện người dùng có thể tái sử dụng và có tính tương tác cao.
+[Normal] Điểm đột phá của ReactJS nằm ở hai khái niệm chính: Kiến trúc dựa trên thành phần (Component-Based Architecture) và DOM ảo (Virtual DOM).
+[List Paragraph] Kiến trúc dựa trên thành phần: React khuyến khích việc chia nhỏ giao diện người dùng phức tạp thành các thành phần độc lập, có thể tái sử dụng (giống như các mảnh ghép LEGO). Mỗi thành phần quản lý trạng thái riêng của nó và có thể được kết hợp lại để tạo nên một ứng dụng hoàn chỉnh. Cách tiếp cận này giúp mã nguồn trở nên dễ quản lý, dễ bảo trì và dễ mở rộng hơn rất nhiều.
+[List Paragraph] DOM ảo: Thay vì thao tác trực tiếp trên DOM thật của trình duyệt (một quá trình tốn kém về hiệu năng), React tạo ra một bản sao của DOM trong bộ nhớ gọi là DOM ảo. Khi trạng thái của một thành phần thay đổi, React sẽ cập nhật trên DOM ảo này trước, sau đó sử dụng một thuật toán so sánh thông minh (diffing algorithm) để xác định những thay đổi tối thiểu cần thiết và chỉ cập nhật những thay đổi đó trên DOM thật. Quá trình này giúp tối ưu hóa đáng kể hiệu suất, mang lại trải nghiệm người dùng mượt mà hơn.
+[Heading 3] 1.5.6. Hệ quản trị cơ sở dữ liệu postgresql
+[Heading 4] 1.5.6.1. Khái niệm
+[Normal] PostgreSQL (thường được gọi là "Postgres") là một hệ quản trị cơ sở dữ liệu (CSDL) quan hệ - đối tượng mã nguồn mở mạnh mẽ và tiên tiến. Với hơn 35 năm phát triển không ngừng, PostgreSQL đã tạo dựng được một danh tiếng vững chắc về độ tin cậy, sự ổn định, tính toàn vẹn dữ liệu và khả năng mở rộng vượt trội. Nó không chỉ là một nơi lưu trữ dữ liệu đơn thuần mà còn là một nền tảng dữ liệu toàn diện, được tin dùng cho các ứng dụng từ quy mô nhỏ đến các hệ thống doanh nghiệp phức tạp và yêu cầu cao nhất.
+[Normal] Nền tảng của PostgreSQL khác biệt so với nhiều hệ quản trị CSDL quan hệ khác. Nó được xây dựng theo mô hình quan hệ - đối tượng (object - relational), nghĩa là nó kế thừa tất cả các tính năng của một CSDL quan hệ truyền thống (như bảng, hàng, cột, khóa ngoại) đồng thời mở rộng chúng với các khái niệm của lập trình hướng đối tượng như khả năng định nghĩa các kiểu dữ liệu phức tạp, hàm, và kế thừa. Điều này mang lại sự linh hoạt to lớn, cho phép các nhà phát triển giải quyết các bài toán phức tạp một cách hiệu quả hơn ngay tại tầng cơ sở dữ liệu.
+[Heading 4] 1.5.6.2. Các Tính năng và Ưu điểm Nổi bật
+[Normal] PostgreSQL được biết đến với một bộ tính năng phong phú, giúp nó nổi bật trong thế giới cơ sở dữ liệu:
+[Normal] Tính mở rộng (Extensibility): Đây là một trong những triết lý thiết kế cốt lõi của PostgreSQL. Người dùng không bị giới hạn bởi các kiểu dữ liệu và hàm có sẵn. Hệ thống cho phép bạn tự định nghĩa các kiểu dữ liệu, toán tử, hàm, và ngôn ngữ thủ tục của riêng mình. Ví dụ tiêu biểu nhất là phần mở rộng PostGIS, biến PostgreSQL thành một hệ quản trị CSDL không gian địa lý hàng đầu thế giới.
+[Normal] Tuân thủ ACID và Toàn vẹn dữ liệu nghiêm ngặt: PostgreSQL tuân thủ chặt chẽ các thuộc tính ACID (Atomicity, Consistency, Isolation, Durability). Điều này đảm bảo rằng các giao dịch (transactions) được xử lý một cách đáng tin cậy, giúp dữ liệu luôn ở trạng thái nhất quán và không bị mất mát ngay cả khi có sự cố xảy ra. Các ràng buộc như khóa chính, khóa ngoại, UNIQUE, CHECK đều được triển khai một cách đầy đủ và mạnh mẽ.
+[Normal] Xử lý đồng thời tiên tiến (MVCC): Hệ thống sử dụng kiến trúc Điều khiển Đồng thời Đa phiên bản (Multi-Version Concurrency Control - MVCC). Kiến trúc này cho phép nhiều tiến trình đọc và ghi có thể hoạt động song song mà không khóa lẫn nhau. Cụ thể, tiến trình đọc không chặn tiến trình ghi và ngược lại, giúp tăng đáng kể hiệu suất và thông lượng cho các ứng dụng có nhiều người dùng truy cập cùng lúc.
+[Normal] Hỗ trợ đa dạng các kiểu dữ liệu nâng cao: Ngoài các kiểu dữ liệu chuẩn (số, chuỗi, ngày giờ), PostgreSQL hỗ trợ sẵn một loạt các kiểu dữ liệu phức tạp như mảng (arrays), hstore (key-value), XML, và đặc biệt là JSON/JSONB. Với kiểu dữ liệu JSONB được tối ưu hóa và có khả năng đánh chỉ mục, PostgreSQL có thể xử lý hiệu quả cả dữ liệu có cấu trúc và bán cấu trúc, trở thành một đối thủ cạnh tranh đáng gờm với các CSDL NoSQL chuyên dụng.
+[Normal] Mã nguồn mở và Cộng đồng vững mạnh: Là một dự án mã nguồn mở hoàn toàn, PostgreSQL không có chi phí bản quyền, không bị ràng buộc bởi nhà cung cấp, và được phát triển bởi một cộng đồng toàn cầu đầy tâm huyết. Điều này đảm bảo sự phát triển liên tục, tài liệu phong phú, và một hệ sinh thái các công cụ, thư viện hỗ trợ đa dạng.
+[Normal] Với sự kết hợp giữa độ tin cậy đã được chứng minh, hiệu suất cao, và bộ tính năng linh hoạt, PostgreSQL là lựa chọn hàng đầu cho nhiều loại ứng dụng, từ các hệ thống giao dịch trực tuyến (OLTP), kho dữ liệu (data warehousing), cho đến các ứng dụng phân tích dữ liệu lớn và dịch vụ backend cho ứng dụng web hiện đại.
+[Heading 2] 1.6. Tổng kết chương 1
+[Normal] Chương 1 đã trình bày một cách tổng quan về hệ thống chatbot được sử dụng trong quá trình đào tạo tại Học viện Kỹ thuật mật mã. Nội dung chính bao gồm phần giới thiệu tổng quan về hệ thống chatbot, những kỹ thuật thường đường sử dụng trong xây dựng hệ thống chatbot. Bên cạnh đó, chương 1 cũng trình bày những khái niệm cơ bản về mô hình ngôn ngữ lớn và AI Agent – một kiến trúc được sử dụng để phát triển chatbot AI hiệu quả, tối ưu. Trong chương tiếp theo, báo cáo sẽ trình bày chi tiết phương pháp xây dựng hệ thống chatbot với AI Agent.
+[Heading 1] CHƯƠNG 2: PHƯƠNG PHÁP XÂY DỰNG HỆ THỐNG CHAT BOT VỚI AI AGENT VÀ LLMS
+[Heading 2] 2.1. Xây dựng mô hình tổng quát của AI Agent
+[Heading 3] 2.1.1. Xác định các tính chất của AI Agent
+[Normal] Theo phần trước, ta đã biết AI Agent được định nghĩa bởi các tính chất môi trường và tương tác với môi trường của Agent. Trong trường hợp AI Agent cho chatbot sử dụng trong đào tạo tại Học viện Kỹ thuật mật mã, các yếu tố này là miền tri thức về sinh viên, về học viện và những thao tác dữ liệu trên môi trường dữ liệu này.
+[Heading 4] 2.1.1.1. Xác định tính chất của AI Agent cho chatbot
+[Normal] Môi trường của chatbot ta đang xây dựng là môi trường gắn liền với các hoạt động giáo dục và đào tạo của giảng viên, sinh viên của Học viện Kỹ thuật mật mã, do đó ta sẽ có được các tính chất sau:
+[Tên bảng] Bảng 2.1. Bảng xác định tính chất môi trường của AI Agent
+[Heading 4] 2.1.1.2. Xác định nguồn dữ liệu của AI Agent
+[Normal] Miền dữ liệu của AI Agent xác định những tài nguyên mà AI Agent có thể truy cập. Ở đây, ta xác định được miền dữ liệu của AI Agent bao gồm những tài nguyên sau:
+[Tên bảng] Bảng 2.2. Bảng xác định miền tri thức của AI Agent
+[Heading 4] 2.1.1.3. Xác định tập hành động của AI Agent đối với môi trường
+[Normal] Tập hành động (Action) định nghĩa những gì mà AI Agent có thể làm để tương tác với môi trường người dùng. Ta có thể hiểu đây là những tính năng của chatbot.
+[Normal] Đối với chatbot phục vụ sinh viên, giảng viên tại học viện, tập hành động này có thể là:
+[List Paragraph] Truy vấn thông tin:
+[List Paragraph] Lấy thông tin từ cơ sở dữ liệu về quy định, quy chế
+[List Paragraph] Tra cứu lịch học, lịch thi cá nhân hoặc theo lớp
+[List Paragraph] Kiểm tra điểm số cá nhân
+[List Paragraph] Trả lời câu hỏi của người dùng
+[List Paragraph] Thực hiện các tác vụ:
+[List Paragraph] Hướng dẫn sinh viên làm thủ tục hành chính
+[List Paragraph] Tính điểm trung bình các môn
+[Normal] Từ tập các hành động đã được xác định, ta có thể xây dựng các node và đưa ra được mô hình AI Agent ở phần sau
+[Heading 3] 2.1.2. Mô hình tổng quan của AI Agent cho hệ thống chatbot
+[Heading 4] 2.1.2.1. Mô hình tổng quan
+[Normal] Dựa vào những lý thuyết về phương pháp xây dựng hệ thống chatbot thông minh với AI Agent và những tính chất đã xác định bên trên, ta xây dựng được mô hình tổng quan của AI Agent như sau:
+[Tên hình vẽ] Hình 2.1. Mô hình tổng quan của AI Agent áp dụng cho chatbot của đề tài
+[Normal] Mô hình tổng quan của AI Agent cho hệ thống chatbot bao gồm các thành phần sau:
+[List Paragraph] Mô hình ngôn ngữ lớn: LLMs chịu trách nhiệm suy luận, đưa ra quyết định, tổng hợp thông tin và tạo sinh câu trả lời cuối cùng. Ngữ cảnh đưa vào LLMs (sau đây gọi là Prompt) bao gồm những thông tin ban đầu như câu hỏi của người dùng, những thông tin do Agent truy xuất được như thông tin sinh viên, thông tin điểm số của sinh viên, thông tin về quy định, quy chế của học viện, lịch sử cuộc trò chuyện. Những thông tin này do AI Agent truy xuất được, thu thập được từ môi trường của Agent thông qua các Tool (tương đương các “sensor” trong định nghĩa Agent).
+[List Paragraph] Tool truy vấn database: Tool này chịu trách nhiệm truy vấn những dữ liệu biến động thường xuyên như dữ liệu điểm sinh viên, thông tin sinh viên, lịch sử trò chuyện từ cơ sở dữ liệu Postgresql của hệ thống. Những truy vấn này có thể thực hiện trực tiếp qua những truy vấn SQL và sẽ được trình bày chi tiết ở phần sau.
+[List Paragraph] Tool truy vấn RAG: RAG là phương pháp truy vấn tạo sinh tăng cường giúp truy vấn chính xác từ cơ sở dữ liệu chuẩn bị trước những thông tin liên quan đến câu truy vấn của người dùng. Những dữ liệu không thay đổi thường xuyên, không có cấu trúc cần được truy vấn theo cách này để đảm bảo mức độ hiệu quả. Chi tiết về RAG và truy vấn RAG sẽ được trình bày ở phần sau của báo cáo.
+[Heading 4] 2.1.2.2. Luồng xử lý tổng quan của một truy vấn từ người dùng khi đi qua AI Agent
+[Normal] Mô hình AI Agent mà ta đang xây dựng là mô hình Thinking Agent bao gồm các thành phần lập kế hoạch, thực thi kế hoạch với các tool và LLMs, thành phần trả kết quả đầu ra cuối cùng. Khi người dùng gửi một tin nhắn mới đến chatbot, hành trình của tin nhắn trong luồng xử lý của AI Agent được miêu tả như hình vẽ dưới đây.
+[Tên hình vẽ] Hình 2.2. Sơ đồ luồng hành trình khi người dùng gửi tin nhắn mới đến chatbot
+[Normal] Diễn giải luồng này như sau:
+[List Paragraph] Sau khi tin nhắn mới được gửi đến, AI Agent thực hiện query lịch sử chat của người dùng. Từ lịch sử chat này, AI Agent sẽ tổng hợp lại thành context duy nhất của cuộc trò chuyện. Lịch sử chat được tổng hợp thông qua phương pháp tóm tắt bằng LLMs.
+[List Paragraph] Sau khi tổng hợp context, AI Agent sẽ lên kế hoạch thực hiện từng bước để giải quyết yêu cầu của người dùng. Việc lên kế hoạch này được thực hiện thông qua LLMs.
+[List Paragraph] Sau khi có bản kế hoạch, AI Agent tiếp tục đánh giá bản kế hoạch này cùng các bước đã làm và những thông tin đã thu được. Lúc này tồn tại các hướng:
+[List Paragraph] Các bước đã thực hiện hết, AI Agent đã thu thập đủ thông tin để trả lười dùng dùng: Lúc này AI Agent quyết định tạo sinh câu trả lời cuối cùng và trả về cho người dùng.
+[List Paragraph] AI Agent cảm thấy chưa đủ dữ kiện, tiếp tục ra lệnh thực hiện task tiếp theo.
+[List Paragraph] AI Agent sẽ thực hiện các task theo kế hoạch đã đề ra từ trước để thu được kết quả.
+[Heading 4] 2.1.2.3. Đồ thị tổng quan của AI Agent khi xây dựng với LangGraph
+[Normal] Từ mô hình tổng quan về Agent đã xây dựng ở phần 2.1.2.1, khi áp dụng LangGraph để xây dựng AI Agent, ta có Graph tổng quan của AI Agent như sau:
+[Tên hình vẽ] Hình 2.3. Graph tổng quan của AI Agent
+[Normal] Đồ thị này thể hiện các Node (các nút) và các cạnh (các edge) quan trọng của AI Agent mà ta xây dựng. Bao gồm:
+[List Paragraph] Node  __START__: đây là nút bắt đầu vào của toàn bộ graph
+[List Paragraph] Node  __Summary_Chat_History: thực hiện tóm tắt lịch sử cuộc trò chuyện, tổng hợp thành context duy nhất cho AI Agent
+[List Paragraph] Node __Initial_Thinking__ thực hiện lên kế hoạch ban đầu cho Agent.
+[List Paragraph] Node __Plan_Validator__ chịu trách nhiệm kiểm tra kế hoạch đã đặt ra xem đã đủ kiện kết thúc chưa, hay vẫn cần thực hiện các task, hay cần lên kế hoạch lại.
+[List Paragraph] Node __Re_Planning__ chịu trách nhiệm chỉnh sửa kế hoạch thực hiện của AI Agent theo yêu cầu của node __Plan_Validator__.
+[List Paragraph] Node __Do_task__ thực hiện các task theo kế hoạch với sự giúp đỡ của các tool, trong đó bao gồm cả Agentic_RAG
+[List Paragraph] Node _RAG_Agentic_ chịu trách nhiệm truy vấn CSDL vector nhằm tra cứu những thông tin liên quan đến quy định, quy chế của học viện.
+[List Paragraph] Node _Execute_tools_ là lớp đại diện cho việc khởi chạy các tool.
+[List Paragraph] Node _END_ là node cuối của LangGraph, nơi trả kết quả về cho người dùng.
+[Heading 2] 2.2. Phương pháp xây dựng chi tiết từng thành phần của AI Agent
+[Heading 3] 2.2.1. Xây dựng node Summary_Chat_History
+[Normal] Node _Summary_Chat_History_ là node chịu trách nhiệm tóm tắt lịch sử trò chuyện giữa người dùng và chatbot, từ đó đưa ra context là một bản tóm tắt cô đọng.
+[Normal] Prompt node này sử dụng như sau:
+[Tên hình vẽ] Hình 2.4. Prompt sử dụng cho node Summary_Chat_History
+[Normal] State hay trạng thái là thành phần quan trọng của LangGraph. State luân chuyển dữ liệu và trạng thái của Agent xuyên suốt graph của Agent. Do đó, ta cần phải nói đến State của các Node. State của node _Summary_Chat_History_ như bảng sau:
+[Tên bảng] Bảng 2.3. State của node _Summary_Chat_History_
+[Heading 3] 2.2.2. Xây dựng node Initial_Thinking
+[Normal] Node Initial_Thinking có nhiệm vụ khởi tạo kế hoạch thực hiện ban đầu cho toàn bộ Agent. Node này sử dụng prompt như sau:
+[Code] ** CONTEXT **
+
+You are do-task agent of KBot - a helpful AI assistant for KMA (Academy of Cryptography Techniques) students.
+Your job is to help students with their questions about KMA regulations, their information, their schedule and their scores or some thing else.
+
+Your user is a student at KMA (Academy of Cryptography Techniques).
+
+They might greet you or ask a question or request information.
+Your task is to THINK ABOUT HOW to answer to the students.
+
+** TASK **
+
+Based on the student's chat, create a detailed plan with step-by-step instructions on how to respond.
+
+You have access to the following tools:
+{tool_descriptions}
+
+Your plan should include:
+1. Identify the core task or question.
+2. Determine if you have all the necessary information to answer the question.
+3. If not, identify what information is missing and how to obtain it.
+4. Decide which tools are appropriate to use based on the question and available information.
+5. Specify the parameters needed for each tool.
+6. Outline the logical sequence of actions to take.
+
+Break down your thinking process into clear steps. Be specific about what information is available and what might be missing.
+DO NOT try to answer the question directly. Just plan the approach. Output a list of steps prefixed with "STEP 1:", "STEP 2:", etc.
+
+Your output format should be in json format that can extract:
+
+field message, 
+field thinking_steps is array of thinking element json that each format as :
+     index : ,
+     step : ,
+
+** EXAMPLE **
+For example, if the student asks about their scores:
+- Identify the student's code and semester.
+- Check if the student code is provided in the chat.
+- If the student code is missing, ask the student for it.
+- If the semester is missing, maybe user want to all scores, so you can ignore it.
+- If both are available, prepare to call the `get_student_scores` tool with the provided parameters.
+- If the tool call is successful, format the output and provide a clear answer to the student.
+
+If the student asks about can he get a scholarship:
+- Get KMA's regulations about scholarships.
+- Based on the regulations, check if the student is eligible for a scholarship.
+- If the student is eligible, provide information about the scholarship process.
+- If need to get student scores, check if the student code is provided.
+- If the student code is missing, ask the student for it.
+
+** IMPORTANT **
+- DO NOT answer the question directly.
+- DO NOT make up information.
+- DO NOT ask clarifying questions if the original query is clear enough to attempt a tool call or provide a direct answer.
+- DO NOT provide information that is not relevant to the question.
+- DO NOT provide information that is not available in the tools or your knowledge.
+- If student's question is inconvenient like just greeting, you can ignore planning and just answer it.
+
+Consider:
+1. What information do I need to answer this question?
+2. Which tools would be appropriate to use?
+3. What specific parameters do I need for each tool?
+4. Is there any missing information that I need to ask the student for?
+5. What is the logical sequence of actions I should take?
+...
+[Normal] Prompt được xây dựng chi tiết, bao gồm cả việc hướng dẫn và mẫu thực hiện cho LLMs.
+[Normal] Node này có state như sau:
+[Tên bảng] Bảng 2.4. State của node Initial_Thinking
+[Heading 3] 2.2.3. Xây dựng node Plan_Validator
+[Normal] Node Plan_Validator có nhiệm vụ xem xét kế hoạch và quyết định sẽ sửa kế hoạch, hay tiếp tục thực hiện hay sẽ dừng. Prompt được sử dụng của Node này là:
+[Code] You are KBot - a helpful AI assistant for KMA (Academy of Cryptography Techniques) students. This is plan validate phase.
+Your job is to help students with their questions about KMA regulations, their information, and their scores.
+
+You have access to the following tools:
+{tool_descriptions}
+
+- search_kma_regulations: Search for information in KMA's regulations, rules, and policies - USE THIS TOOL FIRST for any questions about KMA rules, requirements, policies, or procedures
+- get_student_scores: Get student's scores with filtering options (semester must be in format ki1-2024-2025, k2-2024-2025, etc.)
+- get_student_info: Get student's information (name, class)
+- calculate_average_scores: Calculate average scores for a student
+
+Follow this process:
+1. Understand the student's question and identify the core task.
+2. Check the plan and completed tasks.
+3. Decice for 3 cases:
+    - If the plan is complete and has final result, you can answer the student directly.
+    - If the plan is not complete, you need to re-plan the steps to do task.
+    - If the plan is complete but has no final result, you need to do task with tools.
+
+Your output should be in JSON format with the following fields:
+- `message`: A string containing the final answer to the student or a message indicating the next steps.
+- `decision`: A string indicating the decision made:
+    - "complete": if the plan is complete and has final result, you can answer the student directly.
+    - "replan": if the plan is not complete, you need to re-plan the steps to do task.
+    - "do_task": if the plan is complete but has no final result, you need to do task with tools.
+- `next_steps`: A list of strings containing the next steps to take if re-planning or doing task is needed.
+[Normal] State được sử dụng bởi node này là:
+[Tên bảng] Bảng 2.5. State sử dụng bởi node Plan_Validator
+[Heading 3] 2.2.4. Xây dựng node Re_Planning
+[Normal] Node Re_Planning là node chịu trách nhiệm lập kế hoạch lại cho Agent khi được yêu cầu. Node này có Prompt như sau:
+[Code] ** CONTEXT **
+You are re-planning agent of Kbot – a helpful AI assistant for KMA (Academy of Cryptography Techniques) students.
+Kbot job is to help students with their questions about KMA regulations, their information, their schedule and their scores or some thing else.
+Your user is a student at KMA (Academy of Cryptography Techniques).
+
+You has provided a plan of steps to answer the user’s question and information each step gathered.
+Your task is to THINK AND DECIDE: NEED TO RE-PLAN the steps based on new information that has been gathered or NOT.
+
+You are Kbot – a helpful AI assistant for KMA (Academy of Cryptography Techniques) students.
+You are in the process of REPLANNING your approach based on new information you’ve gathered.
+
+** TASK **
+Based on the student’s original question and the NEW INFORMATION you’ve gathered from your previous actions,
+DECIDE if you need to re-plan your approach or not.
+-> IF NO NEED to re-plan: response that do not need.
+-> IF NEED to re-plan: create a REVISED plan with step-by-step instructions on how to proceed.
+
+** IMPORTANT **
+- DO NOT answer the question directly.
+- DO NOT make up information.
+- DO NOT ask clarifying questions if the original query is clear enough to attempt a tool call or provide a direct answer.
+- NEW PLAN (if has) should not include any steps that have already been completed.
+- NEW PLAN is continuation of the previous plan, so it should not repeat any steps that have already been completed.
+- NEW PLAN should be specific about what information you now have and what might still be missing.
+- Focus on how the NEW INFORMATION changes your approach
+- Be specific about what NEXT STEPS to take
+- DO NOT try to answer the question yet – just plan the remaining steps
+
+** FORMAT **
+You should respond all plan include complete – previous steps and new plan
+Your output format should be in json format t–at can extract:
+
+field need_replan: boolean
+field message: string, 
+field thinking_steps is array of thinking element json that each format as :
+     index : ,
+     step : ,
+     step_result: ,
+     is_done: true/false
+
+** DOCUMENT **
+You have access to the following tools:
+{tool_descriptions}
+
+Your previous plan was:
+{previous_thinking}
+
+You have already performed some actions and gathered new information. The most recent relevant information steps gatherd is:
+{recent_information}
+
+** EXAMPLE **
+For example, if the student asked about eligibility for a scholarship. If previous steps is
+- Retrieve KMA’s regulations about scholarships – done – RESULT: GPA >= 3.0 at the end of the semester
+- Get information about the student – not done yet 
+
+You see that need to re-plan because you need to get the student scors at that semester to check if the student is eligible for a scholarship.
+=> Response Re-plan continue steps as:
+- Get the student scores at the end of the semester
+[Normal] State được sử dụng bởi node này:
+[Tên bảng] Bảng 2.6. State sử dụng bởi node Re_Planning
+[Normal] Lưu ý rằng kế hoạch được tạo mới sẽ bao gồm phần kế hoạch đã thực hiện của state cũ.
+[Heading 3] 2.2.5. Xây dựng node Do_task
+[Normal] Node Do_task là node chịu trách nhiệm gọi các tool nhằm thực hiện các task. Ta có prompt của node này như sau:
+[Code] You are KBot - a helpful AI assistant for KMA (Academy of Cryptography Techniques) students. This is plan validate phase.
+Your job is to help students with their questions about KMA regulations, their information, and their scores.
+
+You have access to the following tools:
+{tool_descriptions}
+
+- search_kma_regulations: Search for information in KMA's regulations, rules, and policies - USE THIS TOOL FIRST for any questions about KMA rules, requirements, policies, or procedures
+- get_student_scores: Get student's scores with filtering options (semester must be in format ki1-2024-2025, k2-2024-2025, etc.)
+- get_student_info: Get student's information (name, class)
+- calculate_average_scores: Calculate average scores for a student
+
+Follow this process:
+1. Understand the student's question and identify the core task.
+2. Check the plan and completed tasks.
+3. Decice for 3 cases:
+    - If the plan is complete and has final result, you can answer the student directly.
+    - If the plan is not complete, you need to re-plan the steps to do task.
+    - If the plan is complete but has no final result, you need to do task with tools.
+
+Your output should be in JSON format with the following fields:
+- `message`: A string containing the final answer to the student or a message indicating the next steps.
+- `decision`: A string indicating the decision made:
+    - "complete": if the plan is complete and has final result, you can answer the student directly.
+    - "replan": if the plan is not complete, you need to re-plan the steps to do task.
+    - "do_task": if the plan is complete but has no final result, you need to do task with tools.
+- `next_steps`: A list of strings containing the next steps to take if re-planning or doing task is needed.
+[Normal] Node này có state là:
+[Tên bảng] Bảng 2.7. State sử dụng bởi node Do_task
+[Heading 3] 2.2.6. Xây dựng node RAG_Agentic
+[Normal] Khi xây dựng node _RAG_Agentic_, ta xây dựng một Agent con có khả năng truy vấn RAG tự điều chỉnh. Trước hết, cần biết đôi nét về RAG.
+[Heading 4] 2.2.6.1. RAG
+[Normal] Khi xây dựng chatbot AI dựa trên các mô hình ngôn ngữ lớn, việc xây dựng dựa trên các mô hình LLMs sẽ mang lại nhiều khả năng mạnh mẽ cho chatbot, tuy nhiên ta cũng cần phải khắc phục một số vấn đề bao gồm:
+[Normal] Non-Specific domain: Các mô hình LLMs được đào tạo giải quyết đa dạng các vấn đề, như vậy chúng không thể giải quyết chuyên sâu những bài toán cụ thể.
+[Normal] Non-access private datas: Các mô hình LLMs không thể hiểu những dữ liệu riêng tư của tổ chức, hệ thống tích hợp chúng. Đồng thời, vì lý do bảo mật, các hệ thống chatbot cũng không được phép đào tạo với dữ liệu riêng tư của tổ chức sử dụng chatbot. Tuy nhiên, việc không thể sử dụng dữ liệu riêng tư lại khiến chatbot không có khả năng thấu hiểu và giải quyết các vấn đề cụ thể của tổ chức/cá nhân sử dụng chatbot
+[Normal] Hiện tượng ảo giác (Hallucination): Khi không được đào tạo kiến thức liên quan phần dữ liệu riêng tư mà ta đã nhắc ở trên, các mô hình LLMs có xu hướng “bịa” ra những dữ liệu này để trả lời. Điều này dẫn đến sự sai sót về thông tin và việc sử dụng chatbot thậm chí đi ngược lại so với tiêu chí xây dựng.
+[Normal] Kỹ thuật truy vấn RAG ra đời nhằm khắc phục những vấn đề kể trên.
+[Normal] RAG là phương pháp kế hợp sức mạnh của các mô hình ngôn ngữ lớn với khả năng truy xuất thông tin từ một cơ sở tri thức bên ngoài. Thay vì chỉ dựa vào kiến thức đã được huấn luyện sẵn (thường bị giới hạn về thời gian và phạm vi), RAG cho phép LLM truy cập và sử dụng thông tin cập nhật từ các tài liệu chuyên ngành để tạo ra câu trả lời, giúp tăng tính chính xác, giảm thiểu hiện tượng "ảo giác" (hallucination) và cung cấp các câu trả lời có căn cứ.
+[Tên hình vẽ] Hình 2.5. Sơ đồ kỹ thuật RAG
+[Normal] Luồng hoạt động tổng quan của RAG bao gồm các bước sau:
+[List Paragraph] Đầu vào (User Query): Người dùng nhập câu hỏi.
+[List Paragraph] Truy xuất (Retrieval): Hệ thống RAG chuyển câu hỏi thành dạng vector và sử dụng nó để tìm kiếm các đoạn văn bản/dữ liệu tương đồng nhất trong vector database.
+[List Paragraph] Tăng cường (Augmentation): Các đoạn văn bản/dữ liệu truy xuất được sẽ được ghép nối với câu hỏi gốc để tạo thành một prompt mới, giàu thông tin hơn.
+[List Paragraph] Sinh câu trả lời (Generation): Prompt tăng cường này được đưa vào LLM để tạo ra câu trả lời cuối cùng cho người dùng.
+[Normal] Dưới đây là mô hình mô phỏng kỹ thuật RAG.
+[Tên hình vẽ] Hình 2.6. Mô hình mô phỏng hệ thống áp dụng kỹ thuật RAG
+[Normal] Quá trình Retrieval của RAG được có hoạt động như sau:
+[List Paragraph] Dữ liệu ban đầu được vector hoá thành dạng các vector trong cơ sở dữ liệu
+[List Paragraph] Câu hỏi ban đầu của người dùng cũng được vector hoá để truy vấn tìm kiếm gần giống (similarity search) trên tập cơ sở dữ liệu vector. Cơ sở dữ liệu vector này chứa các nguồn tài liệu đã được vector hoá.
+[List Paragraph] Do cả dữ liệu ban đầu và truy vấn đích đều được vector hoá nên truy vấn sẽ dễ dàng tìm kiếm những vector tương đồng, tương ứng với chúng là những đoạn dữ liệu gần giống hoặc liên quan đến câu hỏi của người dùng.
+[List Paragraph] Kết quả đầu ra của thành phần này là k tài liệu gần sát với query đầu vào nhất (k là số nguyên dương).
+[Tên hình vẽ] Hình 2.7. Hoạt động của quá trình Retrieval
+[Normal] Quá trình vector hoá tài liệu đầu vào được thực hiện thông qua các embedding model. Các embedding model là những mô hình ngôn ngữ có khả năng chuyển đổi dữ liệu đầu vào ở nhiều dạng khác nhau (như văn bản, hình ảnh, âm thanh,…) thành các vector.
+[Tên hình vẽ] Hình 2.8. Mô phỏng quá trình embedding vector được sinh ra
+[Normal] Do embedding vector biểu diễn đặc trưng của một đối tượng đầu vào nên các đối tượng giống nhau hoặc cùng thể loại, có mối liên hệ gần với nhau sẽ có khoảng cách giữa các vector gần nhau.
+[Tên hình vẽ] Hình 2.9. Hình ảnh mô phỏng các embedding vector tương tự nhau
+[Normal] Sau quá trình truy vấn, ta mang những dữ liệu này bổ sung vào context của LLMs để tạo sinh ra kết quả cuối cùng, hoàn thành quá trình truy vấn RAG.
+[Normal] Cần lưu ý rằng, việc ta truy vấn ra những tài liệu liên quan bằng phương pháp vector nhằm bổ sung những tài liệu hữu ích vào context cho LLMs có thể đưa ra câu trả lời chính xác. Điều này có nghĩa là sau khi truy vấn xong, ta sẽ bổ sung bằng văn bản vào Prompt đầu vào cho LLMs. Sau cùng, đầu vào của LLMs sẽ là một truy vấn với context rất đầy đủ, đó là mục tiêu cốt lõi của RAG.
+[Normal] Dưới đây là ví dụ về một mẫu Prompt (prompt template) áp dụng cho RAG:
+[Tên hình vẽ] Hình 2.10. Một mẫu prompt template sử dụng trong RAG.
+[Heading 4] 2.2.6.2. Agentic RAG
+[Normal] Nhằm tăng hiệu quả và độ chính xác của truy vấn RAG, ta xây dựng Node _RAG_Agentic_ dưới dạng một AI Agent con có khả năng truy vấn RAG và tự cải thiện kết quả truy vấn.
+[Normal] Đồ thị của _RAG_Agentic_ được xây dựng như sau:
+[Tên hình vẽ] Hình 2.11. Đồ thị của Node _RAG_Agentic_
+[Normal] Trong đồ thị này, ta quan tâm các node: _Process_User_Query_, _Retrieve_Document_, _Rewrite_Question_, _Generate_Output_.
+[Normal] _Process_User_Query_ là node chịu trách nhiệm xử lý các trường hợp đầu vào của Agent sử dụng các dạng mã hoá khác nhau về cùng một dạng utf-8 để tiện truy vấn. Node này mang tính kỹ thuật và không ảnh hưởng nhiều đến ý nghĩa của toàn bộ Agent.
+[Normal] _Retrieve_Document_ là node chịu trách nhiệm truy vấn tài liệu từ cơ sở dữ liệu vector. Ở node này, ta sử dụng kỹ thuật truy vấn kép: vừa tìm kiếm tài liệu bằng phương pháp tìm kiếm văn bản thông thường, vừa truy vấn vector. Sau đó ta sẽ tổng hợp cả hai kết quả vào để tránh bỏ sót các phần nội dung quan trọng trong dữ liệu ban đầu. Node này đồng thời sẽ quyết định xem những dữ liệu truy vấn được có liên quan đến câu hỏi của người dùng không. Nếu không sẽ yêu cầu node _ReWrite_Question_ viết lại theo cách khác để tăng hiệu quả truy vấn.
+[Normal] Đối với tìm kiếm văn bản, ta sẽ sử dụng thư viện BM25 Search của Python, còn đối với truy vấn vector, ta sẽ sử dụng cơ sở dữ liệu Vector FAISS của Facebook.
+[Tên hình vẽ] Hình 2.12. Mô phỏng quá trình truy vấn kết hợp
+[Normal] Hàm tạo Reviever như sau:
+[Tên hình vẽ] Hình 2.13. Hàm tạo truy vấn RAG kép
+[Normal] Node _Retrieve_Document_ sử dụng prompt sau:
+[Code] ** Context **
+You are a grader assessing relevance of a retrieved document to a user question that all in vietnamese or another language.
+user's question is about regulations and policies of the Academy of Cryptographic Techniques (KMA).
+Your user is a student or lecturer of KMA.
+You will be given a document and a question.
+If the document contains keyword(s) or semantic meaning related to the user question, grade it as relevant.
+
+** Objective **
+Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question.
+
+** Document **
+{context}
+
+** Question **
+{question}
+[Normal] _ReWrite_Question_là node thực hiện viết lại câu hỏi của người dùng theo dạng khác. Prompt sử dụng của node này như sau:
+[Code] ** Context **
+You are an AI assistant that rewrites user questions to improve clarity and relevance.
+The questions are about regulations and policies of the Academy of Cryptographic Techniques (KMA).
+You are given a question that may be unclear or not directly related to the regulations.
+Look at the input and try to reason about the underlying semantic intent / meaning.
+Please rewrite the question to make it clearer and more relevant.
+
+** Objective **
+- Please rewrite the question to make it clearer and more relevant. Formulate an improved question.
+- Make sure to keep the context of the question intact.
+- Please write only improved question without another words or informations.
+- Rewrite question in Vietnamese.
+
+** Question **
+Here is the initial question:
+{question}
+[Normal] _Generate_Output_ là node sẽ tổng hợp kết quả truy vấn và đưa ra câu trả lời cuối cùng sau khi node _Retrievel_Document_ chấp nhận document đã truy vấn ra hoặc sau khi quá một số lần viết lại câu hỏi nhất định. Node này sử dụng prompt sau:
+[Code] ** Context **
+You are a virtual assistant for students and lecturers of the Cryptographic Engineering Academy (abbreviated as KMA).
+You are knowledgeable about all of the academy's regulations and policies and can answer any questions related to them.
+Your answers must be based on the information provided in the document below, which contains relevant KMA regulations and policies.
+
+** Objective **
+Answer questions related to KMA's regulations and policies.  If you don't know the answer, just say that you don't know.
+
+** Style **
+- Respond as an intelligent and professional virtual assistant.
+- Present your answers in a structured, well-formatted way (use markdown where needed), ensuring clarity and readability.
+- Your answers must be accurate, concise, and informative.
+- Only answer the question being asked. Do not include greetings, advice, or thank-you notes.
+- Respond must in Vietnamese.
+
+** Question **
+The user's question is:
+{question}
+
+** Document **
+Use the following pieces of retrieved context to answer the question:
+{context}
+[Heading 3] 2.2.7. Xây dựng các tool
+[Heading 4] 2.2.7.1. Tool truy vấn điểm của sinh viên
+[Normal] Tool này chịu trách nhiệm truy vấn điểm của sinh viên với đầu vào là các tham số tuỳ chọn: mã sinh viên, học kỳ cần truy vấn. Bằng cách truy vấn trực tiếp vào cơ sở dữ liệu, tool này sẽ cho phép lấy ra danh sách điểm số của sinh viên.
+[Tên hình vẽ] Hình 2.14. Hàm truy vấn của tool tra cứu điểm sinh viên
+[Tên bảng] Bảng 2.8. Thông số của tool truy xuất bảng điểm sinh viên 
+[Heading 4] 2.2.7.2. Tool truy vấn thông tin sinh viên
+[Normal] Tool này chịu trách nhiệm tra cứu thông tin về tên, lớp niên chế của sinh viên có mã sinh viên được yêu cầu.
+[Tên hình vẽ] Hình 2.15. Hàm của tool truy vấn thông tin sinh viên
+[Tên bảng] Bảng 2.9. Thông số của tool truy xuất thông tin sinh viên 
+[Heading 4] 2.2.7.3. Tool tính điểm trung bình các môn của sinh viên
+[Normal] Tool này nhận đầu vào là danh sách điểm các môn kèm theo số tín chỉ của từng môn và cho ra kết quả là điểm trung bình chung tích luỹ theo công thức:
+[Tên hình vẽ] Hình 2.16. Công thức tính điểm trung bình chung tích luỹ học kỳ
+[Tên hình vẽ] Hình 2.17. Hàm của tool tính điểm trung bình cộng
+[Tên bảng] Bảng 2.10. Thông số của tool tính điểm trung bình sinh viên 
+[Heading 2] 2.3. Lựa chọn mô hình ngôn ngữ lớn
+[paragraph] Việc lựa chọn một mô hình ngôn ngữ lớn phù hợp là một bước rất quan trọng, đồng thời cần cân nhắc đến hiệu năng và chi phí. Sau khi khảo sát các mô hình hiện có, bao gồm cả các mô hình mã nguồn mở và các mô hình thương mại, tôi đã quyết định tập trung vào các mô hình có thể truy cập và tùy chỉnh dễ dàng. Trang web Ollama là một nguồn tài nguyên hữu ích, cung cấp nhiều mô hình ngôn ngữ lớn đã được tối ưu hóa để có thể chạy cục bộ giúp tiết kiệm thời gian và chi phí khi cần phải.
+[List Paragraph] Xác định tiêu chí:
+[List Paragraph] Chất lượng output: Mô hình phải có khả năng hiểu và trả lời các câu hỏi liên quan đến sản phẩm, chính sách bán hàng, tình trạng đơn hàng một cách chính xác và tự nhiên, phù hợp với ngữ cảnh trang thương mại điện tử.
+[List Paragraph] Tốc độ phản hồi: Để đảm bảo trải nghiệm người dùng tốt, thời gian phản hồi của chatbot phải nhanh.
+[List Paragraph] Chi phí và khả năng triển khai: Ưu tiên các mô hình mã nguồn mở hoặc có chi phí sử dụng hợp lý, dễ dàng triển khai trên hạ tầng của mình, đặc biệt là có khả năng chạy trên các máy chủ có cấu hình vừa phải hoặc thậm chí là tối ưu để chạy trên thiết bị đầu cuối (edge devices) nếu cần.
+[List Paragraph] Kích thước mô hình (Model size): Các mô hình nhẹ (ít tham số hơn) thường nhanh hơn và yêu cầu ít tài nguyên hơn.
+[List Paragraph] Lựa chọn Gemma3:4b: Dựa trên các tiêu chí trên, và sau khi tham khảo thông tin từ cộng đồng Ollama cũng như các bài đánh giá, tôi đã lựa chọn mô hình Gemma3:4b (hoặc một phiên bản tương đương trong dòng Gemma có kích thước khoảng 4 tỷ tham số). Lý do cho lựa chọn này bao gồm:
+[List Paragraph] Kích thước phù hợp: Với khoảng 4 tỷ tham số, Gemma3:4b là một mô hình tương đối nhẹ, giúp giảm yêu cầu về phần cứng và tăng tốc độ suy luận so với các mô hình lớn hơn hàng chục hoặc hàng trăm tỷ tham số. Điều này rất quan trọng để hệ thống có thể chạy mượt mà trên các máy chủ có cấu hình thấp hoặc trung bình, phục vụ cho cả website và ứng dụng Android.
+[List Paragraph] Hiệu năng tốt: Dòng mô hình Gemma của Google được biết đến với hiệu suất tốt so với kích thước của chúng. Chúng được huấn luyện trên tập dữ liệu chất lượng cao và có khả năng tạo ra văn bản mạch lạc, phù hợp cho các tác vụ chatbot.
+[List Paragraph] Tốc độ suy luận nhanh: Kích thước nhỏ gọn của mô hình, kết hợp với việc Google đặc biệt thiết kế Gemma để chạy hiệu quả trên một GPU duy nhất, thường đồng nghĩa với tốc độ xử lý và phản hồi nhanh hơn. Đây là một yếu tố cực kỳ quan trọng để đảm bảo trải nghiệm người dùng tốt, giúp khách hàng nhận được câu trả lời nhanh hơn.
+[List Paragraph] Hỗ trợ từ cộng đồng và Ollama: Việc mô hình có sẵn trên Ollama giúp đơn giản hóa quá trình thiết lập và thử nghiệm.
+[Heading 2] 2.4. Tổng kết chương 2
+[Normal] Trong chương này, báo cáo đã trình bày phương pháp xây dựng hệ thống chatbot AI chi tiết dựa trên kiến trúc AI Agent và framework LangGraph. Trong chương tiếp theo, báo cáo sẽ trình bày phương pháp xây dựng ứng dụng tra cứu cho sinh viên, có tích hợp hệ thống chatbot AI ta đã xây dựng tại chương 2.
+[Heading 1] CHƯƠNG 3: PHÂN TÍCH, THIẾT KẾ HỆ THỐNG
+[Heading 2] 3.1. Yêu cầu của hệ thống
+[Heading 3] 3.3.1. Yêu cầu về hình thức sản phẩm
+[Normal] Yêu cầu về hình thức sản phẩm của đề tài Áp dụng chatbot trong đào tạo tại Học viện Kỹ thuật mật mã:
+[List Paragraph] Sản phẩm được đói gói dưới dạng hệ thống bao gồm website, hệ thống Backend phục vụ và hệ thống chatbot.
+[List Paragraph] Website được trình bày dưới dạng website tra cứu thông tin về điểm số, các quy định, quy chế của học viện, tra cứu thông tin hữu ích khác cho sinh viên. Website được tích hợp chatbot AI như một tính năng, cho phép người sử dụng tương tác với mô hình chatbot AI mà đề tài đã xây dựng.
+[Heading 3] 3.3.2. Yêu cầu chức năng
+[Heading 4] 3.3.2.1. Yêu cầu chức năng của hệ thống chatbot đối với người dùng:
+[Normal] Các chức năng dành cho người dùng của hệ thống bao gồm:
+[List Paragraph] Chức năng tra cứu điểm sinh viên: Người dùng có thể tra cứu điểm số và tình trạng học tập cá nhân thông qua mã sinh viên. Điểm số được thể hiện dưới dạng danh sách bao gồm: tên môn, số tín chỉ, điểm thành phần, điểm thi, điểm tổng kết, điểm dạng chữ, điểm quy đổi trên thang điểm 4. Tình trạng học tập thể hiện số môn đã tích luỹ, số tín chỉ tích luỹ, số môn còn nợ và tổng điểm GPA của sinh viên.
+[List Paragraph] Chức năng tra cứu xếp hạng điểm: Người dùng có thể tra cứu xếp hạng về điểm số trung bình chung của mình trên các phạm vi bao gồm: toàn khoá, toàn trường, phạm vi lớp niên chế.
+[List Paragraph] Chức năng tra cứu danh sách sinh viên đủ điều kiện xét học bổng: Chức năng này cho phép sinh viên tra cứu sinh viên có điểm trung bình chung cả học kỳ đạt đủ điều kiện dự xét học bổng. Tính năng này cho phép tra cứu theo từng khoá.
+[List Paragraph] Chức năng chat với AI: Xây dựng thành công chức năng trò chuyện với chatbot thông qua ứng dụng di động và website. Chatbot AI có khả năng trả lời các câu hỏi của người dùng liên quan đến các nội dung học tập, rèn luyện tại học viện. Cụ thể bao gồm:
+[List Paragraph] Khả năng hỏi đáp về thông tin quy định, chính sách của học viện.
+[List Paragraph] Khả năng truy vấn về thông tin điểm số cá nhân.
+[List Paragraph] Khả năng tính điểm trung bình theo học kỳ cho sinh viên.
+[List Paragraph] Khả năng hỏi đáp về thông tin quy trình, biểu mẫu văn bản của học viện.
+[List Paragraph] Chức năng lưu trữ lịch sử trò chuyện: Lịch sử trò chuyện được lưu trữ đầy đủ và có thể xem lại.
+[Heading 4] 3.3.2.2. Yêu cầu chức năng của hệ thống đối với quản trị viên:
+[Normal] Các chức năng dành cho quản trị viên của hệ thống bao gồm:
+[List Paragraph] Chức năng đăng nhập: Quản trị viên có thể đăng nhập vào hệ thống thông qua tài khoản đã tạo sẵn để sử dụng các chức năng quản trị.
+[List Paragraph] Chức năng tạo tài khoản quản trị viên: Quản trị viên có thể tạo mới các tài khoản quản trị viên.
+[List Paragraph] Chức năng quản trị dữ liệu về quy định, quy chế của học viện: Quản trị viên có thể cập nhật (thêm mới, sửa, xoá) dữ liệu về quy định, quy chế của học viện.
+[List Paragraph] Chức năng quản trị dữ liệu điểm số sinh viên: Quản trị viên có quyền cập nhật dữ liệu về điểm số của sinh viên sau mỗi kỳ thi. 
+[Heading 3] 3.3.3. Yêu cầu phi chức năng
+[Normal] Yêu cầu phi chức năng của hệ thống chatbot:
+[List Paragraph] Người dùng thông thường có thể sử dụng hệ thống mà không cần tài khoản.
+[List Paragraph] Quản trị viên có thể đăng nhập tài khoản để cập nhật dữ liệu hệ thống.
+[List Paragraph] Tích hợp dễ dàng: có thể dễ dàng tích hợp vào ứng dụng di động hoặc Website thông qua RestAPI.
+[List Paragraph] Khả năng mở rộng.
+[List Paragraph] Hiệu suất truy vấn tốt: tối ưu hoá hiệu suất để quá trình truy xuất, hỏi đáp thông tin diễn ra nhanh chóng.
+[List Paragraph] Giao diện người dùng thân thiện: Yêu cầu một giao diện người dùng thân thiện, dễ sử dụng và có độ trực quan cao để tạo trải nghiệm người dùng thuận tiện và thú vị.
+[Heading 2] 3.2. Phân tích hệ thống
+[Heading 3] 3.2.1. Biểu đồ usecase tổng quát
+[Normal] Với tác nhân là người dùng, ta có biểu đồ ca sử dụng của hệ thống được biểu diễn như sau:
+[Tên hình vẽ] Hình 3.1. Usecase tổng quát
+[Normal] Hệ thống có các usecase chính là:
+[List Paragraph] Tra cứu bảng điểm cá nhân
+[List Paragraph] Tra cứu xếp hạng điểm tổng kết
+[List Paragraph] Tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng
+[List Paragraph] Tra cứu quy định, chính sách của học viện
+[List Paragraph] Quản lý cuộc trò chuyện với chatbot
+[List Paragraph] Gửi tin nhắn mới đến chatbot
+[List Paragraph] Cập nhật dữ liệu điểm sinh viên
+[List Paragraph] Cập nhật dữ liệu quy định, chính sách
+[List Paragraph] Tạo tài khoản admin
+[Heading 3] 3.2.2. Đặc tả các usecase
+[Heading 4] 3.2.2.1. Usecase tra cứu bảng điểm
+[Tên hình vẽ] Hình 3.2. Usecase tra cứu bảng điểm
+[Tên bảng] Bảng 3.1. Đặc tả Usecase tra cứu bảng điểm
+[Heading 4] 3.2.2.2. Usecase xuất bảng điểm dưới dạng file excel
+[Tên hình vẽ] Hình 3.3. Usecase xuất bảng điểm dưới dạng file excel
+[Tên bảng] Bảng 3.2. Đặc tả Usecase xuất bảng điểm dưới dạng file excel
+[Heading 4] 3.2.2.3. Usecase tra cứu xếp hạng điểm tổng kết
+[Tên hình vẽ] Hình 3.4. Usecase tra cứu xếp hạng điểm tổng kết
+[Tên bảng] Bảng 3.3. Đặc tả Usecase tra cứu xếp hạng điểm tổng kết
+[Heading 4] 3.2.2.4. Usecase tra cứu danh sách sinh viên đủ điều kiện xét học bổng
+[Tên hình vẽ] Hình 3.5. Usecase tra cứu danh sách sinh viên đủ điều kiện xét học bổng
+[Tên bảng] Bảng 3.4. Đặc tả Usecase tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng
+[Heading 4] 3.2.2.5. Usecase tra cứu quy định và chính sách của học viện
+[Tên hình vẽ] Hình 3.6. Usecase tra cứu quy định và chính sách của học viện
+[Tên bảng] Bảng 3.5. Đặc tả Usecase tra cứu quy định và chính sách của học viện
+[Heading 4] 3.2.2.6. Usecase quản lý danh sách cuộc trò chuyện
+[Tên hình vẽ] Hình 3.7. Usecase quản lý danh sách cuộc trò chuyện
+[Tên bảng] Bảng 3.6. Đặc tả Usecase quản lý danh sách cuộc trò chuyện
+[Heading 4] 3.2.2.7. Usecase gửi tin nhắn mới
+[Tên hình vẽ] Hình 3.8. Usecase gửi tin nhắn mới
+[Tên bảng] Bảng 3.7. Đặc tả Usecase gửi tin nhắn mới
+[Heading 4] 3.2.2.8. Usecase cập nhật cơ sở dữ liệu điểm sinh viên
+[Tên hình vẽ] Hình.3.9 . Usecase cập nhật cơ sở dữ liệu điểm sinh viên
+[Tên bảng] Bảng 3.8. Đặc tả Usecase cập nhật cơ sở dữ liệu điểm sinh viên
+[Heading 4] 3.2.2.9. Usecase cập nhật cơ sở dữ liệu về quy định, chính sách
+[Tên hình vẽ] Hình 3.10. Usecase cập nhật cơ sở dữ liệu về quy định, chính sách
+[Tên bảng] Bảng 3.9. Đặc tả Usecase cập nhật cơ sở dữ liệu quy định, chính sách
+[Heading 4] 3.2.2.10. Usecase tạo tài khoản admin
+[Tên hình vẽ] Hình 3.11. Usecase tạo tài khoản admin
+[Tên bảng] Bảng 3.10. Đặc tả Usecase tạo tài khoản admin
+[Normal] 3.2.3. Biểu đồ tuần tự
+[Heading 4] 3.2.3.1. Biểu đồ tuần tự chức năng tra cứu bảng điểm cá nhân
+[Tên hình vẽ] Hình 3.12. Biểu đồ tuần tự chức năng tra cứu bảng điểm cá nhân
+[Heading 4] 3.2.3.2. Biểu đồ tuần tự chức năng tra cứu xếp hạng điểm trung bình sinh viên
+[Tên hình vẽ] Hình 3.13. Biểu đồ tuần tra cứu xếp hạng điểm trung bình sinh viên
+[Heading 4] 3.2.3.3. Biểu đồ tuần tự tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng
+[Tên hình vẽ] Hình 3.14. Biểu đồ tuần tự tra cứu danh sách sinh viên xét học bổng
+[Heading 4] 3.2.3.4. Biểu đồ tuần tự tra cứu quy định của học viện
+[Tên hình vẽ] Hình 3.15. Biểu đồ tuần tự tra cứu quy định của học viện
+[Heading 4] 3.2.3.5. Biểu đồ tuần tự quản lý danh sách cuộc hội thoại với chatbot AI
+[Tên hình vẽ] Hình 3.16. Biểu đồ tuần tự quản lý danh sách cuộc hội thoại với chatbot
+[Heading 4] 3.2.3.6. Biểu đồ tuần tự luồng gửi tin nhắn mới đến chatbot AI
+[Tên hình vẽ] Hình 3.17. Biểu đồ tuần tự luồng gửi tin nhắn mới đến chatbot AI
+[Heading 4] 3.2.3.7. Biểu đồ tuần tự luồng cập nhật dữ liệu về điểm số sinh viên
+[Tên hình vẽ] Hình 3.18. Biểu đồ tuần tự luồng cập nhật cơ sở dữ liệu về điểm
+[Heading 4] 3.2.3.8. Biểu đồ tuần tự luồng cập nhật cơ sở dữ liệu về quy định của học viện
+[Tên hình vẽ] Hình 3.19. Biểu đồ tuần tự luồng cập nhật cơ sở dữ liệu về chính sách
+[Heading 2] 3.3. Thiết kế hệ thống
+[Heading 3] 3.3.2. Thiết kế cơ sở dữ liệu
+[Heading 4] 3.3.2.1. Cơ sở dữ liệu về thông tin sinh viên, điểm số sinh viên
+[Normal] Cơ sở dữ liệu về thông tin sinh viên và điểm số sinh viên được tổng hợp và lưu trữ dưới dạng cơ sở dữ liệu Postgresql với các bảng sau.
+[Tên bảng] Bảng 3.11. Score lưu trữ thông tin điểm số
+[Tên bảng] Bảng 3.12. Structure lưu trữ thông tin về môn học
+[Tên bảng] Bảng 3.13. Student lưu trữ thông tin về sinh viên
+[Heading 4] 3.3.2.2. Cơ sở dữ liệu về quy định, quy chế của học viện
+[Tên bảng] Bảng 3.14. Bảng Regulation lưu trữ quy định
+[Heading 4] 3.3.2.3. Cơ sở dữ liệu lưu trữ các đoạn hội thoại
+[Tên bảng] Bảng 3.15. Bảng Message lưu trữ tin nhắn giữa chatbot và người dùng
+[Tên bảng] Bảng 3.16. Bảng Conversation lưu trữ đoạn hội thoại giữa chatbot và người dùng
+[Heading 3] 3.3.2. Thiết kế các API
+[Normal] Các API của hệ thống được mô tả như sau:
+[Tên bảng] Bảng 3.17. API tra cứu điểm sinh viên
+[Tên bảng] Bảng 3.18. API tra cứu xếp hạng sinh viên
+[Tên bảng] Bảng 3.19. API tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng
+[Tên bảng] Bảng 3.20. API tra cứu danh sách quy định, quy chế của học viện
+[Tên bảng] Bảng 3.21. API xem danh sách cuộc trò chuyện
+[Tên bảng] Bảng 3.22. API tạo cuộc trò chuyện mới
+[Tên bảng] Bảng 3.23 API xoá cuộc trò chuyện
+[Tên bảng] Bảng 3.24. API lấy lịch sử chat của cuộc trò chuyện
+[Tên bảng] Bảng 3.25. API gửi tin nhắn mới
+[Heading 2] 3.4. Tổng kết chương 3
+[Normal] Trong chương này, đồ án đã trình bày chi tiết các nguyên lý nền tảng và yêu cầu kỹ thuật cho thành phần cốt lõi của hệ thống thương mại điện tử và hệ thống trả lời tự động. Bên cạnh đó, chương cũng đã thực hiện phân tích và thiết kế tổng thể hệ thống ứng dụng website tra cứu thông tin có tích hợp chatbot AI. Việc xây dựng ứng dụng web cho phép người dùng dễ dàng tiếp cận và sử dụng hệ thống chatbot.
+[Heading 1] CHƯƠNG 4: XÂY DỰNG HỆ THỐNG VÀ THỰC NGHIỆM
+[Heading 2] 4.1. Mô hình tổng quan của hệ thống
+[Normal] Hệ thống có kiến trúc phân tán bao gồm các thành phần:
+[List Paragraph] Ứng dụng web
+[List Paragraph] Hệ thống Backend
+[List Paragraph] Hệ thống chatbot
+[List Paragraph] Cơ sở dữ liệu
+[Normal] Tổ chức của các thành phần được mô tả như hình sau
+[Tên hình vẽ] Hình 4.1. Kiến trúc hệ thống
+[Normal] Kiến trúc của hệ thống cho phép tách biệt các thành phần Backend phục vụ, cơ sở dữ liệu, hệ thống AI Agent của chatbot và ứng dụng frontend. Kết nối các thành phần của hệ thống là các API.
+[Heading 2] 4.2. Các chức năng của hệ thống
+[Heading 3] 4.2.1. Trang chủ
+[Normal] Khi người dùng truy cập vào trang chủ của hệ thống, giao diện trang chủ sẽ hiện ra với logo của hệ thống, thanh điều hướng để truy cập nhanh các trang, lời giới thiệu và các nút thao tác nhanh. Trang chủ của hệ thống được thiết kế theo phong cách tối giản, chỉ hiển thị những thông tin cần thiết nhằm tối ưu trải nghiệm người dùng. Góc dưới bên phải của trang chủ hiển thị một nút động cho phép mở trang trò chuyện với chatbot dưới dạng cửa sổ bật lên (popup).
+[Tên hình vẽ] Hình 4.2. Giao diện trang landing page
+[Heading 3] 4.2.2. Chức năng tra cứu điểm cá nhân
+[Normal] Khi người dùng truy cập trang tra cứu điểm và xếp hạng, giao diện tra cứu sẽ hiển thị với nhóm 3 sinh viên xếp hạng cao nhất được hiển thị dưới dạng hàng ngang. Kế tiếp là bảng thao tác truy vấn điểm cá nhân. Tại đây, người dùng có thể chọn cấp xếp hạng và nhập mã sinh viên cá nhân để tra cứu.
+[Tên hình vẽ] Hình 4.3. Giao diện trang tra cứu điểm và xếp hạng
+[Normal] Sau khi tra cứu thành công, hiển thị giao diện kết quả truy vấn dưới dạng bảng điểm bao gồm các cột: Số thứ tự, tên môn học, điểm thành phần 1, điểm thành phần 2, điểm thi, điểm tổng kết, điểm dạng chữ. Đồng thời, giao diện hiển thị thành tích học tập bao gồm: số môn đã hoàn thành, số môn còn nợ đọng, GPA thang điểm 4, GPA thang điểm 10.
+[Tên hình vẽ] Hình 4.4. Giao diện bảng điểm
+[Heading 3] 4.2.3. Chức năng tra cứu sinh viên đủ điều kiện dự xét học bổng
+[Normal] Khi người dùng bấm vào menu trang tra cứu sinh viên đủ điều kiện, hiển thị giao diện trang tra cứu bao gồm menu chọn khoá sinh viên và các nút thao tra cứu. Khi chưa thực hiện tra cứu, giao diện hiển thị thông báo chưa có kết quả.
+[Normal] Sau khi người dùng thực hiện truy vấn thành công, hiển thị danh sách sinh viên đủ điều kiện dự xét học bổng dưới dạng bảng. Trong đó bao gồm các cột sau: thứ tự xếp hạng, học và tên sinh viên, mã sinh viên, lớp niên chế, GPA. Đồng thời ở trên cùng của bảng hiện thị số lượng kết quả được hiển thị trong bảng.
+[Tên hình vẽ] Hình 4.5. Giao diện trang tra cứu sinh viên đủ điều kiện xét học bổng
+[Tên hình vẽ] Hình 4.6. Giao diện danh sách sinh viên đủ điều kiện dự xét học bổng
+[Heading 3] 4.2.4. Chức năng chat với chatbot AI.
+[Normal] Ở góc phải màn hình là biểu tượng mở chức năng chat với chatbot AI, sau khi bấm vào, hiển thị các giao diện của chức năng chat. Người dùng có thể thực hiện các chức năng bao gồm: xem danh sách cuộc trò chuyện, tạo cuộc trò chuyện mới, gửi tin nhắn mới cho chatbot, xoá cuộc trò chuyện
+[Tên hình vẽ] Hình 4.7. Giao diện một cuộc hội thoại đang mở
+[Heading 3] 4.2.5. Một số chức năng của chatbot AI
+[Normal] Hệ thống chatbot có khả năng tự lên kế hoạch để thực hiện yêu cầu của người dùng dựa trên miền tri thức hiện có của hệ thống, do đó chức năng của chatbot AI là tuỳ thuộc vào yêu cầu của người dùng và dữ liệu của hệ thống. Dưới đây mô tả một số chức năng của hệ thống chatbot.
+[List Paragraph] Chức năng tra cứu thông tin sinh viên sẽ cung cấp thông tin của sinh viên với mã sinh viên được cung cấp, những thông tin này bao gồm: họ tên sinh viên, lớp niên chế. Đây là những dữ liệu công khai của sinh viên học viện.
+[List Paragraph] Chức năng tra cứu điểm số sinh viên cho phép tra cứu ra điểm số tất cả các môn của sinh viên với mã sinh viên được cung cấp. Người dùng hoàn toàn có thể chỉ định học kỳ sẽ tra cứu.
+[List Paragraph] Chức năng tính điểm trung bình cho phép AI tính điểm trung bình dựa trên điểm số đã tra cứu ở bước trước và trả về cho người dùng.
+[List Paragraph] Chức năng tra cứu về quy định, quy chế của học viện cho phép sinh hỏi đáp, tra cứu về những quy định nằm trong cơ sở dữ liệu của hệ thống.
+[Tên hình vẽ] Hình 4.8. Giao diện tra cứu thông tin sinh viên bằng chatbot AI
+[Tên hình vẽ] Hình 4.9. Giao diện tra cứu điểm số sinh viên bằng chatbot AI
+[Tên hình vẽ] Hình 4.10. Giao diện tính điểm trung bình bằng chatbot AI
+[Tên hình vẽ] Hình 4.11. Giao diện tra cứu về quy định của học viện với chatbot AI
+[Heading 3] 4.2.6. Chức năng đăng nhập của quản trị viên
+[Normal] Quản trị viên có thể đăng nhập để thực hiện cập nhật dữ liệu cho hệ thống. Trang đăng nhập có đường dẫn với đuôi tên_miền/admin/sign_in. Sau khi truy cập, giao diện đăng nhập được hiển thị.
+[Tên hình vẽ] Hình 4.12. Giao diện đăng nhập dành cho quản trị viên
+[Heading 3] 4.2.7. Chức năng cập nhật cơ sở dữ liệu về điểm số
+[Normal] Quản trị viên có thể thực hiện cập nhật cơ sở dữ liệu về điểm số cho sinh viên bằng cách truy cập vào trang cập nhật dữ liệu điểm số.
+[Tên hình vẽ] Hình 4.13. Giao diện trang cập nhật dữ liệu điểm số
+[Normal] Giao diện trang cập nhật bao gồm một nút bấm cho phép quản trị viên chọn và tải file dữ liệu lên hệ thống. Sau khi tải file dữ liệu thành công, hệ thống sẽ xử lý và hiển thị dữ liệu sẽ được cập nhật cho phép quản trị viên kiểm tra lại trước khi bấm lưu
+[Tên hình vẽ] Hình 4.14. Giao diện kiểm tra dữ liệu trước khi lưu
+[Heading 3] 4.2.8. Chức năng cập nhật thêm dữ liệu mới về chính sách, quy định của học viện
+[Normal] Admin có thể sử dụng tính năng thêm dữ liệu mới về các chính sách, quy định, nội quy của học viện dưới dạng một bài đăng mới thông qua truy cập vào trang có đuôi tên miền là /create-blog
+[Tên hình vẽ] Hình 4.15. Giao diện chức năng đăng bài viết mới
+[Normal] Ngoài ra quản trị viên có thể thực hiện quản lý đối với danh sách toàn bộ bài viết.
+[Tên hình vẽ] Hình 4.16. Giao diện quản lý danh sách bài viết
+[Heading 2] 4.3. Đánh giá
+[Heading 3] 4.3.1. Mô tả bộ dữ liệu thực nghiệm
+[Heading 4] 4.3.1.1. Cấu trúc bộ dữ liệu
+[Normal] Nhằm đánh giá hệ thống chatbot đã xây dựng, ta tiến hành thực nghiệm hệ thống trên một tập dữ liệu được chuẩn bị trước. Bộ dữ liệu sử dụng trong quá trình thực nghiệm bao gồm các truy vấn mẫu được xây dựng dựa trên các tình huống thực tế mà sinh viên có thể gặp trong quá trình học tập. Do đặc trưng của hệ thống, em xây dựng bộ dữ liệu gồm hai nhóm chính:
+[List Paragraph] Nhóm câu hỏi có đầu vào có thể đưa ra dạng kết quả duy nhất (sau đây gọi là nhóm N1). Ví dụ như câu hỏi về điểm số của sinh viên chỉ có thể đưa kết quả ở dạng duy nhất là một chuỗi các điểm số. 
+[List Paragraph] Nhóm câu hỏi đầu vào có thể đưa ra kết quả ở nhiều dạng khác nhau (sau đây gọi là nhóm N2). Ví dụ như câu hỏi về cách thực hiện phúc khảo kết quả thi, kết quả đầu ra có thể được viết dưới nhiều văn phong khác nhau.
+[Normal] Đối với nhóm N1, các phép đo có độ chính xác cao hơn nhóm N2. Đối với nhóm N2, ta có thể thực hiện thêm phép đo về mức độ liên quan giữa kết quả và ngữ cảnh thực tế.
+[Normal] Mỗi dòng trong bộ dữ liệu thực nghiệm bao gồm các trường thông tin được biểu diễn như bảng sau đây:
+[Tên bảng] Bảng 4.1. Bảng mô tả ý nghĩa các trường của bộ dữ liệu thực nghiệm
+[Heading 4] 4.3.1.2. Chuẩn bị dữ liệu
+[Normal] Để thực hiện đánh giá hệ thống chatbot, em chuẩn bị bộ dữ liệu thực nghiệm bao gồm 100 câu hỏi nhóm N1 và 100 câu hỏi nhóm N2. Các câu hỏi được thiết kế với độ phức tạp tăng dần, từ những câu hỏi đơn giản, có thể thực hiện với một bước truy xuất như câu hỏi về điểm số, câu hỏi về quy định tính điểm học phần,… cho tới những câu hỏi cần nhiều bước thực hiện như câu hỏi về khả năng đạt học bổng của một sinh viên nhất định.
+[Normal] Bảng sau thể hiện ví dụ về một số câu hỏi trong bộ dữ liệu thực nghiệm.
+[Tên bảng] Bảng 4.2. Một số câu hỏi nhóm N1 trong bộ dữ liệu thực nghiệm.
+[Tên bảng] Bảng 4.3. Một số câu hỏi nhóm N2 trong bộ dữ liệu thực nghiệm
+[Heading 3] 4.3.2. Kịch bản thực nghiệm
+[Normal] Việc đo lường các chỉ số là quan trọng để đánh giá mức độ hiểu quả của một AI Agent. Việc đánh giá tập trung vào chất lượng và độ chính xác của hệ thống AI Agent cốt lõi, bỏ qua các yếu tố giao diện người dùng (UI/UX). Phần thực nghiệm của đề tài sẽ tập trung đo lường nhằm xác định các tiêu chí đánh giá sau đây:
+[List Paragraph] Accuracy
+[List Paragraph] Recall
+[List Paragraph] Context Relevance
+[List Paragraph] Latency
+[Heading 4] 4.3.2.1. Accuracy
+[Normal] Accuracy hay độ chính xác thông tin là tiêu chí cốt lõi phản ánh tính đúng đắn của câu trả lời. Với các truy vấn tra cứu thông tin (điểm số, thông tin sinh viên), độ chính xác được đo bằng việc so sánh đáp án của chatbot với dữ liệu đầu ra mong muốn trong bộ dữ liệu thực nghiệm trong cơ sở dữ liệu. Độ chính xác tổng thể là tỉ lệ phần trăm giữa số lượng câu trả lời đúng trên tổng số câu truy vấn đã thực hiện, công thức tính Accuracy của hệ thống được thể hiện trong công thức sau:
+[Normal] Accuracy của hệ thống có thể được đo lường bằng cách thực hiện tokenize 
+[Normal] Với mỗi câu truy vấn, kết quả đánh giá kết quả nhị phân chỉ gồm 2 trạng thái Chấp nhận và Không chấp nhận. Mỗi câu trả lời đúng hoàn toàn được tính là một phản hồi được chấp nhận, câu trả lời sai hoặc chứa thông tin sai lệch được tính là phản hồi Không được chấp nhận. Để quyết định một câu truy vấn mang lại kết quả đúng hay sai ta có thể sử dụng phương pháp tokenize hoặc đánh giá bằng tay.
+[Normal] Đối với phương pháp tokenize, ta thực hiện sử dụng công cụ tokenizer của một mô hình xử lý ngôn ngữ tự nhiên để tách kết quả đầu ra của Agent và kết quả mong muốn thành các token. Sau đó, thực hiện so sánh danh sách các token xuất hiện, nếu danh sách token trùng khớp, ta xác nhận kết quả đầu ra trùng khớp với kết quả mong muốn. Cụ thể, em sẽ sử dụng công cụ tokenizer của mô hình xử lý ngôn ngữ “phobert-base” được công bố bởi đội ngũ VinAI để thực hiện token hoá và đánh giá.
+[Tên hình vẽ]  Hình 4.17. Đoạn code thực hiện đo lường chỉ số accuracy
+[Normal] Đối với đánh giá thủ công, ta sẽ quan sát kết quả đầu ra và kết quả mong muốn và đánh giá kết quả ở mức chủ quan. Trong phạm vi đồ án, em sẽ thực hiện cả hai phương pháp và so sánh kết quả.
+[Heading 4] 4.3.2.2. Recall
+[Normal] Recall hay độ bao phủ là chỉ số đo lường khả năng thu thập đủ các thông tin cần thiết của chatbot. Với câu hỏi có nhiều ý, ví dụ như “Quy định về việc nghỉ học và bảo lưu kết quả”, ta cần kiểm tra chatbot có liệt kê đầy đủ các điểm quan trọng hay bỏ sót không. Recall đo lường lượng thông tin bao phủ bởi kết quả đầu ra so với lượng thông tin trong đáp án mong muốn.
+[Normal] Nhằm đo lường độ bao phủ, ta thực hiện token hoá kết quả đầu ra và kết quả kỳ vọng, sau đó so sánh lượng token trùng lặp và tổng số token trong kết quả mong muốn. Tỷ số giữa token trùng lặp và tổng số token mong muốn chính là kết quả thu được của phép đo Recall. Công thức sau thể hiện phép đo Recall là tỉ số của phần chung giữa kết quả đầu ra với mong muốn và lượng token của kết quả mong muốn.
+[Normal] Để thực hiện đo lường chỉ số recall, ta cũng sẽ thực hiện tokenize thông qua mô hình xử lý ngôn ngữ “phobert-base” tương tự như phép đo accuracy:
+[Tên hình vẽ] Hình 4.18. Đoạn code đo lường chỉ số Recall
+[Heading 4] 4.3.2.3. Context Relevance
+[Normal] Context Relevance hay mức độ liên quan đến ngữ cảnh là chỉ số phản ánh mức độ liên kết của câu trả lời với ngữ cảnh truy vấn ban đầu. Chỉ số này được tính bằng tỷ số lượng token chung giữa câu trả lời và ngữ cảnh trên lượng token trong đáp án mong muốn.
+[Heading 4] 4.3.2.4. Latency
+[Normal] Latency là chỉ số thể hiện tốc độ của hệ thống chatbot. Latency được tính bằng tổng thời gian hệ thống cần để xử lý một đầu vào và cho ra kết quả hoàn chỉnh. Chỉ số này được tính bằng đơn vị giây và được đo bằng cách ghi nhận thời gian bắt đầu và kết thúc của mỗi truy vấn.
+[Tên hình vẽ] Hình 4.19. Đoạn code thực hiện đo lường latency
+[Normal] Công thức tính thể hiện như ảnh sau:
+[Heading 3] 4.3.3. Tiến hành thực nghiệm
+[Normal] Thực nghiệm được tiến hành thông qua một chương trình đánh giá tự động viết bằng ngôn ngữ lập trình Python. Mỗi câu hỏi sẽ được gửi vào truy vấn chatbot thu thập đầu ra và tính toán các chỉ số. Trong số các chỉ số đo lường, chỉ số accuracy sẽ được đo lường đồng thời bằng chương trình và đo lường thủ công nhằm đảm bảo kết quả chính xác nhất. Chương trình thực nghiệm được xây dựng dựa theo các bước sau đây:
+[List Paragraph] Bước 1: Nhập bộ dữ liệu thực nghiệm từ file .csv
+[List Paragraph] Bước 2: Với mỗi câu hỏi của bộ dữ liệu, thực hiện truy vấn chatbot và đo lường các chỉ số.
+[List Paragraph] Bước 3: Ghi kết quả đo lường và chuyển sang câu hỏi tiếp theo
+[List Paragraph] Bước 4: Tổng hợp kết quả đo lường
+[Normal] Dưới đây là đoạn mã có nhiệm vụ tiến hành thực nghiệm hệ thống:
+[Tên hình vẽ] Hình 4.20. Chương trình thực nghiệm hệ thống
+[Heading 3] 4.3.4. Kết quả thực nghiệm
+[Heading 4] 4.3.4.1. Kết quả thực nghiệm
+[Normal] Kết quả thực nghiệm là giá trị của các phép đo lường, trong đó phép đo Accuracy là phép đo tổng hợp kết quả trên cả tập dữ liệu nên chỉ có một giá trị, các phép đo khác sẽ ghi nhận được thêm giá trị tối thiểu và giá trị tối đa. Sau quá trình thực nghiệm, thu lại được những kết quả sau đây. 
+[Tên bảng] Bảng 4.4. Kết quả thực nghiệm bộ dữ liệu N1
+[Tên bảng] Bảng 4.5. Kết quả thực nghiệm bộ dữ liệu N2
+[Heading 4] 4.3.4.2. Đánh giá
+[Normal] Từ kết quả thực nghiệm, thu được đánh giá sau đây:
+[List Paragraph] Độ chính xác trong các truy vấn thuộc nhóm N2 thấp hơn nhóm N1 do đặc tính câu trả lời có thể viết dưới nhiều dạng khác nhau.
+[List Paragraph] Độ chính xác khi đo thủ công và đo tự động của nhóm N2 có sự khác biệt lớn do đặc tính câu trả lời thu được của nhóm N2 thường là các đoạn văn bản dài.
+[List Paragraph] Tỉ lệ bao phủ (recall) của nhóm N1 cao do câu trả lời thường ngắn gọn, chính xác.
+[List Paragraph] Mức độ liên quan giữa câu trả lời và context ở nhóm N2 cao nhất đạt tới hơn 86% thể hiện quá trình truy vấn RAG có tác dụng cải thiện độ chính xác tương đối tốt.
+[List Paragraph] Độ trễ của hệ thống còn cao, đặc biệt rất cao ở những truy vấn phức tạp, đòi hỏi nhiều bước
+[Heading 2] 4.4. Tổng kết
+[Normal] Trong chương 4, báo cáo đã trình bày về mô hình tổng quan của hệ thống, đồng thời giới thiệu các chức năng của hệ thống sau khi xây dựng. Phần sau, chương 4 cũng đã trình bày về phương pháp thực nghiệm hệ thống và kết quả đạt được. Từ những kết quả ấy, ta có thể rút ra kết luận được trình bày ở phần cuối của báo cáo.
+[UH1] KẾT LUẬN
+[Normal] Sau khi nghiên cứu các kiến thức nền tảng, đề xuất mô hình và triển khai xây dựng ứng dụng, đồ án “Xây dựng chatbot phục vụ cho đào tạo tại Học viện Kỹ thuật mật mã” đã đạt được một số kết quả cụ thể như sau:
+[Normal] Kết quả đạt được
+[List Paragraph] Trình bày rõ các khái niệm cơ bản liên quan đến chatbot, chatbot AI.
+[List Paragraph] Trình bày các khái niệm và lý thuyết liên quan đến AI Agent, RAG, LangGraph framework.
+[List Paragraph] Đề xuất mô hình chatbot AI với nền tảng kỹ thuật là AI Agent kết hợp với Agentic RAG trên nền LangGraph Framework.
+[List Paragraph] Giới thiệu và áp dụng framework ReactJs trong xây dựng ứng dụng website.
+[List Paragraph] Tiến hành phân tích, thiết kế và xây dựng thành công chatbot dành cho sinh viên và giảng viên Học viện Kỹ thuật mật mã.
+[Normal] Hạn chế
+[List Paragraph] Do giới hạn về thời gian và nguồn lực, chatbot chưa được tích hợp lên nhiều nền tảng khác nhau.
+[List Paragraph] Một số chức năng trong ứng dụng vẫn còn tồn tại lỗi nhỏ và cần được cải thiện thêm về hiệu suất cũng như  giao diện người dùng.
+[Normal] Hướng phát triển
+[List Paragraph] Tiếp tục hoàn thiện và mở rộng các chức năng, cải thiện độ ổn định, hiệu năng và khả năng sử dụng thực tế của ứng dụng.
+[List Paragraph] Cải thiện khả năng phản hồi của chatbot và mở rộng tính năng cho chatbot.
+[UH1] TÀI LIỆU THAM KHẢO
+[List Paragraph] ReactJS document, " Starting development with TapLinx Android SDK", Online: https://react.dev/learn
+[List Paragraph] LangChain, "Build a Retrieval Augmented Generation (RAG) App", Online:  https://python.langchain.com/docs/tutorials/rag/
+[List Paragraph] Goku Mohandas and Philipp Moritz, "Building RAG-based LLM Applications for Production”
+[List Paragraph] Hugging Face, "Advanced RAG on Hugging Face documentation using LangChain ", Online: https://huggingface.co/learn/cookbook/en/advanced
+[List Paragraph] Keychain Services, Online: https://developer.apple.com/documentation/security/keychain_services#//apple_ref/doc/uid/TP30000897-CH203-TP1
+[List Paragraph] Yunfan Gao , Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Meng Wang, and Haofen Wang, "Retrieval-Augmented Generation for Large Language Models: A Survey", Online: https://arxiv.org/pdf/2312.10997
+[List Paragraph] Mehdi Allahyari, Angelina Yang, "A Practical Approach to Retrieval Augmented Generation Systems, Online: https://mallahyari.github.io/rag-ebook/
+[List Paragraph] LangGraph Document, “LangGraph Cookbook”, Online: https://langchain-ai.github.io/langgraph/. 
+[List Paragraph] Yuan-Hao Jiang, Ruijia, Zizhou Zhou, Changyong Qi, Hanglei Hu, “AI Agent for Education: von Neumann Multi-Agent System Framework”, Online: https://arxiv.org/html/2501.00083v1
+[List Paragraph] Chip Huyen, “Agent”, Online: https://huyenchip.com/2025/01/07/agents.html
+
+
+=== TABLES ===
+
+
+--- TABLE 1 ---
+ | BAN CƠ YẾU CHÍNH PHỦ | HỌC VIỆN KỸ THUẬT MẬT MÃ | ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ |  |  |  | ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC
+ | ĐỀ TÀI | NGHIÊN CỨU PHÁT TRIỂN TRỢ LÝ ẢO PHÁP LUẬT CHO CHUYỂN ĐỔI Số | 
+				Sinh viên thực hiện: Vương Văn Duy | 				Lớp: CT6D | 				Chuyên ngành: Phát triển phần mềm di động | 				Mã ngành: 7.48.02.01 | Người hướng dẫn: ThS. Trần Đức Thịnh |  | 	 |  |  |  | Hà Nội, 2026 | 
+ | BAN CƠ YẾU CHÍNH PHỦ | HỌC VIỆN KỸ THUẬT MẬT MÃ | ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ |  |  |  | ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC
+ | ĐỀ TÀI | NGHIÊN CỨU PHÁT TRIỂN TRỢ LÝ ẢO PHÁP LUẬT CHO CHUYỂN ĐỔI Số | 
+				Sinh viên thực hiện: Vương Văn Duy | 				Lớp: CT6D | 				Chuyên ngành: Phát triển phần mềm di động | 				Mã ngành: 7.48.02.01 | Người hướng dẫn: ThS. Trần Đức Thịnh |  |  | 	 |  |  | Hà Nội, 2026 | 
+
+--- TABLE 2 ---
+ || Hà Nội, ngày     tháng     năm 2026 | Sinh viên thực hiện | (Ký tên và ghi rõ họ tên) |  |  | Vương Văn Duy
+
+--- TABLE 3 ---
+Yếu tố || Tính chất
+Đối tượng sử dụng || Sinh viên, giảng viên, CBNV của Học viện
+Bối cảnh sử dụng || Tìm kiếm thông tin xoay quanh hoạt động đào tạo như: thông tin sinh viên, thông tin học viện, bảng điểm, thi cử, lịch học,...
+Vai trò của chatbot || Chatbot có vai trò là người trợ lý, giải đáp câu hỏi của người dùng
+Phạm vi phục vụ của chatbot || Phục vụ những nội dung liên quan đến hoạt động đào tạo, từ chối phục vụ những nội dung khác
+Phạm vi đạo đức của chatbot || chatbot chỉ được trả lời chính xác những câu hỏi trong tầm hiểu biết, không được phép trả lời nếu không có dữ liệu
+
+--- TABLE 4 ---
+Loại dữ liệu || Nguồn dữ liệu || Định dạng
+Điểm thi KTHP || Website của Khảo thí || Các bảng điểm lưu trữ dưới dạng file PDF
+Thông tin sinh viên (bao gồm mã sinh viên, tên sinh viên, lớp niên chế) || Tổng hợp từ các file bảng điểm của khảo thí || Các bảng lưu trữ
+Quy chế sinh viên || Sổ tay sinh viên và website của Học viện || Văn bản dài dưới dạng file PDF
+Mẹo hữu ích trong quá trình học tập || Thu thập từ các bạn sinh viên học viện || Các văn bản ngắn lưu trữ dưới dạng file .txt
+Những câu hỏi thường gặp (FAQs) || Khảo sát từ các bạn sinh viên học viện || Các dạng file văn bản
+
+--- TABLE 5 ---
+Tên State || AgentState || AgentState
+Tên biến || Kiểu dữ liệu || Ý nghĩa
+messages || Annotated[Sequence[BaseMessage]] || Lưu giữ chuỗi các tin nhắn giữa AI, Tool, User xuyên suốt Graph
+
+--- TABLE 6 ---
+Tên State || InitThinkingOutput || InitThinkingOutput
+Tên biến || Kiểu dữ liệu || Ý nghĩa
+messages || Annotated[Sequence[BaseMessage]] || Lưu giữ chuỗi các tin nhắn giữa AI, Tool, User xuyên suốt Graph
+thinking_steps || Optional[List[str]] || Lưu giữ chuỗi các bước thực hiện của kế hoạch
+
+--- TABLE 7 ---
+Tên State || PlanValidatorOutput || PlanValidatorOutput
+Tên biến || Kiểu dữ liệu || Ý nghĩa
+messages || Annotated[Sequence[BaseMessage]] || Lưu giữ chuỗi các tin nhắn giữa AI, Tool, User xuyên suốt Graph
+thinking_steps || Optional[List[str]] || Lưu giữ chuỗi các bước thực hiện của kế hoạch
+Completed_steps || Optional[List[str]] || Lưu giữ chuỗi các bước đã hoàn thành
+Decision || Str || Quyết định được đưa ra bởi node này
+Next_steps: || Str || Bước thực hiện tiếp theo
+
+--- TABLE 8 ---
+Tên State || PlanValidatorOutput || PlanValidatorOutput
+Tên biến || Kiểu dữ liệu || Ý nghĩa
+messages || Annotated[Sequence[BaseMessage]] || Lưu giữ chuỗi các tin nhắn giữa AI, Tool, User xuyên suốt Graph
+thinking_steps || Optional[List[str]] || Lưu giữ chuỗi các bước thực hiện của kế hoạch mới
+Completed_steps || Optional[List[str]] || Lưu giữ chuỗi các bước đã hoàn thành
+
+--- TABLE 9 ---
+Tên State || PlanValidatorOutput || PlanValidatorOutput
+Tên biến || Kiểu dữ liệu || Ý nghĩa
+messages || Annotated[Sequence[BaseMessage]] || Lưu giữ chuỗi các tin nhắn giữa AI, Tool, User xuyên suốt Graph. Bao gồm cả kết quả vừa thu được.
+thinking_steps || Optional[List[str]] || Lưu giữ chuỗi các bước thực hiện của kế hoạch mới
+Completed_steps || Optional[List[str]] || Lưu giữ chuỗi các bước đã hoàn thành
+
+--- TABLE 10 ---
+Thông số || Giá trị || Giá trị
+Tên của tool || Get_student_score || Get_student_score
+Mô tả || Get KMA student scores from the database. Useful for retrieving scores for a specific student. The student code must be provided. Optionally, you can filter by semester in format ki1-2024-2025, k2-2024-2025, or some thing like that. || Get KMA student scores from the database. Useful for retrieving scores for a specific student. The student code must be provided. Optionally, you can filter by semester in format ki1-2024-2025, k2-2024-2025, or some thing like that.
+Bộ tham số || Student_code || Mã sinh viên của sinh viên
+Bộ tham số || Semester || Học kỳ cần lấy điểm
+Bộ tham số || Subject_name || Tên môn học cần lấy điểm
+
+--- TABLE 11 ---
+Thông số || Giá trị || Giá trị
+Tên của tool || Get_student_info || Get_student_info
+Mô tả || Get KMA student information from the database. Useful for retrieving information for a specific student. The student code must be provided. || Get KMA student information from the database. Useful for retrieving information for a specific student. The student code must be provided.
+Bộ tham số || Student_code || Mã sinh viên của sinh viên
+
+--- TABLE 12 ---
+Thông số || Giá trị || Giá trị
+Tên của tool || Calculate Score || Calculate Score
+Mô tả || Calculate average scores from provided scores data. The scores data must be provided in JSON format.The JSON string should contain an array of scores with fields: subject_name, subject_credits and score_over_rall. Please input data only in this JSON format and has no other words, scores, array of, subject_name, subject_credits, score_over_rall. || Calculate average scores from provided scores data. The scores data must be provided in JSON format.The JSON string should contain an array of scores with fields: subject_name, subject_credits and score_over_rall. Please input data only in this JSON format and has no other words, scores, array of, subject_name, subject_credits, score_over_rall.
+Bộ tham số || Score_json || Dữ liệu json các môn cần tính điểm trung bình
+
+--- TABLE 13 ---
+Tên Usecase || UC – Tra cứu bảng điểm cá nhân
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng tra cứu bảng điểm cá nhân thông qua mã sinh viên
+Luồng chính || 1. Người dùng truy cập vào website, trang tra cứu điểm | 2. Hệ thống hiển thị giao diện tra cứu điểm, người dùng nhập mã sinh viên cần tra cứu vào khung nhập | 3. Hệ thống kiểm tra thông tin và hiển thị danh sách điểm các môn cho người dùng
+Luồng thay thế || Nếu người dùng nhập dữ liệu không hợp lệ thì hệ thống sẽ hiển thị thông báo lỗi. 
+Kết quả || Hiển thị thành công bảng điểm cá nhân 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 14 ---
+Tên Usecase || UC – Xuất bảng điểm excel
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng sử dụng chức năng xuất bảng điểm dưới dạng file excel
+Luồng chính || 1. Người dùng truy cập vào website, trang tra cứu điểm | 2. Người dùng sử dụng chức năng tra cứu bảng điểm và hệ thống đã hiển thị bảng điểm cá nhân | 3. Người dùng chọn chức năng xuất bảng điểm cá nhân
+Luồng thay thế || Nếu không xuất file thành công, hệ thống sẽ báo lỗi 
+Kết quả || Xuất file bảng điểm thành công 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 15 ---
+Tên Usecase || UC – Xếp hạng điểm tổng kết
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng sử dụng chức năng tra cứu xếp hạng điểm tổng kết
+Luồng chính || 1. Người dùng truy cập vào website, trang tra cứu xếp hạng | 2. Người dùng chọn mức xếp hạng cần tra cứu, điền mã số sinh viên cá nhân và bấm tra cứu | 3. Hệ thống kiểm tra thông tin và hiển thị dữ liệu về bảng xếp hạng bao gồm nhóm 3 sinh viên có xếp hạng cao nhất và xếp hạng của người dùng.
+Luồng thay thế || Nếu không tra cứu thành công, hệ thống sẽ báo lỗi 
+Kết quả || Tra cứu xếp hạng điểm tổng kết thành công 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 16 ---
+Tên Usecase || UC – Tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng sử dụng chức năng tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng theo từng khoá
+Luồng chính || 1. Người dùng truy cập vào website, trang tra cứu học bổng. | 2. Người dùng chọn khoá cần tra cứu và bấm tra cứu. | 3. Hệ thống truy vấn cơ sở dữ liệu và trả về danh sách sinh viên của khoá đạt các điều kiện sau: | - Không có môn học lại. | - Điểm trung bình tích luỹ học kỳ đạt từ 3.0 trở lên. | 4. Hiển thị danh sách lên giao diện người dùng. 
+Luồng thay thế || Nếu không tra cứu thành công, hệ thống sẽ báo lỗi 
+Kết quả || Tra cứu danh sách sinh viên đủ điều kiện dự xét học bổng thành công
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 17 ---
+Tên Usecase || UC – Tra cứu quy định và chính sách của học viện
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng sử dụng chức năng tra cứu quy định, chính sách của học viện.
+Luồng chính || 1. Người dùng truy cập vào website, trang tra cứu quy định, chính sách | 2. Hệ thống hiển thị danh sách quy định, chính sách của học viện dưới dạng các bài viết. Người dùng bấm chọn bài viết muốn xem. | 3. Hệ thống hiển thị nội dung của quy định, chính sách
+Luồng thay thế || Nếu không tra cứu thành công, hệ thống sẽ báo lỗi 
+Kết quả || Tra cứu quy định và chính sách của học viện thành công
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 18 ---
+Tên Usecase || UC – Quản lý danh sách cuộc trò chuyện
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng sử dụng chức năng quản lý danh sách cuộc trò chuyện với chatbot AI
+Luồng chính || 1. Người dùng truy cập vào website, mở trang chatbot | 2. Hệ thống hiển thị danh sách cuộc trò chuyện đã diễn ra, đồng thời tự động tạo một cuộc trò chuyện mới. | 3. Người dùng có thể bấm vào xem nội dung cuộc trò chuyện | 4. Người dùng có thể bấm xoá cuộc trò chuyện |   4.1. Hệ thống kiểm tra và thực hiện xoá |   4.2. Nếu xoá thành công sẽ tải lại danh sách cuộc trò chuyện | 5. Người dùng có thể bấm tạo cuộc trò chuyện mới. |   5.1. Hệ thống tạo cuộc trò chuyện mới cho người dùng. |   5.2. Nếu tạo thành công, hiển thị nội dung cuộc trò chuyện mới
+Luồng thay thế || Nếu có lỗi xảy ra, thông báo cho người dùng. 
+Kết quả || Chức năng quản lý danh sách cuộc trò chuyện hoạt động bình thường
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 19 ---
+Tên Usecase || UC – gửi tin nhắn mới
+Tác nhân || Người dùng
+Mô tả || Usecase mô tả cách người dùng gửi tin nhắn mới trong cuộc hội thoại với chatbot AI
+Luồng chính || 1. Người dùng truy cập vào website, trang chatbot | 2. Hệ thống tự tạo cuộc trò chuyện mới hoặc người dùng sử dụng cuộc trò chuyện có sẵn | 3. Người dùng nhập tin nhắn và bấm gửi. Tin nhắn của người dùng hiển thị trên màn hình. | 4. Giao diện hiển thị trạng thái đang chờ phản hồi | 5. Hệ thống chatbot trả phản hồi, hiển thị lên giao diện người dùng,
+Luồng thay thế || Nếu không trả cứu thành công, hệ thống sẽ báo lỗi 
+Kết quả || Gửi tin nhắn thành công, có thể nhìn thấy cả tin nhắn gửi đi và tin nhắn nhận về 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 20 ---
+Tên Usecase || UC – cập nhật cơ sở dữ liệu điểm sinh viên
+Tác nhân || Quản trị viên
+Mô tả || Usecase mô tả cách quản trị viên thực hiện cập nhật cơ sở dữ liệu về điểm sinh viên cho hệ thống
+Luồng chính || 1. Người dùng truy cập vào website, trang đăng nhập | 2. Người dùng nhập thông tin đăng nhập và thực hiện đăng nhập |    2.1. Nếu người dùng nhập sai thông tin hoặc tài khoản không có quyền quản trị, hệ thống thông báo lỗi |    2.2. Nếu người dùng đăng nhập thành công và hệ thống có quyền quản trị, đưa người dùng vào trang quản trị | 3. Người dùng chọn chức năng quản trị cơ sở dữ liệu điểm | 4. Người dùng có thể chọn chức năng thêm dữ liệu học kỳ mới. |   4.1. Hệ thống hiển thị trang cập nhật |   4.2. Người dùng tải các file dữ liệu định dạng pdf lên |   4.3. Hệ thống thực hiện xử lý dữ liệu và thông báo cho người dùng, đồng thời thực hiện cập nhật cơ sở dữ liệu. |    4.4. Nếu cập nhật thất bại, thông báo lý do lỗi. | 5. Người dùng có thể chọn chức năng cập nhật dữ liệu học kỳ mới và chọn học kỳ cần cập nhật. |   5.1. Hệ thống hiển thị trang cập nhật |   5.2. Người dùng tải các file dữ liệu định dạng pdf lên |   5.3. Hệ thống thực hiện xử lý dữ liệu và thông báo cho người dùng, đồng thời thực hiện cập nhật cơ sở dữ liệu. |   5.4. Nếu cập nhật thất bại, thông báo lý do lỗi
+Luồng thay thế || Nếu không cập nhật thành công, hệ thống sẽ báo lỗi 
+Kết quả || Cập nhật dữ liệu thành công 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 21 ---
+Tên Usecase || UC – cập nhật cơ sở dữ liệu về quy định
+Tác nhân || Quản trị viên
+Mô tả || Usecase mô tả cách quản trị viên thực hiện cập nhật cơ sở dữ liệu về quy định của học viện cho hệ thống
+Luồng chính || 1. Người dùng truy cập vào website, trang đăng nhập | 2. Người dùng nhập thông tin đăng nhập và thực hiện đăng nhập |    2.1. Nếu người dùng nhập sai thông tin hoặc tài khoản không có quyền quản trị, hệ thống thông báo lỗi |    2.2. Nếu người dùng đăng nhập thành công và hệ thống có quyền quản trị, đưa người dùng vào trang quản trị | 3. Người dùng chọn chức năng quản trị cơ sở dữ liệu về quy định, chính sách của học viện | 4. Hệ thống hiển thị danh sách nội dung | 5. Người dùng chọn nội dung cần cập nhật hoặc chọn thêm mới nội dung | 5. Hệ thống hiển thị giao diện nhập dữ liệu | 6. Người dùng nhập dữ liệu mới hoặc chỉnh sửa dữ liệu có sẵn và bấm lưu. | 
+Luồng thay thế || Nếu không cập nhật thành công, hệ thống sẽ báo lỗi 
+Kết quả || Cập nhật dữ liệu thành công 
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 22 ---
+Tên Usecase || UC – tạo tài khoản admin
+Tác nhân || Quản trị viên
+Mô tả || Usecase mô tả cách quản trị viên thực hiện tạo mới tài khoản quản trị
+Luồng chính || 1. Người dùng truy cập vào website, trang đăng nhập | 2. Người dùng đăng nhập thành công vào trang quản trị viên  | 3. Người dùng chọn chức năng tạo tài khoản quản trị viên | 4. Người dùng nhập thông tin đăng nhập cho tài khoản mới và bấm lưu | 
+Luồng thay thế || Nếu không tạo thành công, báo lỗi 
+Kết quả || Tạo tài khoản mới thành công
+Yêu cầu đặc biệt || Không có
+
+--- TABLE 23 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Id || Int || Id
+2 || Student_code || Varchar(20) || Mã sinh viên
+3 || Subject_name || Varchar(100) || Tên môn học
+4 || Semester || Varchar(50) || Học kỳ
+5 || Score_first || Float4 || Điểm thành phần 1
+6 || Score_second || Float4 || Điểm thành phần 2
+7 || Score_final || Float4 || Điểm thi KTHP
+8 || Score_overall || Float4 || Điểm trung bình học kỳ
+9 || Score_text || Varchar(100) || Điểm chữ
+
+--- TABLE 24 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Subject_id || Int || Id
+2 || Subject_name || Varchar(100) || Tên môn học
+3 || Subject_credits || int || Số tín chỉ môn học
+
+--- TABLE 25 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Student_code || Int || Mã sinh viên
+2 || Student_name || Varchar(100) || Tên sinh viên
+3 || Student_class || Varchar(20) || Lớp niên chế của sinh viên
+
+--- TABLE 26 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Id || Int || Id
+2 || Title || Varchar(100) || Tiêu đề
+3 || Subtitle || Varchar(100) || Mô tả
+4 || Content || Text || Nội dung của quy định, lưu dưới dạng markdown
+5 || Date || Date || Ngày đăng tải
+
+--- TABLE 27 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Id || Int || Id
+2 || Is_user || Boolean || Biến kiểm tra là người dùng hay AI chatbot
+3 || Conversation_id || Int || Khoá ngoại liên kết tới bảng Conversation
+4 || Content || Text || Nội dung của quy định, lưu dưới dạng markdown
+5 || Date || Date || Ngày đăng tải
+
+--- TABLE 28 ---
+STT || Tên trường || Kiểu dữ liệu || Ý nghĩa
+1 || Id || Int || Id
+2 || Title || Varchar(100) || Tiêu đề
+3 || ession_id || Int || Session_id của người dùng. Sử dụng để định danh.
+4 || Updated_date || Date || Ngày thay đổi cuối cùng
+
+--- TABLE 29 ---
+Endpoint || /api/score || /api/score || /api/score
+Loại  || GET || GET || GET
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || Student_code || String || Mã sinh viên cần tra cứu
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Dữ liệu tra cứu điểm
+Kết quả || Data.subject_name || String || Tên môn học
+Kết quả || Data.subject_credit || Int || Số tín chỉ
+Kết quả || Data.tp1 || Float || Điểm thành phần 1
+Kết quả || Data.tp2 || Float || Điểm thành phần 2
+Kết quả || Data.exam_score || Float || Điểm thi
+Kết quả || Data.overall || Float || Điểm tổng kết
+
+--- TABLE 30 ---
+Endpoint || /api/ranking || /api/ranking || /api/ranking
+Loại  || GET || GET || GET
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || Student_code || String || Mã sinh viên cần tra cứu
+ || Ranking_type || Int || Mã loại xếp hạng cần tra cứu
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Dữ liệu tra cứu xếp hạng
+Kết quả || Data.student_code || String || Mã sinh viên
+Kết quả || Data.student_name || String || Tên sinh viên
+Kết quả || Data.class_name || String || Lớp niên chế
+Kết quả || Data.gpa || Float || Điểm tổng kết
+Kết quả || Data.ranking || Int || Xếp hạng
+
+--- TABLE 31 ---
+Endpoint || /api/schoolarship || /api/schoolarship || /api/schoolarship
+Loại  || GET || GET || GET
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || Grade || String || Khối sinh viên sẽ tra cứu. Ví dụ: CT5
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Size || Int || Số lượng sinh viên
+Kết quả || Data || Mảng json || Dữ liệu tra cứu
+Kết quả || Data.student_code || String || Mã sinh viên
+Kết quả || Data.student_name || String || Tên sinh viên
+Kết quả || Data.class_name || String || Lớp niên chế
+Kết quả || Data.gpa || Float || Điểm tổng kết
+Kết quả || Data.ranking || Int || Xếp hạng
+Kết quả || Data.overall || Float || Điểm tổng kết
+
+--- TABLE 32 ---
+Endpoint || /api/regulation || /api/regulation || /api/regulation
+Loại || GET || GET || GET
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Dữ liệu tra cứu
+Kết quả || Data.title || String || Tiêu đề
+Kết quả || Data.subtitle || String || Mô tả
+Kết quả || Data.content || String || Nội dung
+Kết quả || Data.publish_date || Date || Ngày đăng tải
+Kết quả || Data.category || String || Thể loại
+
+--- TABLE 33 ---
+Endpoint || /api/conversations || /api/conversations || /api/conversations
+Loại || GET || GET || GET
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || SessionID || String || ID phiên sử dụng của người dùng
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Danh sách cuộc trò chuyện
+Kết quả || Data.title || String || Tiêu đề
+Kết quả || Data.updated || Date Time || Thời điểm cập nhật gần nhất
+Kết quả || Data.id || String || ID
+Kết quả || Data.created || Date Time || Thời điểm tạo
+
+--- TABLE 34 ---
+Endpoint || /api/conversations || /api/conversations || /api/conversations
+Loại || POST || POST || POST
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || title || String || Tiêu đề
+Tham số || SessionID || String || ID phiên sử dụng của người dùng
+Tham số || Title || String || Tiêu đề
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || title || String || Tiêu đề
+Kết quả || updated || Date Time || Thời điểm cập nhật gần nhất
+Kết quả || id || String || ID
+Kết quả || created || Date Time || Thời điểm tạo
+
+--- TABLE 35 ---
+Endpoint || /api/conversation/:ConversationId || /api/conversation/:ConversationId || /api/conversation/:ConversationId
+Loại || DELETE || DELETE || DELETE
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || ConversationId || String || ID của cuộc trò chuyện càn thao tác
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Message || String || Thông báo kết quả thao tác
+
+--- TABLE 36 ---
+Endpoint || /api/message/:ConversationId || /api/message/:ConversationId || /api/message/:ConversationId
+Loại || GET || GET || GET
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || ConversationId || String || ID của cuộc trò chuyện càn thao tác
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Dữ liệu mảng tin nhắn
+Kết quả || Data.id || String || ID của tin nhắn
+Kết quả || Data.is_user || Boolean || Đánh dấu có phải do user gửi hay không
+Kết quả || Data.content || String || Nội dung
+Kết quả || Data.time || DateTime || Thời điểm gửi tin nhắn
+
+--- TABLE 37 ---
+Endpoint || /api/message/:ConversationId || /api/message/:ConversationId || /api/message/:ConversationId
+Loại || POST || POST || POST
+Tham số || Tên tham số || Kiểu dữ liệu || Ý nghĩa
+Tham số || ConversationId || String || ID của cuộc trò chuyện càn thao tác
+Kết quả || Tên trường || Kiểu dữ liệu || Ý nghĩa
+Kết quả || Data || Mảng json || Dữ liệu mảng tin nhắn
+Kết quả || Data.id || String || ID của tin nhắn
+Kết quả || Data.is_user || Boolean || Đánh dấu có phải do user gửi hay không
+Kết quả || Data.content || String || Nội dung
+
+--- TABLE 38 ---
+Tên trường || Ý nghĩa
+Query || Câu hỏi đầu vào cho hệ thống chatbot
+Expect || Đầu ra mong muốn chatbot đạt được
+Context || Ngữ cảnh liên quan. Đây là ngữ cảnh thực tế, được trích xuất từ bộ dữ liệu sử dụng để xây dựng hệ thống chatbot. | Đối với nhóm N2, trường context là bắt buộc để thực hiện phép đo về độ liên quan đến ngữ cảnh thực tế. Đối với nhóm N1, trường này là không bắt buộc.
+
+--- TABLE 39 ---
+STT || Query || Expect || Context
+1 || Điểm số môn Lập trình android của sinh viên CT050413 || 10 || 
+2 || Điểm số môn lý thuyết cơ sở dữ liệu của sinh viên CT050413 || 8,3 || 
+3 || Thông tin của sinh viên có mã sinh viên CT050413 || Họ và tên: Hoàng Văn Giang | Mã sinh viên: CT050413 | Lớp: CT5D || 
+4 || Xếp hạng điểm số toàn khoá của sinh viên có mã sinh viên CT050413 || 6 || 
+4 || Điểm các môn học kỳ 1 năm học 2025-2026 của sinh viên CT050413 || Lập trình Android nâng cao: 10,0 | Lập trình game trên thiết bị di động: 9,0 | An toàn và bảo mật trong phát triển phần mềm di động: 8,5 || 
+5 || Khả năng được học học bổng học kỳ 1 năm học 2025-2026 của sinh viên CT050413 || Có || 
+6 || Dựa vào số môn không đạt, sinh viên có mã CT050413 có bị hạ bậc bằng tốt nghiệp hay không || Không || 
+
+--- TABLE 40 ---
+Câu hỏi số 1 || Câu hỏi số 1
+Query || Quy định về học cải thiện
+Expect || Nếu có các học phần bị D, D+ (thang điểm 10 là từ 4.0 đến 5.4), sinh viên được đăng ký học lại các học phần đó để cải thiện điểm trung bình chung tích lũy. Điểm tích lũy cuối cùng của các học phần này sẽ là điểm cao nhất trong các lần học.
+Context || a) Đối với các sinh viên tuyển sinh từ 2020 trở về trước, nếu có các học phần bị D, D+ (thang điểm 10 là từ 4.0 đến 5.4) được đăng ký học lại các học phần đó để cải thiện điểm trung bình chung tích lũy. Điểm tích lũy cuối cùng của các học phần này sẽ là điểm cao nhất trong các lần học. | b) Đối với các sinh viên tuyển sinh từ 2021 trở đi, nếu có các học phần bị D, D+ (thang điểm 10 là từ 4.0 đến 5.4) được xem xét đăng ký học lại các học phần đó để cải thiện điểm trung bình chung tích lũy. Điểm tích lũy cuối cùng của các học phần này sẽ là điểm cao nhất trong các lần học.
+Câu hỏi số 2 || Câu hỏi số 2
+Query || Quy định về xếp loại tốt nghiệp
+Expect || Loại xuất sắc: điểm trung bình tích lũy từ 3,60 đến 4,00 | Loại giỏi: điểm trung bình tích lũy từ 3,20 đến 3,59 | Loại khá: điểm trung bình tích lũy từ 2,50 đến 3,19 | Loại trung bình: điểm trung bình tích lũy từ 2,00 đến 2,49 | Hạng tốt nghiệp của những sinh viên có kết quả học tập toàn khoá loại xuất sắc và giỏi sẽ bị giảm đi một mức nếu bị rơi vào một trong các trường hợp sau:  | a) Có khối lượng của các học phần phải học lại hoặc thi lại vượt quá 5% so với tổng số tín chỉ quy định cho toàn Chương trình đào tạo;  | b) Đã bị kỷ luật trong thời gian học từ mức cảnh cáo trở lên
+Context || 1. Xếp hạng tốt nghiệp được xác định theo điểm trung bình chung tích lũy của toàn khoá học như sau:  | a) Loại xuất sắc: điểm trung bình tích lũy từ 3,60 đến 4,00  | b) Loại giỏi: điểm trung bình tích lũy từ 3,20 đến 3,59  | c) Loại khá: điểm trung bình tích lũy từ 2,50 đến 3,19  | d) Loại trung bình: điểm trung bình tích lũy từ 2,00 đến 2,49.  | 2. Hạng tốt nghiệp của những sinh viên có kết quả học tập toàn khoá loại xuất sắc và giỏi sẽ bị giảm đi một mức nếu bị rơi vào một trong các trường hợp sau:  | a) Có khối lượng của các học phần phải học lại hoặc thi lại vượt quá 5% so với tổng số tín chỉ quy định cho toàn Chương trình đào tạo;  | b) Đã bị kỷ luật trong thời gian học từ mức cảnh cáo trở lên.
+
+--- TABLE 41 ---
+Chỉ số || Giá trị trung bình || Giá trị tối thiểu || Giá trị tối đa
+Accuracy (đo tự động) || 73 % ||  || 
+Accuracy (đo thủ công) || 81 % ||  || 
+Recall || 73,21 % || 23,21 % || 87,12 %
+Latency || 47,22 giây || 12,2 giây || 112,7 giây
+
+--- TABLE 42 ---
+Chỉ số || Giá trị trung bình || Giá trị tối thiểu || Giá trị tối đa
+Accuracy (đo tự động) || 34 % ||  || 
+Accuracy (đo thủ công) || 77 % ||  || 
+Recall || 64,21 % || 11,73 % || 93,11 %
+Context Relevance || 66,17 % || 27,06 % || 86,20 %
+Latency || 25,47 giây || 5,2 giây || 61,5 giây

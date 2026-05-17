@@ -1,0 +1,26 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Quản trị viên" as Admin
+rectangle "Quản trị dữ liệu pháp luật" {
+  usecase "Upload PDF\nvăn bản pháp luật" as Upload
+  usecase "Xem trước kết quả\ntrích xuất" as Preview
+  usecase "Theo dõi task\nxử lý" as Track
+  usecase "Huỷ task\nđang chạy" as Cancel
+  usecase "Xoá log task" as DeleteTask
+  usecase "Xoá văn bản\nkhỏi hệ thống" as DeleteLaw
+  usecase "Rebuild cache\nthư viện" as Cache
+  usecase "Xem dashboard\nthống kê" as Dash
+}
+Admin --> Upload
+Admin --> Preview
+Admin --> Track
+Admin --> Cancel
+Admin --> DeleteTask
+Admin --> DeleteLaw
+Admin --> Cache
+Admin --> Dash
+Upload ..> Track : <<include>>
+@enduml

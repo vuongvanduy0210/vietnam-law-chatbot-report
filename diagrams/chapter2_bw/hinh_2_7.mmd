@@ -1,0 +1,21 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart LR
+    IN["Kết quả sau rerank"]
+    GROUP["Nhóm theo\nloại văn bản + chủ đề"]
+    CHECK{"Có nhiều năm\ntrong cùng nhóm?"}
+    PASS["Không đánh dấu"]
+    COMPARE["So sánh năm ban hành"]
+    NEW["Gắn nhãn\nvăn bản mới nhất"]
+    OLD["Gắn cảnh báo\nvăn bản cũ hơn"]
+    OUT["Context cho Agent\nkèm trạng thái hiệu lực"]
+
+    IN --> GROUP --> CHECK
+    CHECK -- "Không" --> PASS --> OUT
+    CHECK -- "Có" --> COMPARE
+    COMPARE --> NEW --> OUT
+    COMPARE --> OLD --> OUT
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class IN,GROUP,PASS,COMPARE,NEW,OLD,OUT core;
+    class CHECK decision;

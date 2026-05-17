@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Nhóm xác thực và tài khoản" {
+  usecase "Đăng ký tài khoản" as Signup
+  usecase "Đăng nhập" as Login
+  usecase "Làm mới token" as Refresh
+  usecase "Đăng xuất" as Logout
+  usecase "Xem/cập nhật\nthông tin cá nhân" as Profile
+  usecase "Đổi mật khẩu" as Password
+}
+User --> Signup
+User --> Login
+User --> Logout
+User --> Profile
+User --> Password
+Login ..> Refresh : <<include>>
+@enduml

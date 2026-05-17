@@ -1,0 +1,20 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","actorBkg":"#ffffff","actorBorder":"#111111","activationBkgColor":"#f4f4f4","activationBorderColor":"#111111","sequenceNumberColor":"#111111","labelBoxBkgColor":"#ffffff","labelBoxBorderColor":"#111111"}}}%%
+sequenceDiagram
+    autonumber
+    participant U as Người dùng
+    participant M as Mobile App
+    participant Main as Main Service
+    participant RAG as RAG Service
+    participant LLM as Gemini
+
+    U->>M: Nhập câu hỏi
+    M->>Main: POST /guided/clarify
+    Main->>RAG: Chuyển tiếp clarify
+    RAG->>LLM: Phân tích ngữ cảnh thiếu
+    LLM-->>RAG: Câu hỏi làm rõ
+    RAG-->>Main: Clarify response
+    Main-->>M: Danh sách lựa chọn
+    U->>M: Chọn đáp án
+    M->>Main: POST /guided/answer/stream
+    Main->>RAG: Stream answer
+    RAG-->>M: SSE thinking + answer

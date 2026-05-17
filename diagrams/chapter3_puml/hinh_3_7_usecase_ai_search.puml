@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Tìm kiếm AI ngữ nghĩa" {
+  usecase "Nhập truy vấn\nngôn ngữ tự nhiên" as Query
+  usecase "Gửi yêu cầu\nAI Search" as Send
+  usecase "Truy hồi vector\ntrong ChromaDB" as Retrieve
+  usecase "Xếp hạng lại\nkết quả" as Rerank
+  usecase "Xem danh sách\nđiều luật liên quan" as Result
+  usecase "Mở chi tiết\nđiều luật" as Detail
+}
+User --> Query
+Query ..> Send : <<include>>
+Send ..> Retrieve : <<include>>
+Retrieve ..> Rerank : <<include>>
+Rerank ..> Result : <<include>>
+Result ..> Detail : <<extend>>
+@enduml

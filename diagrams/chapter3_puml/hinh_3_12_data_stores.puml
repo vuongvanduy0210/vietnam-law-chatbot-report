@@ -1,0 +1,23 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+rectangle "PostgreSQL" as PG {
+  rectangle "users" as U
+  rectangle "conversations" as C
+  rectangle "messages.sources" as S
+  rectangle "document_tasks.law_id" as T
+}
+rectangle "MongoDB" as M {
+  rectangle "VietnamLawDB.articles" as A
+  rectangle "laws_cache" as LC
+}
+rectangle "ChromaDB" as CH {
+  rectangle "vietnamese_law" as V
+  rectangle "chunk_id = law_id_article_id_chunkN" as CK
+}
+T --> A : law_id
+A --> V : law_id + article_id
+S --> V : source/chunk reference
+LC --> A : materialized summary
+@enduml

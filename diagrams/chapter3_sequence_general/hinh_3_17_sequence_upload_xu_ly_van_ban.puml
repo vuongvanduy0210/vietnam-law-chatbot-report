@@ -1,0 +1,83 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Upload và xử lý văn bản
+
+actor "Quản trị viên" as Admin
+boundary "Giao diện\nquản trị" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+database "CSDL Vector" as VDB
+
+Admin -> UI: 1: Chọn tệp PDF văn bản pháp luật
+activate UI
+UI -> UI: 2: Kiểm tra định dạng và kích thước
+UI -> System: 3: Gửi yêu cầu upload
+activate System
+System -> DB: 4: Tạo task xử lý
+activate DB
+DB --> System: 5: Trả mã task
+deactivate DB
+System --> UI: 6: Xác nhận tiếp nhận
+UI --> Admin: 7: Hiển thị trạng thái xử lý
+System -> DB: 8: Kiểm tra trùng lặp văn bản
+activate DB
+DB --> System: 9: Trả kết quả kiểm tra
+deactivate DB
+System --> UI: 10: Cập nhật tiến trình kiểm tra
+UI --> Admin: 11: Hiển thị tiến trình
+System -> System: 12: Trích xuất và chuẩn hóa nội dung
+System --> UI: 13: Cập nhật tiến trình trích xuất
+UI --> Admin: 14: Hiển thị tiến trình
+System -> DB: 15: Lưu văn bản và điều luật
+activate DB
+DB --> System: 16: Xác nhận lưu dữ liệu
+deactivate DB
+System -> VDB: 17: Vector hóa và lưu embedding
+activate VDB
+VDB --> System: 18: Xác nhận lưu vector
+deactivate VDB
+System -> DB: 19: Cập nhật cache và trạng thái task
+activate DB
+DB --> System: 20: Xác nhận hoàn tất
+deactivate DB
+System --> UI: 21: Trả kết quả hoàn tất
+deactivate System
+UI --> Admin: 22: Hiển thị văn bản đã cập nhật
+
+alt Xử lý thất bại
+  System --> UI: 23: Trả nguyên nhân lỗi
+  UI --> Admin: 24: Hiển thị trạng thái thất bại
+else Hủy yêu cầu
+  Admin -> UI: 25: Hủy tiến trình đang chạy
+  UI -> System: 26: Gửi yêu cầu hủy
+  activate System
+  System -> DB: 27: Cập nhật task đã hủy
+  activate DB
+  DB --> System: 28: Xác nhận trạng thái hủy
+  deactivate DB
+  System --> UI: 29: Xác nhận đã hủy
+  deactivate System
+  UI --> Admin: 30: Cập nhật trạng thái đã hủy
+end
+deactivate UI
+@enduml

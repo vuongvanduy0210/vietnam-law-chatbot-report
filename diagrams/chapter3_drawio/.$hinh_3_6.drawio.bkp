@@ -1,0 +1,58 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_3_6" name="hinh_3_6">
+    <mxGraphModel dx="2054" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i1" edge="1" parent="1" source="list_laws" style="endArrow=open;endFill=0;html=1;rounded=0;strokeColor=#111111;strokeWidth=1.8;dashed=1;fontFamily=Arial;fontSize=15;fontStyle=1;" target="meta_laws" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="detail_laws" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="820" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="search_laws" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="420" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="filter_laws" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="820" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="list_laws" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="420" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="system" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=none;spacingTop=14;" value="Tra cứu thư viện pháp luật" vertex="1">
+          <mxGeometry height="630" width="840" x="320" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Arial;fontSize=18;fontStyle=1;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Người dùng" vertex="1">
+          <mxGeometry height="135" width="95" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="list_laws" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Xem danh sách&lt;br&gt;văn bản" vertex="1">
+          <mxGeometry height="100" width="260" x="430" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="filter_laws" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Lọc theo năm,&lt;br&gt;chủ đề" vertex="1">
+          <mxGeometry height="100" width="260" x="430" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="search_laws" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Tìm kiếm theo&lt;br&gt;nội dung" vertex="1">
+          <mxGeometry height="100" width="260" x="430" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_laws" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Xem chi tiết&lt;br&gt;điều luật" vertex="1">
+          <mxGeometry height="100" width="260" x="430" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="meta_laws" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Xem topic,&lt;br&gt;năm, keyword" vertex="1">
+          <mxGeometry height="100" width="260" x="840" y="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

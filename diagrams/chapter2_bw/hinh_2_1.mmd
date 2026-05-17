@@ -1,0 +1,42 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    subgraph UI["Lớp giao diện"]
+        direction LR
+        MOBILE["Mobile App\nKotlin Multiplatform"]
+        ADMIN["Admin Web\nNext.js"]
+    end
+
+    subgraph API["Lớp dịch vụ"]
+        direction LR
+        MAIN["Main Service :8000\nAuth | Chat | Laws | Upload"]
+        RAG["RAG Service :8001\nAgentic RAG | Ingestion"]
+    end
+
+    subgraph DATA["Lớp dữ liệu"]
+        direction LR
+        PG[("PostgreSQL\nNgười dùng, hội thoại")]
+        MONGO[("MongoDB\nĐiều luật")]
+        CHROMA[("ChromaDB\nVector index")]
+    end
+
+    subgraph EXT["Dịch vụ ngoài"]
+        direction LR
+        GEMINI["Gemini API"]
+        SEARCH["Tavily / Google"]
+        CLOUD["Cloudinary"]
+    end
+
+    MOBILE -->|"HTTPS + SSE"| MAIN
+    ADMIN -->|"HTTPS + WebSocket"| MAIN
+    MAIN -->|"HTTP nội bộ + API key"| RAG
+    MAIN --- PG
+    MAIN --- MONGO
+    MAIN --- CLOUD
+    RAG --- CHROMA
+    RAG --- GEMINI
+    RAG --- SEARCH
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class MOBILE,ADMIN,MAIN,RAG core;
+    class PG,MONGO,CHROMA,GEMINI,SEARCH,CLOUD muted;

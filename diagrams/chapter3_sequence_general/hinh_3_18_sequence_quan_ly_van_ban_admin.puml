@@ -1,0 +1,84 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Quản lý văn bản phía admin
+
+actor "Quản trị viên" as Admin
+boundary "Giao diện\nquản trị" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+database "CSDL Vector" as VDB
+
+Admin -> UI: 1: Mở trang quản lý văn bản
+activate UI
+UI -> System: 2: Yêu cầu danh sách văn bản
+activate System
+System -> DB: 3: Lấy danh sách văn bản
+activate DB
+DB --> System: 4: Trả dữ liệu văn bản
+deactivate DB
+System --> UI: 5: Trả danh sách và thống kê văn bản
+deactivate System
+UI --> Admin: 6: Hiển thị bảng văn bản
+
+Admin -> UI: 7: Tìm kiếm hoặc lọc văn bản
+UI -> System: 8: Gửi điều kiện lọc
+activate System
+System -> DB: 9: Truy vấn theo điều kiện lọc
+activate DB
+DB --> System: 10: Trả danh sách phù hợp
+deactivate DB
+System --> UI: 11: Trả danh sách phù hợp
+deactivate System
+UI --> Admin: 12: Cập nhật bảng kết quả
+
+opt Xóa văn bản
+  Admin -> UI: 13: Xác nhận xóa văn bản
+  UI -> System: 14: Gửi yêu cầu xóa
+  activate System
+  System -> VDB: 15: Xóa dữ liệu vector
+  activate VDB
+  VDB --> System: 16: Xác nhận đã xóa
+  deactivate VDB
+  System -> DB: 17: Xóa văn bản và làm mới cache
+  activate DB
+  DB --> System: 18: Xác nhận dữ liệu mới
+  deactivate DB
+  System --> UI: 19: Trả kết quả xóa
+  deactivate System
+  UI --> Admin: 20: Cập nhật danh sách văn bản
+end
+
+opt Làm mới cache
+  Admin -> UI: 21: Chọn làm mới cache
+  UI -> System: 22: Gửi yêu cầu rebuild
+  activate System
+  System -> DB: 23: Đồng bộ lại cache văn bản
+  activate DB
+  DB --> System: 24: Trả số lượng đã đồng bộ
+  deactivate DB
+  System --> UI: 25: Trả số lượng văn bản đã đồng bộ
+  deactivate System
+  UI --> Admin: 26: Hiển thị trạng thái hoàn tất
+end
+deactivate UI
+@enduml

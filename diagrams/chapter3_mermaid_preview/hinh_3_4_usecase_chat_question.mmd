@@ -1,0 +1,19 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 58, "rankSpacing": 76, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    User(("Người dùng"))
+
+    subgraph QA["Hỏi đáp pháp luật"]
+      Input(["Nhập câu hỏi<br/>pháp luật"])
+      Send(["Gửi tin nhắn<br/>qua chat"])
+      Ready(["Nhận event<br/>ready"])
+      Progress(["Theo dõi tiến trình<br/>SSE"])
+      Done(["Nhận câu trả lời<br/>và nguồn dẫn"])
+      Suggested(["Xem câu hỏi<br/>gợi ý"])
+    end
+
+    User --> Input
+    Input -. include .-> Send
+    Send -. include .-> Ready
+    Send -. include .-> Progress
+    Send -. include .-> Done
+    Done -. extend .-> Suggested

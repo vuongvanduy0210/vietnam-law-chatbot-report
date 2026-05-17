@@ -1,0 +1,19 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 62, "rankSpacing": 84, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    Admin(("Quản trị viên"))
+
+    subgraph UPLOAD["Cập nhật văn bản pháp luật"]
+      Upload(["Upload PDF<br/>văn bản pháp luật"])
+      Preview(["Xem trước kết quả<br/>trích xuất"])
+      Duplicate(["Kiểm tra trùng<br/>văn bản"])
+      Validate(["Validate dữ liệu<br/>trích xuất"])
+      Save(["Lưu MongoDB<br/>và ChromaDB"])
+      Rollback(["Rollback<br/>khi lỗi"])
+    end
+
+    Admin --> Upload
+    Admin --> Preview
+    Upload -. include .-> Duplicate
+    Upload -. include .-> Validate
+    Validate -. include .-> Save
+    Save -. extend .-> Rollback

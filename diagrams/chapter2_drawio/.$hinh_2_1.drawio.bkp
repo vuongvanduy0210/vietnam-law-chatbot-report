@@ -1,0 +1,81 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_2_1" name="hinh_2_1">
+    <mxGraphModel dx="1325" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mobile" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Mobile App&lt;br&gt;Kotlin Multiplatform&lt;br&gt;Chat, Guided Consultation" vertex="1">
+          <mxGeometry height="120" width="200" x="560" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Admin Web&lt;br&gt;Next.js Dashboard&lt;br&gt;Quản trị văn bản" vertex="1">
+          <mxGeometry height="118" width="200" x="840" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="main" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="Main Service&lt;br&gt;FastAPI&lt;br&gt;Auth, Chat, Guided, Documents, Laws" vertex="1">
+          <mxGeometry height="100" width="220" x="690" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="rag" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=#ffffff;spacing=8;spacingTop=4;spacingBottom=4;" value="RAG Service&lt;br&gt;FastAPI&lt;br&gt;Agentic RAG, Retrieval, Guided, Ingest" vertex="1">
+          <mxGeometry height="120" width="240" x="680" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="external" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;strokeColor=#555555;strokeWidth=2.2;fillColor=#f4f4f4;spacing=8;spacingTop=4;spacingBottom=4;" value="Dịch vụ ngoài&lt;br&gt;LLMs, Legal Web Search,&lt;br&gt;Cloudinary" vertex="1">
+          <mxGeometry height="120" width="140" x="1150" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="mobile" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="main" value="REST, SSE">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="300" />
+              <mxPoint x="800" y="300" />
+            </Array>
+            <mxPoint x="510.0022222222224" y="260" as="sourcePoint" />
+            <mxPoint x="649.98" y="382" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="main" value="REST, WebSocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="rag" value="Internal API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="2c1UMm60_lIwHEcImMH0-2" value="transactional data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="275" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="2c1UMm60_lIwHEcImMH0-4" value="law articles">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="635" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="rag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="2c1UMm60_lIwHEcImMH0-4" value="article metadata">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="620" />
+              <mxPoint x="650" y="850" />
+            </Array>
+            <mxPoint x="640" y="620" as="sourcePoint" />
+            <mxPoint x="380" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="rag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="2c1UMm60_lIwHEcImMH0-5" value="vector search">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="965" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="rag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="external" value="LLMs + search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111111;strokeWidth=2.1;endArrow=block;endFill=1;fontFamily=Arial;fontSize=14;fontStyle=1;" target="external" value="PDF storage + parsing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2c1UMm60_lIwHEcImMH0-2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;PostgreSQL&lt;/span&gt;&lt;br style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;users, conversations,&lt;/span&gt;&lt;br style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;messages, document_tasks&lt;/span&gt;" vertex="1">
+          <mxGeometry height="200" width="150" x="270" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="2c1UMm60_lIwHEcImMH0-4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;MongoDB&lt;/span&gt;&lt;br style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;articles, laws_cache&lt;/span&gt;" vertex="1">
+          <mxGeometry height="200" width="150" x="470" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="2c1UMm60_lIwHEcImMH0-5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;ChromaDB&lt;/span&gt;&lt;br style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-family: Arial; font-size: 16px; font-weight: 700;&quot;&gt;vector chunks&lt;/span&gt;" vertex="1">
+          <mxGeometry height="190" width="135" x="733" y="770" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

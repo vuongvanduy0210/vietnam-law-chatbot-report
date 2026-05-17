@@ -1,0 +1,64 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Dashboard và theo dõi task
+
+actor "Quản trị viên" as Admin
+boundary "Giao diện\nquản trị" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+
+Admin -> UI: 1: Mở trang dashboard
+activate UI
+UI -> System: 2: Yêu cầu số liệu tổng quan
+activate System
+System -> DB: 3: Tổng hợp thống kê và task
+activate DB
+DB --> System: 4: Trả số liệu tổng quan
+deactivate DB
+System --> UI: 5: Trả thống kê và task gần đây
+deactivate System
+UI --> Admin: 6: Hiển thị dashboard
+
+Admin -> UI: 7: Mở trang theo dõi tiến trình
+UI -> System: 8: Kết nối nhận cập nhật realtime
+activate System
+System --> UI: 9: Xác nhận kết nối
+UI -> System: 10: Yêu cầu danh sách task
+System -> DB: 11: Lấy lịch sử task
+activate DB
+DB --> System: 12: Trả danh sách task
+deactivate DB
+System --> UI: 13: Trả lịch sử task
+deactivate System
+UI --> Admin: 14: Hiển thị tiến trình xử lý
+
+opt Có task thay đổi trạng thái
+  System -> DB: 15: Ghi trạng thái task mới
+  activate DB
+  DB --> System: 16: Xác nhận cập nhật
+  deactivate DB
+  System --> UI: 17: Gửi cập nhật realtime
+  UI --> Admin: 18: Cập nhật trạng thái trên giao diện
+end
+deactivate UI
+@enduml

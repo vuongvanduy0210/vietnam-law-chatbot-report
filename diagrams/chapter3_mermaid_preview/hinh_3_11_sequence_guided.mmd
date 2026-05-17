@@ -1,0 +1,20 @@
+%%{init: {"theme": "base", "sequence": {"mirrorActors": false, "wrap": true, "width": 150, "height": 65, "messageMargin": 48}, "themeVariables": {"actorBkg": "#ffffff", "actorBorder": "#111111", "actorTextColor": "#111111", "signalColor": "#111111", "signalTextColor": "#111111", "activationBkgColor": "#ffffff", "activationBorderColor": "#111111", "labelBoxBkgColor": "#ffffff", "labelTextColor": "#111111", "loopTextColor": "#111111"}}}%%
+sequenceDiagram
+    participant Mobile as Mobile App
+    participant Main as Main Service
+    participant RAG as RAG Service
+    participant Chroma as ChromaDB
+
+    Mobile->>Main: POST /guided/clarify
+    Main->>RAG: POST /rag/guided-clarify
+    RAG-->>Main: topic và câu hỏi làm rõ
+    Main-->>Mobile: Danh sách câu hỏi làm rõ
+    Mobile->>Main: POST /guided/answer/stream
+    Main->>RAG: POST /rag/guided-answer/stream
+    RAG-->>Main: progress validate
+    Main-->>Mobile: event progress
+    RAG->>Chroma: Truy hồi nguồn phù hợp
+    RAG-->>Main: progress retrieve, synthesize, verify
+    Main-->>Mobile: event progress
+    RAG-->>Main: done answer, sources
+    Main-->>Mobile: event done

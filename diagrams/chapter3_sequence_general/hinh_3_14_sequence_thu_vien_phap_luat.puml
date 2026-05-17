@@ -1,0 +1,68 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Tra cứu thư viện pháp luật
+
+actor "Người dùng" as User
+boundary "Giao diện" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+
+User -> UI: 1: Mở thư viện pháp luật
+activate UI
+UI -> System: 2: Yêu cầu danh sách văn bản
+activate System
+System -> DB: 3: Lấy dữ liệu văn bản đã lưu
+activate DB
+DB --> System: 4: Trả danh sách văn bản
+deactivate DB
+System --> UI: 5: Trả danh sách văn bản
+deactivate System
+UI --> User: 6: Hiển thị danh sách
+
+User -> UI: 7: Chọn bộ lọc hoặc nhập từ khóa
+UI -> System: 8: Gửi điều kiện tra cứu
+activate System
+System -> DB: 9: Truy vấn theo điều kiện lọc
+activate DB
+DB --> System: 10: Trả kết quả phù hợp
+deactivate DB
+System --> UI: 11: Trả kết quả phù hợp
+deactivate System
+UI --> User: 12: Cập nhật danh sách kết quả
+
+User -> UI: 13: Chọn văn bản hoặc điều luật
+UI -> System: 14: Yêu cầu nội dung chi tiết
+activate System
+System -> DB: 15: Lấy nội dung chi tiết
+activate DB
+DB --> System: 16: Trả chi tiết văn bản
+deactivate DB
+System --> UI: 17: Trả chi tiết văn bản
+deactivate System
+UI --> User: 18: Hiển thị nội dung chi tiết
+
+alt Không có dữ liệu phù hợp
+  UI --> User: 19: Hiển thị trạng thái rỗng
+end
+deactivate UI
+@enduml

@@ -1,0 +1,25 @@
+%%{init: {"theme": "base", "sequence": {"mirrorActors": false, "wrap": true, "width": 150, "height": 65, "messageMargin": 46}, "themeVariables": {"actorBkg": "#ffffff", "actorBorder": "#111111", "actorTextColor": "#111111", "signalColor": "#111111", "signalTextColor": "#111111", "activationBkgColor": "#ffffff", "activationBorderColor": "#111111", "labelBoxBkgColor": "#ffffff", "labelTextColor": "#111111", "loopTextColor": "#111111"}}}%%
+sequenceDiagram
+    participant Mobile as Mobile App
+    participant Main as Main Service
+    participant PG as PostgreSQL
+    participant RAG as RAG Service
+    participant Chroma as ChromaDB
+    participant Mongo as MongoDB
+
+    Mobile->>Main: POST /chat/messages/stream
+    Main->>PG: Tạo hoặc lấy hội thoại
+    Main->>PG: Lưu tin nhắn người dùng
+    Main-->>Mobile: event ready
+    Main->>RAG: POST /rag/agent-search/stream
+    RAG-->>Main: progress validate, analyze
+    Main-->>Mobile: event progress
+    RAG->>Chroma: Truy hồi vector chunks
+    RAG->>Mongo: Đối chiếu metadata nguồn
+    RAG-->>Main: progress retrieve, synthesize, verify
+    Main-->>Mobile: event progress
+    RAG-->>Main: done answer, sources
+    Main->>PG: Lưu tin nhắn trả lời
+    Main-->>Mobile: event done
+    Mobile->>Main: GET suggested-questions
+    Main-->>Mobile: suggested_questions

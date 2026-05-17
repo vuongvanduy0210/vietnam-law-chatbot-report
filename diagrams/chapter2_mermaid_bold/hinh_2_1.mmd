@@ -1,0 +1,18 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    UI["Lớp giao diện\nMobile App | Admin Web"]
+    MAIN["Main Service\nAPI + Business"]
+    RAG["RAG Service\nAgent + Retrieval"]
+    DATA["Lớp dữ liệu\nPostgreSQL | MongoDB | ChromaDB"]
+    EXT["Dịch vụ ngoài\nLLMs | Search | Cloudinary"]
+
+    UI --> MAIN --> RAG
+    MAIN --> DATA
+    RAG --> DATA
+    MAIN --> EXT
+    RAG --> EXT
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class UI,MAIN,RAG core;
+    class DATA,EXT muted;

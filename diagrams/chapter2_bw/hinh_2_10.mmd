@@ -1,0 +1,21 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart LR
+    REQ["Yêu cầu Gemini API"]
+    PICK["Chọn API key hiện tại"]
+    CALL["Gọi Gemini"]
+    RESP{"Phản hồi"}
+    OK["200\nTrả kết quả"]
+    ROTATE["429 / 503\nĐổi key"]
+    BACKOFF["Hết key\nbackoff rồi thử lại"]
+    ERR["400 / 401\nBáo lỗi ngay"]
+
+    REQ --> PICK --> CALL --> RESP
+    RESP -- "Thành công" --> OK
+    RESP -- "Rate limit / overload" --> ROTATE --> CALL
+    ROTATE -- "Đã thử hết key" --> BACKOFF --> CALL
+    RESP -- "Lỗi cấu hình" --> ERR
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class REQ,PICK,CALL,OK,ROTATE,BACKOFF,ERR core;
+    class RESP decision;

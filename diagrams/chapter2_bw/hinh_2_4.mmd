@@ -1,0 +1,23 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart LR
+    START(["Người dùng gửi câu hỏi"])
+    GUARD{"Guardrail\nCâu hỏi hợp lệ?"}
+    REJECT["Từ chối lịch sự"]
+    ANALYZE["Query Analysis\nViết lại và trích ngữ cảnh"]
+    AGENT{"Agent ReAct\nCần gọi công cụ?"}
+    INTERNAL["Retrieve Internal Law"]
+    WEB["Search Web Law"]
+    VERIFY["Verifier\nKiểm chứng theo nguồn"]
+    END(["Câu trả lời có citation"])
+
+    START --> GUARD
+    GUARD -- "Không" --> REJECT --> END
+    GUARD -- "Có" --> ANALYZE --> AGENT
+    AGENT -- "Tra nội bộ" --> INTERNAL --> AGENT
+    AGENT -- "Cần cập nhật" --> WEB --> AGENT
+    AGENT -- "Đủ thông tin" --> VERIFY --> END
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class START,REJECT,ANALYZE,INTERNAL,WEB,VERIFY,END core;
+    class GUARD,AGENT decision;

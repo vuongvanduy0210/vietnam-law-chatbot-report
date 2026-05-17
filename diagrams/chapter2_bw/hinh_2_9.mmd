@@ -1,0 +1,37 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart LR
+    subgraph ADMIN["Admin Web"]
+        A1["Upload PDF"]
+        A2["Theo dõi tiến trình"]
+    end
+
+    subgraph MAIN["Main Service"]
+        M1["Tạo DocumentTask"]
+        M2["Upload Cloudinary"]
+        M3["Parse & structure"]
+        M4["Lưu MongoDB"]
+        M5["WebSocket status"]
+    end
+
+    subgraph RAG["RAG Service"]
+        R1["Chunk articles"]
+        R2["Embed batch"]
+        R3["Upsert vectors"]
+    end
+
+    subgraph DATA["Storage"]
+        C[("Cloudinary")]
+        MG[("MongoDB")]
+        CH[("ChromaDB")]
+    end
+
+    A1 --> M1
+    M1 --> M2 --> C
+    M1 --> M3 --> M4 --> MG
+    M4 --> R1 --> R2 --> R3 --> CH
+    R3 --> M5 --> A2
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class A1,A2,M1,M2,M3,M4,M5,R1,R2,R3 core;
+    class C,MG,CH muted;

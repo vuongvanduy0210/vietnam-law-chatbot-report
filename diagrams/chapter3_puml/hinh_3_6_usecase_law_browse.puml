@@ -1,0 +1,19 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Tra cứu thư viện pháp luật" {
+  usecase "Xem danh sách\nvăn bản" as List
+  usecase "Lọc theo năm,\nchủ đề" as Filter
+  usecase "Tìm kiếm theo\nnội dung" as Search
+  usecase "Xem chi tiết\nđiều luật" as Detail
+  usecase "Xem topic,\nnăm, keyword" as Meta
+}
+User --> List
+User --> Filter
+User --> Search
+User --> Detail
+List ..> Meta : <<include>>
+@enduml

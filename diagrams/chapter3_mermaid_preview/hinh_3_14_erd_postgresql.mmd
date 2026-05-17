@@ -1,0 +1,57 @@
+%%{init: {"theme": "base", "class": {"hideEmptyMembersBox": true}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111"}}}%%
+classDiagram
+    direction LR
+
+    class users {
+      id UUID
+      email varchar
+      hashed_password varchar
+      full_name varchar
+      role varchar
+      is_active boolean
+      last_login_at timestamptz
+    }
+
+    class conversations {
+      id UUID
+      user_id UUID
+      title varchar
+      is_pinned boolean
+      is_archived boolean
+      message_count integer
+      last_message_at timestamptz
+    }
+
+    class messages {
+      id UUID
+      conversation_id UUID
+      question_id UUID
+      role varchar
+      content text
+      sources JSONB
+      metadata JSONB
+    }
+
+    class refresh_tokens {
+      id UUID
+      user_id UUID
+      token varchar
+      expires_at timestamptz
+      is_revoked boolean
+    }
+
+    class document_tasks {
+      id UUID
+      user_id UUID
+      filename varchar
+      status varchar
+      progress integer
+      law_id varchar
+      article_count integer
+    }
+
+    users "1" --> "*" conversations : owns
+    users "1" --> "*" refresh_tokens : has
+    users "1" --> "*" document_tasks : creates
+    conversations "1" --> "*" messages : contains
+    messages "1" --> "0..1" messages : replies_to

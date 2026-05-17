@@ -1,0 +1,25 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+left to right direction
+actor "Người dùng" as User
+rectangle "Nhóm hội thoại và hỏi đáp" {
+  usecase "Tạo hội thoại" as NewConv
+  usecase "Xem danh sách\nhội thoại" as ListConv
+  usecase "Cập nhật hội thoại\n(đổi tên, ghim, lưu trữ)" as UpdateConv
+  usecase "Xoá hội thoại" as DeleteConv
+  usecase "Gửi câu hỏi\npháp luật" as Chat
+  usecase "Nhận tiến trình\nxử lý theo SSE" as Progress
+  usecase "Xem câu hỏi\ngợi ý" as Suggested
+  usecase "Tìm kiếm\nlịch sử chat" as SearchChat
+}
+User --> NewConv
+User --> ListConv
+User --> UpdateConv
+User --> DeleteConv
+User --> Chat
+User --> SearchChat
+Chat ..> Progress : <<include>>
+Chat ..> Suggested : <<extend>>
+@enduml

@@ -1,0 +1,17 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 58, "rankSpacing": 76, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    User(("Người dùng"))
+
+    subgraph CHAT["Quản lý hội thoại"]
+      NewConv(["Tạo hội thoại"])
+      ListConv(["Xem danh sách<br/>hội thoại"])
+      UpdateConv(["Cập nhật hội thoại<br/>đổi tên, ghim, lưu trữ"])
+      DeleteConv(["Xóa hội thoại"])
+      SearchChat(["Tìm kiếm<br/>lịch sử chat"])
+    end
+
+    User --> NewConv
+    User --> ListConv
+    User --> UpdateConv
+    User --> DeleteConv
+    User --> SearchChat

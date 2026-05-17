@@ -1,0 +1,14 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":6,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    A["Admin Web\nUpload PDF"]
+    M["Main Service\nCreate task"]
+    P["Pre-check\nhash + law_id"]
+    O["Document Processor\nOCR + LLM"]
+    S["Lưu dữ liệu\nPDF + articles"]
+    R["RAG Ingest\nEmbed + ChromaDB"]
+    W["Task Status\nWebSocket"]
+
+    A --> M --> P --> O --> S --> R --> W
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    class A,M,P,O,S,R,W core;

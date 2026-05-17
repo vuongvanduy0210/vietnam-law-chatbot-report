@@ -1,0 +1,27 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+participant "Mobile App" as Mobile
+participant "Main Service" as Main
+database "PostgreSQL" as PG
+participant "RAG Service" as RAG
+database "ChromaDB" as Chroma
+database "MongoDB" as Mongo
+Mobile -> Main : POST /api/v1/chat/messages/stream
+Main -> PG : tạo/lấy conversation
+Main -> PG : lưu user message
+Main --> Mobile : event ready
+Main -> RAG : POST /api/v1/rag/agent-search/stream
+RAG --> Main : event progress(validate/analyze)
+Main --> Mobile : event progress
+RAG -> Chroma : truy hồi vector chunks
+RAG -> Mongo : đối chiếu metadata/nội dung nguồn
+RAG --> Main : event progress(retrieve/synthesize/verify)
+Main --> Mobile : event progress
+RAG --> Main : event done(answer, sources)
+Main -> PG : lưu assistant message
+Main --> Mobile : event done
+Mobile -> Main : GET /messages/{id}/suggested-questions
+Main --> Mobile : suggested_questions
+@enduml

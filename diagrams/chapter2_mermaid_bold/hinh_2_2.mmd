@@ -1,0 +1,19 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":32,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    R["API Routes\nAuth | Chat | Documents | Laws | Guided"]
+    S["Business Services\nAuth | Chat | Document Processor\nLaw | RAG Client"]
+    D["Data Access\nUser | Conversation | DocumentTask | Law Repo"]
+    PG[("PostgreSQL\nusers | conversations\ntasks")]
+    MG[("MongoDB\nlaws | articles")]
+    EXT["RAG Service\nInternal API\nProxy SSE"]
+
+    R --> S
+    S --> D
+    D --> PG
+    D --> MG
+    S --> EXT
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class R,S,D core;
+    class PG,MG,EXT muted;

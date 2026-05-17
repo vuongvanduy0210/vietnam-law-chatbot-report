@@ -1,0 +1,47 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart LR
+    subgraph R["API Routes"]
+        direction TB
+        R1["Auth"]
+        R2["Chat"]
+        R3["Documents"]
+        R4["Laws"]
+        R5["Guided"]
+    end
+
+    subgraph S["Business Services"]
+        direction TB
+        S1["Auth Service"]
+        S2["Chat Service"]
+        S3["Document Processor"]
+        S4["Law Service"]
+        S5["RAG Client"]
+    end
+
+    subgraph D["Data Access"]
+        direction TB
+        D1["User Repo"]
+        D2["Conversation Repo"]
+        D3["Document Task Repo"]
+        D4["Law Repo"]
+    end
+
+    subgraph DB["Databases"]
+        direction TB
+        PG[("PostgreSQL")]
+        MG[("MongoDB")]
+    end
+
+    R --> S
+    S --> D
+    D1 --- PG
+    D2 --- PG
+    D3 --- PG
+    D4 --- MG
+    S2 -->|"Proxy SSE"| S5
+    S5 -->|"RAG Service"| EXT["Internal API"]
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class R1,R2,R3,R4,R5,S1,S2,S3,S4,S5 core;
+    class D1,D2,D3,D4,PG,MG,EXT muted;

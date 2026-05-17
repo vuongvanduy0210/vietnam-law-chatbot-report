@@ -1,0 +1,60 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+hide circle
+entity "users" as users {
+  * id : UUID
+  --
+  email : varchar
+  hashed_password : varchar
+  full_name : varchar
+  phone_number : varchar
+  role : varchar
+  is_active : boolean
+  last_login_at : timestamptz
+}
+entity "conversations" as conversations {
+  * id : UUID
+  --
+  user_id : UUID
+  title : varchar
+  is_pinned : boolean
+  is_archived : boolean
+  message_count : integer
+  last_message_at : timestamptz
+}
+entity "messages" as messages {
+  * id : UUID
+  --
+  conversation_id : UUID
+  question_id : UUID
+  role : varchar
+  content : text
+  sources : JSONB
+  metadata : JSONB
+}
+entity "refresh_tokens" as tokens {
+  * id : UUID
+  --
+  user_id : UUID
+  token : varchar
+  expires_at : timestamptz
+  is_revoked : boolean
+}
+entity "document_tasks" as tasks {
+  * id : UUID
+  --
+  user_id : UUID
+  filename : varchar
+  status : enum
+  progress : integer
+  law_id : varchar
+  article_count : integer
+}
+users ||--o{ conversations
+users ||--o{ tokens
+users ||--o{ tasks
+conversations ||--o{ messages
+messages ||--o| messages : question_id
+@enduml

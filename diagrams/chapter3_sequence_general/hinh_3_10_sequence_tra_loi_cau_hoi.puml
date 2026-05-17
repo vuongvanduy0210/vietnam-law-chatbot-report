@@ -1,0 +1,44 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Hỏi đáp pháp luật
+
+participant "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+
+User -> UI: 1: Nhập câu hỏi pháp luật
+activate UI
+UI -> UI: 2: Kiểm tra nội dung nhập
+UI -> System: 3: Gửi yêu cầu trả lời
+activate System
+System --> UI: 4: Trả trạng thái đang xử lý
+UI --> User: 5: Hiển thị tiến trình
+System --> UI: 6: Trả câu trả lời và nguồn tham chiếu
+deactivate System
+UI --> User: 7: Hiển thị kết quả
+deactivate UI
+
+alt Không xử lý được yêu cầu
+  UI -> System: 8: Gửi yêu cầu cần xử lý lại
+  activate System
+  System --> UI: 9: Trả thông báo lỗi
+  deactivate System
+  UI --> User: 10: Hiển thị lỗi phù hợp
+end
+@enduml

@@ -1,0 +1,33 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    Q["Query đã viết lại"]
+    ENC["Bi-Encoder\nvector 768 chiều"]
+    CH["ChromaDB\nTop 60 chunks"]
+    PICK["Candidate Set\nchọn tối đa 40"]
+    RERANK["Cross-Encoder\nrerank theo cặp"]
+    BOOST["Year Boost\nưu tiên văn bản mới"]
+    CONFLICT["Conflict Check\nđánh dấu văn bản cũ"]
+    TOP["Top 10\ncho Agent"]
+    TH{"Score >= 0.60?"}
+    OK["Trả context"]
+    FALLBACK["Fallback\nweb search"]
+
+    subgraph S1["Giai đoạn 1: tìm kiếm vector"]
+        direction LR
+        Q --> ENC --> CH --> PICK
+    end
+
+    subgraph S2["Giai đoạn 2: rerank và chuẩn hóa"]
+        direction LR
+        RERANK --> BOOST --> CONFLICT --> TOP
+    end
+
+    PICK --> RERANK
+    TOP --> TH
+    TH -- "Có" --> OK
+    TH -- "Không" --> FALLBACK
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class Q,ENC,CH,PICK,RERANK,BOOST,CONFLICT,TOP,OK,FALLBACK core;
+    class TH decision;

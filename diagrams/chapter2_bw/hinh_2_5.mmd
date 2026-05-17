@@ -1,0 +1,18 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"18px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TD
+    IN["Input\nmessage + query analysis"]
+    THINK["Thought\nlập kế hoạch"]
+    ACT["Action\ngọi tool"]
+    OBS["Observation\nnhận bằng chứng"]
+    CHECK{"Đủ bằng chứng?"}
+    GEN["Generate\ntrả lời + citation"]
+    OUT["Output\nanswer + sources"]
+
+    IN --> THINK --> ACT --> OBS --> CHECK
+    CHECK -- "Chưa" --> THINK
+    CHECK -- "Rồi" --> GEN --> OUT
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class IN,THINK,ACT,OBS,GEN,OUT core;
+    class CHECK decision;

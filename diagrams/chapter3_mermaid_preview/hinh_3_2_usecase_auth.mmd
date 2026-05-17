@@ -1,0 +1,19 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": true, "nodeSpacing": 60, "rankSpacing": 78, "curve": "basis"}, "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111", "clusterBkg": "#f8f8f8", "clusterBorder": "#555555"}}}%%
+flowchart LR
+    User(("Người dùng"))
+
+    subgraph AUTH["Nhóm xác thực và tài khoản"]
+      Signup(["Đăng ký<br/>tài khoản"])
+      Login(["Đăng nhập"])
+      Refresh(["Làm mới<br/>token"])
+      Logout(["Đăng xuất"])
+      Profile(["Xem và cập nhật<br/>thông tin cá nhân"])
+      Password(["Đổi mật khẩu"])
+    end
+
+    User --> Signup
+    User --> Login
+    User --> Logout
+    User --> Profile
+    User --> Password
+    Login -. include .-> Refresh

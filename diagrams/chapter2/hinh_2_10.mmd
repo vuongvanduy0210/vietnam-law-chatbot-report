@@ -1,0 +1,17 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    C["Mobile App\nGửi câu hỏi"]
+    M["Main Service\n/messages/stream"]
+    U["Lưu user\nready event"]
+    R["RAG Service\nAgentic RAG"]
+    F["SSE Bridge\nprogress"]
+    A["Lưu assistant\nanswer + sources"]
+    D["Done event\ncitations"]
+    Q["Câu hỏi gợi ý\nbackground"]
+
+    C --> M --> U --> R --> F --> A
+    A --> D
+    A --> Q
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    class C,M,U,R,F,A,D,Q core;

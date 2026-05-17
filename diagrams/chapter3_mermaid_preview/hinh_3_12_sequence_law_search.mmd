@@ -1,0 +1,18 @@
+%%{init: {"theme": "base", "sequence": {"mirrorActors": false, "wrap": true, "width": 150, "height": 65, "messageMargin": 48}, "themeVariables": {"actorBkg": "#ffffff", "actorBorder": "#111111", "actorTextColor": "#111111", "signalColor": "#111111", "signalTextColor": "#111111", "activationBkgColor": "#ffffff", "activationBorderColor": "#111111", "labelBoxBkgColor": "#ffffff", "labelTextColor": "#111111", "loopTextColor": "#111111"}}}%%
+sequenceDiagram
+    participant Mobile as Mobile App
+    participant Main as Main Service
+    participant Mongo as MongoDB
+    participant RAG as RAG Service
+    participant Chroma as ChromaDB
+
+    Mobile->>Main: GET /laws với bộ lọc
+    Main->>Mongo: Aggregation theo law_id
+    Mongo-->>Main: Danh sách văn bản
+    Main-->>Mobile: items, total, page
+    Mobile->>Main: POST /laws/ai-search
+    Main->>RAG: POST /rag/semantic-search
+    RAG->>Chroma: Vector search và rerank
+    Chroma-->>RAG: Nguồn liên quan
+    RAG-->>Main: results
+    Main-->>Mobile: Kết quả semantic search

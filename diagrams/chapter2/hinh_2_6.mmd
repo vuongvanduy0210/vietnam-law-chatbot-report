@@ -1,0 +1,18 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    Q["Query"]
+    S1["Vector Search\nBi-Encoder\nChromaDB Top 60"]
+    S2["Rerank\nCross-Encoder\nYear Boost"]
+    S3["Conflict Check\nTop 10\nfor Agent"]
+    TH{"Score\n>= 0.60?"}
+    OK["Đạt ngưỡng\nContext"]
+    WEB["Không đạt ngưỡng\nFallback\nWeb Search"]
+
+    Q --> S1 --> S2 --> S3 --> TH
+    TH --> OK
+    TH --> WEB
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class Q,S1,S2,S3,OK,WEB core;
+    class TH decision;

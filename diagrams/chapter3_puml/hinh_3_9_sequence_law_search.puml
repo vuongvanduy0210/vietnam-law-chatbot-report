@@ -1,0 +1,20 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+participant "Mobile App" as Mobile
+participant "Main Service" as Main
+database "MongoDB" as Mongo
+participant "RAG Service" as RAG
+database "ChromaDB" as Chroma
+Mobile -> Main : GET /api/v1/laws?q/year/topics
+Main -> Mongo : aggregation group by law_id
+Mongo --> Main : danh sách văn bản
+Main --> Mobile : items, total, page
+Mobile -> Main : POST /api/v1/laws/ai-search
+Main -> RAG : POST /api/v1/rag/semantic-search
+RAG -> Chroma : vector search + rerank
+Chroma --> RAG : sources
+RAG --> Main : results
+Main --> Mobile : kết quả semantic search
+@enduml

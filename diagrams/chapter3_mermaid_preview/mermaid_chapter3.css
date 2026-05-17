@@ -1,0 +1,78 @@
+svg {
+  font-family: Arial, "Helvetica Neue", sans-serif !important;
+}
+
+text,
+.nodeLabel,
+.edgeLabel,
+.cluster-label,
+.label,
+.messageText,
+.actor,
+.sequenceNumber,
+.er.entityLabel,
+.er.relationshipLabel {
+  font-family: Arial, "Helvetica Neue", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  fill: #111111 !important;
+}
+
+.nodeLabel,
+.label,
+.edgeLabel p,
+.nodeLabel p,
+.label p {
+  text-align: center !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+.node rect,
+.node polygon,
+.node circle,
+.node ellipse,
+.node path,
+.actor {
+  fill: #ffffff !important;
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+}
+
+.cluster rect {
+  fill: #f8f8f8 !important;
+  stroke: #555555 !important;
+  stroke-width: 2.5px !important;
+}
+
+.edgePath .path,
+.flowchart-link,
+.messageLine0,
+.messageLine1,
+.loopLine,
+.activation0,
+.activation1,
+.activation2 {
+  stroke: #111111 !important;
+  stroke-width: 3px !important;
+}
+
+.arrowheadPath,
+marker path {
+  fill: #111111 !important;
+  stroke: #111111 !important;
+}
+
+.edgeLabel,
+.labelBkg {
+  background: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.er.entityBox,
+.er.attributeBoxOdd,
+.er.attributeBoxEven {
+  fill: #ffffff !important;
+  stroke: #111111 !important;
+  stroke-width: 2.5px !important;
+}

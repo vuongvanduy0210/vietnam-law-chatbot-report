@@ -1,0 +1,13 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#111111", "primaryBorderColor": "#111111", "lineColor": "#111111"}}}%%
+block-beta
+  columns 3
+  User(("Người dùng")) space:2
+  Query["Nhập truy vấn<br/>ngôn ngữ tự nhiên"] Send["Gửi yêu cầu<br/>AI Search"] Retrieve["Truy hồi vector<br/>trong ChromaDB"]
+  Rerank["Xếp hạng lại<br/>kết quả"] Result["Xem danh sách<br/>điều luật liên quan"] Detail["Mở chi tiết<br/>điều luật"]
+
+  User --> Query
+  Query --> Send
+  Send --> Retrieve
+  Retrieve --> Rerank
+  Rerank --> Result
+  Result --> Detail

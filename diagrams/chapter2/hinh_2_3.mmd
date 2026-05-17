@@ -1,0 +1,14 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    API["RAG API\n/agent-search | /search\n/guided | /ingest"]
+    GRAPH["Agent Graph\nGuardrail -> Analysis\nAgent -> Verifier"]
+    TOOLS["Tool Layer\nRetrieval\nWeb Search"]
+    INFRA["Storage / Models\nChromaDB\nLLM Service"]
+
+    API --> GRAPH --> TOOLS --> INFRA
+    INFRA -.-> GRAPH
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef muted fill:#f4f4f4,stroke:#555555,stroke-width:1.5px,color:#111111;
+    class API,GRAPH,TOOLS core;
+    class INFRA muted;

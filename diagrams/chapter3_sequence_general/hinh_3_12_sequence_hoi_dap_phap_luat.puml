@@ -1,0 +1,72 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 18
+skinparam dpi 180
+skinparam sequence {
+  ArrowColor #111111
+  ArrowThickness 1.4
+  LifeLineBorderColor #111111
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #111111
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantFontColor #111111
+  ParticipantFontStyle bold
+  ParticipantFontSize 18
+  ArrowFontSize 17
+  GroupFontSize 17
+  BoxBorderColor #111111
+  BoxBackgroundColor #FFFFFF
+}
+hide footbox
+mainframe sd Hỏi đáp pháp luật
+
+actor "Người dùng" as User
+boundary "Giao diện" as UI
+control "Hệ thống" as System
+database "CSDL" as DB
+
+User -> UI: 1: Nhập câu hỏi pháp luật
+activate UI
+UI -> UI: 2: Kiểm tra nội dung nhập
+UI -> System: 3: Gửi yêu cầu trả lời
+activate System
+System -> DB: 4: Lưu câu hỏi và lịch sử hội thoại
+activate DB
+DB --> System: 5: Xác nhận dữ liệu đầu vào
+deactivate DB
+System --> UI: 6: Trả trạng thái sẵn sàng
+UI --> User: 7: Hiển thị tiến trình xử lý
+System -> DB: 8: Truy hồi dữ liệu pháp luật liên quan
+activate DB
+DB --> System: 9: Trả nguồn tham chiếu
+deactivate DB
+System --> UI: 10: Trả các bước xử lý
+UI --> User: 11: Cập nhật tiến trình
+System -> DB: 12: Lưu câu trả lời và nguồn dẫn
+activate DB
+DB --> System: 13: Xác nhận đã lưu
+deactivate DB
+System --> UI: 14: Trả câu trả lời và nguồn tham chiếu
+deactivate System
+UI --> User: 15: Hiển thị kết quả
+
+opt Lấy gợi ý
+  UI -> System: 16: Yêu cầu câu hỏi liên quan
+  activate System
+  System -> DB: 17: Lấy gợi ý đã sinh
+  activate DB
+  DB --> System: 18: Trả danh sách gợi ý
+  deactivate DB
+  System --> UI: 19: Trả danh sách câu hỏi gợi ý
+  deactivate System
+  UI --> User: 20: Hiển thị câu hỏi tiếp theo
+end
+
+alt Xử lý thất bại
+  System --> UI: 21: Trả thông báo lỗi
+  UI --> User: 22: Hiển thị lỗi phù hợp
+end
+deactivate UI
+@enduml

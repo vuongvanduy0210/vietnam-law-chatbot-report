@@ -1,0 +1,42 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="hinh_3_8" name="hinh_3_8">
+    <mxGraphModel dx="2162" dy="1274" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i4" edge="1" parent="1" source="upload" style="endArrow=open;endFill=0;html=1;rounded=0;strokeColor=#111111;strokeWidth=1.8;dashed=1;fontFamily=Arial;fontSize=15;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="track" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="320" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cancel" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="1060" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#111111;strokeWidth=2.0;fontFamily=Arial;fontSize=15;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="upload" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="467" as="sourcePoint" />
+            <mxPoint x="380" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="system" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontStyle=1;strokeColor=#111111;strokeWidth=2.2;fillColor=none;spacingTop=14;" value="Cập nhật văn bản pháp luật" vertex="1">
+          <mxGeometry height="410" width="810" x="280" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Arial;fontSize=18;fontStyle=1;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Quản trị viên" vertex="1">
+          <mxGeometry height="135" width="95" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="upload" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Upload PDF&lt;br&gt;văn bản pháp luật" vertex="1">
+          <mxGeometry height="100" width="260" x="370" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="track" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Theo dõi kết quả&lt;br&gt;xử lý" vertex="1">
+          <mxGeometry height="100" width="260" x="780" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontStyle=1;spacing=10;spacingTop=6;spacingBottom=6;strokeColor=#111111;strokeWidth=2.4;fillColor=#ffffff;" value="Hủy yêu cầu&lt;br&gt;cập nhật" vertex="1">
+          <mxGeometry height="100" width="260" x="370" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

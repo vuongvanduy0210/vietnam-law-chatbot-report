@@ -1,0 +1,20 @@
+# Word temp files
+~$*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment (credentials)
+evaluation/.env
+.env
+
+# Evaluation results (generated data, not source)
+evaluation/results/
+
+# Intermediate render working directories
+render_*/
+
+# macOS
+.DS_Store

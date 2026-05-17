@@ -1,0 +1,19 @@
+%%{init: {"theme":"base","flowchart":{"nodeSpacing":25,"rankSpacing":22,"padding":8,"curve":"basis","htmlLabels":false},"themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#111111","secondaryColor":"#f4f4f4","tertiaryColor":"#fafafa","lineColor":"#111111","clusterBkg":"#f7f7f7","clusterBorder":"#8a8a8a","edgeLabelBackground":"#ffffff"}}}%%
+flowchart TB
+    IN["Reranked\nresults"]
+    GROUP["Nhóm theo\nvăn bản + chủ đề"]
+    CHECK{"Nhiều năm\nban hành?"}
+    RESOLVE["Có nhiều năm\nTemporal\nresolution"]
+    MARK["Đánh dấu\nmới / cũ"]
+    DIRECT["Không nhiều năm\nbỏ qua xử lý"]
+    OUT["Context\ncho Agent"]
+
+    IN --> GROUP --> CHECK
+    CHECK --> RESOLVE
+    RESOLVE --> MARK --> OUT
+    CHECK --> DIRECT --> OUT
+
+    classDef core fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+    classDef decision fill:#f4f4f4,stroke:#111111,stroke-width:2px,color:#111111;
+    class IN,GROUP,RESOLVE,MARK,DIRECT,OUT core;
+    class CHECK decision;
