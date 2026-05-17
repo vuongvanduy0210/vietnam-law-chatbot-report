@@ -10,9 +10,6 @@ __pycache__/
 evaluation/.env
 .env
 
-# Evaluation results (generated data, not source)
-evaluation/results/
-
 # Intermediate render working directories
 render_*/
 
