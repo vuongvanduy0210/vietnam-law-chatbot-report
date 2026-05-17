@@ -62,8 +62,8 @@ Mở `.env` bằng Notepad và điền thông tin:
 
 ```
 EVAL_BASE_URL=http://localhost:8000
-EVAL_EMAIL=your_account@email.com
-EVAL_PASSWORD=your_password_here
+EVAL_EMAIL=duyconbn7@gnailm.com
+EVAL_PASSWORD=Vuongvanduy@0210
 EVAL_DELAY=15
 ```
 
