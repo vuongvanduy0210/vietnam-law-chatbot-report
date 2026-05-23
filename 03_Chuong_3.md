@@ -165,7 +165,7 @@ Hai tác nhân chia sẻ một số chức năng (duyệt thư viện, xem chi t
 | **Tác nhân** | Người dùng đã đăng nhập |
 | **Mô tả** | Quy trình 2 bước: hệ thống hỏi làm rõ ngữ cảnh trước, sau đó chạy pipeline AI với thông tin đầy đủ |
 | **Tiền điều kiện** | Đã đăng nhập |
-| **Luồng cơ bản** | 1. Người dùng mở màn hình "Tư vấn có hướng dẫn". 2. Nhập câu hỏi ngắn (VD: "Vượt đèn đỏ phạt bao nhiêu?"). 3. Nhấn "Bắt đầu". 4. Hệ thống phân tích, hiển thị câu hỏi trắc nghiệm (VD: "Phương tiện: [Ô tô / Xe máy / Xe đạp]"). 5. Người dùng chọn đáp án. 6. Nhấn "Tiếp tục". 7. ThinkingPanel + stream trả lời (tương tự UC-05). 8. Hiển thị câu trả lời chuyên sâu theo ngữ cảnh đã chọn. |
+| **Luồng cơ bản** | 1. Người dùng mở màn hình "Tư vấn có hướng dẫn". 2. Nhập câu hỏi ngắn (VD: "Vượt đèn đỏ phạt bao nhiêu?"). 3. Nhấn "Bắt đầu". 4. Hệ thống phân tích, hiển thị câu hỏi trắc nghiệm (VD: "Phương tiện: [Ô tô / Xe máy / Xe đạp]"). 5. Người dùng chọn đáp án. 6. Nhấn "Tiếp tục". 7. ThinkingPanel hiển thị tiến trình và stream nội dung trả lời. 8. Hiển thị câu trả lời chuyên sâu theo ngữ cảnh đã chọn. |
 | **Luồng thay thế** | 4a. Câu hỏi đã đủ ngữ cảnh → hệ thống không sinh câu hỏi làm rõ, chuyển thẳng sang Bước 6. |
 | **Hậu điều kiện** | Câu trả lời chính xác theo loại phương tiện/tình huống cụ thể của người dùng. |
 

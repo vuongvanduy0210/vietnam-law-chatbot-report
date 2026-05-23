@@ -3,18 +3,16 @@
 Generate 04_Chuong_4.docx from 04_Chuong_4.md.
 
 Images are in sample_images/chapter4/.
-Mobile screenshots (portrait) get a light gray background + thin border
-  to separate them from the white page (avoids white-on-white blending).
-Admin/landscape screenshots scale up to 15cm width, no frame needed.
+Mobile screenshots (portrait) scale to 8cm width.
+Admin/landscape screenshots scale up to 15cm width.
+Headings use proper Word Heading 1/2/3 styles for TOC and integration compatibility.
 """
 
 import struct
 from pathlib import Path
 
-from docx.shared import Cm, Pt
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
+from docx.shared import Cm, Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 
 import make_chapter1_docx as base
 
@@ -23,14 +21,9 @@ MD_FILE = HERE / "04_Chuong_4.md"
 OUT_FILE = HERE / "04_Chuong_4.docx"
 IMG_DIR = HERE / "sample_images" / "chapter4"
 
-MAX_WIDTH_CM    = 15.0   # landscape / admin screens
-MAX_HEIGHT_CM   = 18.0   # cap portrait so it doesn't fill a whole page
-MOBILE_MAX_WIDTH_CM = 8.0  # portrait phone screenshots
-
-# Frame style — matches iOS system background (#F2F2F7), light gray border
-FRAME_FILL        = "F2F2F7"
-FRAME_BORDER_CLR  = "C0C0C0"
-FRAME_BORDER_SZ   = "6"     # eighths of a point → 0.75 pt
+MAX_WIDTH_CM        = 15.0
+MAX_HEIGHT_CM       = 18.0
+MOBILE_MAX_WIDTH_CM = 8.0
 
 
 def _png_size(path: Path):
@@ -49,32 +42,45 @@ def _png_size(path: Path):
         return None
 
 
-def _frame_para(para):
-    """Add iOS-gray background + thin border to a paragraph."""
-    pPr = para._p.get_or_add_pPr()
+def _setup_doc_styles(doc):
+    """Apply Times New Roman 1.3× spacing to Heading styles for standalone viewing."""
+    BLACK = RGBColor(0, 0, 0)
 
-    # Clear previous pBdr / shd if any
-    for tag in (qn("w:pBdr"), qn("w:shd")):
-        for old in pPr.findall(tag):
-            pPr.remove(old)
+    specs = [
+        ("Heading 1", 16, True,  False, WD_ALIGN_PARAGRAPH.CENTER,  0, 18),
+        ("Heading 2", 14, True,  False, WD_ALIGN_PARAGRAPH.LEFT,   10,  4),
+        ("Heading 3", 14, True,  True,  WD_ALIGN_PARAGRAPH.LEFT,    8,  4),
+    ]
+    for name, size, bold, italic, align, before, after in specs:
+        try:
+            s = doc.styles[name]
+        except KeyError:
+            continue
+        f = s.font
+        f.name = "Times New Roman"
+        f.size = Pt(size)
+        f.bold = bold
+        f.italic = italic
+        f.color.rgb = BLACK
+        pf = s.paragraph_format
+        pf.alignment = align
+        pf.first_line_indent = Cm(0)
+        pf.space_before = Pt(before)
+        pf.space_after = Pt(after)
+        pf.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
+        pf.line_spacing = 1.3
 
-    # Border box
-    pBdr = OxmlElement("w:pBdr")
-    for side in ["top", "left", "bottom", "right"]:
-        el = OxmlElement(f"w:{side}")
-        el.set(qn("w:val"), "single")
-        el.set(qn("w:sz"), FRAME_BORDER_SZ)
-        el.set(qn("w:space"), "8")
-        el.set(qn("w:color"), FRAME_BORDER_CLR)
-        pBdr.append(el)
-    pPr.append(pBdr)
 
-    # Background fill
-    shd = OxmlElement("w:shd")
-    shd.set(qn("w:val"), "clear")
-    shd.set(qn("w:color"), "auto")
-    shd.set(qn("w:fill"), FRAME_FILL)
-    pPr.append(shd)
+def _h1_para(doc, text):
+    return doc.add_heading(text, level=1)
+
+
+def _h2_para(doc, text):
+    return doc.add_heading(text, level=2)
+
+
+def _h3_para(doc, text):
+    return doc.add_heading(text, level=3)
 
 
 def chapter4_image_para(doc, filename):
@@ -93,15 +99,12 @@ def chapter4_image_para(doc, filename):
     base._para_fmt(p, before=12, after=0, indent=0)
 
     if is_portrait:
-        # Mobile screenshot: frame + constrained width
-        _frame_para(p)
         width_cm = MOBILE_MAX_WIDTH_CM
         height_cm = width_cm / aspect
         if height_cm > MAX_HEIGHT_CM:
             height_cm = MAX_HEIGHT_CM
             width_cm = height_cm * aspect
     else:
-        # Landscape/admin: no frame, full width
         width_cm = MAX_WIDTH_CM
         height_cm = width_cm / aspect
         if height_cm > MAX_HEIGHT_CM:
@@ -117,9 +120,14 @@ def main():
     base.OUT_FILE = OUT_FILE
     base.IMG_DIR = IMG_DIR
     base.image_para = chapter4_image_para
+    # Override heading functions → use proper Word heading styles
+    base.h1_para = _h1_para
+    base.h2_para = _h2_para
+    base.h3_para = _h3_para
 
     lines = MD_FILE.read_text(encoding="utf-8").splitlines()
     doc = base.build_doc(lines)
+    _setup_doc_styles(doc)
     doc.save(OUT_FILE)
     print(f"Saved: {OUT_FILE}")
 

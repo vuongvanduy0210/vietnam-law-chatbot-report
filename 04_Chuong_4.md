@@ -167,54 +167,35 @@ Một tính năng đáng chú ý là khả năng **phục hồi sau reload trang
 
 ### 4.4.1. Thiết kế thực nghiệm
 
-Để đánh giá hiệu quả của giải pháp Agentic RAG đề xuất, em thiết kế thực nghiệm theo hai trục chính: (1) đánh giá chất lượng câu trả lời trên bộ dữ liệu kiểm thử đa dạng, và (2) so sánh tương phản (A/B comparison) giữa phương pháp Naive RAG và Agentic RAG trên cùng bộ câu hỏi.
+Để đánh giá hiệu quả của giải pháp Agentic RAG đề xuất, em thiết kế thực nghiệm tập trung vào hai mục tiêu: (1) đánh giá chất lượng câu trả lời trên bộ dữ liệu kiểm thử đa dạng theo các chỉ số định lượng, và (2) đo lường hiệu năng pipeline để xác định tính khả dụng trong điều kiện thực tế.
 
 **Bộ dữ liệu kiểm thử**
 
-Em xây dựng hai tập câu hỏi độc lập với tổng cộng 200 câu, phủ rộng năm lĩnh vực pháp luật thực tế:
+Em xây dựng hai tập câu hỏi độc lập với tổng cộng 60 câu, phủ rộng các lĩnh vực pháp luật thực tế bao gồm giao thông đường bộ, lao động, doanh nghiệp, đất đai & nhà ở và hình sự & dân sự:
 
 *Bảng 4.3. Cấu trúc bộ dữ liệu kiểm thử*
 
 | Tập | Loại | Số câu | Mô tả |
 |---|---|---|---|
-| **N1** | Factual | 100 | Câu hỏi có đáp án xác định (số liệu, điều khoản cụ thể). Đánh giá tự động bằng so khớp kết quả |
-| **N2** | Open/Reasoning | 100 | Câu hỏi mở, tình huống thực tế, cần tổng hợp nhiều nguồn. Đánh giá bằng LLM-judge |
+| **N1** | Factual | 30 | Câu hỏi có đáp án xác định (số liệu, điều khoản cụ thể). Đánh giá tự động bằng so khớp kết quả; trong đó 3 câu chuyên biệt kiểm tra Temporal Conflict (NĐ 100/2019 vs NĐ 168/2024) |
+| **N2** | Open/Reasoning | 30 | Câu hỏi mở, tình huống thực tế, cần tổng hợp nhiều nguồn. Đánh giá bằng LLM-judge (Gemini 2.5 Pro, thang 1–5) |
 
-Phân bố câu hỏi theo lĩnh vực:
-
-*Bảng 4.4. Phân bố câu hỏi theo lĩnh vực pháp luật*
-
-| Lĩnh vực | N1 | N2 | Tổng | Đặc điểm |
-|---|---|---|---|---|
-| Giao thông đường bộ | 25 | 20 | 45 | Có 5 câu kiểm tra Temporal Conflict (NĐ 100/2019 vs 168/2024) |
-| Lao động | 20 | 20 | 40 | Tranh chấp, quyền lợi người lao động |
-| Doanh nghiệp | 20 | 20 | 40 | Thành lập, quản trị, xử phạt |
-| Đất đai & Nhà ở | 20 | 20 | 40 | Luật Đất đai 2024, Nhà ở 2023 |
-| Hình sự & Dân sự | 15 | 20 | 35 | BLHS 2015, BLDS 2015 |
-| **Tổng** | **100** | **100** | **200** | |
-
-Câu hỏi tập N1 được tham chiếu với các văn bản pháp luật cụ thể (điều khoản và số văn bản), trong khi câu hỏi tập N2 được đánh giá bởi LLM-judge là Gemini 2.5 Pro theo thang điểm 1–5. Để đảm bảo độ tin cậy, 20% câu hỏi N2 được thẩm định chéo bởi con người có kiến thức pháp luật.
-
-**Phương pháp Naive RAG (baseline)**
-
-Để có cơ sở so sánh, em triển khai thêm hệ thống Naive RAG với kiến trúc đơn giản: tiếp nhận câu hỏi → embedding bi-encoder → truy vấn ChromaDB top-5 → ghép context vào prompt → Gemini Flash sinh câu trả lời. Naive RAG không có Guardrail, không có Query Analysis, không có Verifier, không có Two-Stage Reranking và không có xử lý xung đột thời gian.
+Câu hỏi tập N1 được tham chiếu với các văn bản pháp luật cụ thể (điều khoản và số văn bản) để có thể so khớp tự động; câu hỏi tập N2 đánh giá khả năng suy luận và tổng hợp của hệ thống trên các tình huống pháp lý phức tạp.
 
 ### 4.4.2. Các chỉ số đánh giá
 
-Em sử dụng sáu chỉ số đánh giá, được phân nhóm theo mục tiêu đo lường:
+Em sử dụng năm chỉ số đánh giá, được phân nhóm theo mục tiêu đo lường:
 
 *Bảng 4.5. Bộ chỉ số đánh giá hệ thống*
 
 | Chỉ số | Áp dụng | Mô tả | Phương pháp đo |
 |---|---|---|---|
 | **Accuracy@1** | N1 | Tỷ lệ câu trả lời chứa đúng thông tin factual (số liệu, điều khoản) | So khớp tự động với expected_ref |
-| **Recall@20** | N1 + N2 | Tỷ lệ chunk liên quan được retrieve trong top-20 kết quả | Ground-truth labeling |
-| **Context Relevance** | N1 + N2 | Mức độ liên quan của context được đưa vào LLM so với câu hỏi | LLM-judge (1–5) |
 | **Answer Quality** | N2 | Chất lượng tổng thể câu trả lời (độ đầy đủ, chính xác, có trích dẫn) | LLM-judge (1–5) |
 | **Citation Accuracy** | N1 | Tỷ lệ nguồn được trích dẫn khớp với văn bản thực sự chứa đáp án | So khớp tự động |
-| **Temporal Conflict Detection Rate** | Subset 5 câu N1 | Tỷ lệ phát hiện đúng cặp xung đột pháp luật cũ/mới | So khớp thủ công |
+| **Temporal Conflict Detection Rate** | Subset 3 câu N1 | Tỷ lệ phát hiện đúng cặp xung đột pháp luật cũ/mới | So khớp thủ công |
 
-Ngoài các chỉ số về chất lượng, em cũng đo **Response Latency** (thời gian từ khi gửi câu hỏi đến khi nhận token đầu tiên, và đến khi stream hoàn tất) theo phân vị P50 và P95 trên 200 lượt truy vấn. Đây là chỉ số quan trọng trong bối cảnh ứng dụng thực tế, khi người dùng kỳ vọng phản hồi trong thời gian chấp nhận được.
+Ngoài các chỉ số về chất lượng, em cũng đo **Response Latency** (thời gian từ khi gửi câu hỏi đến khi stream hoàn tất) theo phân vị P50 và P95 trên 60 lượt truy vấn. Đây là chỉ số quan trọng trong bối cảnh ứng dụng thực tế, khi người dùng kỳ vọng phản hồi trong thời gian chấp nhận được.
 
 ### 4.4.3. Kết quả thực nghiệm
 
@@ -251,9 +232,9 @@ Kết quả thực nghiệm cho thấy Agentic RAG đạt chất lượng câu t
 
 *Câu hỏi*: "Hiện nay lái xe ô tô có nồng độ cồn 0.35mg/L khí thở bị phạt bao nhiêu?"
 
-Đây là câu hỏi có xung đột thời gian điển hình: hệ thống CSDL chứa cả NĐ 100/2019/NĐ-CP (quy định mức phạt cũ 30–40 triệu đồng, tước GPLX 16–18 tháng) và NĐ 168/2024/NĐ-CP (thay thế một phần NĐ 100/2019 từ ngày 01/01/2025, quy định mức phạt 30–40 triệu đồng, tước GPLX 22–24 tháng với mức vi phạm tương tương).
+Đây là câu hỏi có xung đột thời gian điển hình: hệ thống CSDL chứa cả NĐ 100/2019/NĐ-CP (quy định mức phạt cũ 30–40 triệu đồng, tước GPLX 16–18 tháng) và NĐ 168/2024/NĐ-CP (thay thế một phần NĐ 100/2019 từ ngày 01/01/2025, quy định mức phạt 30–40 triệu đồng, tước GPLX 22–24 tháng với mức vi phạm tương đương).
 
-Naive RAG retrieve 5 chunk ngẫu nhiên, có thể trả về thông tin từ văn bản cũ hoặc mới mà không phân biệt, dẫn đến câu trả lời mơ hồ hoặc sai. Agentic RAG xử lý theo luồng:
+Nếu dùng phương pháp RAG không có Temporal Conflict Detection, việc retrieve chunk có thể trả về thông tin từ văn bản cũ hoặc mới mà không phân biệt, dẫn đến câu trả lời mơ hồ hoặc sai. Agentic RAG xử lý theo luồng:
 
 1. **Query Analysis** xác định đây là câu hỏi về mức xử phạt giao thông, cần tìm kiếm theo từ khóa "nồng độ cồn" + "xe ô tô" + kết hợp metadata `year`
 2. **Tool retrieve_internal_law** thực hiện Two-Stage Retrieval, Temporal Conflict Detection phát hiện hai văn bản có cùng `metadata.topics` và `metadata.keywords` nhưng khác `metadata.year` → đánh dấu cặp xung đột
@@ -281,8 +262,8 @@ Về mặt tài nguyên, RAG Service tiêu thụ khoảng 500–800 MB RAM trong
 
 ## 4.5. Tổng kết chương 4
 
-Chương 4 đã trình bày toàn diện kết quả triển khai hệ thống Vietnam Law Chatbot trên cả ba phương diện: môi trường vận hành thực tế, giao diện người dùng trực quan trên hai nền tảng Mobile (KMP) và Web Admin (Next.js), cùng với kết quả thực nghiệm định lượng so sánh phương pháp Agentic RAG đề xuất với baseline Naive RAG.
+Chương 4 đã trình bày toàn diện kết quả triển khai hệ thống Vietnam Law Chatbot trên cả ba phương diện: môi trường vận hành thực tế, giao diện người dùng trực quan trên hai nền tảng Mobile (KMP) và Web Admin (Next.js), cùng với kết quả thực nghiệm định lượng đánh giá hiệu quả phương pháp Agentic RAG đề xuất.
 
-Kết quả thực nghiệm khẳng định rằng việc bổ sung các cơ chế Guardrail, Two-Stage Reranking, ReAct Agent Loop và Verifier mang lại cải thiện đáng kể về chất lượng câu trả lời, đặc biệt trong việc chống hallucination và xử lý xung đột pháp luật theo thời gian — hai vấn đề đặc thù của lĩnh vực pháp lý Việt Nam. Hạn chế chính là độ trễ cao hơn so với Naive RAG, phù hợp với bối cảnh ứng dụng tư vấn pháp lý nơi độ chính xác được ưu tiên hơn tốc độ.
+Kết quả thực nghiệm khẳng định rằng việc bổ sung các cơ chế Guardrail, Two-Stage Reranking, ReAct Agent Loop và Verifier mang lại cải thiện đáng kể về chất lượng câu trả lời, đặc biệt trong việc chống hallucination và xử lý xung đột pháp luật theo thời gian — hai vấn đề đặc thù của lĩnh vực pháp lý Việt Nam. Hạn chế chính của pipeline hiện tại là độ trễ cao (P50 = 65,5s, P95 = 100,6s), phù hợp với bối cảnh ứng dụng tư vấn pháp lý nơi độ chính xác được ưu tiên hơn tốc độ.
 
 Chương 5 sẽ trình bày kết luận tổng thể, đóng góp của đề tài và hướng phát triển tiếp theo.
