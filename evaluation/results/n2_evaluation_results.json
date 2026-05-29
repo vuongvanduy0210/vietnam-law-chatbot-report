@@ -1,0 +1,152 @@
+[
+  {
+    "id": "N2-001",
+    "score": 4,
+    "reason": "Đúng mức phạt theo NĐ 168/2024 cho ô tô có nồng độ cồn 0,35mg/L khí thở: 18-20 triệu và trừ điểm GPLX. Tuy nhiên câu hỏi hỏi rõ thời gian tước GPLX, câu trả lời chưa nhấn mạnh rằng theo cơ chế mới là trừ điểm, không còn tước GPLX trong trường hợp này."
+  },
+  {
+    "id": "N2-003",
+    "score": 4,
+    "reason": "Nêu đúng NĐ 168/2024 đang áp dụng và các mức xử phạt nồng độ cồn cơ bản đối với ô tô. Tuy nhiên phần so sánh với NĐ 100/2019 chưa thật đầy đủ, đặc biệt khác biệt giữa cơ chế tước GPLX cũ và trừ điểm GPLX mới."
+  },
+  {
+    "id": "N2-005",
+    "score": 4,
+    "reason": "Xác định đúng hai hành vi vi phạm: chạy quá tốc độ 20km/h và không đội mũ bảo hiểm; mức phạt cơ bản phù hợp. Tuy nhiên trích dẫn điều khoản cho lỗi tốc độ chưa cụ thể và chưa phân tích rõ ngưỡng 'vượt 20km/h' nằm ở mức nào."
+  },
+  {
+    "id": "N2-007",
+    "score": 2,
+    "reason": "Đúng ở phần mức phạt tiền 30-40 triệu đối với ô tô không chấp hành kiểm tra nồng độ cồn, nhưng có điểm sai/nghi vấn khi viện dẫn Nghị định 81/2026 và cơ chế xử phạt bổ sung. Cần phân biệt chính xác giữa tước GPLX và trừ điểm theo quy định hiện hành."
+  },
+  {
+    "id": "N2-015",
+    "score": 3,
+    "reason": "Đúng hướng khi phân biệt xử phạt hành chính theo NĐ 168/2024 và trách nhiệm hình sự theo BLHS. Tuy nhiên phần mức phạt hành chính cho người trực tiếp đua xe và các khung hình sự theo Điều 266 BLHS chưa được trình bày đầy đủ."
+  },
+  {
+    "id": "N2-020",
+    "score": 3,
+    "reason": "Có nêu đúng khả năng truy cứu theo Điều 260 BLHS khi gây tai nạn giao thông. Tuy nhiên chưa trả lời trọng tâm: đầu thú trong 24 giờ không xóa vi phạm hành chính/hình sự, nhưng có thể là tình tiết giảm nhẹ; bỏ trốn vẫn có thể là tình tiết định khung nếu nhằm trốn tránh trách nhiệm hoặc không cứu giúp nạn nhân."
+  },
+  {
+    "id": "N2-021",
+    "score": 4,
+    "reason": "Nêu đúng căn cứ BLLĐ 2019 và nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt HĐLĐ trái luật. Còn thiếu một số điểm về nơi khiếu kiện/giải quyết tranh chấp như hòa giải viên lao động, Hội đồng trọng tài lao động hoặc Tòa án tùy loại tranh chấp."
+  },
+  {
+    "id": "N2-024",
+    "score": 4,
+    "reason": "Đúng hướng khi viện dẫn Điều 137 BLLĐ 2019 về bảo vệ lao động nữ mang thai và nêu việc sa thải/đơn phương chấm dứt vì lý do mang thai là trái luật. Tuy nhiên cần phân biệt kỹ hơn giữa 'sa thải' kỷ luật, đơn phương chấm dứt và trường hợp thay đổi cơ cấu/cắt giảm nhân sự hợp pháp."
+  },
+  {
+    "id": "N2-026",
+    "score": 3,
+    "reason": "Đúng hướng khi xác định có quyền lợi từ người sử dụng lao động và quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp. Tuy nhiên câu trả lời thiếu các mức cụ thể quan trọng cho trường hợp suy giảm 30% khả năng lao động, như bồi thường/trợ cấp từ NSDLĐ và trợ cấp một lần từ BHXH."
+  },
+  {
+    "id": "N2-029",
+    "score": 4,
+    "reason": "Viện dẫn đúng Điều 140 BLLĐ 2019: khi trở lại sau thai sản, người lao động được bảo đảm việc làm cũ hoặc việc khác với lương không thấp hơn trước khi nghỉ. Kết luận công ty giảm lương 30% là vi phạm là đúng, nhưng phần chế tài/khiếu nại chưa đầy đủ."
+  },
+  {
+    "id": "N2-031",
+    "score": 4,
+    "reason": "Nêu đúng thời hạn báo trước và các trường hợp người lao động được nghỉ không cần báo trước theo Điều 35 BLLĐ 2019. Cần bổ sung rõ hậu quả theo Điều 40: không được trợ cấp thôi việc, bồi thường nửa tháng lương, tiền lương tương ứng ngày không báo trước và chi phí đào tạo nếu có."
+  },
+  {
+    "id": "N2-041",
+    "score": 5,
+    "reason": "Trả lời đúng trọng tâm theo Luật Doanh nghiệp: thành viên phải chào bán phần vốn cho thành viên còn lại, nếu họ không mua hoặc không mua hết trong thời hạn luật định thì được chuyển nhượng cho người ngoài với cùng điều kiện. Có căn cứ điều luật phù hợp."
+  },
+  {
+    "id": "N2-043",
+    "score": 4,
+    "reason": "Nêu đúng tỷ lệ 5% cổ phần phổ thông và quyền yêu cầu triệu tập ĐHĐCĐ bất thường. Tuy nhiên cần đầy đủ hơn về điều kiện yêu cầu, nội dung văn bản yêu cầu, thời hạn HĐQT triệu tập, vai trò Ban kiểm soát và quyền tự triệu tập nếu HĐQT/BKS không thực hiện."
+  },
+  {
+    "id": "N2-046",
+    "score": 4,
+    "reason": "Đúng khi xác định giao dịch mua 70% cổ phần đối thủ có thể là tập trung kinh tế và có thể phải thông báo trước cho Ủy ban Cạnh tranh Quốc gia. Tuy nhiên thiếu các ngưỡng cụ thể theo Nghị định 35/2020/NĐ-CP và quy trình thẩm định sơ bộ/chính thức."
+  },
+  {
+    "id": "N2-056",
+    "score": 2,
+    "reason": "Câu hỏi yêu cầu theo Luật Phá sản 2014 nhưng câu trả lời chuyển sang luật mới và đưa ngưỡng 06 tháng, trong khi Luật Phá sản 2014 quy định mất khả năng thanh toán là không thực hiện nghĩa vụ thanh toán trong 03 tháng kể từ ngày đến hạn. Vì vậy lệch trọng tâm và sai theo văn bản được hỏi."
+  },
+  {
+    "id": "N2-061",
+    "score": 4,
+    "reason": "Đúng hướng khi viện dẫn các quy định về tài sản riêng, tài sản chung và nguyên tắc chia tài sản khi ly hôn. Tuy nhiên cần phân tích kỹ hơn việc đất mua bằng tiền riêng trước hôn nhân nhưng đứng tên cả hai có thể được xem là đã nhập vào tài sản chung, trừ khi chứng minh được thỏa thuận khác."
+  },
+  {
+    "id": "N2-065",
+    "score": 4,
+    "reason": "Nêu đúng căn cứ Luật Kinh doanh BĐS 2023 và các điều kiện bán nhà ở hình thành trong tương lai, trong đó có điều kiện về hạ tầng và thông báo đủ điều kiện. Tuy nhiên phần quyền cụ thể của khách hàng như yêu cầu chấm dứt hợp đồng, hoàn tiền, bồi thường, khiếu nại/tố cáo chưa thật đầy đủ."
+  },
+  {
+    "id": "N2-068",
+    "score": 4,
+    "reason": "Đúng khi xác định di chúc có hiệu lực nếu đáp ứng điều kiện hợp pháp theo BLDS 2015 và con cái không mặc nhiên có quyền phủ quyết. Cần trình bày rõ hơn phần di sản bắt buộc: người thừa kế không phụ thuộc nội dung di chúc được hưởng 2/3 suất thừa kế theo pháp luật nếu thuộc nhóm được bảo vệ."
+  },
+  {
+    "id": "N2-074",
+    "score": 5,
+    "reason": "Trả lời đúng và đầy đủ theo Điều 623 BLDS 2015: thời hiệu yêu cầu chia di sản là 30 năm đối với bất động sản, 10 năm đối với động sản; có nêu hệ quả khi hết thời hiệu."
+  },
+  {
+    "id": "N2-079",
+    "score": 3,
+    "reason": "Có nêu đúng căn cứ chung về BLDS và Luật Đất đai 2024, nhưng chưa làm rõ điều kiện mấu chốt của tài sản đang thế chấp: cần sự đồng ý của bên nhận thế chấp hoặc giải chấp/xử lý nghĩa vụ bảo đảm trước khi chuyển nhượng, cùng các bước công chứng và đăng ký biến động."
+  },
+  {
+    "id": "N2-081",
+    "score": 3,
+    "reason": "Đúng hướng khi nêu người bán hàng giả mạo nhãn hiệu có thể chịu trách nhiệm hành chính, dân sự, hình sự. Tuy nhiên chưa đầy đủ về trách nhiệm của sàn TMĐT và người mua; phần căn cứ pháp lý còn thiếu các quy định về thương mại điện tử, bảo vệ người tiêu dùng và xử phạt hàng giả."
+  },
+  {
+    "id": "N2-083",
+    "score": 3,
+    "reason": "Đúng ở mức khái quát rằng thu âm, quay phim không đồng ý có thể vi phạm quyền hình ảnh, đời tư tùy hoàn cảnh. Tuy nhiên chưa phân biệt rõ việc ghi âm/ghi hình với việc sử dụng, công bố, phát tán; thiếu trích dẫn cụ thể Điều 32, 38 BLDS và các chế tài hành chính/hình sự tương ứng."
+  },
+  {
+    "id": "N2-084",
+    "score": 4,
+    "reason": "Nêu đúng Luật Bảo vệ quyền lợi người tiêu dùng 2023 và các quyền cơ bản khi hàng mua online bị lỗi như yêu cầu đổi/trả, bồi thường, nhận đúng chất lượng cam kết. Cần bổ sung rõ hơn quyền trong giao dịch từ xa, nghĩa vụ của bên bán/sàn và cơ chế khiếu nại."
+  },
+  {
+    "id": "N2-089",
+    "score": 4,
+    "reason": "Đúng hướng khi chia thành ba hướng xử lý dân sự, hành chính, hình sự. Tuy nhiên phần dân sự và hình sự cần trích dẫn cụ thể hơn, như Điều 34, 584, 592 BLDS và Điều 155 hoặc 156 BLHS tùy hành vi xúc phạm hay vu khống."
+  },
+  {
+    "id": "N2-092",
+    "score": 5,
+    "reason": "Trả lời đúng theo Điều 328 BLDS 2015: nếu bên bán là bên nhận đặt cọc từ chối giao kết/thực hiện hợp đồng thì phải trả lại tiền cọc và một khoản tương đương, trừ khi có thỏa thuận khác. Với cọc 10%, bên mua thường nhận tổng 20% giá trị hợp đồng."
+  },
+  {
+    "id": "N2-093",
+    "score": 5,
+    "reason": "Đúng và đầy đủ theo Điều 201 BLHS 2015: lãi suất gấp 5 lần mức cao nhất của BLDS, kèm điều kiện thu lợi bất chính hoặc tái phạm, các khung phạt tiền/cải tạo không giam giữ/phạt tù và hình phạt bổ sung."
+  },
+  {
+    "id": "N2-023",
+    "score": 2,
+    "reason": "Câu trả lời sai ở điểm quan trọng khi cho rằng giới hạn làm thêm hiện hành là 60 giờ/tháng. Nghị quyết 17/2022 về mức 60 giờ/tháng đã hết hiệu lực; theo Điều 107 BLLĐ 2019, giới hạn thông thường là 40 giờ/tháng. Vì vậy công ty yêu cầu 60 giờ/tháng liên tục là vi phạm nếu không thuộc cơ chế đặc biệt hợp pháp."
+  },
+  {
+    "id": "N2-002",
+    "score": 4,
+    "reason": "Đúng khi áp dụng nguyên tắc bồi thường thiệt hại ngoài hợp đồng và chia trách nhiệm theo mức độ lỗi. Tuy nhiên cần nhấn mạnh lỗi không có gương chiếu hậu chỉ làm giảm bồi thường nếu có quan hệ nhân quả với tai nạn; không tự động làm B chịu trách nhiệm ngang với xe tải vượt tốc độ."
+  },
+  {
+    "id": "N2-098",
+    "score": 4,
+    "reason": "Đúng hướng khi viện dẫn Luật Khám bệnh, chữa bệnh 2023 về sai sót chuyên môn kỹ thuật. Cần bổ sung đầy đủ hơn trách nhiệm dân sự của bệnh viện, trách nhiệm nghề nghiệp/hành chính của bác sĩ, khả năng xử lý hình sự nếu gây hậu quả nghiêm trọng và các con đường khiếu nại/khởi kiện."
+  },
+  {
+    "id": "N2-100",
+    "score": 2,
+    "reason": "Câu trả lời có khả năng nhầm giữa chuyển nhượng vốn góp và chuyển nhượng cổ phần/cổ phiếu. Với cổ phần công ty cổ phần, kể cả chưa niêm yết, cần phân biệt quy định thuế đối với chuyển nhượng chứng khoán và cách xác định giá tính thuế; không thể khẳng định chung là 20% trên thu nhập tính thuế như chuyển nhượng phần vốn."
+  }
+]
