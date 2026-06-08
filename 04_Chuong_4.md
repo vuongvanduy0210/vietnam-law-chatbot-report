@@ -178,9 +178,9 @@ Em xây dựng hai tập câu hỏi độc lập với tổng cộng 60 câu, ph
 | Tập | Loại | Số câu | Mô tả |
 |---|---|---|---|
 | **N1** | Factual | 30 | Câu hỏi có đáp án xác định (số liệu, điều khoản cụ thể). Đánh giá tự động bằng so khớp kết quả; trong đó 3 câu chuyên biệt kiểm tra Temporal Conflict (NĐ 100/2019 vs NĐ 168/2024) |
-| **N2** | Open/Reasoning | 30 | Câu hỏi mở, tình huống thực tế, cần tổng hợp nhiều nguồn. Đánh giá bằng LLM-judge (Gemini 2.5 Pro, thang 1–5) |
+| **N2** | Open/Reasoning | 30 | Câu hỏi mở, tình huống thực tế, cần tổng hợp nhiều nguồn. Đánh giá bằng LLM-judge theo thang 1-5 |
 
-Câu hỏi tập N1 được tham chiếu với các văn bản pháp luật cụ thể (điều khoản và số văn bản) để có thể so khớp tự động; câu hỏi tập N2 đánh giá khả năng suy luận và tổng hợp của hệ thống trên các tình huống pháp lý phức tạp.
+Câu hỏi tập N1 được tham chiếu với các văn bản pháp luật cụ thể để có thể so khớp tự động về nội dung trả lời, nguồn trích dẫn và khả năng nhận diện xung đột giữa văn bản cũ - mới. Câu hỏi tập N2 được sử dụng để đánh giá khả năng suy luận, tổng hợp và diễn giải tư vấn của hệ thống trong các tình huống pháp lý mở.
 
 ### 4.4.2. Các chỉ số đánh giá
 
@@ -190,39 +190,39 @@ Em sử dụng năm chỉ số đánh giá, được phân nhóm theo mục tiê
 
 | Chỉ số | Áp dụng | Mô tả | Phương pháp đo |
 |---|---|---|---|
-| **Accuracy@1** | N1 | Tỷ lệ câu trả lời chứa đúng thông tin factual (số liệu, điều khoản) | So khớp tự động với expected_ref |
+| **Accuracy@1** | N1 | Tỷ lệ câu trả lời đầu tiên chứa đúng thông tin factual kỳ vọng | So khớp tự động với bộ từ khóa kỳ vọng |
 | **Answer Quality** | N2 | Chất lượng tổng thể câu trả lời (độ đầy đủ, chính xác, có trích dẫn) | LLM-judge (1–5) |
-| **Citation Accuracy** | N1 | Tỷ lệ nguồn được trích dẫn khớp với văn bản thực sự chứa đáp án | So khớp tự động |
-| **Temporal Conflict Detection Rate** | Subset 3 câu N1 | Tỷ lệ phát hiện đúng cặp xung đột pháp luật cũ/mới | So khớp thủ công |
+| **Citation Accuracy** | N1 | Tỷ lệ nguồn được trích dẫn khớp với văn bản pháp luật chứa đáp án | So khớp tự động |
+| **Temporal Conflict OK** | Subset 3 câu N1 | Tỷ lệ nhận diện đúng văn bản hiện hành khi tồn tại luật cũ và luật mới | So khớp tự động |
 
-Ngoài các chỉ số về chất lượng, em cũng đo **Response Latency** (thời gian từ khi gửi câu hỏi đến khi stream hoàn tất) theo phân vị P50 và P95 trên 60 lượt truy vấn. Đây là chỉ số quan trọng trong bối cảnh ứng dụng thực tế, khi người dùng kỳ vọng phản hồi trong thời gian chấp nhận được.
+Ngoài các chỉ số về chất lượng, phần thực nghiệm cũng đo độ trễ phản hồi, tính từ thời điểm gửi câu hỏi đến khi quá trình trả lời hoàn tất, theo phân vị P50 và P95 trên 60 lượt truy vấn. Chỉ số P50 phản ánh độ trễ trung vị, còn P95 cho biết thời gian phản hồi trong nhóm câu hỏi chậm hơn, qua đó giúp đánh giá tính khả dụng của hệ thống trong điều kiện thực tế.
 
 ### 4.4.3. Kết quả thực nghiệm
 
-Thực nghiệm được tiến hành trên bộ 60 câu hỏi (30 N1 + 30 N2) chạy tự động qua API chatbot. Toàn bộ 60 câu hoàn thành không có lỗi. Điểm N1 được chấm theo phương pháp so khớp tự động với expected_ref; điểm N2 được chấm bởi LLM-judge (Gemini 2.5 Pro) theo thang 1–5.
+Thực nghiệm được tiến hành trên bộ 60 câu hỏi (30 N1 + 30 N2) chạy tự động qua API chatbot. Toàn bộ 60 câu hoàn thành không có lỗi. Điểm N1 được chấm theo phương pháp so khớp từ khóa tự động: mỗi câu hỏi được gán tập từ khóa factual trích từ văn bản pháp luật gốc, câu trả lời được tính đúng khi chứa đúng thông tin kỳ vọng. Điểm N2 được chấm bằng LLM-judge theo thang 1-5 với tiêu chí: 5 = đầy đủ, chính xác, có trích dẫn điều khoản; 4 = đúng hướng, thiếu vài điểm phụ; 3 = đúng phần lớn nhưng thiếu thông tin quan trọng; 2 = lẫn thông tin đúng và sai; 1 = sai hoàn toàn.
 
 *Bảng 4.6. Kết quả đánh giá hệ thống Agentic RAG*
 
 | Chỉ số | Kết quả | Ghi chú |
 |---|---|---|
 | **Accuracy@1** (N1, 30 câu) | **90,0%** (27/30) | 3 câu sai do thiếu số liệu điều khoản cụ thể trong câu trả lời |
-| **Citation Accuracy** (N1) | **56,7%** (17/30) | Phản ánh việc NĐ 168/2024 chưa được index đầy đủ trong ChromaDB |
+| **Citation Accuracy** (N1) | **86,7%** (26/30) | Tỷ lệ nguồn trích dẫn đúng đạt mức cao; các lỗi còn lại chủ yếu xuất hiện ở một số câu có nhiều văn bản liên quan hoặc truy hồi nhầm văn bản gần nghĩa |
 | **Temporal Conflict OK** (3 câu ★) | **3/3 (100%)** | Hệ thống xác định đúng NĐ 168/2024 thay thế NĐ 100/2019 |
-| **Answer Quality** (N2, LLM-judge) | **3,67/5,0** | Phân bố: 5★×4, 4★×16, 3★×6, 2★×4, 1★×0 |
-| **Latency P50** (full response) | **65,5s** | Bao gồm toàn bộ pipeline: Guardrail → Query Analysis → Agent → Verifier |
-| **Latency P95** (full response) | **100,6s** | Trường hợp câu hỏi phức tạp, Agent thực hiện nhiều vòng lặp ReAct |
+| **Answer Quality** (N2, LLM-judge) | **4,07/5,0** | Phân bố: 5★×6, 4★×20, 3★×4, 2★×0, 1★×0 |
+| **Latency P50** (full response) | **65,16s** | Bao gồm toàn bộ pipeline: Guardrail → Query Analysis → Agent → Verifier |
+| **Latency P95** (full response) | **96,46s** | Trường hợp câu hỏi phức tạp, Agent thực hiện nhiều vòng lặp ReAct |
 
 **Nhận xét tổng hợp**
 
-Kết quả thực nghiệm cho thấy Agentic RAG đạt chất lượng câu trả lời tốt với Accuracy@1 = 90,0% và Answer Quality = 3,67/5,0, khẳng định khả năng tư vấn pháp lý thực tế của hệ thống. Hai phát hiện nổi bật được phân tích dưới đây.
+Kết quả thực nghiệm cho thấy Agentic RAG đạt chất lượng câu trả lời tốt với Accuracy@1 = 90,0%, Citation Accuracy = 86,7% và Answer Quality = 4,07/5,0. Các kết quả này cho thấy hệ thống không chỉ trả lời đúng nội dung factual trong phần lớn trường hợp, mà còn duy trì được nguồn trích dẫn tương đối đáng tin cậy và chất lượng tư vấn tốt trên nhóm câu hỏi mở.
 
-*Thứ nhất*, **Temporal Conflict Detection đạt 100% (3/3)**. Đây là tính năng đặc thù của hệ thống, không có ở các chatbot RAG thông thường. Trong cả ba câu hỏi kiểm tra xung đột thời gian giữa NĐ 100/2019 và NĐ 168/2024, hệ thống xác định đúng văn bản đang có hiệu lực, trình bày so sánh rõ ràng và không trích dẫn sai văn bản đã hết hiệu lực. Kết quả này chứng minh thiết kế metadata `effective_date` và logic Temporal Conflict trong pipeline RAG hoạt động đúng.
+*Thứ nhất*, **Temporal Conflict Detection đạt 100% (3/3)**. Đây là tính năng đặc thù của hệ thống, không có ở các chatbot RAG thông thường. Trong cả ba câu hỏi kiểm tra xung đột thời gian giữa NĐ 100/2019 và NĐ 168/2024, hệ thống xác định đúng văn bản đang có hiệu lực, trình bày so sánh rõ ràng và không trích dẫn sai văn bản đã hết hiệu lực. Kết quả này chứng minh logic Temporal Conflict dựa trên năm trong số hiệu văn bản, loại văn bản và metadata chủ đề hoạt động đúng trong các tình huống kiểm thử.
 
-*Thứ hai*, **khoảng cách giữa Accuracy@1 (90,0%) và Citation Accuracy (56,7%)** là một phát hiện quan trọng. Hệ thống trả lời đúng nhiều hơn so với tỷ lệ retrieve đúng văn bản nguồn, cho thấy Gemini 2.5 Pro đang bổ sung parametric knowledge (kiến thức nội tại từ quá trình huấn luyện) khi retrieval không tìm được đúng văn bản — đặc biệt với NĐ 168/2024 là văn bản mới chưa được index đầy đủ. Đây vừa là điểm mạnh (hệ thống vẫn trả lời đúng) vừa là hạn chế (câu trả lời thiếu nguồn trích dẫn từ kho dữ liệu nội bộ, khó kiểm chứng).
+*Thứ hai*, **Citation Accuracy đạt 86,7% (26/30)**, cho thấy cơ chế truy hồi, xếp hạng lại và đóng gói nguồn luật đã hoạt động tương đối ổn định. Một số lỗi còn lại chủ yếu xuất hiện ở các câu hỏi có nhiều văn bản liên quan gần nghĩa hoặc khi đoạn truy hồi chứa thông tin đúng nhưng chưa khớp hoàn toàn với nguồn kỳ vọng. Điều này cho thấy hệ thống đã cải thiện đáng kể khả năng cung cấp căn cứ pháp lý, tuy nhiên vẫn cần tiếp tục tối ưu dữ liệu vector và chiến lược reranking để giảm các trường hợp trích dẫn nhầm văn bản gần chủ đề.
 
-*Về Answer Quality (N2)*, điểm 3,67/5,0 phản ánh hệ thống trả lời đúng hướng với căn cứ pháp lý rõ ràng ở hầu hết câu hỏi mở. Một số câu bị trừ điểm do thiếu chi tiết về chế tài, quy trình khiếu nại hoặc chưa phân biệt đủ các trường hợp ngoại lệ — đây là giới hạn tự nhiên khi câu hỏi mở yêu cầu phân tích tình huống phức tạp.
+*Về Answer Quality (N2)*, điểm trung bình 4,07/5,0 phản ánh hệ thống trả lời tốt ở phần lớn câu hỏi tình huống mở. Các câu trả lời thường có cấu trúc rõ ràng, nêu được căn cứ pháp lý và đưa ra hướng tư vấn phù hợp với bối cảnh người dùng. Những điểm còn hạn chế chủ yếu nằm ở các câu hỏi yêu cầu phân biệt nhiều ngoại lệ hoặc cần diễn giải sâu về trình tự xử lý, khi câu trả lời vẫn có thể thiếu một số chi tiết phụ.
 
-*Về latency*, P50 = 65,5s và P95 = 100,6s là thời gian phản hồi cao hơn kỳ vọng ban đầu (ước tính 10–15s). Nguyên nhân chủ yếu đến từ: (1) mỗi câu hỏi thực hiện 4–6 lần gọi LLM tuần tự, (2) Gemini API có latency nền ~10–15s/lần gọi trong điều kiện thực tế, và (3) retrieval Two-Stage với top-60 → top-20 thêm ~500ms. Trong bối cảnh tư vấn pháp lý — nơi độ chính xác quan trọng hơn tốc độ — đây là đánh đổi chấp nhận được, nhưng cần cải thiện trong phiên bản sản xuất thực tế.
+*Về latency*, P50 = 65,16s và P95 = 96,46s là thời gian phản hồi còn cao so với một chatbot thông thường. Nguyên nhân chủ yếu đến từ việc mỗi câu hỏi phải đi qua nhiều bước xử lý tuần tự như kiểm tra đầu vào, phân tích truy vấn, truy hồi dữ liệu, gọi công cụ, kiểm chứng và sinh câu trả lời cuối cùng. Trong bối cảnh tư vấn pháp luật, nơi độ chính xác và căn cứ trích dẫn quan trọng hơn tốc độ phản hồi tức thời, đây là mức đánh đổi có thể chấp nhận được ở giai đoạn thử nghiệm, nhưng vẫn cần tối ưu trong phiên bản triển khai thực tế.
 
 ### 4.4.4. Phân tích case study
 
@@ -251,8 +251,8 @@ Kết quả: câu trả lời chính xác, minh bạch, hiển thị cả hai ng
 |---|---|
 | ChromaDB query top-60 (cosine, HNSW) | < 200ms |
 | Two-Stage Reranking (top-60 → top-20) | < 500ms |
-| Agentic RAG full response (P50) | **65,5 giây** (đo thực nghiệm, 60 câu) |
-| Agentic RAG full response (P95) | **100,6 giây** (đo thực nghiệm) |
+| Agentic RAG full response (P50) | **65,16 giây** (đo thực nghiệm, 60 câu) |
+| Agentic RAG full response (P95) | **96,46 giây** (đo thực nghiệm) |
 | Ingestion pipeline (PDF 50 điều, ~30 trang) | 3–5 phút |
 | Embedding batch 100 chunks | < 10 giây |
 
@@ -264,6 +264,4 @@ Về mặt tài nguyên, RAG Service tiêu thụ khoảng 500–800 MB RAM trong
 
 Chương 4 đã trình bày toàn diện kết quả triển khai hệ thống Vietnam Law Chatbot trên cả ba phương diện: môi trường vận hành thực tế, giao diện người dùng trực quan trên hai nền tảng Mobile (KMP) và Web Admin (Next.js), cùng với kết quả thực nghiệm định lượng đánh giá hiệu quả phương pháp Agentic RAG đề xuất.
 
-Kết quả thực nghiệm khẳng định rằng việc bổ sung các cơ chế Guardrail, Two-Stage Reranking, ReAct Agent Loop và Verifier mang lại cải thiện đáng kể về chất lượng câu trả lời, đặc biệt trong việc chống hallucination và xử lý xung đột pháp luật theo thời gian — hai vấn đề đặc thù của lĩnh vực pháp lý Việt Nam. Hạn chế chính của pipeline hiện tại là độ trễ cao (P50 = 65,5s, P95 = 100,6s), phù hợp với bối cảnh ứng dụng tư vấn pháp lý nơi độ chính xác được ưu tiên hơn tốc độ.
-
-Chương 5 sẽ trình bày kết luận tổng thể, đóng góp của đề tài và hướng phát triển tiếp theo.
+Kết quả thực nghiệm cho thấy việc bổ sung các cơ chế Guardrail, Two-Stage Reranking, ReAct Agent Loop và Verifier giúp cải thiện chất lượng câu trả lời, đặc biệt trong việc hạn chế hiện tượng sinh thông tin không có căn cứ và xử lý xung đột pháp luật theo thời gian. Hệ thống đạt Accuracy@1 = 90,0%, Citation Accuracy = 86,7% và Answer Quality = 4,07/5,0, cho thấy khả năng kết hợp giữa truy hồi nguồn luật và sinh câu trả lời tư vấn tương đối ổn định. Hạn chế chính của quy trình hiện tại là độ trễ còn cao (P50 = 65,16 giây, P95 = 96,46 giây), tuy nhiên mức đánh đổi này phù hợp hơn với bối cảnh tư vấn pháp lý, nơi độ chính xác được ưu tiên hơn tốc độ.
